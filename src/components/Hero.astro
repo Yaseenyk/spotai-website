@@ -74,42 +74,42 @@ const exercises = [
           <rect x="292" y="356" width="80" height="16" rx="6" fill="var(--iron-2)" stroke="var(--line-2)" />
         </g>
         <line data-gear="cable" x1="300" y1="0" x2="300" y2="100" stroke="var(--steel)" stroke-width="3" opacity="0" />
-        <circle data-prop="plate" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" opacity="0" />
+        <circle data-prop="plate" cx="238" cy="156" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" />
         <g fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-linecap="round" opacity="0.5">
-          <line data-f="uarmB" stroke-width="17" />
-          <line data-f="farmB" stroke-width="14" />
-          <circle data-f="handB" r="9" stroke="none" />
-          <line data-f="thighB" stroke-width="21" />
-          <line data-f="shinB" stroke-width="16" />
-          <line data-f="footB" stroke-width="12" />
+          <line data-f="uarmB" x1="237" y1="150" x2="267" y2="202" stroke-width="17" />
+          <line data-f="farmB" x1="267" y1="202" x2="219" y2="150" stroke-width="14" />
+          <circle data-f="handB" cx="219" cy="150" r="9" stroke="none" />
+          <line data-f="thighB" x1="237" y1="300" x2="243" y2="400" stroke-width="21" />
+          <line data-f="shinB" x1="243" y1="400" x2="237" y2="500" stroke-width="16" />
+          <line data-f="footB" x1="237" y1="500" x2="267" y2="500" stroke-width="12" />
         </g>
         <g fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <line data-f="thigh" stroke-width="23" />
-          <line data-f="shin" stroke-width="17" />
-          <line data-f="foot" stroke-width="13" />
-          <path data-f="torso" stroke-width="14" />
-          <line data-f="neck" stroke-width="13" />
-          <line data-f="uarm" stroke-width="18" />
-          <line data-f="farm" stroke-width="15" />
-          <circle data-f="hand" r="10" stroke="none" />
-          <ellipse data-f="head" rx="23" ry="26" stroke="none" />
+          <line data-f="thigh" x1="250" y1="300" x2="256" y2="400" stroke-width="23" />
+          <line data-f="shin" x1="256" y1="400" x2="250" y2="500" stroke-width="17" />
+          <line data-f="foot" x1="250" y1="500" x2="280" y2="500" stroke-width="13" />
+          <path data-f="torso" d="M230 150 L235 300 L265 300 L270 150 Z" stroke-width="14" />
+          <line data-f="neck" x1="250" y1="80" x2="250" y2="150" stroke-width="13" />
+          <line data-f="uarm" x1="250" y1="150" x2="280" y2="202" stroke-width="18" />
+          <line data-f="farm" x1="280" y1="202" x2="232" y2="150" stroke-width="15" />
+          <circle data-f="hand" cx="232" cy="150" r="10" stroke="none" />
+          <ellipse data-f="head" cx="250" cy="80" rx="23" ry="26" stroke="none" />
         </g>
         <g data-prop="db" opacity="0">
           <path data-prop="dbShape" fill="var(--rubber)" stroke="currentColor" stroke-width="6" stroke-linejoin="round" />
         </g>
         <path data-prop="handle" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" opacity="0" />
         <g fill="none" stroke="var(--violet-2)" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round" opacity="0.9">
-          <polyline data-f="trackArm" />
-          <polyline data-f="trackLeg" />
-          <line data-f="trackTorso" />
+          <polyline data-f="trackArm" points="250,150 280,202 232,150" />
+          <polyline data-f="trackLeg" points="250,300 256,400 250,500" />
+          <line data-f="trackTorso" x1="250" y1="150" x2="250" y2="300" />
         </g>
         <g fill="var(--violet-2)" stroke="var(--rubber)" stroke-width="2">
-          <circle data-j="shoulder" r="6" />
-          <circle data-j="elbow" r="6" />
-          <circle data-j="wrist" r="6" />
-          <circle data-j="hip" r="6" />
-          <circle data-j="knee" r="6" />
-          <circle data-j="ankle" r="6" />
+          <circle data-j="shoulder" cx="250" cy="150" r="6" />
+          <circle data-j="elbow" cx="280" cy="202" r="6" />
+          <circle data-j="wrist" cx="232" cy="150" r="6" />
+          <circle data-j="hip" cx="250" cy="300" r="6" />
+          <circle data-j="knee" cx="256" cy="400" r="6" />
+          <circle data-j="ankle" cx="250" cy="500" r="6" />
         </g>
       </svg>
 
@@ -136,6 +136,17 @@ const exercises = [
     padding-top: 104px;
     padding-bottom: 48px;
     overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(55% 60% at 78% 8%, rgba(139, 92, 246, 0.22), transparent 65%),
+      radial-gradient(40% 45% at 92% 70%, rgba(109, 63, 224, 0.16), transparent 70%),
+      radial-gradient(45% 40% at 8% 96%, rgba(196, 181, 253, 0.07), transparent 70%);
+    pointer-events: none;
   }
   .hero__in {
     display: grid;
@@ -189,12 +200,25 @@ const exercises = [
     right: -12%;
     bottom: var(--floor);
     height: 1px;
-    background: var(--line-2);
+    background: linear-gradient(90deg, transparent, rgba(196, 181, 253, 0.6) 30%, rgba(196, 181, 253, 0.6) 70%, transparent);
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.5);
   }
   .stage__light {
     position: absolute;
-    inset: -10% 14% var(--floor) 6%;
-    background: radial-gradient(60% 90% at 50% 100%, rgba(236, 233, 225, 0.08), transparent 70%);
+    inset: -14% 12% var(--floor) 2%;
+    background:
+      radial-gradient(55% 95% at 50% 100%, rgba(236, 233, 225, 0.11), transparent 70%),
+      radial-gradient(70% 50% at 50% 100%, rgba(139, 92, 246, 0.28), transparent 70%);
+    pointer-events: none;
+  }
+  .stage::before {
+    content: '';
+    position: absolute;
+    left: -12%;
+    right: -12%;
+    bottom: 0;
+    height: var(--floor);
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.12), transparent);
     pointer-events: none;
   }
   .chalk {
@@ -278,8 +302,8 @@ const exercises = [
 
   .cue {
     position: absolute;
-    left: 2%;
-    top: 52%;
+    left: 50%;
+    top: 60%;
     z-index: 3;
     padding: 9px 12px;
     border-radius: 8px;
@@ -294,7 +318,7 @@ const exercises = [
   .cue::after {
     content: '';
     position: absolute;
-    right: -5px;
+    left: -5px;
     top: 50%;
     width: 10px;
     height: 10px;
@@ -372,7 +396,8 @@ const exercises = [
       font-size: 44px;
     }
     .cue {
-      top: 48%;
+      left: 46%;
+      top: 56%;
       font-size: 12px;
     }
     .chalk--plate {
