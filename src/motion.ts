@@ -277,12 +277,18 @@ function squat() {
   if (!svg) return;
   const seg = (n: string) => svg.querySelector<SVGLineElement>(`[data-seg="${n}"]`)!;
   const j = (n: string) => svg.querySelector<SVGCircleElement>(`[data-j="${n}"]`)!;
-  const stand = { hipY: 250, kneeY: 330, kneeLx: 225, kneeRx: 295, headY: 120, armY: 230 };
-  const deep = { hipY: 330, kneeY: 352, kneeLx: 205, kneeRx: 315, headY: 205, armY: 262 };
+  const stand = { hipY: 250, kneeY: 330, kneeLx: 225, kneeRx: 295, headY: 120, headX: 260, armY: 230 };
+  const deep = { hipY: 330, kneeY: 352, kneeLx: 205, kneeRx: 315, headY: 205, headX: 272, armY: 262 };
   const s = { ...stand };
   const apply = () => {
+    seg('spine').setAttribute('x1', String(s.headX));
     seg('spine').setAttribute('y1', String(s.headY + 30));
     seg('spine').setAttribute('y2', String(s.hipY));
+    seg('trackSpine').setAttribute('x1', String(s.headX));
+    seg('trackSpine').setAttribute('y1', String(s.headY + 30));
+    seg('trackSpine').setAttribute('y2', String(s.hipY));
+    seg('armL').setAttribute('x1', String(s.headX));
+    seg('armR').setAttribute('x1', String(s.headX));
     seg('armL').setAttribute('y1', String(s.headY + 55));
     seg('armR').setAttribute('y1', String(s.headY + 55));
     seg('armL').setAttribute('y2', String(s.armY));
@@ -298,6 +304,7 @@ function squat() {
       j(`knee${side}`).setAttribute('cy', String(s.kneeY));
     }
     j('hip').setAttribute('cy', String(s.hipY));
+    j('head').setAttribute('cx', String(s.headX));
     j('head').setAttribute('cy', String(s.headY));
   };
   const flag = (n: string) => svg.querySelector(`[data-flag="${n}"]`)!;
@@ -311,6 +318,10 @@ function squat() {
     .to(flag('valgus'), { opacity: 1, duration: 0.3 }, '<0.3')
     .to(s, { kneeLx: 222, kneeRx: 298, duration: 0.6, onUpdate: apply })
     .to(flag('valgus'), { opacity: 0, duration: 0.3 }, '<0.2')
+    .to(s, { headX: 318, headY: 215, duration: 0.6, onUpdate: apply })
+    .to(flag('lean'), { opacity: 1, duration: 0.3 }, '<0.3')
+    .to(s, { headX: 272, headY: 205, duration: 0.5, onUpdate: apply })
+    .to(flag('lean'), { opacity: 0, duration: 0.3 }, '<0.1')
     .to(s, { ...stand, duration: 1, onUpdate: apply })
     .to(flag('good'), { opacity: 1, duration: 0.3 }, '<0.5');
 }

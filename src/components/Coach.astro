@@ -1,163 +1,286 @@
 ---
-const base = import.meta.env.BASE_URL;
+const features = [
+  {
+    title: 'Counts every rep',
+    body: 'Prop the phone side-on or at 45°. The counter runs on the body landmarks, so you lift and the app keeps score.',
+  },
+  {
+    title: 'Three form checks per rep',
+    body: 'Knee valgus, shallow depth and forward lean, flagged per rep. Squats today; deadlift and bench are next.',
+  },
+  {
+    title: 'One tip per set',
+    body: 'Picked from templates your gym’s trainer approved, in English, Hindi or Bengali. Nothing made up on the spot.',
+  },
+  {
+    title: 'Video never leaves your phone',
+    body: 'Pose runs on the phone with MediaPipe. Only rep counts and flags reach the server, never a frame.',
+  },
+  {
+    title: 'Mark a tip wrong',
+    body: 'Tap “This was wrong” and trainers see each template’s wrong-rate in the staff console, then retire the bad ones.',
+  },
+  {
+    title: 'Clips are your call',
+    body: 'Saving a clip is a separate consent, off by default, deletable any time. Camera features are for members 18 and over.',
+  },
+];
 ---
 
 <section class="section coach" id="coach" aria-labelledby="coach-title">
   <div class="wrap coach__in">
-    <div class="coach__art" data-reveal>
-      <!-- A squat, tracked. Scrubbed by scroll: the skeleton drops into the squat and the flags light up. -->
-      <svg viewBox="0 0 520 520" aria-hidden="true" data-squat>
-        <defs>
-          <linearGradient id="sq-rim" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#22d3ee" />
-            <stop offset="1" stop-color="#a855f7" />
-          </linearGradient>
-        </defs>
-        <rect x="24" y="24" width="472" height="472" rx="36" fill="#0b0e14" stroke="#ffffff" stroke-opacity="0.08" />
-        <!-- viewfinder corners -->
-        <g stroke="url(#sq-rim)" stroke-width="3" fill="none" stroke-linecap="round">
-          <path d="M52 92 V60 a8 8 0 0 1 8 -8 H92" />
-          <path d="M428 52 h32 a8 8 0 0 1 8 8 V92" />
-          <path d="M52 428 v32 a8 8 0 0 0 8 8 H92" />
-          <path d="M468 428 v32 a8 8 0 0 1 -8 8 H428" />
-        </g>
-        <!-- scan line -->
-        <rect x="60" y="100" width="400" height="2" fill="#22d3ee" opacity="0.7" data-scan />
-        <!-- floor -->
-        <line x1="90" y1="430" x2="430" y2="430" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" />
-        <!-- skeleton standing (GSAP morphs the points toward the squat set) -->
-        <g stroke="#67e8f9" stroke-width="4" stroke-linecap="round" fill="none">
-          <line data-seg="spine" x1="260" y1="150" x2="260" y2="250" />
+    <!-- What the coach sees: a viewfinder with the tracked body. Scroll scrubs the squat and the flags fire in order. -->
+    <div class="cam" aria-hidden="true">
+      <div class="cam__bar">
+        <span class="cam__chip">Squat</span>
+        <span class="cam__chip">Side view</span>
+        <span class="cam__live"><i></i>On device</span>
+      </div>
+      <div class="cam__view">
+      <svg viewBox="0 0 520 520" data-squat>
+        <line x1="90" y1="450" x2="430" y2="450" stroke="var(--line-2)" stroke-width="2" />
+        <ellipse cx="260" cy="452" rx="110" ry="8" fill="var(--chalk)" opacity="0.08" />
+        <g stroke="var(--chalk-2)" stroke-width="15" stroke-linecap="round" opacity="0.5">
           <line data-seg="thighL" x1="260" y1="250" x2="225" y2="330" />
-          <line data-seg="thighR" x1="260" y1="250" x2="295" y2="330" />
           <line data-seg="shinL" x1="225" y1="330" x2="230" y2="425" />
-          <line data-seg="shinR" x1="295" y1="330" x2="290" y2="425" />
           <line data-seg="armL" x1="260" y1="175" x2="215" y2="230" />
-          <line data-seg="armR" x1="260" y1="175" x2="305" y2="230" />
         </g>
-        <circle data-j="head" cx="260" cy="120" r="18" fill="none" stroke="#f8fafc" stroke-width="4" />
-        <g fill="#f8fafc">
+        <g stroke="var(--chalk)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+          <line data-seg="spine" x1="260" y1="150" x2="260" y2="250" stroke-width="24" />
+          <line data-seg="thighR" x1="260" y1="250" x2="295" y2="330" stroke-width="22" />
+          <line data-seg="shinR" x1="295" y1="330" x2="290" y2="425" stroke-width="16" />
+          <path d="M290 425 l30 0" stroke-width="13" />
+          <line data-seg="armR" x1="260" y1="175" x2="305" y2="230" stroke-width="16" />
+        </g>
+        <circle data-j="head" cx="260" cy="120" r="24" fill="var(--chalk)" />
+        <g fill="none" stroke="var(--violet-2)" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round" opacity="0.9">
+          <line data-seg="trackSpine" x1="260" y1="150" x2="260" y2="250" />
+        </g>
+        <g fill="var(--violet-2)" stroke="var(--rubber)" stroke-width="2">
           <circle data-j="hip" cx="260" cy="250" r="7" />
-          <circle data-j="kneeL" cx="225" cy="330" r="8" fill="#22d3ee" />
-          <circle data-j="kneeR" cx="295" cy="330" r="8" fill="#22d3ee" />
+          <circle data-j="kneeL" cx="225" cy="330" r="7" />
+          <circle data-j="kneeR" cx="295" cy="330" r="7" />
           <circle data-j="ankleL" cx="230" cy="425" r="6" />
           <circle data-j="ankleR" cx="290" cy="425" r="6" />
         </g>
-        <!-- flags -->
         <g data-flag="depth" opacity="0">
-          <rect x="300" y="300" width="150" height="34" rx="17" fill="#05070a" stroke="#fbbf24" stroke-opacity="0.7" />
-          <text x="375" y="322" text-anchor="middle" class="sq__text" fill="#fbbf24">SHALLOW DEPTH</text>
+          <rect x="316" y="296" width="150" height="34" rx="17" fill="var(--warn)" />
+          <text x="391" y="318" text-anchor="middle" class="cam__flag">Shallow depth</text>
         </g>
         <g data-flag="valgus" opacity="0">
-          <rect x="60" y="340" width="140" height="34" rx="17" fill="#05070a" stroke="#f87171" stroke-opacity="0.7" />
-          <text x="130" y="362" text-anchor="middle" class="sq__text" fill="#f87171">KNEE VALGUS</text>
+          <rect x="56" y="342" width="140" height="34" rx="17" fill="var(--violet)" />
+          <text x="126" y="364" text-anchor="middle" class="cam__flag cam__flag--light">Knee valgus</text>
+        </g>
+        <g data-flag="lean" opacity="0">
+          <rect x="320" y="150" width="150" height="34" rx="17" fill="var(--warn)" />
+          <text x="395" y="172" text-anchor="middle" class="cam__flag">Forward lean</text>
         </g>
         <g data-flag="good" opacity="0">
-          <rect x="190" y="60" width="140" height="34" rx="17" fill="#05070a" stroke="#34d399" stroke-opacity="0.8" />
-          <circle cx="212" cy="77" r="4" fill="#34d399" />
-          <text x="268" y="82" text-anchor="middle" class="sq__text" fill="#34d399">GOOD REP · 8</text>
+          <rect x="190" y="40" width="140" height="34" rx="17" fill="var(--go)" />
+          <text x="260" y="62" text-anchor="middle" class="cam__flag">Good rep</text>
         </g>
-        <text x="260" y="482" text-anchor="middle" class="sq__text" fill="#6b7a93">POSE · ON DEVICE · 30 FPS</text>
       </svg>
+      </div>
+      <div class="cam__foot">
+        <p class="cam__rep"><b>6</b><span>of 8 reps</span></p>
+        <p class="cam__tip">“Try pushing your knees out over your toes as you stand up.”</p>
+        <p class="cam__ask"><span>Helpful</span><span>This was wrong</span></p>
+      </div>
     </div>
 
     <div class="coach__copy">
-      <div class="section__head" data-reveal>
-        <p class="mono eyebrow">AI coach</p>
-        <h2 id="coach-title">No one spotting your squat? The AI coach checks your form on the phone camera.</h2>
-        <p class="lead">
-          Prop your phone against the rack, do a set of squats. The coach counts reps, flags knee valgus, shallow
-          depth and forward lean per rep, and gives you one tip, written from templates your gym’s trainer approved.
-        </p>
-      </div>
-      <ul class="coach__list" role="list">
-        <li data-reveal style="--d: 0.05s">
-          <strong>Video stays on your phone.</strong> Pose runs on device with MediaPipe. Only movement points leave,
-          never frames.
-        </li>
-        <li data-reveal style="--d: 0.1s">
-          <strong>Trainer in the loop.</strong> Every tip template is reviewed in the staff console, with each flag’s
-          wrong-rate on show so trainers can retire bad ones.
-        </li>
-        <li data-reveal style="--d: 0.15s">
-          <strong>Squats today, more soon.</strong> Deadlift and bench are next. Every exercise already has a how-to and
-          a short.
-        </li>
-        <li data-reveal style="--d: 0.2s">
-          <strong>Adults only.</strong> Camera features switch off for members under 18.
-        </li>
+      <h2 id="coach-title">No one spotting your squat? The AI coach checks your form on the phone camera.</h2>
+      <p class="lead">
+        Prop your phone against the rack and do a set. The coach counts reps, flags form per rep, and gives you one
+        tip your gym’s trainer has approved.
+      </p>
+      <ul class="coach__grid" role="list">
+        {
+          features.map((f) => (
+            <li>
+              <h3>{f.title}</h3>
+              <p>{f.body}</p>
+            </li>
+          ))
+        }
       </ul>
-      <div class="coach__shot" data-reveal style="--d: 0.25s">
-        <div class="phone">
-          <img
-            src={`${base}shots/m-dark-coach.webp`}
-            width="640"
-            height="1385"
-            alt="AI coach screen: pose tracking preview with Runs on your phone label, exercise Squat selected, camera angle Side, note that video stays on the phone"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .coach {
-    background: radial-gradient(60% 50% at 20% 40%, rgba(34, 211, 238, 0.08), transparent 70%);
-  }
   .coach__in {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: clamp(32px, 6vw, 96px);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(32px, 5vw, 80px);
     align-items: start;
   }
-  .coach__art {
-    position: sticky;
-    top: 110px;
+  .coach__copy h2 {
+    font-size: clamp(30px, 3.2vw, 44px);
   }
-  .coach__art svg {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.6));
+  .coach__copy .lead {
+    margin-top: 16px;
   }
-  .sq__text {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-  }
-  .coach__list {
-    margin: 0;
+  .coach__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+    margin: 28px 0 0;
     padding: 0;
     list-style: none;
-    display: grid;
-    gap: 14px;
   }
-  .coach__list li {
-    padding: 16px 18px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.03);
+  .coach__grid li {
+    padding: 16px 0 18px;
+    border-top: 1px solid var(--line);
+  }
+  .coach__grid h3 {
+    font-size: 16.5px;
+    font-variation-settings: 'wdth' 105;
+    letter-spacing: -0.01em;
+  }
+  .coach__grid p {
+    margin-top: 6px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--steel);
+  }
+
+  /* Viewfinder */
+  .cam {
+    position: sticky;
+    top: 96px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #16181e, #0f1014);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 0 0 1px var(--line-2),
+      0 40px 70px -40px rgba(0, 0, 0, 0.95);
+    overflow: hidden;
+  }
+  .cam__view {
+    position: relative;
+    margin: 10px 18px 0;
+  }
+  .cam__view::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background:
+      linear-gradient(var(--violet-2), var(--violet-2)) top left / 22px 2px no-repeat,
+      linear-gradient(var(--violet-2), var(--violet-2)) top left / 2px 22px no-repeat,
+      linear-gradient(var(--violet-2), var(--violet-2)) top right / 22px 2px no-repeat,
+      linear-gradient(var(--violet-2), var(--violet-2)) top right / 2px 22px no-repeat,
+      linear-gradient(var(--violet-2), var(--violet-2)) bottom left / 22px 2px no-repeat,
+      linear-gradient(var(--violet-2), var(--violet-2)) bottom left / 2px 22px no-repeat,
+      linear-gradient(var(--violet-2), var(--violet-2)) bottom right / 22px 2px no-repeat,
+      linear-gradient(var(--violet-2), var(--violet-2)) bottom right / 2px 22px no-repeat;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  .cam__bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px 0;
+  }
+  .cam__chip {
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(236, 233, 225, 0.07);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--chalk);
+  }
+  .cam__live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--go);
+  }
+  .cam__live i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--go);
+    box-shadow: 0 0 8px var(--go);
+    animation: blink 1.6s ease-in-out infinite;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0.35;
+    }
+  }
+  .cam svg {
+    width: 100%;
+  }
+  .cam__flag {
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 700;
+    fill: #141518;
+  }
+  .cam__flag--light {
+    fill: #fff;
+  }
+  .cam__foot {
+    padding: 4px 18px 18px;
+  }
+  .cam__rep {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .cam__rep b {
+    font-size: 40px;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 118;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .cam__rep span {
+    font-size: 13px;
+    color: var(--steel);
+  }
+  .cam__tip {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.14);
+    box-shadow: inset 0 0 0 1px rgba(196, 181, 253, 0.25);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .cam__ask {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .cam__ask span {
+    padding: 6px 10px;
+    border-radius: 999px;
     box-shadow: inset 0 0 0 1px var(--line);
-    color: var(--muted);
-    font-size: 15.5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--steel);
   }
-  .coach__list strong {
-    color: var(--text);
-  }
-  .coach__shot {
-    width: min(260px, 70%);
-    margin: 40px auto 0;
-  }
-  @media (max-width: 900px) {
+
+  @media (max-width: 960px) {
     .coach__in {
       grid-template-columns: 1fr;
     }
-    .coach__art {
+    .cam {
       position: static;
-      max-width: 520px;
-      margin-inline: auto;
+      max-width: 440px;
+    }
+  }
+  @media (max-width: 600px) {
+    .coach__grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
