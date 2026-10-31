@@ -134,7 +134,6 @@ const exercises = [
     </div>
   </div>
 
-  <div class="hero__floor" aria-hidden="true"></div>
 </section>
 
 <style>
@@ -142,45 +141,47 @@ const exercises = [
     position: relative;
     min-height: 100svh;
     display: grid;
-    align-items: end;
-    padding-top: 120px;
-    padding-bottom: 56px;
+    align-items: center;
+    padding-top: 104px;
+    padding-bottom: 48px;
     overflow: hidden;
   }
   .hero__in {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-    align-items: end;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
     gap: clamp(24px, 4vw, 64px);
   }
   .hero__copy {
-    padding-bottom: clamp(40px, 7vh, 88px);
+    padding-bottom: 0;
   }
   .hero__title {
-    font-size: clamp(32px, 3.5vw, 54px);
-    line-height: 1.04;
+    font-size: clamp(28px, 2.7vw, 44px);
+    line-height: 1.06;
+    max-width: 22ch;
     letter-spacing: -0.02em;
   }
   .hero__sub {
     margin-top: 18px;
-    font-size: clamp(26px, 2.6vw, 38px);
+    font-size: clamp(22px, 1.9vw, 30px);
     font-weight: 800;
     font-variation-settings: 'wdth' 118;
     letter-spacing: -0.02em;
     color: var(--violet-2);
   }
   .hero__lead {
-    margin-top: 28px;
-    max-width: 48ch;
+    margin-top: 22px;
+    max-width: 50ch;
+    font-size: 17px;
   }
   .hero__cta {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 36px;
+    margin-top: 30px;
   }
   .hero__note {
-    margin-top: 22px;
+    margin-top: 18px;
     font-size: 14px;
     color: var(--dim);
     max-width: 44ch;
@@ -189,13 +190,14 @@ const exercises = [
   /* Stage: the lifter stands on the floor line; the tab row sits on the floor below. */
   .hero__stage {
     position: relative;
-    height: clamp(480px, 62vh, 620px);
+    height: clamp(460px, 58vh, 600px);
     color: var(--chalk);
   }
-  .hero__floor {
+  .hero__stage::after {
+    content: '';
     position: absolute;
-    left: 0;
-    right: 0;
+    left: -12%;
+    right: -12%;
     bottom: 56px;
     height: 1px;
     background: var(--line-2);
@@ -207,15 +209,16 @@ const exercises = [
     will-change: transform;
   }
   .chalk--plate {
-    right: -2%;
+    right: -3%;
     bottom: 56px;
-    width: 30%;
+    width: 24%;
+    opacity: 0.2;
   }
   .chalk--plate2 {
-    right: 10%;
+    right: 6%;
     bottom: 56px;
-    width: 30%;
-    opacity: 0.16;
+    width: 24%;
+    opacity: 0.12;
   }
   .stage__light {
     position: absolute;
@@ -236,7 +239,7 @@ const exercises = [
     pointer-events: none;
   }
   .chalk--rack {
-    left: 8%;
+    left: 3%;
     top: -6%;
     height: calc(106% - 56px);
     width: auto;
@@ -251,9 +254,9 @@ const exercises = [
   }
   .figure {
     position: absolute;
-    left: 4%;
+    left: 0;
     bottom: 56px;
-    height: calc(94% - 56px);
+    height: calc(92% - 56px);
     width: auto;
     color: var(--chalk);
     filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.45));
@@ -378,11 +381,8 @@ const exercises = [
   @media (max-width: 960px) {
     .hero {
       padding-top: 96px;
-      padding-bottom: 40px;
+      padding-bottom: 32px;
       align-items: start;
-    }
-    .hero__floor {
-      bottom: 40px;
     }
     .hero__in {
       grid-template-columns: 1fr;
