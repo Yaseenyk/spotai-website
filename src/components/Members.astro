@@ -1,124 +1,183 @@
 ---
 const base = import.meta.env.BASE_URL;
-const phones = [
+const steps = [
   {
+    problem: 'No idea what to train today',
+    fix: 'Check in and the app picks today’s session from your last week: the muscle group that’s most rested, or cardio, cycling, mobility.',
     src: 'm-dark-picker.webp',
+    pos: '50% 57%',
     alt: 'Session picker: What are you training today? Strength is suggested with the reason, then Cardio, Cycling and Mobility',
-    cap: 'Pick today’s session. The coach suggests one from your last week.',
   },
   {
+    problem: 'Same three exercises every time',
+    fix: 'Tick the ones you want. Each exercise shows how many times you did it this week, so the gaps are obvious.',
     src: 'm-dark-exercises.webp',
-    alt: 'Exercise checklist for Back and biceps with Lat pulldown, Dumbbell row, Biceps curl and Hammer curl ticked, showing how many times each was done this week',
-    cap: 'Tick the exercises you want. Each one shows what you did this week.',
+    pos: '50% 43%',
+    alt: 'Exercise checklist for Back and biceps with Lat pulldown, Dumbbell row, Biceps curl and Hammer curl, each showing how many times it was done this week',
   },
   {
+    problem: 'Sets never get written down',
+    fix: 'Reps and kilograms per set, a 30-second short if you forgot the move, or let the camera count the set for you.',
     src: 'm-dark-workout.webp',
-    alt: 'Workout screen for Lat pulldown with a how-to, Watch short and Record set buttons and three sets of reps and kilograms to log',
-    cap: 'Log sets, watch a short, or let the coach record one.',
-  },
-];
-const features = [
-  {
-    icon: 'M4 12h16M7 8v8M17 8v8M4 10v4M20 10v4',
-    title: 'Sessions that fit your week',
-    body: 'Strength by muscle group, cardio, cycling or mobility. The suggestion follows the twice-a-week-per-muscle guideline, and you can always pick something else.',
-  },
-  {
-    icon: 'M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5',
-    title: 'Every set, counted',
-    body: 'Reps and kilograms per set, timed sets for cardio and mobility, personal bests and milestone badges from 1,000 kg lifted to 100,000.',
-  },
-  {
-    icon: 'M15 10l4.5-2.5v9L15 14M3 7h12v10H3z',
-    title: 'Shorts, not lectures',
-    body: 'Each exercise opens a short from a well-known coach inside the app, so you learn the move in 30 seconds and get back to the set.',
-  },
-  {
-    icon: 'M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z',
-    title: 'Check in from your phone',
-    body: 'Show a QR at the desk or confirm a face check-in. Membership, days left and dues are one tap away, paid with UPI.',
+    pos: '50% 40%',
+    alt: 'Workout screen for Lat pulldown with a how-to, Watch short and Record set buttons and sets of reps and kilograms to log',
   },
 ];
 ---
 
 <section class="section members" id="members" aria-labelledby="members-title">
   <div class="wrap">
-    <div class="section__head" data-reveal>
-      <p class="mono eyebrow">For members</p>
-      <h2 id="members-title">Walk in with no plan? The app tells you what to train today and logs every set.</h2>
-      <p class="lead">
-        No more scrolling for a plan between sets. Check in, pick a session, and the app carries you from the first
-        warm-up to the last rep.
-      </p>
+    <div class="members__head">
+      <h2 id="members-title">Walk in with no plan? Not anymore.</h2>
+      <p class="lead">Check in and SpotAI gives you today’s workout, then logs every set.</p>
     </div>
 
-    <div class="members__phones" data-phones>
+    <ol class="steps" role="list">
       {
-        phones.map((p, i) => (
-          <figure class="members__phone" data-reveal style={`--d: ${i * 0.12}s`}>
-            <div class="phone">
-              <img src={`${base}shots/${p.src}`} width="640" height="1385" alt={p.alt} loading="lazy" decoding="async" />
+        steps.map((s, i) => (
+          <li class="step">
+            <div class="step__shot">
+              <img
+                src={`${base}shots/${s.src}`}
+                width="640"
+                height="1385"
+                alt={s.alt}
+                loading="lazy"
+                decoding="async"
+                style={`object-position: ${s.pos}`}
+              />
             </div>
-            <figcaption>{p.cap}</figcaption>
-          </figure>
-        ))
-      }
-    </div>
-
-    <ul class="members__grid" role="list">
-      {
-        features.map((f, i) => (
-          <li class="card card--rim" data-reveal style={`--d: ${i * 0.08}s`}>
-            <span class="card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d={f.icon} />
-              </svg>
-            </span>
-            <h3>{f.title}</h3>
-            <p>{f.body}</p>
+            <div class="step__text">
+              <span class="step__n" aria-hidden="true">{i + 1}</span>
+              <h3>{s.problem}</h3>
+              <p>{s.fix}</p>
+            </div>
           </li>
         ))
       }
-    </ul>
+    </ol>
   </div>
 </section>
 
 <style>
-  .members__phones {
+  .members__head {
+    max-width: 640px;
+    margin-bottom: clamp(32px, 5vw, 56px);
+  }
+  .members__head h2 {
+    font-size: clamp(30px, 3.4vw, 46px);
+  }
+  .members__head .lead {
+    margin-top: 14px;
+  }
+
+  .steps {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(16px, 3vw, 40px);
-    align-items: end;
-    margin-bottom: clamp(48px, 7vw, 96px);
-  }
-  .members__phone {
-    margin: 0;
-  }
-  .members__phone:nth-child(2) {
-    translate: 0 -28px;
-  }
-  .members__phone figcaption {
-    margin-top: 16px;
-    text-align: center;
-    font-size: 14px;
-    color: var(--muted);
-  }
-  .members__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
+    gap: 20px;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  @media (max-width: 760px) {
-    .members__phones {
+  .step {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #1f2129, #171920);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 0 0 1px var(--line),
+      0 30px 50px -30px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+  }
+  .step__shot {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: #0b0c0f;
+  }
+  .step__shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .step__shot::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 40%;
+    background: linear-gradient(180deg, transparent, rgba(23, 25, 32, 0.9));
+  }
+  .step__text {
+    position: relative;
+    padding: 18px 22px 24px;
+  }
+  .step__n {
+    position: absolute;
+    top: -16px;
+    left: 22px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--violet);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    box-shadow: 0 0 0 4px #171920;
+  }
+  .step h3 {
+    margin-top: 10px;
+    font-size: 21px;
+    line-height: 1.15;
+  }
+  .step p {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--steel);
+  }
+
+  @media (max-width: 960px) {
+    .steps {
       grid-template-columns: 1fr;
-      max-width: 320px;
-      margin-inline: auto;
+      gap: 16px;
     }
-    .members__phone:nth-child(2) {
-      translate: none;
+    .step {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      grid-template-rows: none;
+    }
+    .step__shot {
+      aspect-ratio: auto;
+      min-height: 100%;
+    }
+    .step__shot::after {
+      inset: 0 0 0 auto;
+      width: 40%;
+      height: auto;
+      background: linear-gradient(90deg, transparent, rgba(23, 25, 32, 0.9));
+    }
+    .step__n {
+      position: static;
+      box-shadow: none;
+    }
+    .step h3 {
+      font-size: 19px;
+    }
+  }
+  @media (max-width: 560px) {
+    .step {
+      grid-template-columns: 1fr;
+    }
+    .step__shot {
+      aspect-ratio: 16 / 10;
+      min-height: 0;
+    }
+    .step__shot::after {
+      inset: auto 0 0;
+      width: auto;
+      height: 40%;
+      background: linear-gradient(180deg, transparent, rgba(23, 25, 32, 0.9));
     }
   }
 </style>
