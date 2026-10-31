@@ -7,30 +7,40 @@ const consents = [
   ['Chat', true],
   ['Dues reminders', true],
 ] as const;
+const points = [
+  ['Frames never leave the phone', 'Pose tracking runs on the device. The server only ever gets rep counts and flags.'],
+  ['One switch per purpose', 'Camera, clips, face, matching, chat and reminders are separate opt-ins, each with the notice version recorded.'],
+  ['Export or delete from the app', 'A JSON of everything you have, or the whole account gone. No email to support.'],
+  ['Complaints get a reference', 'File from the app, get a number, and the gym has to answer. As India’s DPDP Act expects.'],
+  ['Language models behind a gate', 'Any model call goes through a gateway that strips identity and checks consent first, with template fallback.'],
+  ['Adults only', 'Camera features and the community switch off for members under 18.'],
+];
 ---
 
 <section class="section privacy" id="privacy" aria-labelledby="privacy-title">
   <div class="wrap privacy__in">
-    <div class="section__head" data-reveal>
-      <p class="mono eyebrow">Private by design</p>
-      <h2 id="privacy-title">Worried where your camera footage goes? Nowhere. It stays on your phone.</h2>
+    <div class="privacy__copy">
+      <h2 id="privacy-title">Worried where your camera footage goes? Nowhere.</h2>
       <p class="lead">
-        A gym app sees your camera, your attendance and sometimes your face. SpotAI treats each of those as a
-        separate decision you make, the way India’s DPDP Act expects, not a wall of text you tap through once.
+        A gym app sees your camera, your attendance and sometimes your face. Each one is a separate decision you
+        make, not a wall of text you tap through once.
       </p>
-      <ul class="privacy__list" role="list">
-        <li>Pose tracking on device. Frames never leave the phone.</li>
-        <li>Each purpose is its own opt-in, with the notice version recorded.</li>
-        <li>Export my data and delete my account, from the app, no email needed.</li>
-        <li>Complaints get a reference number the gym has to answer.</li>
-        <li>Language models only through a gateway that redacts identity and checks consent first.</li>
-        <li>Camera features and the community are for adults only.</li>
+      <ul class="points" role="list">
+        {
+          points.map(([t, b]) => (
+            <li>
+              <h3>{t}</h3>
+              <p>{b}</p>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
-    <div class="privacy__panel card" data-reveal style="--d: 0.1s" aria-label="Example of the consent toggles in the app">
-      <p class="mono">Privacy centre</p>
-      <ul class="privacy__toggles" role="list">
+    <div class="centre" aria-label="The privacy centre in the app">
+      <p class="centre__title">Privacy centre</p>
+      <p class="centre__sub">In the SpotAI app</p>
+      <ul class="toggles" role="list">
         {
           consents.map(([label, on]) => (
             <li class:list={{ 'is-on': on }}>
@@ -41,7 +51,7 @@ const consents = [
           ))
         }
       </ul>
-      <div class="privacy__actions">
+      <div class="centre__actions">
         <span>Export my data</span>
         <span>Delete my account</span>
       </div>
@@ -52,100 +62,130 @@ const consents = [
 <style>
   .privacy__in {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: clamp(32px, 6vw, 96px);
-    align-items: center;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: clamp(32px, 5vw, 80px);
+    align-items: start;
   }
-  .privacy__list {
+  .privacy__copy h2 {
+    font-size: clamp(30px, 3.2vw, 44px);
+  }
+  .privacy__copy .lead {
+    margin-top: 16px;
+  }
+  .points {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
     margin: 28px 0 0;
     padding: 0;
     list-style: none;
-    display: grid;
-    gap: 12px;
-    color: var(--muted);
   }
-  .privacy__list li {
-    padding-left: 30px;
-    position: relative;
+  .points li {
+    padding: 16px 0 18px;
+    border-top: 1px solid var(--line);
   }
-  .privacy__list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 7px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--grad);
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  .points h3 {
+    font-size: 16.5px;
+    font-variation-settings: 'wdth' 105;
+    letter-spacing: -0.01em;
   }
-  .privacy__panel .mono {
-    color: var(--violet-400);
+  .points p {
+    margin-top: 6px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--steel);
   }
-  .privacy__toggles {
-    margin: 18px 0 0;
+
+  .centre {
+    position: sticky;
+    top: 96px;
+    padding: 22px 22px 20px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #1f2129, #171920);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 0 0 1px var(--line),
+      0 30px 50px -30px rgba(0, 0, 0, 0.9);
+  }
+  .centre__title {
+    font-size: 20px;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 110;
+  }
+  .centre__sub {
+    margin-top: 2px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--violet-2);
+  }
+  .toggles {
+    margin: 16px 0 0;
     padding: 0;
     list-style: none;
-    display: grid;
-    gap: 6px;
   }
-  .privacy__toggles li {
+  .toggles li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 14px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.03);
-    font-weight: 600;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
     font-size: 15px;
+    font-weight: 600;
   }
-  .privacy__toggles i {
+  .toggles i {
     position: relative;
-    width: 44px;
-    height: 26px;
+    width: 42px;
+    height: 24px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--iron-2);
     transition: background 0.3s ease;
   }
-  .privacy__toggles i::after {
+  .toggles i::after {
     content: '';
     position: absolute;
     top: 3px;
     left: 3px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background: #fff;
+    background: var(--chalk-2);
     transition: transform 0.3s var(--ease);
   }
-  .privacy__toggles li.is-on i {
-    background: var(--grad);
+  .toggles .is-on i {
+    background: var(--violet);
   }
-  .privacy__toggles li.is-on i::after {
+  .toggles .is-on i::after {
+    background: #fff;
     transform: translateX(18px);
   }
-  .privacy__actions {
+  .centre__actions {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     margin-top: 16px;
   }
-  .privacy__actions span {
+  .centre__actions span {
     flex: 1;
-    padding: 12px;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 700;
+    padding: 10px 12px;
+    border-radius: 10px;
     box-shadow: inset 0 0 0 1px var(--line-2);
-    color: var(--muted);
+    font-size: 13.5px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--chalk);
   }
-  @media (max-width: 860px) {
+
+  @media (max-width: 960px) {
     .privacy__in {
       grid-template-columns: 1fr;
     }
-    .privacy__panel {
-      max-width: 420px;
+    .centre {
+      position: static;
+      max-width: 440px;
+    }
+  }
+  @media (max-width: 600px) {
+    .points {
+      grid-template-columns: 1fr;
     }
   }
 </style>
