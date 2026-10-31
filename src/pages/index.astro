@@ -28,7 +28,10 @@ import Footer from '../components/Footer.astro';
   </main>
   <Footer />
   <script>
-    import { start } from '../motion';
-    start();
+    // Content is plain HTML; the animation bundle (GSAP) loads only after the page has painted and is idle.
+    const boot = () => import('../motion').then((m) => m.start());
+    const later = () => ('requestIdleCallback' in window ? requestIdleCallback(boot, { timeout: 1500 }) : setTimeout(boot, 200));
+    if (document.readyState === 'complete') later();
+    else window.addEventListener('load', later, { once: true });
   </script>
 </Layout>

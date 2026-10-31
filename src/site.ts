@@ -1,9 +1,9 @@
 // Every fact on the site in one place. Nothing here is invented: the numbers come from the SpotAI repo.
 export const SITE = {
   name: 'SpotAI',
-  tagline: 'Your AI gym buddy, built for Indian gyms',
+  tagline: 'AI gym coach app for India: form check on your phone, gym leaderboard, UPI dues',
   description:
-    'SpotAI is an AI gym buddy for members and a management console for gym owners in India. Live form check on the phone camera, workout logging, gym leaderboards, buddy matching, QR and face check-in, dues reminders and UPI payments. Private by design.',
+    'Nobody checking your form, no plan for today, dues chased on WhatsApp: SpotAI fixes all three. An AI gym coach that checks your squat on the phone camera, a workout log, an opt-in gym leaderboard and buddies for members; arrivals, dues reminders and UPI payments for gym owners in India. Video never leaves the phone.',
   url: 'https://yaseenyk.github.io/spotai-website/',
   email: 'contact@streamerosai.com',
   author: { name: 'Yaseen Khatib', url: 'https://yaseenkhatib.streamerosai.com' },
