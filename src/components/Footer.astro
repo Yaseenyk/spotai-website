@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../site';
+import { FEATURES } from '../features';
 const base = import.meta.env.BASE_URL;
 const year = new Date().getFullYear();
 ---
@@ -13,18 +14,17 @@ const year = new Date().getFullYear();
       </a>
       <p>{SITE.tagline}.</p>
     </div>
+    <nav aria-label="Features" class="footer__nav">
+      {FEATURES.map((f) => <a href={`${base}features/${f.slug}/`}>{f.nav}</a>)}
+    </nav>
     <nav aria-label="Footer" class="footer__nav">
-      <a href="#members">Members</a>
-      <a href="#coach">AI coach</a>
-      <a href="#gains">Gains</a>
-      <a href="#owners">Gym owners</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#faq">FAQ</a>
+      <a href={`${base}#faq`}>FAQ</a>
+      <a href={`${base}#download`}>Get the app</a>
+      <a href={`${base}llms.txt`}>llms.txt</a>
     </nav>
     <div class="footer__contact">
       <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
       <a href={SITE.author.url} rel="author">Made by {SITE.author.name}</a>
-      <a href={`${base}llms.txt`}>llms.txt</a>
     </div>
   </div>
   <p class="wrap footer__legal">© {year} SpotAI · Hyderabad, India · Not medical advice. Train with a qualified coach.</p>
@@ -37,7 +37,7 @@ const year = new Date().getFullYear();
   }
   .footer__in {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) auto auto;
+    grid-template-columns: minmax(0, 1.2fr) auto auto auto;
     gap: 32px 56px;
     align-items: start;
   }

@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL;
 const consents = [
   ['Camera coaching', true],
   ['Save my clips', false],
@@ -25,6 +26,7 @@ const points = [
         A gym app sees your camera, your attendance and sometimes your face. Each one is a separate decision you
         make, not a wall of text you tap through once.
       </p>
+      <a class="more-link" href={`${base}features/privacy/`}>How privacy works in SpotAI</a>
       <ul class="points" role="list">
         {
           points.map(([t, b]) => (
