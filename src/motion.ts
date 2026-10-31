@@ -54,7 +54,7 @@ function hero() {
 // The exercise reel. A side-view lifter whose joints tween between two key poses per exercise; after four reps
 // it slides to the next one. The tabs under the floor pick an exercise directly.
 type Pose = { hx: number; hy: number; sx: number; sy: number; ex: number; ey: number; wx: number; wy: number; px: number; py: number; kx: number; ky: number; ax: number; ay: number };
-type Exercise = { a: Pose; b: Pose; prop: 'plate' | 'db' | 'handle' | 'none'; plateAt?: 'wrist' | 'back'; gear?: 'bench' | 'seat'; headRot?: number; period: number; cue?: string };
+type Exercise = { a: Pose; b: Pose; prop: 'plate' | 'db' | 'handle' | 'none'; plateAt?: 'wrist' | 'back'; gear?: 'bench' | 'seat'; period: number; cue?: string };
 const STAND = { hx: 250, hy: 80, sx: 250, sy: 150, px: 250, py: 300, kx: 256, ky: 400, ax: 250, ay: 500 };
 const EXERCISES: Record<string, Exercise> = {
   squat: {
@@ -78,7 +78,6 @@ const EXERCISES: Record<string, Exercise> = {
     prop: 'plate',
     plateAt: 'wrist',
     gear: 'bench',
-    headRot: -90,
     period: 2,
   },
   curl: {
@@ -132,64 +131,58 @@ export function reel(staticOnly: boolean) {
   };
   const hex = (x: number, y: number, r: number) =>
     'M' + [0, 1, 2, 3, 4, 5].map((i) => `${(x + r * Math.cos((Math.PI / 3) * i)).toFixed(1)} ${(y + r * Math.sin((Math.PI / 3) * i)).toFixed(1)}`).join(' L') + 'Z';
-  // Unit normal of a segment: positive side is the lifter's back (they face right).
-  const norm = (x1: number, y1: number, x2: number, y2: number) => {
+  // A limb segment: a tapered quad from (x1,y1) at width w1 to (x2,y2) at width w2. Ball joints round the ends.
+  const taper = (x1: number, y1: number, x2: number, y2: number, w1: number, w2: number) => {
     const dx = x2 - x1;
     const dy = y2 - y1;
     const len = Math.hypot(dx, dy) || 1;
-    return [-dy / len, dx / len, dx, dy] as const;
+    const nx = -dy / len;
+    const ny = dx / len;
+    return `M${x1 + nx * w1} ${y1 + ny * w1} L${x2 + nx * w2} ${y2 + ny * w2} L${x2 - nx * w2} ${y2 - ny * w2} L${x1 - nx * w1} ${y1 - ny * w1} Z`;
   };
-  // A muscle: a segment that swells to wm at tm along its length, then tapers to w2.
-  const muscle = (x1: number, y1: number, x2: number, y2: number, w1: number, wm: number, w2: number, tm: number) => {
-    const [nx, ny, dx, dy] = norm(x1, y1, x2, y2);
-    const mx = x1 + dx * tm;
-    const my = y1 + dy * tm;
-    return `M${x1 + nx * w1} ${y1 + ny * w1} Q${mx + nx * wm} ${my + ny * wm} ${x2 + nx * w2} ${y2 + ny * w2} L${x2 - nx * w2} ${y2 - ny * w2} Q${mx - nx * wm} ${my - ny * wm} ${x1 - nx * w1} ${y1 - ny * w1} Z`;
+  // Lower leg with a calf: wide just below the knee, narrow at the ankle.
+  const calf = (x1: number, y1: number, x2: number, y2: number) => {
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    const len = Math.hypot(dx, dy) || 1;
+    const nx = -dy / len;
+    const ny = dx / len;
+    const mx = x1 + dx * 0.3;
+    const my = y1 + dy * 0.3;
+    return `M${x1 + nx * 13} ${y1 + ny * 13} Q${mx + nx * 19} ${my + ny * 19} ${x2 + nx * 8} ${y2 + ny * 8} L${x2 - nx * 8} ${y2 - ny * 8} Q${mx - nx * 13} ${my - ny * 13} ${x1 - nx * 13} ${y1 - ny * 13} Z`;
   };
-  // Shorts: the top half of the thigh, cut wider.
-  const shorts = (x1: number, y1: number, x2: number, y2: number) => {
-    const [nx, ny, dx, dy] = norm(x1, y1, x2, y2);
-    const ex = x1 + dx * 0.52;
-    const ey = y1 + dy * 0.52;
-    return `M${x1 + nx * 23} ${y1 + ny * 23} L${ex + nx * 18} ${ey + ny * 18} L${ex - nx * 18} ${ey - ny * 18} L${x1 - nx * 21} ${y1 - ny * 21} Z`;
-  };
-  // Torso around the spine: lats and glutes on the back edge, chest and abs on the front.
-  const torsoPath = (shirt: boolean) => {
-    const [nx, ny, dx, dy] = norm(s.sx, s.sy, s.px, s.py);
+  // Torso: shoulders, chest, a waist and the pelvis, built around the spine from shoulder to hip.
+  const torso = () => {
+    const dx = s.px - s.sx;
+    const dy = s.py - s.sy;
+    const len = Math.hypot(dx, dy) || 1;
+    const nx = -dy / len;
+    const ny = dx / len;
     const p = (t: number, w: number, side: number) => `${s.sx + dx * t + nx * w * side} ${s.sy + dy * t + ny * w * side}`;
-    const t0 = shirt ? 0.12 : 0;
-    return `M${p(t0, 21, 1)} Q${p(0.3, 27, 1)} ${p(0.62, 16, 1)} Q${p(0.86, 25, 1)} ${p(1.04, 17, 1)} L${p(1.04, 15, -1)} Q${p(0.62, 17, -1)} ${p(0.26, 25, -1)} Q${p(0.08, 23, -1)} ${p(t0, 18, -1)} Z`;
+    return `M${p(0, 22, 1)} Q${p(0.3, 27, 1)} ${p(0.62, 18, 1)} L${p(1, 18, 1)} L${p(1, 17, -1)} L${p(0.62, 15, -1)} Q${p(0.3, 21, -1)} ${p(0, 20, -1)} Z`;
   };
-  // A shoe: heel behind the ankle, toe 36 ahead; the sole is a strip under it.
-  const shoe = (x: number, y: number) => `M${x - 11} ${y - 7} Q${x + 10} ${y - 10} ${x + 30} ${y - 5} Q${x + 44} ${y - 2} ${x + 40} ${y + 7} L${x - 13} ${y + 7} Q${x - 17} ${y} ${x - 11} ${y - 7} Z`;
-  const sole = (x: number, y: number) => `M${x - 13} ${y + 3} L${x + 41} ${y + 3} L${x + 40} ${y + 8} L${x - 13} ${y + 8} Z`;
+  // A shoe: heel behind the ankle, toe 34 ahead.
+  const foot = (x: number, y: number) => `M${x - 10} ${y - 6} L${x + 34} ${y - 4} Q${x + 42} ${y - 2} ${x + 40} ${y + 6} L${x - 12} ${y + 6} Q${x - 16} ${y} ${x - 10} ${y - 6} Z`;
   const d = (n: string, path: string) => f(n).setAttribute('d', path);
   const limbs = (suffix: string, ox: number) => {
-    d(`uarm${suffix}`, muscle(s.sx + ox, s.sy, s.ex + ox, s.ey, 12, 14, 9, 0.45));
+    d(`uarm${suffix}`, taper(s.sx + ox, s.sy, s.ex + ox, s.ey, 13, 10));
     at(f(`elbow${suffix}`), s.ex + ox, s.ey);
-    d(`farm${suffix}`, muscle(s.ex + ox, s.ey, s.wx + ox, s.wy, 9, 11, 6, 0.35));
+    d(`farm${suffix}`, taper(s.ex + ox, s.ey, s.wx + ox, s.wy, 10, 7));
     at(f(`hand${suffix}`), s.wx + ox, s.wy);
-    d(`thigh${suffix}`, muscle(s.px + ox, s.py, s.kx + ox, s.ky, 19, 21, 13, 0.4));
-    d(`shorts${suffix}`, shorts(s.px + ox, s.py, s.kx + ox, s.ky));
+    d(`thigh${suffix}`, taper(s.px + ox, s.py, s.kx + ox, s.ky, 19, 13));
     at(f(`knee${suffix}`), s.kx + ox, s.ky);
-    d(`calf${suffix}`, muscle(s.kx + ox, s.ky, s.ax + ox, s.ay, 12, 18, 8, 0.3));
-    d(`foot${suffix}`, shoe(s.ax + ox, s.ay));
+    d(`calf${suffix}`, calf(s.kx + ox, s.ky, s.ax + ox, s.ay));
+    d(`foot${suffix}`, foot(s.ax + ox, s.ay));
   };
 
   const render = () => {
     const ex = EXERCISES[id]!;
-    const rot = ex.headRot ?? 0;
-    const rad = (rot * Math.PI) / 180;
-    const nxh = s.hx + -2 * Math.cos(rad) - 14 * Math.sin(rad);
-    const nyh = s.hy + -2 * Math.sin(rad) + 14 * Math.cos(rad);
-    f('headG').setAttribute('transform', `translate(${s.hx} ${s.hy}) rotate(${rot})`);
-    d('neck', muscle(nxh, nyh, s.sx, s.sy, 7, 8, 10, 0.5));
-    d('torso', torsoPath(false));
-    d('shirt', torsoPath(true));
+    at(f('head'), s.hx, s.hy);
+    d('neck', taper(s.hx, s.hy + 10, s.sx, s.sy, 7, 9));
+    d('torso', torso());
     at(f('shoulderJ'), s.sx, s.sy);
     at(f('hipJ'), s.px, s.py);
     at(f('ankle'), s.ax, s.ay);
-    d('sole', sole(s.ax, s.ay));
     limbs('', 0);
     limbs('B', -13);
     poly('trackArm', [[s.sx, s.sy], [s.ex, s.ey], [s.wx, s.wy]]);

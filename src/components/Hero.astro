@@ -88,35 +88,24 @@ const exercises = [
             <stop offset="0" stop-color="#f3f1ea" />
             <stop offset="1" stop-color="#d6d2c7" />
           </linearGradient>
-          <linearGradient id="kitgrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#3b3650" />
-            <stop offset="1" stop-color="#2a2738" />
-          </linearGradient>
         </defs>
         <!-- back limbs, dimmer: depth -->
-        <g fill="#b7b3aa" stroke="#b7b3aa" stroke-width="2" stroke-linejoin="round" opacity="0.62">
-          <path data-f="thighB" /><path data-f="shortsB" fill="#1c1e25" stroke="#1c1e25" /><circle data-f="kneeB" r="12" /><path data-f="calfB" /><path data-f="footB" />
-          <path data-f="uarmB" /><circle data-f="elbowB" r="9" /><path data-f="farmB" /><circle data-f="handB" r="9" />
+        <g fill="#b7b3aa" stroke="#b7b3aa" stroke-width="3" stroke-linejoin="round" opacity="0.6">
+          <path data-f="thighB" /><circle data-f="kneeB" r="13" /><path data-f="calfB" /><path data-f="footB" />
+          <path data-f="uarmB" /><circle data-f="elbowB" r="10" /><path data-f="farmB" /><circle data-f="handB" r="9" />
         </g>
         <!-- body -->
-        <g fill="url(#skin)" stroke="url(#skin)" stroke-width="2" stroke-linejoin="round">
+        <g fill="url(#skin)" stroke="url(#skin)" stroke-width="3" stroke-linejoin="round">
+          <circle data-f="hipJ" r="17" />
+          <path data-f="thigh" /><circle data-f="knee" r="14" /><path data-f="calf" /><circle data-f="ankle" r="8" /><path data-f="foot" />
           <path data-f="torso" />
-          <path data-f="shirt" fill="url(#kitgrad)" stroke="none" />
-          <circle data-f="hipJ" r="18" fill="#262932" stroke="none" />
-          <path data-f="thigh" /><path data-f="shorts" fill="#262932" stroke="#262932" /><circle data-f="knee" r="13" /><path data-f="calf" /><circle data-f="ankle" r="8" />
-          <path data-f="foot" fill="#e3e0d8" stroke="none" /><path data-f="sole" fill="#2b2d34" stroke="none" />
           <path data-f="neck" />
-          <g data-f="headG">
-            <path d="M-18 -24 Q0 -32 14 -22 Q23 -12 21 -3 L27 3 L22 7 Q22 13 17 17 Q10 25 -2 23 Q-18 17 -21 0 Q-23 -14 -18 -24 Z" />
-            <path d="M-20 -22 Q0 -34 17 -20 Q10 -17 0 -19 Q-14 -17 -20 -2 Q-24 -12 -20 -22 Z" fill="#2b2d34" stroke="none" />
-            <ellipse cx="-5" cy="1" rx="3.5" ry="5" fill="#cfcbc0" stroke="none" />
-            <circle cx="12" cy="-6" r="2" fill="#2b2d34" stroke="none" />
-          </g>
-          <circle data-f="shoulderJ" r="15" />
+          <ellipse data-f="head" rx="21" ry="25" />
+          <circle data-f="shoulderJ" r="14" />
         </g>
         <!-- front arm, edged so it separates from the chest -->
         <g fill="url(#skin)" stroke="var(--rubber)" stroke-width="2.5" stroke-linejoin="round">
-          <path data-f="uarm" /><circle data-f="elbow" r="10" /><path data-f="farm" /><circle data-f="hand" r="9" />
+          <path data-f="uarm" /><circle data-f="elbow" r="11" /><path data-f="farm" /><circle data-f="hand" r="10" />
         </g>
         <g data-prop="db" opacity="0">
           <path data-prop="dbShape" d="" fill="var(--rubber)" stroke="currentColor" stroke-width="6" stroke-linejoin="round" />
