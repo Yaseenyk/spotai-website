@@ -1,0 +1,239 @@
+---
+const base = import.meta.env.BASE_URL;
+const cards = [
+  {
+    title: 'Today, at a glance',
+    body: 'Arrivals as they happen with dues flagged on the name, active members, memberships ending this week, collected this month vs last.',
+  },
+  {
+    title: 'Dues that collect themselves',
+    body: 'Overdue members in one list, reminders that respect each member’s consent, and UPI payment inside the member app with a reference you can match.',
+  },
+  {
+    title: 'Busy hours and visit trends',
+    body: 'Daily visits for 14 days and a busy-hours heatmap over four weeks, so you staff the floor and plan classes with numbers, not guesses.',
+  },
+  {
+    title: 'Front desk and trainer consoles',
+    body: 'Check-in by QR or name. Trainers review the AI coach’s tips with each flag’s wrong-rate, moderate the community and endorse helpers.',
+  },
+  {
+    title: 'Complaints with a reference number',
+    body: 'A member files a complaint from the app, gets a reference, and you see it in the dashboard. Required under India’s data protection rules, and good manners.',
+  },
+  {
+    title: 'Face check-in, your call',
+    body: 'An optional entrance device with liveness check and encrypted templates. Nothing in the cloud. It stays in shadow mode until calibrated with consenting members.',
+  },
+];
+---
+
+<section class="section owners" id="owners" aria-labelledby="owners-title">
+  <div class="wrap">
+    <div class="section__head" data-reveal>
+      <p class="mono eyebrow">For gym owners</p>
+      <h2 id="owners-title">Run the floor from <span class="grad-text">one screen.</span></h2>
+      <p class="lead">
+        Most gym software in India is a register with a login. SpotAI gives owners the same thing members get: a
+        live picture of the gym, dues that get paid, and a reason for people to keep coming.
+      </p>
+    </div>
+
+    <div class="owners__shot" data-reveal data-tilt>
+      <div class="owners__frame">
+        <div class="owners__bar" aria-hidden="true"><i></i><i></i><i></i><span>owner.spotai.app</span></div>
+        <img
+          src={`${base}shots/o-overview.webp`}
+          width="1600"
+          height="1000"
+          alt="SpotAI owner dashboard: arrivals today, active members, overdue dues in rupees, collected this month, daily visits bar chart, busy hours heatmap and a live arrivals list"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+
+    <div class="owners__kpis" aria-label="Dashboard numbers from the demo gym">
+      <div data-reveal><span class="mono">Arrivals today</span><strong data-count="1">0</strong></div>
+      <div data-reveal style="--d: 0.06s"><span class="mono">Active members</span><strong data-count="8">0</strong></div>
+      <div data-reveal style="--d: 0.12s"><span class="mono">Overdue</span><strong>₹<span data-count="2000">0</span></strong></div>
+      <div data-reveal style="--d: 0.18s"><span class="mono">Collected this month</span><strong>₹<span data-count="9000">0</span></strong></div>
+    </div>
+
+    <ul class="owners__grid" role="list">
+      {
+        cards.map((c, i) => (
+          <li class="card card--rim" data-reveal style={`--d: ${(i % 3) * 0.08}s`}>
+            <span class="owners__num mono">0{i + 1}</span>
+            <h3>{c.title}</h3>
+            <p>{c.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="owners__more">
+      <figure data-reveal>
+        <img
+          src={`${base}shots/o-dues.webp`}
+          width="1600"
+          height="1000"
+          alt="Dues screen listing overdue members with amounts and a reminder action"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Dues</figcaption>
+      </figure>
+      <figure data-reveal style="--d: 0.1s">
+        <img
+          src={`${base}shots/o-insights.webp`}
+          width="1600"
+          height="1000"
+          alt="Insights screen with revenue and visit trends for the gym"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Insights</figcaption>
+      </figure>
+    </div>
+
+    <div class="owners__cta" data-reveal>
+      <p>Running a gym in India and want a pilot?</p>
+      <a href="#download" class="btn btn--primary">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .owners {
+    background:
+      radial-gradient(60% 40% at 50% 0%, rgba(34, 211, 238, 0.08), transparent 70%),
+      linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02));
+  }
+  .owners__shot {
+    perspective: 1600px;
+  }
+  .owners__frame {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #0b0e14;
+    box-shadow:
+      inset 0 0 0 1px var(--line-2),
+      0 60px 120px -50px rgba(0, 0, 0, 0.9),
+      0 0 80px -30px rgba(168, 85, 247, 0.4);
+    transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.6s var(--ease);
+    will-change: transform;
+  }
+  .owners__bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 36px;
+    padding: 0 14px;
+    background: #10141b;
+    border-bottom: 1px solid var(--line);
+  }
+  .owners__bar i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+  }
+  .owners__bar span {
+    margin-left: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+  }
+  .owners__kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .owners__kpis div {
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .owners__kpis .mono {
+    color: var(--faint);
+    font-size: 10.5px;
+  }
+  .owners__kpis strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+  .owners__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: clamp(40px, 6vw, 72px) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .owners__num {
+    color: var(--cyan-300);
+  }
+  .owners__grid h3 {
+    margin-top: 14px;
+  }
+  .owners__more {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .owners__more figure {
+    margin: 0;
+  }
+  .owners__more img {
+    border-radius: 16px;
+    box-shadow:
+      inset 0 0 0 1px var(--line),
+      0 30px 60px -40px rgba(0, 0, 0, 0.9);
+  }
+  .owners__more figcaption {
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .owners__cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 48px;
+    padding: 24px 28px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(168, 85, 247, 0.14));
+    box-shadow: inset 0 0 0 1px var(--line-2);
+  }
+  .owners__cta p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  @media (max-width: 900px) {
+    .owners__kpis,
+    .owners__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 560px) {
+    .owners__kpis,
+    .owners__grid,
+    .owners__more {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

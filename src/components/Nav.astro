@@ -1,0 +1,170 @@
+---
+const base = import.meta.env.BASE_URL;
+const links = [
+  ['#members', 'Members'],
+  ['#coach', 'AI coach'],
+  ['#gains', 'Gains'],
+  ['#owners', 'Gym owners'],
+  ['#faq', 'FAQ'],
+];
+---
+
+<header class="nav" data-nav>
+  <div class="wrap nav__in">
+    <a href={base} class="nav__brand" aria-label="SpotAI home">
+      <img src={`${base}icon.svg`} width="34" height="34" alt="" />
+      <span>Spot<b>AI</b></span>
+    </a>
+    <nav aria-label="Primary" class="nav__links">
+      {links.map(([href, label]) => <a href={href}>{label}</a>)}
+    </nav>
+    <a href="#download" class="btn btn--primary nav__cta">Get the app</a>
+    <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false" data-burger>
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav aria-label="Mobile" class="nav__sheet" data-sheet>
+    {links.map(([href, label]) => <a href={href}>{label}</a>)}
+    <a href="#download" class="btn btn--primary">Get the app</a>
+  </nav>
+</header>
+
+<style>
+  .nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    padding-top: env(safe-area-inset-top, 0px);
+    transition:
+      background 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+  .nav.is-solid {
+    background: rgba(5, 7, 10, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: inset 0 -1px 0 var(--line);
+  }
+  .nav__in {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    height: 72px;
+  }
+  .nav__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+  }
+  .nav__brand img {
+    border-radius: 10px;
+  }
+  .nav__brand b {
+    background: var(--ink-fill);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .nav__links {
+    display: flex;
+    gap: 26px;
+    margin-left: auto;
+  }
+  .nav__links a {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .nav__links a:hover {
+    color: var(--text);
+  }
+  .nav__cta {
+    min-height: 44px;
+    padding-inline: 20px;
+    font-size: 14px;
+  }
+  .nav__burger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav__burger span {
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s var(--ease);
+  }
+  .nav__burger[aria-expanded='true'] span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+  .nav__burger[aria-expanded='true'] span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+  .nav__sheet {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px var(--gutter) 20px;
+  }
+  .nav__sheet a {
+    padding: 14px 4px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav__sheet .btn {
+    margin-top: 12px;
+    color: #fff;
+    border: 0;
+  }
+  @media (max-width: 860px) {
+    .nav__links,
+    .nav__cta {
+      display: none;
+    }
+    .nav__burger {
+      display: flex;
+      margin-left: auto;
+    }
+    .nav.is-open {
+      background: rgba(5, 7, 10, 0.96);
+    }
+    .nav.is-open .nav__sheet {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.querySelector<HTMLElement>('[data-nav]')!;
+  const burger = document.querySelector<HTMLButtonElement>('[data-burger]')!;
+  const solid = () => nav.classList.toggle('is-solid', window.scrollY > 24);
+  solid();
+  window.addEventListener('scroll', solid, { passive: true });
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('[data-sheet] a').forEach((a) =>
+    a.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+    }),
+  );
+</script>

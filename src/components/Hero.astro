@@ -1,0 +1,382 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <!-- The gym: perspective floor, rack uprights and spotlights. Pure SVG, animated by GSAP. -->
+  <svg class="hero__gym" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" data-gym>
+    <defs>
+      <linearGradient id="floor-fade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#05070a" stop-opacity="0" />
+        <stop offset="0.35" stop-color="#22d3ee" stop-opacity="0.08" />
+        <stop offset="1" stop-color="#a855f7" stop-opacity="0.16" />
+      </linearGradient>
+      <radialGradient id="spot" cx="0.5" cy="0" r="0.8">
+        <stop offset="0" stop-color="#a855f7" stop-opacity="0.35" />
+        <stop offset="1" stop-color="#a855f7" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="spot-c" cx="0.5" cy="0" r="0.8">
+        <stop offset="0" stop-color="#22d3ee" stop-opacity="0.3" />
+        <stop offset="1" stop-color="#22d3ee" stop-opacity="0" />
+      </radialGradient>
+      <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#67e8f9" stop-opacity="0.9" />
+        <stop offset="1" stop-color="#67e8f9" stop-opacity="0" />
+      </linearGradient>
+    </defs>
+    <!-- Spotlights -->
+    <ellipse cx="300" cy="0" rx="420" ry="620" fill="url(#spot-c)" data-spot />
+    <ellipse cx="1140" cy="0" rx="420" ry="620" fill="url(#spot)" data-spot />
+    <!-- Floor -->
+    <g data-floor>
+      <rect x="0" y="540" width="1440" height="360" fill="url(#floor-fade)" />
+      <g stroke="#67e8f9" stroke-opacity="0.16" stroke-width="1">
+        <line x1="720" y1="540" x2="-400" y2="900" />
+        <line x1="720" y1="540" x2="-40" y2="900" />
+        <line x1="720" y1="540" x2="300" y2="900" />
+        <line x1="720" y1="540" x2="560" y2="900" />
+        <line x1="720" y1="540" x2="720" y2="900" />
+        <line x1="720" y1="540" x2="880" y2="900" />
+        <line x1="720" y1="540" x2="1140" y2="900" />
+        <line x1="720" y1="540" x2="1480" y2="900" />
+        <line x1="720" y1="540" x2="1840" y2="900" />
+      </g>
+      <g stroke="#c084fc" stroke-opacity="0.14" stroke-width="1" data-floor-rows>
+        <line x1="0" y1="580" x2="1440" y2="580" />
+        <line x1="0" y1="632" x2="1440" y2="632" />
+        <line x1="0" y1="700" x2="1440" y2="700" />
+        <line x1="0" y1="790" x2="1440" y2="790" />
+      </g>
+    </g>
+    <!-- Rack uprights -->
+    <g stroke="#ffffff" stroke-opacity="0.08" stroke-width="10" stroke-linecap="round" data-rack>
+      <line x1="150" y1="120" x2="150" y2="560" />
+      <line x1="330" y1="120" x2="330" y2="560" />
+      <line x1="1110" y1="120" x2="1110" y2="560" />
+      <line x1="1290" y1="120" x2="1290" y2="560" />
+      <line x1="150" y1="130" x2="330" y2="130" />
+      <line x1="1110" y1="130" x2="1290" y2="130" />
+    </g>
+    <g fill="#ffffff" fill-opacity="0.1" data-rack>
+      {[200, 250, 300, 350, 400, 450].map((y) => <rect x="144" y={y} width="12" height="5" rx="2" />)}
+      {[200, 250, 300, 350, 400, 450].map((y) => <rect x="324" y={y} width="12" height="5" rx="2" />)}
+      {[200, 250, 300, 350, 400, 450].map((y) => <rect x="1104" y={y} width="12" height="5" rx="2" />)}
+      {[200, 250, 300, 350, 400, 450].map((y) => <rect x="1284" y={y} width="12" height="5" rx="2" />)}
+    </g>
+    <!-- Light beams from the ceiling -->
+    <rect x="236" y="0" width="8" height="300" fill="url(#beam)" opacity="0.5" data-beam />
+    <rect x="1196" y="0" width="8" height="300" fill="url(#beam)" opacity="0.5" data-beam />
+  </svg>
+
+  <div class="wrap hero__in">
+    <div class="hero__copy">
+      <p class="mono eyebrow" data-hero-line>Built for Indian gyms · members and owners</p>
+      <h1 id="hero-title" class="hero__title">
+        <span class="hero__word" data-hero-line>Your AI</span>
+        <span class="hero__word" data-hero-line>gym buddy,</span>
+        <span class="hero__word grad-text" data-hero-line>in your pocket.</span>
+      </h1>
+      <p class="lead" data-hero-line>
+        SpotAI checks your form on the phone camera, logs every set, puts your gym on a leaderboard and finds you a
+        buddy. For owners: arrivals, dues, UPI payments and a trainer console. Nothing leaves the phone that
+        shouldn't.
+      </p>
+      <div class="hero__cta" data-hero-line>
+        <a href="#download" class="btn btn--primary">Get early access</a>
+        <a href="#owners" class="btn btn--ghost">For gym owners</a>
+      </div>
+      <ul class="hero__proof mono" data-hero-line aria-label="Highlights">
+        <li>On-device pose</li>
+        <li>Opt-in leaderboard</li>
+        <li>UPI dues</li>
+        <li>Consent per purpose</li>
+      </ul>
+    </div>
+
+    <div class="hero__stage" data-stage>
+      <!-- Floating kit: assembles on load, drifts with the pointer. -->
+      <svg class="kit kit--plate" viewBox="0 0 200 200" aria-hidden="true" data-kit data-depth="0.6">
+        <defs>
+          <radialGradient id="k-metal" cx="0.32" cy="0.26" r="0.9">
+            <stop offset="0" stop-color="#4b505c" />
+            <stop offset="0.38" stop-color="#1c1f26" />
+            <stop offset="1" stop-color="#07080b" />
+          </radialGradient>
+          <linearGradient id="k-rim" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#22d3ee" stop-opacity="0.95" />
+            <stop offset="0.4" stop-color="#22d3ee" stop-opacity="0" />
+            <stop offset="0.6" stop-color="#a855f7" stop-opacity="0" />
+            <stop offset="1" stop-color="#a855f7" stop-opacity="0.95" />
+          </linearGradient>
+          <linearGradient id="k-chrome" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e2e8f0" />
+            <stop offset="0.45" stop-color="#94a3b8" />
+            <stop offset="1" stop-color="#334155" />
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="88" fill="url(#k-metal)" />
+        <circle cx="100" cy="100" r="88" fill="none" stroke="url(#k-rim)" stroke-width="2.5" />
+        <circle cx="100" cy="100" r="62" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" />
+        <circle cx="100" cy="100" r="22" fill="#07080b" stroke="url(#k-chrome)" stroke-width="3" />
+        <text x="100" y="70" text-anchor="middle" class="kit__label">20 KG</text>
+      </svg>
+
+      <svg class="kit kit--bell" viewBox="0 0 230 250" aria-hidden="true" data-kit data-depth="1">
+        <path d="M66 112 C60 28 170 28 164 112" stroke="#1c1f26" stroke-width="24" stroke-linecap="round" fill="none" />
+        <path d="M72 104 C70 44 160 44 158 104" stroke="#a855f7" stroke-width="1.5" fill="none" opacity="0.55" />
+        <circle cx="115" cy="160" r="84" fill="url(#k-metal)" />
+        <circle cx="115" cy="160" r="84" fill="none" stroke="url(#k-rim)" stroke-width="2.5" />
+        <ellipse cx="84" cy="118" rx="30" ry="18" fill="#ffffff" fill-opacity="0.12" />
+        <text x="115" y="176" text-anchor="middle" class="kit__label kit__label--big">24 KG</text>
+      </svg>
+
+      <svg class="kit kit--db" viewBox="0 0 240 120" aria-hidden="true" data-kit data-depth="1.4">
+        <rect x="62" y="52" width="116" height="16" rx="5" fill="url(#k-chrome)" />
+        <polygon points="26,8 62,8 74,60 62,112 26,112 14,60" fill="url(#k-metal)" />
+        <polygon points="26,8 62,8 74,60 62,112 26,112 14,60" fill="none" stroke="url(#k-rim)" stroke-width="2" />
+        <polygon points="178,8 214,8 226,60 214,112 178,112 166,60" fill="url(#k-metal)" />
+        <polygon points="178,8 214,8 226,60 214,112 178,112 166,60" fill="none" stroke="url(#k-rim)" stroke-width="2" />
+        <text x="44" y="64" text-anchor="middle" class="kit__label">12.5</text>
+        <text x="196" y="64" text-anchor="middle" class="kit__label">12.5</text>
+      </svg>
+
+      <!-- Pose skeleton the coach tracks: draws itself, then breathes. -->
+      <svg class="pose" viewBox="0 0 260 420" aria-hidden="true" data-pose>
+        <g stroke="#67e8f9" stroke-width="3" stroke-linecap="round" fill="none" data-pose-lines>
+          <path d="M130 70 L130 170" />
+          <path d="M130 100 L80 150 L70 210" />
+          <path d="M130 100 L180 150 L190 210" />
+          <path d="M130 170 L95 250 L100 350" />
+          <path d="M130 170 L165 250 L160 350" />
+          <path d="M100 350 L70 362" />
+          <path d="M160 350 L190 362" />
+        </g>
+        <g fill="#f8fafc" data-pose-dots>
+          <circle cx="130" cy="48" r="16" fill="none" stroke="#f8fafc" stroke-width="3" />
+          <circle cx="130" cy="100" r="5" />
+          <circle cx="80" cy="150" r="5" />
+          <circle cx="180" cy="150" r="5" />
+          <circle cx="70" cy="210" r="5" />
+          <circle cx="190" cy="210" r="5" />
+          <circle cx="130" cy="170" r="5" />
+          <circle cx="95" cy="250" r="6" fill="#22d3ee" />
+          <circle cx="165" cy="250" r="6" fill="#22d3ee" />
+          <circle cx="100" cy="350" r="5" />
+          <circle cx="160" cy="350" r="5" />
+        </g>
+        <g class="pose__chip" data-pose-chip>
+          <rect x="150" y="226" width="96" height="36" rx="18" fill="#05070a" stroke="#22d3ee" stroke-opacity="0.6" />
+          <circle cx="170" cy="244" r="4" fill="#34d399" />
+          <text x="183" y="249" class="pose__text">FORM 92</text>
+        </g>
+      </svg>
+
+      <div class="phone phone--glow hero__phone" data-phone>
+        <img
+          src={`${base}shots/m-dark-home-train.webp`}
+          width="640"
+          height="1385"
+          alt="SpotAI home screen during a workout: Back and biceps session, 0 of 4 exercises done, next up Lat pulldown 3 by 10, day streak and visits this week"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero__tip" data-tip>
+        <span class="mono">Coach tip</span>
+        <p>“Try pushing your knees out over your toes as you stand up.”</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="#members" class="hero__scroll mono" aria-label="Scroll to members section">Scroll<span></span></a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    align-items: center;
+    padding-top: 110px;
+    padding-bottom: 60px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero__gym {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+  .hero__in {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(24px, 5vw, 72px);
+  }
+  .hero__title {
+    margin-top: 22px;
+    font-size: clamp(44px, 7vw, 96px);
+    line-height: 0.98;
+  }
+  .hero__word {
+    display: block;
+  }
+  .hero__copy .lead {
+    margin-top: 24px;
+  }
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .hero__proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--faint);
+    font-size: 11px;
+  }
+  .hero__proof li::before {
+    content: '◆ ';
+    color: var(--violet);
+  }
+
+  .hero__stage {
+    position: relative;
+    height: clamp(520px, 70vh, 760px);
+  }
+  .kit {
+    position: absolute;
+    filter: drop-shadow(0 22px 28px rgba(5, 7, 10, 0.6));
+    will-change: transform;
+  }
+  .kit--plate {
+    left: 2%;
+    top: 4%;
+    width: 30%;
+  }
+  .kit--bell {
+    right: -2%;
+    bottom: -2%;
+    width: 34%;
+  }
+  .kit--db {
+    left: -6%;
+    bottom: 18%;
+    width: 42%;
+  }
+  .kit__label,
+  .pose__text {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    fill: #94a3b8;
+  }
+  .kit__label--big {
+    font-size: 18px;
+    letter-spacing: 0.12em;
+  }
+  .pose__text {
+    fill: #67e8f9;
+    font-size: 12px;
+  }
+  .pose {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 36%;
+    translate: -128% -52%;
+    opacity: 0.95;
+  }
+  .hero__phone {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(300px, 46%);
+    translate: -46% -50%;
+    rotate: -6deg;
+    will-change: transform;
+  }
+  .hero__tip {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 220px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: rgba(12, 15, 21, 0.9);
+    box-shadow:
+      inset 0 0 0 1px var(--line-2),
+      0 30px 60px -30px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
+  .hero__tip .mono {
+    color: var(--violet-400);
+    font-size: 10px;
+  }
+  .hero__tip p {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .hero__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    translate: -50% 0;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--faint);
+    text-decoration: none;
+    font-size: 10px;
+  }
+  .hero__scroll span {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(var(--cyan), transparent);
+    animation: drop 1.8s ease-in-out infinite;
+  }
+  @keyframes drop {
+    50% {
+      transform: translateY(6px);
+      opacity: 0.4;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .hero {
+      padding-top: 96px;
+    }
+    .hero__in {
+      grid-template-columns: 1fr;
+    }
+    .hero__stage {
+      height: clamp(440px, 80vw, 600px);
+      margin-top: 8px;
+    }
+    .hero__phone {
+      width: min(260px, 52%);
+      translate: -40% -50%;
+    }
+    .hero__tip {
+      top: 0;
+      width: 190px;
+    }
+    .pose {
+      width: 40%;
+      translate: -125% -52%;
+    }
+    .hero__scroll {
+      display: none;
+    }
+  }
+</style>

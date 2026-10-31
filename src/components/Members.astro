@@ -1,0 +1,124 @@
+---
+const base = import.meta.env.BASE_URL;
+const phones = [
+  {
+    src: 'm-dark-picker.webp',
+    alt: 'Session picker: What are you training today? Strength is suggested with the reason, then Cardio, Cycling and Mobility',
+    cap: 'Pick today’s session. The coach suggests one from your last week.',
+  },
+  {
+    src: 'm-dark-exercises.webp',
+    alt: 'Exercise checklist for Back and biceps with Lat pulldown, Dumbbell row, Biceps curl and Hammer curl ticked, showing how many times each was done this week',
+    cap: 'Tick the exercises you want. Each one shows what you did this week.',
+  },
+  {
+    src: 'm-dark-workout.webp',
+    alt: 'Workout screen for Lat pulldown with a how-to, Watch short and Record set buttons and three sets of reps and kilograms to log',
+    cap: 'Log sets, watch a short, or let the coach record one.',
+  },
+];
+const features = [
+  {
+    icon: 'M4 12h16M7 8v8M17 8v8M4 10v4M20 10v4',
+    title: 'Sessions that fit your week',
+    body: 'Strength by muscle group, cardio, cycling or mobility. The suggestion follows the twice-a-week-per-muscle guideline, and you can always pick something else.',
+  },
+  {
+    icon: 'M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5',
+    title: 'Every set, counted',
+    body: 'Reps and kilograms per set, timed sets for cardio and mobility, personal bests and milestone badges from 1,000 kg lifted to 100,000.',
+  },
+  {
+    icon: 'M15 10l4.5-2.5v9L15 14M3 7h12v10H3z',
+    title: 'Shorts, not lectures',
+    body: 'Each exercise opens a short from a well-known coach inside the app, so you learn the move in 30 seconds and get back to the set.',
+  },
+  {
+    icon: 'M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z',
+    title: 'Check in from your phone',
+    body: 'Show a QR at the desk or confirm a face check-in. Membership, days left and dues are one tap away, paid with UPI.',
+  },
+];
+---
+
+<section class="section members" id="members" aria-labelledby="members-title">
+  <div class="wrap">
+    <div class="section__head" data-reveal>
+      <p class="mono eyebrow">For members</p>
+      <h2 id="members-title">Walk in. Know what to do. <span class="grad-text">Leave stronger.</span></h2>
+      <p class="lead">
+        No more scrolling for a plan between sets. Check in, pick a session, and the app carries you from the first
+        warm-up to the last rep.
+      </p>
+    </div>
+
+    <div class="members__phones" data-phones>
+      {
+        phones.map((p, i) => (
+          <figure class="members__phone" data-reveal style={`--d: ${i * 0.12}s`}>
+            <div class="phone">
+              <img src={`${base}shots/${p.src}`} width="640" height="1385" alt={p.alt} loading="lazy" decoding="async" />
+            </div>
+            <figcaption>{p.cap}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <ul class="members__grid" role="list">
+      {
+        features.map((f, i) => (
+          <li class="card card--rim" data-reveal style={`--d: ${i * 0.08}s`}>
+            <span class="card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d={f.icon} />
+              </svg>
+            </span>
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .members__phones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 40px);
+    align-items: end;
+    margin-bottom: clamp(48px, 7vw, 96px);
+  }
+  .members__phone {
+    margin: 0;
+  }
+  .members__phone:nth-child(2) {
+    translate: 0 -28px;
+  }
+  .members__phone figcaption {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .members__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  @media (max-width: 760px) {
+    .members__phones {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+      margin-inline: auto;
+    }
+    .members__phone:nth-child(2) {
+      translate: none;
+    }
+  }
+</style>

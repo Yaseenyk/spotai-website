@@ -1,0 +1,90 @@
+---
+import { SITE } from '../site';
+const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div>
+      <a href={base} class="footer__brand" aria-label="SpotAI home">
+        <img src={`${base}icon.svg`} width="30" height="30" alt="" />
+        <span>Spot<b>AI</b></span>
+      </a>
+      <p class="footer__tag">{SITE.tagline}.</p>
+    </div>
+    <nav aria-label="Footer" class="footer__nav">
+      <a href="#members">Members</a>
+      <a href="#coach">AI coach</a>
+      <a href="#gains">Gains</a>
+      <a href="#owners">Gym owners</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a href={`${base}llms.txt`}>llms.txt</a>
+    </nav>
+    <div class="footer__contact">
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      <a href={SITE.author.url} rel="author">Made by {SITE.author.name}</a>
+    </div>
+  </div>
+  <p class="wrap footer__legal mono">© {year} SpotAI · Hyderabad, India · Not medical advice. Train with a qualified coach.</p>
+</footer>
+
+<style>
+  .footer {
+    padding: 56px 0 calc(28px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--line);
+    background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.06));
+  }
+  .footer__in {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 28px;
+  }
+  .footer__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .footer__brand img {
+    border-radius: 9px;
+  }
+  .footer__brand b {
+    background: var(--ink-fill);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .footer__tag {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .footer__nav,
+  .footer__contact {
+    display: grid;
+    gap: 8px;
+    align-content: start;
+  }
+  .footer a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14.5px;
+  }
+  .footer a:hover {
+    color: var(--text);
+  }
+  .footer__legal {
+    margin-top: 40px;
+    color: var(--faint);
+    font-size: 10.5px;
+  }
+  @media (max-width: 700px) {
+    .footer__in {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,214 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="section gains" id="gains" aria-labelledby="gains-title">
+  <div class="wrap">
+    <div class="section__head" data-reveal>
+      <p class="mono eyebrow">Gains, leaderboard, buddies</p>
+      <h2 id="gains-title">Numbers that make you <span class="grad-text">come back tomorrow.</span></h2>
+      <p class="lead">
+        Lifetime kilograms, this week’s reps, a streak you don’t want to break, and a board where your gym can see
+        you showing up. All opt-in, first names only.
+      </p>
+    </div>
+
+    <div class="gains__grid">
+      <div class="gains__stats card" data-reveal>
+        <p class="mono">You’ve lifted</p>
+        <p class="gains__big"><span data-count="8850">0</span><small>kg</small></p>
+        <p class="gains__sub">
+          <span data-count="1110">0</span> reps across <span data-count="14">0</span> workouts.
+        </p>
+        <div class="gains__bar" aria-hidden="true"><span data-bar></span></div>
+        <p class="gains__sub">Next badge: 10k kg</p>
+        <ul class="gains__badges" aria-label="Milestone badges">
+          <li class="is-done">1k</li>
+          <li class="is-done">5k</li>
+          <li>10k</li>
+          <li>25k</li>
+          <li>50k</li>
+        </ul>
+      </div>
+
+      <figure class="gains__phone" data-reveal style="--d: 0.1s">
+        <div class="phone">
+          <img
+            src={`${base}shots/m-dark-leaderboard.webp`}
+            width="640"
+            height="1385"
+            alt="Gym leaderboard: tabs for Visits, Kg lifted and Streak with a podium of Diya, Sana and Arjun and the member's own place highlighted"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <figcaption>Three boards: visits, kilograms and streak. Leave any time.</figcaption>
+      </figure>
+
+      <figure class="gains__phone" data-reveal style="--d: 0.2s">
+        <div class="phone">
+          <img
+            src={`${base}shots/m-dark-connect.webp`}
+            width="640"
+            height="1385"
+            alt="Buddies screen with suggested training partners, requests, chats and groups"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <figcaption>Buddies, chat and groups. Separate consent for each, adults only.</figcaption>
+      </figure>
+
+      <ul class="gains__points" role="list">
+        <li class="card" data-reveal style="--d: 0.1s">
+          <h3>Opt-in, not forced</h3>
+          <p>Your numbers stay private until you join the board. Leave, and they go private again.</p>
+        </li>
+        <li class="card" data-reveal style="--d: 0.18s">
+          <h3>You vs your buddy</h3>
+          <p>A side-by-side of this week’s visits and kilograms with the buddy you train with most.</p>
+        </li>
+        <li class="card" data-reveal style="--d: 0.26s">
+          <h3>Helper badge</h3>
+          <p>Members who help others get endorsed by trainers and show up first in buddy suggestions.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gains {
+    background: radial-gradient(50% 40% at 80% 30%, rgba(168, 85, 247, 0.1), transparent 70%);
+  }
+  .gains__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-areas:
+      'stats p1 p2'
+      'points points points';
+    gap: 20px;
+    align-items: start;
+  }
+  .gains__stats {
+    grid-area: stats;
+    background: linear-gradient(160deg, #0f1420, #05070a 70%);
+    box-shadow:
+      inset 0 0 0 1px var(--line),
+      0 0 0 1px rgba(168, 85, 247, 0.15),
+      0 40px 80px -40px rgba(168, 85, 247, 0.5);
+  }
+  .gains__stats .mono {
+    color: var(--cyan-300);
+  }
+  .gains__big {
+    margin-top: 10px;
+    font-size: clamp(56px, 7vw, 92px);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .gains__big small {
+    font-size: 0.4em;
+    margin-left: 6px;
+    color: var(--muted);
+  }
+  .gains__sub {
+    margin-top: 10px;
+    color: var(--muted);
+  }
+  .gains__bar {
+    height: 10px;
+    margin-top: 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+  .gains__bar span {
+    display: block;
+    width: 88.5%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--grad);
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  .gains__badges {
+    display: flex;
+    gap: 10px;
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .gains__badges li {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 2px dashed var(--line-2);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .gains__badges li.is-done {
+    border-color: transparent;
+    background: var(--grad);
+    color: var(--ink);
+  }
+  .gains__phone {
+    margin: 0;
+  }
+  .gains__phone:nth-of-type(2) {
+    grid-area: p1;
+  }
+  .gains__phone:nth-of-type(3) {
+    grid-area: p2;
+  }
+  .gains__phone figcaption {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .gains__points {
+    grid-area: points;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .gains__points h3 {
+    margin-top: 0;
+  }
+  @media (max-width: 900px) {
+    .gains__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'stats stats'
+        'p1 p2'
+        'points points';
+    }
+    .gains__points {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 560px) {
+    .gains__grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'stats'
+        'p1'
+        'p2'
+        'points';
+    }
+    .gains__phone {
+      max-width: 300px;
+      margin-inline: auto;
+    }
+  }
+</style>

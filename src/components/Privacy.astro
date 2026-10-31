@@ -1,0 +1,151 @@
+---
+const consents = [
+  ['Camera coaching', true],
+  ['Save my clips', false],
+  ['Face check-in', false],
+  ['Buddy matching', true],
+  ['Chat', true],
+  ['Dues reminders', true],
+] as const;
+---
+
+<section class="section privacy" id="privacy" aria-labelledby="privacy-title">
+  <div class="wrap privacy__in">
+    <div class="section__head" data-reveal>
+      <p class="mono eyebrow">Private by design</p>
+      <h2 id="privacy-title">Your body, <span class="grad-text">your data.</span></h2>
+      <p class="lead">
+        A gym app sees your camera, your attendance and sometimes your face. SpotAI treats each of those as a
+        separate decision you make, the way India’s DPDP Act expects, not a wall of text you tap through once.
+      </p>
+      <ul class="privacy__list" role="list">
+        <li>Pose tracking on device. Frames never leave the phone.</li>
+        <li>Each purpose is its own opt-in, with the notice version recorded.</li>
+        <li>Export my data and delete my account, from the app, no email needed.</li>
+        <li>Complaints get a reference number the gym has to answer.</li>
+        <li>Language models only through a gateway that redacts identity and checks consent first.</li>
+        <li>Camera features and the community are for adults only.</li>
+      </ul>
+    </div>
+
+    <div class="privacy__panel card" data-reveal style="--d: 0.1s" aria-label="Example of the consent toggles in the app">
+      <p class="mono">Privacy centre</p>
+      <ul class="privacy__toggles" role="list">
+        {
+          consents.map(([label, on]) => (
+            <li class:list={{ 'is-on': on }}>
+              <span>{label}</span>
+              <i aria-hidden="true" />
+              <b class="sr-only">{on ? 'on' : 'off'}</b>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="privacy__actions">
+        <span>Export my data</span>
+        <span>Delete my account</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .privacy__in {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+  }
+  .privacy__list {
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    color: var(--muted);
+  }
+  .privacy__list li {
+    padding-left: 30px;
+    position: relative;
+  }
+  .privacy__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--grad);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  .privacy__panel .mono {
+    color: var(--violet-400);
+  }
+  .privacy__toggles {
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+  }
+  .privacy__toggles li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .privacy__toggles i {
+    position: relative;
+    width: 44px;
+    height: 26px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    transition: background 0.3s ease;
+  }
+  .privacy__toggles i::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform 0.3s var(--ease);
+  }
+  .privacy__toggles li.is-on i {
+    background: var(--grad);
+  }
+  .privacy__toggles li.is-on i::after {
+    transform: translateX(18px);
+  }
+  .privacy__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .privacy__actions span {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px var(--line-2);
+    color: var(--muted);
+  }
+  @media (max-width: 860px) {
+    .privacy__in {
+      grid-template-columns: 1fr;
+    }
+    .privacy__panel {
+      max-width: 420px;
+    }
+  }
+</style>

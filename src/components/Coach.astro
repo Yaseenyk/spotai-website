@@ -1,0 +1,163 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="section coach" id="coach" aria-labelledby="coach-title">
+  <div class="wrap coach__in">
+    <div class="coach__art" data-reveal>
+      <!-- A squat, tracked. Scrubbed by scroll: the skeleton drops into the squat and the flags light up. -->
+      <svg viewBox="0 0 520 520" aria-hidden="true" data-squat>
+        <defs>
+          <linearGradient id="sq-rim" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#22d3ee" />
+            <stop offset="1" stop-color="#a855f7" />
+          </linearGradient>
+        </defs>
+        <rect x="24" y="24" width="472" height="472" rx="36" fill="#0b0e14" stroke="#ffffff" stroke-opacity="0.08" />
+        <!-- viewfinder corners -->
+        <g stroke="url(#sq-rim)" stroke-width="3" fill="none" stroke-linecap="round">
+          <path d="M52 92 V60 a8 8 0 0 1 8 -8 H92" />
+          <path d="M428 52 h32 a8 8 0 0 1 8 8 V92" />
+          <path d="M52 428 v32 a8 8 0 0 0 8 8 H92" />
+          <path d="M468 428 v32 a8 8 0 0 1 -8 8 H428" />
+        </g>
+        <!-- scan line -->
+        <rect x="60" y="100" width="400" height="2" fill="#22d3ee" opacity="0.7" data-scan />
+        <!-- floor -->
+        <line x1="90" y1="430" x2="430" y2="430" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" />
+        <!-- skeleton standing (GSAP morphs the points toward the squat set) -->
+        <g stroke="#67e8f9" stroke-width="4" stroke-linecap="round" fill="none">
+          <line data-seg="spine" x1="260" y1="150" x2="260" y2="250" />
+          <line data-seg="thighL" x1="260" y1="250" x2="225" y2="330" />
+          <line data-seg="thighR" x1="260" y1="250" x2="295" y2="330" />
+          <line data-seg="shinL" x1="225" y1="330" x2="230" y2="425" />
+          <line data-seg="shinR" x1="295" y1="330" x2="290" y2="425" />
+          <line data-seg="armL" x1="260" y1="175" x2="215" y2="230" />
+          <line data-seg="armR" x1="260" y1="175" x2="305" y2="230" />
+        </g>
+        <circle data-j="head" cx="260" cy="120" r="18" fill="none" stroke="#f8fafc" stroke-width="4" />
+        <g fill="#f8fafc">
+          <circle data-j="hip" cx="260" cy="250" r="7" />
+          <circle data-j="kneeL" cx="225" cy="330" r="8" fill="#22d3ee" />
+          <circle data-j="kneeR" cx="295" cy="330" r="8" fill="#22d3ee" />
+          <circle data-j="ankleL" cx="230" cy="425" r="6" />
+          <circle data-j="ankleR" cx="290" cy="425" r="6" />
+        </g>
+        <!-- flags -->
+        <g data-flag="depth" opacity="0">
+          <rect x="300" y="300" width="150" height="34" rx="17" fill="#05070a" stroke="#fbbf24" stroke-opacity="0.7" />
+          <text x="375" y="322" text-anchor="middle" class="sq__text" fill="#fbbf24">SHALLOW DEPTH</text>
+        </g>
+        <g data-flag="valgus" opacity="0">
+          <rect x="60" y="340" width="140" height="34" rx="17" fill="#05070a" stroke="#f87171" stroke-opacity="0.7" />
+          <text x="130" y="362" text-anchor="middle" class="sq__text" fill="#f87171">KNEE VALGUS</text>
+        </g>
+        <g data-flag="good" opacity="0">
+          <rect x="190" y="60" width="140" height="34" rx="17" fill="#05070a" stroke="#34d399" stroke-opacity="0.8" />
+          <circle cx="212" cy="77" r="4" fill="#34d399" />
+          <text x="268" y="82" text-anchor="middle" class="sq__text" fill="#34d399">GOOD REP · 8</text>
+        </g>
+        <text x="260" y="482" text-anchor="middle" class="sq__text" fill="#6b7a93">POSE · ON DEVICE · 30 FPS</text>
+      </svg>
+    </div>
+
+    <div class="coach__copy">
+      <div class="section__head" data-reveal>
+        <p class="mono eyebrow">AI coach</p>
+        <h2 id="coach-title">A spotter who <span class="grad-text">never looks away.</span></h2>
+        <p class="lead">
+          Prop your phone against the rack, do a set of squats. The coach counts reps, flags knee valgus, shallow
+          depth and forward lean per rep, and gives you one tip, written from templates your gym’s trainer approved.
+        </p>
+      </div>
+      <ul class="coach__list" role="list">
+        <li data-reveal style="--d: 0.05s">
+          <strong>Video stays on your phone.</strong> Pose runs on device with MediaPipe. Only movement points leave,
+          never frames.
+        </li>
+        <li data-reveal style="--d: 0.1s">
+          <strong>Trainer in the loop.</strong> Every tip template is reviewed in the staff console, with each flag’s
+          wrong-rate on show so trainers can retire bad ones.
+        </li>
+        <li data-reveal style="--d: 0.15s">
+          <strong>Squats today, more soon.</strong> Deadlift and bench are next. Every exercise already has a how-to and
+          a short.
+        </li>
+        <li data-reveal style="--d: 0.2s">
+          <strong>Adults only.</strong> Camera features switch off for members under 18.
+        </li>
+      </ul>
+      <div class="coach__shot" data-reveal style="--d: 0.25s">
+        <div class="phone">
+          <img
+            src={`${base}shots/m-dark-coach.webp`}
+            width="640"
+            height="1385"
+            alt="AI coach screen: pose tracking preview with Runs on your phone label, exercise Squat selected, camera angle Side, note that video stays on the phone"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .coach {
+    background: radial-gradient(60% 50% at 20% 40%, rgba(34, 211, 238, 0.08), transparent 70%);
+  }
+  .coach__in {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: start;
+  }
+  .coach__art {
+    position: sticky;
+    top: 110px;
+  }
+  .coach__art svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.6));
+  }
+  .sq__text {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+  .coach__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 14px;
+  }
+  .coach__list li {
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 0 1px var(--line);
+    color: var(--muted);
+    font-size: 15.5px;
+  }
+  .coach__list strong {
+    color: var(--text);
+  }
+  .coach__shot {
+    width: min(260px, 70%);
+    margin: 40px auto 0;
+  }
+  @media (max-width: 900px) {
+    .coach__in {
+      grid-template-columns: 1fr;
+    }
+    .coach__art {
+      position: static;
+      max-width: 520px;
+      margin-inline: auto;
+    }
+  }
+</style>
