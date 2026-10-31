@@ -32,6 +32,16 @@ const exercises = [
 
     <div class="hero__stage" data-stage>
       <!-- Chalk kit on the floor; drawn on load. -->
+      <div class="stage__light" aria-hidden="true"></div>
+      <div class="stage__pool" aria-hidden="true"></div>
+      <svg class="chalk chalk--plate2" viewBox="0 0 320 320" aria-hidden="true" data-kit data-depth="0.35">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-chalk>
+          <circle cx="160" cy="160" r="150" />
+          <circle cx="160" cy="160" r="112" />
+          <circle cx="160" cy="160" r="30" />
+        </g>
+        <text x="160" y="76" text-anchor="middle" class="chalk__label">15</text>
+      </svg>
       <svg class="chalk chalk--plate" viewBox="0 0 320 320" aria-hidden="true" data-kit data-depth="0.5">
         <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-chalk>
           <circle cx="160" cy="160" r="150" />
@@ -48,9 +58,11 @@ const exercises = [
         </g>
       </svg>
 
-      <div class="hero__rep" data-rep-box>
+      <div class="hero__set" data-rep-box>
+        <span class="hero__set-name" data-set-name>Squat</span>
         <b class="wide" data-rep>0</b>
-        <span data-rep-label>reps</span>
+        <span class="hero__ticks" aria-hidden="true" data-ticks><i></i><i></i><i></i><i></i></span>
+        <span class="hero__set-label">reps this set</span>
       </div>
       <div class="hero__flag" data-hflag>Knees out over your toes</div>
 
@@ -191,9 +203,33 @@ const exercises = [
     will-change: transform;
   }
   .chalk--plate {
-    right: -10%;
+    right: -2%;
     bottom: 56px;
-    width: 46%;
+    width: 30%;
+  }
+  .chalk--plate2 {
+    right: 10%;
+    bottom: 56px;
+    width: 30%;
+    opacity: 0.16;
+  }
+  .stage__light {
+    position: absolute;
+    left: 10%;
+    right: 18%;
+    top: -10%;
+    bottom: 56px;
+    background: radial-gradient(60% 90% at 50% 100%, rgba(236, 233, 225, 0.075), transparent 70%);
+    pointer-events: none;
+  }
+  .stage__pool {
+    position: absolute;
+    left: 6%;
+    right: 14%;
+    bottom: 50px;
+    height: 14px;
+    background: radial-gradient(closest-side, rgba(236, 233, 225, 0.22), transparent);
+    pointer-events: none;
   }
   .chalk--rack {
     left: 8%;
@@ -219,30 +255,50 @@ const exercises = [
     filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.45));
     will-change: transform;
   }
-  .hero__rep {
+  .hero__set {
     position: absolute;
     right: 0;
-    top: 2%;
+    top: 0;
     display: grid;
-    gap: 2px;
+    justify-items: end;
+    gap: 6px;
     text-align: right;
     z-index: 2;
   }
-  .hero__rep b {
+  .hero__set-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--steel);
+  }
+  .hero__set b {
     font-size: clamp(56px, 6vw, 88px);
     line-height: 0.9;
     letter-spacing: -0.03em;
     font-variant-numeric: tabular-nums;
     color: var(--chalk);
   }
-  .hero__rep span {
-    font-size: 13px;
-    color: var(--steel);
+  .hero__ticks {
+    display: flex;
+    gap: 5px;
+  }
+  .hero__ticks i {
+    width: 18px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--iron-2);
+    transition: background 0.3s ease;
+  }
+  .hero__ticks i.is-on {
+    background: var(--violet-2);
+  }
+  .hero__set-label {
+    font-size: 12.5px;
+    color: var(--dim);
   }
   .hero__flag {
     position: absolute;
-    left: 4%;
-    top: 20%;
+    left: 2%;
+    top: 52%;
     padding: 9px 12px;
     border-radius: 8px;
     background: var(--violet);
@@ -283,27 +339,32 @@ const exercises = [
   .hero__tabs button {
     position: relative;
     flex: 0 0 auto;
-    padding: 8px 10px;
+    padding: 7px 11px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 999px;
     background: transparent;
     color: var(--dim);
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    transition: color 0.25s ease;
+    overflow: hidden;
+    transition:
+      color 0.25s ease,
+      background 0.25s ease;
   }
   .hero__tabs button:hover {
     color: var(--steel);
+    background: rgba(236, 233, 225, 0.04);
   }
   .hero__tabs button[aria-selected='true'] {
     color: var(--chalk);
+    background: var(--iron-2);
   }
   .hero__tabs button i {
     position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 2px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 2px;
     background: var(--violet-2);
     transform: scaleX(0);
@@ -331,23 +392,24 @@ const exercises = [
     .figure {
       height: calc(90% - 56px);
     }
-    .hero__rep b {
+    .hero__set b {
       font-size: 48px;
-    }
-    .hero__rep span {
-      font-size: 12px;
     }
     .hero__flag {
       left: 0;
-      top: 12%;
+      top: 48%;
       font-size: 12px;
     }
     .chalk--rack {
       left: 2%;
     }
     .chalk--plate {
-      width: 50%;
-      right: -16%;
+      width: 34%;
+      right: -6%;
+    }
+    .chalk--plate2 {
+      width: 34%;
+      right: 8%;
     }
     .hero__tabs {
       margin-inline: calc(-1 * var(--gutter));

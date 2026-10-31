@@ -110,6 +110,8 @@ export function reel(staticOnly: boolean) {
   const joint = (n: string) => el(`[data-j="${n}"]`);
   const tabs = gsap.utils.toArray<HTMLButtonElement>('[data-ex]');
   const repEl = document.querySelector<HTMLElement>('[data-rep]');
+  const ticks = gsap.utils.toArray<HTMLElement>('[data-ticks] i');
+  const nameEl = document.querySelector<HTMLElement>('[data-set-name]');
   const flag = document.querySelector<HTMLElement>('[data-hflag]');
   const ids = Object.keys(EXERCISES);
   let id = ids[0]!;
@@ -191,6 +193,7 @@ export function reel(staticOnly: boolean) {
     reps = n;
     if (!repEl) return;
     repEl.textContent = String(n);
+    ticks.forEach((t, i) => t.classList.toggle('is-on', i < n));
     if (n) gsap.fromTo(repEl, { y: 8, opacity: 0.4 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' });
   };
   const showFlag = (on: boolean) => flag && gsap.to(flag, { opacity: on ? 1 : 0, y: on ? 0 : 6, duration: 0.3 });
@@ -230,6 +233,7 @@ export function reel(staticOnly: boolean) {
         render();
         setRep(0);
         if (flag) flag.textContent = EXERCISES[id]!.cue ?? '';
+        if (nameEl) nameEl.textContent = tabs.find((t) => t.dataset.ex === id)?.textContent?.trim() ?? '';
       })
       .fromTo(svg, { x: 70, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: 'power3.out' })
       .add(play);
