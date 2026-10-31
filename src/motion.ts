@@ -7,6 +7,7 @@ export function start() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-in'));
     document.querySelectorAll<SVGElement>('[data-flag]').forEach((el) => el.setAttribute('opacity', '1'));
+    reel(true);
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
@@ -20,66 +21,223 @@ export function start() {
 function hero() {
   const lines = gsap.utils.toArray<HTMLElement>('[data-hero-line]');
   const kit = gsap.utils.toArray<SVGElement>('[data-kit]');
-  const phone = document.querySelector('[data-phone]');
-  const tip = document.querySelector('[data-tip]');
-  const poseLines = gsap.utils.toArray<SVGPathElement>('[data-pose-lines] path');
-  const poseDots = document.querySelector('[data-pose-dots]');
-  const chip = document.querySelector('[data-pose-chip]');
+  const chalk = gsap.utils.toArray<SVGGeometryElement>('[data-chalk] *');
 
-  poseLines.forEach((p) => {
+  chalk.forEach((p) => {
     const len = p.getTotalLength();
     gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
   });
-  gsap.set(poseDots, { opacity: 0, scale: 0.6, transformOrigin: '50% 50%' });
-  gsap.set(chip, { opacity: 0, y: 10 });
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-  tl.from(lines, { y: 40, opacity: 0, duration: 1, stagger: 0.09 }, 0)
-    .from(phone, { y: 80, opacity: 0, rotate: -14, duration: 1.3, ease: 'expo.out' }, 0.2)
-    .from(kit, { y: 120, opacity: 0, scale: 0.8, duration: 1.4, stagger: 0.12, ease: 'expo.out' }, 0.3)
-    .to(poseLines, { strokeDashoffset: 0, duration: 0.9, stagger: 0.08, ease: 'power2.inOut' }, 0.7)
-    .to(poseDots, { opacity: 1, scale: 1, duration: 0.6 }, 1.2)
-    .to(chip, { opacity: 1, y: 0, duration: 0.5 }, 1.6)
-    .from(tip, { x: 30, opacity: 0, duration: 0.8 }, 1.4)
-    .from('[data-beam]', { scaleY: 0, transformOrigin: '50% 0%', duration: 1.6, stagger: 0.2, ease: 'power2.out' }, 0.2)
-    .from('[data-spot]', { opacity: 0, duration: 2 }, 0);
+  tl.from(lines, { y: 30, opacity: 0, duration: 1, stagger: 0.1 }, 0)
+    .to(chalk, { strokeDashoffset: 0, duration: 1.6, stagger: 0.04, ease: 'power2.inOut' }, 0.2)
+    .from('[data-figure]', { y: 40, opacity: 0, duration: 1.1, ease: 'expo.out' }, 0.5)
+    .from('[data-rep-box], [data-ex]', { opacity: 0, y: 10, duration: 0.6, stagger: 0.05 }, 1)
+    .add(() => reel(false), 1.4);
 
-  // The kit never quite settles.
-  kit.forEach((k, i) => {
-    gsap.to(k, { y: `+=${10 + i * 4}`, duration: 4.5 + i, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1.5 });
-  });
-  gsap.to('[data-pose-lines]', { y: 6, duration: 2.4, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 2 });
-  gsap.to('[data-scan]', { y: 330, duration: 2.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-
-  // Pointer parallax: nearer kit moves more.
+  // Pointer parallax on the chalk kit.
   const stage = document.querySelector<HTMLElement>('[data-stage]');
   if (stage && window.matchMedia('(pointer: fine)').matches) {
     const qx = kit.map((k) => gsap.quickTo(k, 'x', { duration: 0.8, ease: 'power3' }));
-    const qy = kit.map((k) => gsap.quickTo(k, 'y', { duration: 0.8, ease: 'power3' }));
-    const px = gsap.quickTo(phone, 'x', { duration: 1, ease: 'power3' });
-    const py = gsap.quickTo(phone, 'y', { duration: 1, ease: 'power3' });
     window.addEventListener(
       'pointermove',
       (e) => {
         const dx = (e.clientX / window.innerWidth - 0.5) * 2;
-        const dy = (e.clientY / window.innerHeight - 0.5) * 2;
-        kit.forEach((k, i) => {
-          const depth = Number(k.dataset.depth ?? 1);
-          qx[i]!(dx * 18 * depth);
-          qy[i]!(dy * 14 * depth);
-        });
-        px(dx * -10);
-        py(dy * -8);
+        kit.forEach((k, i) => qx[i]!(dx * 14 * Number(k.dataset.depth ?? 1)));
       },
       { passive: true },
     );
   }
+  gsap.to(stage, { y: 90, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
+}
 
-  // Scroll: the gym recedes, the kit drifts apart.
-  gsap.to('[data-gym]', { y: 120, scale: 1.06, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
-  kit.forEach((k, i) =>
-    gsap.to(k, { y: `+=${(i + 1) * 60}`, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } }),
-  );
+// The exercise reel. A side-view lifter whose joints tween between two key poses per exercise; after four reps
+// it slides to the next one. The tabs under the floor pick an exercise directly.
+type Pose = { hx: number; hy: number; sx: number; sy: number; ex: number; ey: number; wx: number; wy: number; px: number; py: number; kx: number; ky: number; ax: number; ay: number };
+type Exercise = { a: Pose; b: Pose; prop: 'plate' | 'db' | 'handle' | 'none'; plateAt?: 'wrist' | 'back'; gear?: 'bench' | 'seat'; period: number; cue?: string };
+const STAND = { hx: 250, hy: 80, sx: 250, sy: 150, px: 250, py: 300, kx: 256, ky: 400, ax: 250, ay: 500 };
+const EXERCISES: Record<string, Exercise> = {
+  squat: {
+    a: { ...STAND, ex: 280, ey: 202, wx: 232, wy: 150 },
+    b: { hx: 288, hy: 196, sx: 276, sy: 262, ex: 304, ey: 314, wx: 258, wy: 262, px: 218, py: 360, kx: 308, ky: 405, ax: 250, ay: 500 },
+    prop: 'plate',
+    plateAt: 'back',
+    period: 2.2,
+    cue: 'Knees out over your toes',
+  },
+  deadlift: {
+    a: { hx: 318, hy: 220, sx: 296, sy: 268, ex: 300, ey: 360, wx: 304, wy: 452, px: 206, py: 328, kx: 282, ky: 420, ax: 250, ay: 500 },
+    b: { ...STAND, ex: 258, ey: 240, wx: 264, wy: 326 },
+    prop: 'plate',
+    plateAt: 'wrist',
+    period: 2.4,
+  },
+  bench: {
+    a: { hx: 130, hy: 338, sx: 196, sy: 346, ex: 200, ey: 280, wx: 200, wy: 222, px: 330, py: 352, kx: 384, ky: 420, ax: 392, ay: 500 },
+    b: { hx: 130, hy: 338, sx: 196, sy: 346, ex: 238, ey: 352, wx: 206, wy: 300, px: 330, py: 352, kx: 384, ky: 420, ax: 392, ay: 500 },
+    prop: 'plate',
+    plateAt: 'wrist',
+    gear: 'bench',
+    period: 2,
+  },
+  curl: {
+    a: { ...STAND, ex: 256, ey: 245, wx: 264, wy: 332 },
+    b: { ...STAND, ex: 256, ey: 245, wx: 300, wy: 190 },
+    prop: 'db',
+    period: 1.8,
+  },
+  pulldown: {
+    a: { hx: 250, hy: 196, sx: 250, sy: 262, ex: 294, ey: 190, wx: 306, wy: 104, px: 250, py: 382, kx: 334, ky: 400, ax: 334, ay: 500 },
+    b: { hx: 250, hy: 196, sx: 250, sy: 262, ex: 282, ey: 300, wx: 310, wy: 250, px: 250, py: 382, kx: 334, ky: 400, ax: 334, ay: 500 },
+    prop: 'handle',
+    gear: 'seat',
+    period: 2,
+  },
+  press: {
+    a: { ...STAND, ex: 300, ey: 200, wx: 284, wy: 146 },
+    b: { ...STAND, ex: 280, ey: 95, wx: 272, wy: 34 },
+    prop: 'db',
+    period: 2,
+  },
+};
+
+export function reel(staticOnly: boolean) {
+  const svg = document.querySelector<SVGSVGElement>('[data-figure]');
+  if (!svg) return;
+  const el = (sel: string) => svg.querySelector<SVGElement>(sel)!;
+  const f = (n: string) => el(`[data-f="${n}"]`);
+  const prop = (n: string) => el(`[data-prop="${n}"]`);
+  const joint = (n: string) => el(`[data-j="${n}"]`);
+  const tabs = gsap.utils.toArray<HTMLButtonElement>('[data-ex]');
+  const repEl = document.querySelector<HTMLElement>('[data-rep]');
+  const flag = document.querySelector<HTMLElement>('[data-hflag]');
+  const ids = Object.keys(EXERCISES);
+  let id = ids[0]!;
+  const s: Pose = { ...EXERCISES[id]!.a };
+
+  const seg = (n: string, x1: number, y1: number, x2: number, y2: number) => {
+    const node = f(n);
+    node.setAttribute('x1', String(x1));
+    node.setAttribute('y1', String(y1));
+    node.setAttribute('x2', String(x2));
+    node.setAttribute('y2', String(y2));
+  };
+  const poly = (n: string, points: number[][]) => f(n).setAttribute('points', points.map((p) => p.join(',')).join(' '));
+  const at = (node: Element, x: number, y: number) => {
+    node.setAttribute('cx', String(x));
+    node.setAttribute('cy', String(y));
+  };
+  const hex = (x: number, y: number, r: number) =>
+    'M' + [0, 1, 2, 3, 4, 5].map((i) => `${(x + r * Math.cos((Math.PI / 3) * i)).toFixed(1)} ${(y + r * Math.sin((Math.PI / 3) * i)).toFixed(1)}`).join(' L') + 'Z';
+  // Torso: a tapered slab from the shoulder line to the hip line, drawn around the spine.
+  const torso = () => {
+    const dx = s.px - s.sx;
+    const dy = s.py - s.sy;
+    const len = Math.hypot(dx, dy) || 1;
+    const nx = -dy / len;
+    const ny = dx / len;
+    const sw = 20;
+    const hw = 15;
+    return `M${s.sx + nx * sw} ${s.sy + ny * sw} L${s.px + nx * hw} ${s.py + ny * hw} L${s.px - nx * hw} ${s.py - ny * hw} L${s.sx - nx * sw} ${s.sy - ny * sw} Z`;
+  };
+  const limbs = (suffix: string, ox: number) => {
+    seg(`uarm${suffix}`, s.sx + ox, s.sy, s.ex + ox, s.ey);
+    seg(`farm${suffix}`, s.ex + ox, s.ey, s.wx + ox, s.wy);
+    at(f(`hand${suffix}`), s.wx + ox, s.wy);
+    seg(`thigh${suffix}`, s.px + ox, s.py, s.kx + ox, s.ky);
+    seg(`shin${suffix}`, s.kx + ox, s.ky, s.ax + ox, s.ay);
+    seg(`foot${suffix}`, s.ax + ox, s.ay, s.ax + ox + 30, s.ay);
+  };
+
+  const render = () => {
+    const ex = EXERCISES[id]!;
+    at(f('head'), s.hx, s.hy);
+    seg('neck', s.hx, s.hy, s.sx, s.sy);
+    f('torso').setAttribute('d', torso());
+    limbs('', 0);
+    limbs('B', -13);
+    poly('trackArm', [[s.sx, s.sy], [s.ex, s.ey], [s.wx, s.wy]]);
+    poly('trackLeg', [[s.px, s.py], [s.kx, s.ky], [s.ax, s.ay]]);
+    seg('trackTorso', s.sx, s.sy, s.px, s.py);
+    at(joint('shoulder'), s.sx, s.sy);
+    at(joint('elbow'), s.ex, s.ey);
+    at(joint('wrist'), s.wx, s.wy);
+    at(joint('hip'), s.px, s.py);
+    at(joint('knee'), s.kx, s.ky);
+    at(joint('ankle'), s.ax, s.ay);
+    const plate = prop('plate');
+    plate.setAttribute('opacity', ex.prop === 'plate' ? '1' : '0');
+    if (ex.plateAt === 'back') at(plate, s.sx - 12, s.sy + 6);
+    else at(plate, s.wx, s.wy);
+    prop('db').setAttribute('opacity', ex.prop === 'db' ? '1' : '0');
+    if (ex.prop === 'db') prop('dbShape').setAttribute('d', hex(s.wx, s.wy, 22));
+    const handle = prop('handle');
+    handle.setAttribute('opacity', ex.prop === 'handle' ? '1' : '0');
+    if (ex.prop === 'handle') handle.setAttribute('d', `M${s.wx - 28} ${s.wy} h56`);
+    const cable = el('[data-gear="cable"]');
+    cable.setAttribute('opacity', ex.prop === 'handle' ? '1' : '0');
+    cable.setAttribute('x1', String(s.wx));
+    cable.setAttribute('x2', String(s.wx));
+    cable.setAttribute('y2', String(s.wy));
+    el('[data-gear="bench"]').setAttribute('opacity', ex.gear === 'bench' ? '1' : '0');
+    el('[data-gear="seat"]').setAttribute('opacity', ex.gear === 'seat' ? '1' : '0');
+  };
+  render();
+  if (staticOnly) return;
+
+  let loop: gsap.core.Timeline | null = null;
+  let reps = 0;
+  const setRep = (n: number) => {
+    reps = n;
+    if (!repEl) return;
+    repEl.textContent = String(n);
+    if (n) gsap.fromTo(repEl, { y: 8, opacity: 0.4 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' });
+  };
+  const showFlag = (on: boolean) => flag && gsap.to(flag, { opacity: on ? 1 : 0, y: on ? 0 : 6, duration: 0.3 });
+
+  const play = () => {
+    const ex = EXERCISES[id]!;
+    const half = ex.period / 2;
+    loop?.kill();
+    loop = gsap.timeline({ repeat: -1, repeatDelay: 0.25 });
+    loop
+      .to(s, { ...ex.b, duration: half, ease: 'power2.inOut', onUpdate: render })
+      .add(() => {
+        setRep(reps + 1);
+        if (ex.cue) showFlag(reps === 3);
+        if (reps >= 4) next();
+      })
+      .to(s, { ...ex.a, duration: half, ease: 'power2.inOut', onUpdate: render }, '+=0.1');
+    const bar = tabs.find((t) => t.dataset.ex === id)?.querySelector('i');
+    if (bar) gsap.fromTo(bar, { scaleX: 0 }, { scaleX: 1, duration: (ex.period + 0.35) * 4, ease: 'none' });
+  };
+
+  const show = (nextId: string) => {
+    if (!EXERCISES[nextId]) return;
+    loop?.kill();
+    tabs.forEach((t) => {
+      t.setAttribute('aria-selected', String(t.dataset.ex === nextId));
+      const bar = t.querySelector('i');
+      if (bar && t.dataset.ex !== nextId) gsap.set(bar, { scaleX: 0 });
+    });
+    showFlag(false);
+    gsap
+      .timeline()
+      .to(svg, { x: -70, opacity: 0, duration: 0.3, ease: 'power2.in' })
+      .add(() => {
+        id = nextId;
+        Object.assign(s, EXERCISES[id]!.a);
+        render();
+        setRep(0);
+        if (flag) flag.textContent = EXERCISES[id]!.cue ?? '';
+      })
+      .fromTo(svg, { x: 70, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: 'power3.out' })
+      .add(play);
+  };
+  const next = () => show(ids[(ids.indexOf(id) + 1) % ids.length]!);
+
+  tabs.forEach((t) => t.addEventListener('click', () => t.dataset.ex !== id && show(t.dataset.ex!)));
+  play();
 }
 
 function reveals() {

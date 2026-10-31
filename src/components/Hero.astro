@@ -1,193 +1,130 @@
 ---
-const base = import.meta.env.BASE_URL;
+const exercises = [
+  ['squat', 'Squat'],
+  ['deadlift', 'Deadlift'],
+  ['bench', 'Bench press'],
+  ['curl', 'Biceps curl'],
+  ['pulldown', 'Lat pulldown'],
+  ['press', 'Overhead press'],
+];
 ---
 
 <section class="hero" id="top" aria-labelledby="hero-title">
-  <!-- The gym: perspective floor, rack uprights and spotlights. Pure SVG, animated by GSAP. -->
-  <svg class="hero__gym" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" data-gym>
-    <defs>
-      <linearGradient id="floor-fade" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#05070a" stop-opacity="0" />
-        <stop offset="0.35" stop-color="#22d3ee" stop-opacity="0.08" />
-        <stop offset="1" stop-color="#a855f7" stop-opacity="0.16" />
-      </linearGradient>
-      <radialGradient id="spot" cx="0.5" cy="0" r="0.8">
-        <stop offset="0" stop-color="#a855f7" stop-opacity="0.35" />
-        <stop offset="1" stop-color="#a855f7" stop-opacity="0" />
-      </radialGradient>
-      <radialGradient id="spot-c" cx="0.5" cy="0" r="0.8">
-        <stop offset="0" stop-color="#22d3ee" stop-opacity="0.3" />
-        <stop offset="1" stop-color="#22d3ee" stop-opacity="0" />
-      </radialGradient>
-      <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#67e8f9" stop-opacity="0.9" />
-        <stop offset="1" stop-color="#67e8f9" stop-opacity="0" />
-      </linearGradient>
-    </defs>
-    <!-- Spotlights -->
-    <ellipse cx="300" cy="0" rx="420" ry="620" fill="url(#spot-c)" data-spot />
-    <ellipse cx="1140" cy="0" rx="420" ry="620" fill="url(#spot)" data-spot />
-    <!-- Floor -->
-    <g data-floor>
-      <rect x="0" y="540" width="1440" height="360" fill="url(#floor-fade)" />
-      <g stroke="#67e8f9" stroke-opacity="0.16" stroke-width="1">
-        <line x1="720" y1="540" x2="-400" y2="900" />
-        <line x1="720" y1="540" x2="-40" y2="900" />
-        <line x1="720" y1="540" x2="300" y2="900" />
-        <line x1="720" y1="540" x2="560" y2="900" />
-        <line x1="720" y1="540" x2="720" y2="900" />
-        <line x1="720" y1="540" x2="880" y2="900" />
-        <line x1="720" y1="540" x2="1140" y2="900" />
-        <line x1="720" y1="540" x2="1480" y2="900" />
-        <line x1="720" y1="540" x2="1840" y2="900" />
-      </g>
-      <g stroke="#c084fc" stroke-opacity="0.14" stroke-width="1" data-floor-rows>
-        <line x1="0" y1="580" x2="1440" y2="580" />
-        <line x1="0" y1="632" x2="1440" y2="632" />
-        <line x1="0" y1="700" x2="1440" y2="700" />
-        <line x1="0" y1="790" x2="1440" y2="790" />
-      </g>
-    </g>
-    <!-- Rack uprights -->
-    <g stroke="#ffffff" stroke-opacity="0.08" stroke-width="10" stroke-linecap="round" data-rack>
-      <line x1="150" y1="120" x2="150" y2="560" />
-      <line x1="330" y1="120" x2="330" y2="560" />
-      <line x1="1110" y1="120" x2="1110" y2="560" />
-      <line x1="1290" y1="120" x2="1290" y2="560" />
-      <line x1="150" y1="130" x2="330" y2="130" />
-      <line x1="1110" y1="130" x2="1290" y2="130" />
-    </g>
-    <g fill="#ffffff" fill-opacity="0.1" data-rack>
-      {[200, 250, 300, 350, 400, 450].map((y) => <rect x="144" y={y} width="12" height="5" rx="2" />)}
-      {[200, 250, 300, 350, 400, 450].map((y) => <rect x="324" y={y} width="12" height="5" rx="2" />)}
-      {[200, 250, 300, 350, 400, 450].map((y) => <rect x="1104" y={y} width="12" height="5" rx="2" />)}
-      {[200, 250, 300, 350, 400, 450].map((y) => <rect x="1284" y={y} width="12" height="5" rx="2" />)}
-    </g>
-    <!-- Light beams from the ceiling -->
-    <rect x="236" y="0" width="8" height="300" fill="url(#beam)" opacity="0.5" data-beam />
-    <rect x="1196" y="0" width="8" height="300" fill="url(#beam)" opacity="0.5" data-beam />
-  </svg>
-
   <div class="wrap hero__in">
     <div class="hero__copy">
-      <p class="mono eyebrow" data-hero-line>Built for Indian gyms · members and owners</p>
-      <h1 id="hero-title" class="hero__title">
-        <span class="hero__word" data-hero-line>Your AI</span>
-        <span class="hero__word" data-hero-line>gym buddy,</span>
-        <span class="hero__word grad-text" data-hero-line>in your pocket.</span>
+      <h1 id="hero-title" class="hero__title wide">
+        <span data-hero-line>The AI gym buddy</span>
+        <span data-hero-line>for Indian gyms.</span>
       </h1>
-      <p class="lead" data-hero-line>
-        SpotAI checks your form on the phone camera, logs every set, puts your gym on a leaderboard and finds you a
-        buddy. For owners: arrivals, dues, UPI payments and a trainer console. Nothing leaves the phone that
-        shouldn't.
+      <p class="lead hero__lead" data-hero-line>
+        Lean your phone on the rack and squat: SpotAI counts the reps and calls the form, on the phone, with no video
+        sent anywhere. Every set logged, a leaderboard for your gym, a buddy to train with. Owners get arrivals, dues
+        and UPI in one console.
       </p>
       <div class="hero__cta" data-hero-line>
         <a href="#download" class="btn btn--primary">Get early access</a>
         <a href="#owners" class="btn btn--ghost">For gym owners</a>
       </div>
-      <ul class="hero__proof mono" data-hero-line aria-label="Highlights">
-        <li>On-device pose</li>
-        <li>Opt-in leaderboard</li>
-        <li>UPI dues</li>
-        <li>Consent per purpose</li>
-      </ul>
+      <p class="hero__note" data-hero-line>
+        In private demo with partner gyms in Hyderabad. Play Store and App Store links on launch day.
+      </p>
     </div>
 
     <div class="hero__stage" data-stage>
-      <!-- Floating kit: assembles on load, drifts with the pointer. -->
-      <svg class="kit kit--plate" viewBox="0 0 200 200" aria-hidden="true" data-kit data-depth="0.6">
-        <defs>
-          <radialGradient id="k-metal" cx="0.32" cy="0.26" r="0.9">
-            <stop offset="0" stop-color="#4b505c" />
-            <stop offset="0.38" stop-color="#1c1f26" />
-            <stop offset="1" stop-color="#07080b" />
-          </radialGradient>
-          <linearGradient id="k-rim" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#22d3ee" stop-opacity="0.95" />
-            <stop offset="0.4" stop-color="#22d3ee" stop-opacity="0" />
-            <stop offset="0.6" stop-color="#a855f7" stop-opacity="0" />
-            <stop offset="1" stop-color="#a855f7" stop-opacity="0.95" />
-          </linearGradient>
-          <linearGradient id="k-chrome" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#e2e8f0" />
-            <stop offset="0.45" stop-color="#94a3b8" />
-            <stop offset="1" stop-color="#334155" />
-          </linearGradient>
-        </defs>
-        <circle cx="100" cy="100" r="88" fill="url(#k-metal)" />
-        <circle cx="100" cy="100" r="88" fill="none" stroke="url(#k-rim)" stroke-width="2.5" />
-        <circle cx="100" cy="100" r="62" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" />
-        <circle cx="100" cy="100" r="22" fill="#07080b" stroke="url(#k-chrome)" stroke-width="3" />
-        <text x="100" y="70" text-anchor="middle" class="kit__label">20 KG</text>
-      </svg>
-
-      <svg class="kit kit--bell" viewBox="0 0 230 250" aria-hidden="true" data-kit data-depth="1">
-        <path d="M66 112 C60 28 170 28 164 112" stroke="#1c1f26" stroke-width="24" stroke-linecap="round" fill="none" />
-        <path d="M72 104 C70 44 160 44 158 104" stroke="#a855f7" stroke-width="1.5" fill="none" opacity="0.55" />
-        <circle cx="115" cy="160" r="84" fill="url(#k-metal)" />
-        <circle cx="115" cy="160" r="84" fill="none" stroke="url(#k-rim)" stroke-width="2.5" />
-        <ellipse cx="84" cy="118" rx="30" ry="18" fill="#ffffff" fill-opacity="0.12" />
-        <text x="115" y="176" text-anchor="middle" class="kit__label kit__label--big">24 KG</text>
-      </svg>
-
-      <svg class="kit kit--db" viewBox="0 0 240 120" aria-hidden="true" data-kit data-depth="1.4">
-        <rect x="62" y="52" width="116" height="16" rx="5" fill="url(#k-chrome)" />
-        <polygon points="26,8 62,8 74,60 62,112 26,112 14,60" fill="url(#k-metal)" />
-        <polygon points="26,8 62,8 74,60 62,112 26,112 14,60" fill="none" stroke="url(#k-rim)" stroke-width="2" />
-        <polygon points="178,8 214,8 226,60 214,112 178,112 166,60" fill="url(#k-metal)" />
-        <polygon points="178,8 214,8 226,60 214,112 178,112 166,60" fill="none" stroke="url(#k-rim)" stroke-width="2" />
-        <text x="44" y="64" text-anchor="middle" class="kit__label">12.5</text>
-        <text x="196" y="64" text-anchor="middle" class="kit__label">12.5</text>
-      </svg>
-
-      <!-- Pose skeleton the coach tracks: draws itself, then breathes. -->
-      <svg class="pose" viewBox="0 0 260 420" aria-hidden="true" data-pose>
-        <g stroke="#67e8f9" stroke-width="3" stroke-linecap="round" fill="none" data-pose-lines>
-          <path d="M130 70 L130 170" />
-          <path d="M130 100 L80 150 L70 210" />
-          <path d="M130 100 L180 150 L190 210" />
-          <path d="M130 170 L95 250 L100 350" />
-          <path d="M130 170 L165 250 L160 350" />
-          <path d="M100 350 L70 362" />
-          <path d="M160 350 L190 362" />
+      <!-- Chalk kit on the floor; drawn on load. -->
+      <svg class="chalk chalk--plate" viewBox="0 0 320 320" aria-hidden="true" data-kit data-depth="0.5">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-chalk>
+          <circle cx="160" cy="160" r="150" />
+          <circle cx="160" cy="160" r="112" />
+          <circle cx="160" cy="160" r="30" />
+          <path d="M160 10 v24 M160 286 v24 M10 160 h24 M286 160 h24" />
         </g>
-        <g fill="#f8fafc" data-pose-dots>
-          <circle cx="130" cy="48" r="16" fill="none" stroke="#f8fafc" stroke-width="3" />
-          <circle cx="130" cy="100" r="5" />
-          <circle cx="80" cy="150" r="5" />
-          <circle cx="180" cy="150" r="5" />
-          <circle cx="70" cy="210" r="5" />
-          <circle cx="190" cy="210" r="5" />
-          <circle cx="130" cy="170" r="5" />
-          <circle cx="95" cy="250" r="6" fill="#22d3ee" />
-          <circle cx="165" cy="250" r="6" fill="#22d3ee" />
-          <circle cx="100" cy="350" r="5" />
-          <circle cx="160" cy="350" r="5" />
-        </g>
-        <g class="pose__chip" data-pose-chip>
-          <rect x="150" y="226" width="96" height="36" rx="18" fill="#05070a" stroke="#22d3ee" stroke-opacity="0.6" />
-          <circle cx="170" cy="244" r="4" fill="#34d399" />
-          <text x="183" y="249" class="pose__text">FORM 92</text>
+        <text x="160" y="76" text-anchor="middle" class="chalk__label">20</text>
+      </svg>
+      <svg class="chalk chalk--rack" viewBox="0 0 60 600" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-chalk>
+          <path d="M18 0 V600 M42 0 V600" />
+          {[40, 100, 160, 220, 280, 340, 400, 460, 520].map((y) => <circle cx="30" cy={y} r="5" />)}
         </g>
       </svg>
 
-      <div class="phone phone--glow hero__phone" data-phone>
-        <img
-          src={`${base}shots/m-dark-home-train.webp`}
-          width="640"
-          height="1385"
-          alt="SpotAI home screen during a workout: Back and biceps session, 0 of 4 exercises done, next up Lat pulldown 3 by 10, day streak and visits this week"
-          fetchpriority="high"
-        />
+      <div class="hero__rep" data-rep-box>
+        <b class="wide" data-rep>0</b>
+        <span data-rep-label>reps</span>
       </div>
-      <div class="hero__tip" data-tip>
-        <span class="mono">Coach tip</span>
-        <p>“Try pushing your knees out over your toes as you stand up.”</p>
+      <div class="hero__flag" data-hflag>Knees out over your toes</div>
+
+      <!-- The lifter. Side view; every joint is driven by the exercise reel in motion.ts. -->
+      <svg class="figure" viewBox="0 0 520 560" aria-hidden="true" data-figure>
+        <ellipse cx="270" cy="508" rx="130" ry="9" fill="currentColor" opacity="0.1" />
+        <!-- gear behind the lifter -->
+        <g data-gear="bench" opacity="0">
+          <rect x="110" y="372" width="300" height="22" rx="6" fill="var(--iron-2)" stroke="var(--line-2)" />
+          <rect x="150" y="394" width="14" height="106" fill="var(--iron-2)" />
+          <rect x="356" y="394" width="14" height="106" fill="var(--iron-2)" />
+        </g>
+        <g data-gear="seat" opacity="0">
+          <rect x="190" y="392" width="120" height="20" rx="6" fill="var(--iron-2)" stroke="var(--line-2)" />
+          <rect x="242" y="412" width="16" height="88" fill="var(--iron-2)" />
+          <rect x="292" y="356" width="80" height="16" rx="6" fill="var(--iron-2)" stroke="var(--line-2)" />
+        </g>
+        <line data-gear="cable" x1="300" y1="0" x2="300" y2="100" stroke="var(--steel)" stroke-width="3" opacity="0" />
+        <circle data-prop="plate" cx="0" cy="0" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" opacity="0" />
+        <circle data-prop="plate2" cx="0" cy="0" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" opacity="0" />
+        <!-- back limbs, dimmer: depth -->
+        <g fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-linecap="round" opacity="0.5">
+          <line data-f="uarmB" stroke-width="17" />
+          <line data-f="farmB" stroke-width="14" />
+          <circle data-f="handB" r="9" stroke="none" />
+          <line data-f="thighB" stroke-width="21" />
+          <line data-f="shinB" stroke-width="16" />
+          <line data-f="footB" stroke-width="12" />
+        </g>
+        <!-- torso and front limbs -->
+        <g fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <line data-f="thigh" stroke-width="23" />
+          <line data-f="shin" stroke-width="17" />
+          <line data-f="foot" stroke-width="13" />
+          <path data-f="torso" stroke-width="14" />
+          <line data-f="neck" stroke-width="13" />
+          <line data-f="uarm" stroke-width="18" />
+          <line data-f="farm" stroke-width="15" />
+          <circle data-f="hand" r="10" stroke="none" />
+          <ellipse data-f="head" rx="23" ry="26" stroke="none" />
+        </g>
+        <g data-prop="db" opacity="0">
+          <path data-prop="dbShape" d="" fill="var(--rubber)" stroke="currentColor" stroke-width="6" stroke-linejoin="round" />
+        </g>
+        <path data-prop="handle" d="" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" opacity="0" />
+        <!-- what the camera tracks: the landmark skeleton over the body -->
+        <g fill="none" stroke="var(--violet)" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round" opacity="0.9">
+          <polyline data-f="trackArm" />
+          <polyline data-f="trackLeg" />
+          <line data-f="trackTorso" />
+        </g>
+        <g fill="var(--violet-2)" stroke="var(--rubber)" stroke-width="2">
+          <circle data-j="shoulder" r="6" />
+          <circle data-j="elbow" r="6" />
+          <circle data-j="wrist" r="6" />
+          <circle data-j="hip" r="6" />
+          <circle data-j="knee" r="6" />
+          <circle data-j="ankle" r="6" />
+        </g>
+      </svg>
+
+      <div class="hero__tabs" role="tablist" aria-label="Exercises in the demo">
+        {
+          exercises.map(([id, name], i) => (
+            <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-ex={id}>
+              {name}<i></i>
+            </button>
+          ))
+        }
       </div>
     </div>
   </div>
 
-  <a href="#members" class="hero__scroll mono" aria-label="Scroll to members section">Scroll<span></span></a>
+  <div class="hero__floor" aria-hidden="true"></div>
 </section>
 
 <style>
@@ -195,188 +132,226 @@ const base = import.meta.env.BASE_URL;
     position: relative;
     min-height: 100svh;
     display: grid;
-    align-items: center;
-    padding-top: 110px;
-    padding-bottom: 60px;
+    align-items: end;
+    padding-top: 120px;
+    padding-bottom: 56px;
     overflow: hidden;
-    isolation: isolate;
-  }
-  .hero__gym {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
   }
   .hero__in {
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    align-items: center;
-    gap: clamp(24px, 5vw, 72px);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: end;
+    gap: clamp(24px, 4vw, 64px);
+  }
+  .hero__copy {
+    padding-bottom: clamp(56px, 9vh, 112px);
   }
   .hero__title {
-    margin-top: 22px;
-    font-size: clamp(44px, 7vw, 96px);
-    line-height: 0.98;
+    font-size: clamp(42px, 5.6vw, 84px);
+    line-height: 0.96;
   }
-  .hero__word {
+  .hero__title span {
     display: block;
   }
-  .hero__copy .lead {
-    margin-top: 24px;
+  .hero__lead {
+    margin-top: 28px;
+    max-width: 48ch;
   }
   .hero__cta {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 32px;
+    margin-top: 36px;
   }
-  .hero__proof {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 22px;
-    margin: 30px 0 0;
-    padding: 0;
-    list-style: none;
-    color: var(--faint);
-    font-size: 11px;
-  }
-  .hero__proof li::before {
-    content: '◆ ';
-    color: var(--violet);
+  .hero__note {
+    margin-top: 22px;
+    font-size: 14px;
+    color: var(--dim);
+    max-width: 44ch;
   }
 
+  /* Stage: the lifter stands on the floor line; the tab row sits on the floor below. */
   .hero__stage {
     position: relative;
-    height: clamp(520px, 70vh, 760px);
+    height: clamp(500px, 68vh, 680px);
+    color: var(--chalk);
   }
-  .kit {
+  .hero__floor {
     position: absolute;
-    filter: drop-shadow(0 22px 28px rgba(5, 7, 10, 0.6));
+    left: 0;
+    right: 0;
+    bottom: 56px;
+    height: 1px;
+    background: var(--line-2);
+  }
+  .chalk {
+    position: absolute;
+    color: var(--chalk);
+    opacity: 0.26;
     will-change: transform;
   }
-  .kit--plate {
-    left: 2%;
-    top: 4%;
-    width: 30%;
+  .chalk--plate {
+    right: -10%;
+    bottom: 56px;
+    width: 46%;
   }
-  .kit--bell {
-    right: -2%;
-    bottom: -2%;
-    width: 34%;
+  .chalk--rack {
+    left: 8%;
+    top: -6%;
+    height: calc(106% - 56px);
+    width: auto;
+    opacity: 0.2;
   }
-  .kit--db {
-    left: -6%;
-    bottom: 18%;
-    width: 42%;
+  .chalk__label {
+    font-family: var(--font);
+    font-variation-settings: 'wdth' 125;
+    font-weight: 800;
+    font-size: 30px;
+    fill: currentColor;
   }
-  .kit__label,
-  .pose__text {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    fill: #94a3b8;
-  }
-  .kit__label--big {
-    font-size: 18px;
-    letter-spacing: 0.12em;
-  }
-  .pose__text {
-    fill: #67e8f9;
-    font-size: 12px;
-  }
-  .pose {
+  .figure {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 36%;
-    translate: -128% -52%;
-    opacity: 0.95;
-  }
-  .hero__phone {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: min(300px, 46%);
-    translate: -46% -50%;
-    rotate: -6deg;
+    left: 4%;
+    bottom: 56px;
+    height: calc(94% - 56px);
+    width: auto;
+    color: var(--chalk);
+    filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.45));
     will-change: transform;
   }
-  .hero__tip {
+  .hero__rep {
     position: absolute;
     right: 0;
-    top: 10%;
-    width: 220px;
-    padding: 14px 16px;
-    border-radius: 18px;
-    background: rgba(12, 15, 21, 0.9);
-    box-shadow:
-      inset 0 0 0 1px var(--line-2),
-      0 30px 60px -30px rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
+    top: 2%;
+    display: grid;
+    gap: 2px;
+    text-align: right;
+    z-index: 2;
   }
-  .hero__tip .mono {
-    color: var(--violet-400);
-    font-size: 10px;
+  .hero__rep b {
+    font-size: clamp(56px, 6vw, 88px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    color: var(--chalk);
   }
-  .hero__tip p {
-    margin-top: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4;
+  .hero__rep span {
+    font-size: 13px;
+    color: var(--steel);
   }
-  .hero__scroll {
+  .hero__flag {
     position: absolute;
-    left: 50%;
-    bottom: 22px;
-    translate: -50% 0;
-    display: inline-flex;
-    flex-direction: column;
+    left: 4%;
+    top: 20%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: var(--violet);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(6px);
+    z-index: 3;
+  }
+  .hero__flag::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: inherit;
+    transform: translateY(-50%) rotate(45deg);
+    border-radius: 2px;
+  }
+  .hero__tabs {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 56px;
+    display: flex;
+    gap: 4px;
     align-items: center;
-    gap: 8px;
-    color: var(--faint);
-    text-decoration: none;
-    font-size: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
   }
-  .hero__scroll span {
-    width: 1px;
-    height: 36px;
-    background: linear-gradient(var(--cyan), transparent);
-    animation: drop 1.8s ease-in-out infinite;
+  .hero__tabs::-webkit-scrollbar {
+    display: none;
   }
-  @keyframes drop {
-    50% {
-      transform: translateY(6px);
-      opacity: 0.4;
-    }
+  .hero__tabs button {
+    position: relative;
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--dim);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.25s ease;
+  }
+  .hero__tabs button:hover {
+    color: var(--steel);
+  }
+  .hero__tabs button[aria-selected='true'] {
+    color: var(--chalk);
+  }
+  .hero__tabs button i {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 2px;
+    height: 2px;
+    background: var(--violet-2);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
   }
 
   @media (max-width: 960px) {
     .hero {
       padding-top: 96px;
+      padding-bottom: 40px;
+      align-items: start;
+    }
+    .hero__floor {
+      bottom: 40px;
     }
     .hero__in {
       grid-template-columns: 1fr;
     }
+    .hero__copy {
+      padding-bottom: 8px;
+    }
     .hero__stage {
-      height: clamp(440px, 80vw, 600px);
-      margin-top: 8px;
+      height: clamp(420px, 108vw, 520px);
     }
-    .hero__phone {
-      width: min(260px, 52%);
-      translate: -40% -50%;
+    .figure {
+      height: calc(90% - 56px);
     }
-    .hero__tip {
-      top: 0;
-      width: 190px;
+    .hero__rep b {
+      font-size: 48px;
     }
-    .pose {
-      width: 40%;
-      translate: -125% -52%;
+    .hero__rep span {
+      font-size: 12px;
     }
-    .hero__scroll {
-      display: none;
+    .hero__flag {
+      left: 0;
+      top: 12%;
+      font-size: 12px;
+    }
+    .chalk--rack {
+      left: 2%;
+    }
+    .chalk--plate {
+      width: 50%;
+      right: -16%;
+    }
+    .hero__tabs {
+      margin-inline: calc(-1 * var(--gutter));
+      padding-inline: var(--gutter);
     }
   }
 </style>

@@ -11,21 +11,21 @@ const links = [
 
 <header class="nav" data-nav>
   <div class="wrap nav__in">
-    <a href={base} class="nav__brand" aria-label="SpotAI home">
-      <img src={`${base}icon.svg`} width="34" height="34" alt="" />
-      <span>Spot<b>AI</b></span>
+    <a href={base} class="nav__brand wide" aria-label="SpotAI home">
+      <img src={`${base}icon.svg`} width="30" height="30" alt="" />
+      <span>SpotAI</span>
     </a>
     <nav aria-label="Primary" class="nav__links">
       {links.map(([href, label]) => <a href={href}>{label}</a>)}
     </nav>
-    <a href="#download" class="btn btn--primary nav__cta">Get the app</a>
+    <a href="#download" class="btn btn--ghost nav__cta">Get early access</a>
     <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false" data-burger>
       <span></span><span></span>
     </button>
   </div>
   <nav aria-label="Mobile" class="nav__sheet" data-sheet>
     {links.map(([href, label]) => <a href={href}>{label}</a>)}
-    <a href="#download" class="btn btn--primary">Get the app</a>
+    <a href="#download" class="btn btn--primary">Get early access</a>
   </nav>
 </header>
 
@@ -36,13 +36,11 @@ const links = [
     z-index: 50;
     padding-top: env(safe-area-inset-top, 0px);
     transition:
-      background 0.4s ease,
-      box-shadow 0.4s ease;
+      background 0.3s ease,
+      box-shadow 0.3s ease;
   }
   .nav.is-solid {
-    background: rgba(5, 7, 10, 0.72);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(20, 21, 24, 0.9);
     box-shadow: inset 0 -1px 0 var(--line);
   }
   .nav__in {
@@ -55,19 +53,12 @@ const links = [
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: -0.03em;
+    font-size: 19px;
+    letter-spacing: 0;
     text-decoration: none;
   }
   .nav__brand img {
-    border-radius: 10px;
-  }
-  .nav__brand b {
-    background: var(--ink-fill);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    border-radius: 8px;
   }
   .nav__links {
     display: flex;
@@ -75,18 +66,18 @@ const links = [
     margin-left: auto;
   }
   .nav__links a {
-    font-size: 14.5px;
-    font-weight: 600;
-    color: var(--muted);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--steel);
     text-decoration: none;
     transition: color 0.2s ease;
   }
   .nav__links a:hover {
-    color: var(--text);
+    color: var(--chalk);
   }
   .nav__cta {
-    min-height: 44px;
-    padding-inline: 20px;
+    min-height: 42px;
+    padding-inline: 18px;
     font-size: 14px;
   }
   .nav__burger {
@@ -94,8 +85,8 @@ const links = [
     width: 44px;
     height: 44px;
     border: 0;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    background: var(--iron);
     cursor: pointer;
     flex-direction: column;
     gap: 6px;
@@ -105,7 +96,7 @@ const links = [
   .nav__burger span {
     width: 20px;
     height: 2px;
-    background: var(--text);
+    background: var(--chalk);
     border-radius: 2px;
     transition: transform 0.3s var(--ease);
   }
@@ -118,18 +109,18 @@ const links = [
   .nav__sheet {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 2px;
     padding: 8px var(--gutter) 20px;
   }
   .nav__sheet a {
     padding: 14px 4px;
     font-weight: 600;
     text-decoration: none;
-    color: var(--muted);
+    color: var(--steel);
     border-bottom: 1px solid var(--line);
   }
   .nav__sheet .btn {
-    margin-top: 12px;
+    margin-top: 14px;
     color: #fff;
     border: 0;
   }
@@ -143,7 +134,7 @@ const links = [
       margin-left: auto;
     }
     .nav.is-open {
-      background: rgba(5, 7, 10, 0.96);
+      background: rgba(20, 21, 24, 0.98);
     }
     .nav.is-open .nav__sheet {
       display: flex;
