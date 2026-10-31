@@ -5,21 +5,18 @@ const steps = [
     problem: 'No idea what to train today',
     fix: 'Check in and the app picks today’s session from your last week: the muscle group that’s most rested, or cardio, cycling, mobility.',
     src: 'm-dark-picker.webp',
-    pos: '50% 57%',
     alt: 'Session picker: What are you training today? Strength is suggested with the reason, then Cardio, Cycling and Mobility',
   },
   {
     problem: 'Same three exercises every time',
     fix: 'Tick the ones you want. Each exercise shows how many times you did it this week, so the gaps are obvious.',
     src: 'm-dark-exercises.webp',
-    pos: '50% 43%',
     alt: 'Exercise checklist for Back and biceps with Lat pulldown, Dumbbell row, Biceps curl and Hammer curl, each showing how many times it was done this week',
   },
   {
     problem: 'Sets never get written down',
     fix: 'Reps and kilograms per set, a 30-second short if you forgot the move, or let the camera count the set for you.',
     src: 'm-dark-workout.webp',
-    pos: '50% 19%',
     alt: 'Workout screen for Lat pulldown with a how-to, Watch short and Record set buttons and sets of reps and kilograms to log',
   },
 ];
@@ -29,26 +26,24 @@ const steps = [
   <div class="wrap">
     <div class="members__head">
       <h2 id="members-title">Walk in with no plan? Not anymore.</h2>
-      <p class="lead">Check in and SpotAI gives you today’s workout, then logs every set.</p>
+      <p class="lead">Check in on your phone. SpotAI gives you today’s workout, then logs every set.</p>
     </div>
 
     <ol class="steps" role="list">
       {
         steps.map((s, i) => (
           <li class="step">
-            <div class="step__shot">
-              <img
-                src={`${base}shots/${s.src}`}
-                width="640"
-                height="1385"
-                alt={s.alt}
-                loading="lazy"
-                decoding="async"
-                style={`object-position: ${s.pos}`}
-              />
+            <div class="step__phone">
+              <div class="phone">
+                <img src={`${base}shots/${s.src}`} width="640" height="1385" alt={s.alt} loading="lazy" decoding="async" />
+              </div>
             </div>
             <div class="step__text">
               <span class="step__n" aria-hidden="true">{i + 1}</span>
+              <span class="step__app">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" /><path d="M10 18h4" /></svg>
+                In the SpotAI app
+              </span>
               <h3>{s.problem}</h3>
               <p>{s.fix}</p>
             </div>
@@ -90,22 +85,27 @@ const steps = [
       0 30px 50px -30px rgba(0, 0, 0, 0.9);
     overflow: hidden;
   }
-  .step__shot {
+  .step__phone {
     position: relative;
-    aspect-ratio: 4 / 3;
-    background: #0b0c0f;
+    height: 340px;
+    padding: 26px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    background: radial-gradient(70% 60% at 50% 100%, rgba(139, 92, 246, 0.32), transparent 70%);
   }
-  .step__shot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .step__phone .phone {
+    width: 74%;
+    flex: 0 0 auto;
   }
-  .step__shot::after {
+  .step__phone::after {
     content: '';
     position: absolute;
     inset: auto 0 0;
-    height: 40%;
-    background: linear-gradient(180deg, transparent, rgba(23, 25, 32, 0.9));
+    height: 30%;
+    background: linear-gradient(180deg, transparent, rgba(23, 25, 32, 0.95));
+    pointer-events: none;
   }
   .step__text {
     position: relative;
@@ -126,8 +126,17 @@ const steps = [
     font-weight: 800;
     box-shadow: 0 0 0 4px #171920;
   }
-  .step h3 {
+  .step__app {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     margin-top: 10px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--violet-2);
+  }
+  .step h3 {
+    margin-top: 8px;
     font-size: 21px;
     line-height: 1.15;
   }
@@ -144,18 +153,23 @@ const steps = [
       gap: 16px;
     }
     .step {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
       grid-template-rows: none;
     }
-    .step__shot {
-      aspect-ratio: auto;
-      min-height: 100%;
-    }
-    .step__shot::after {
-      inset: 0 0 0 auto;
-      width: 40%;
+    .step__phone {
       height: auto;
-      background: linear-gradient(90deg, transparent, rgba(23, 25, 32, 0.9));
+      min-height: 100%;
+      padding: 24px 0 0 20px;
+      align-items: flex-start;
+    }
+    .step__phone .phone {
+      width: 92%;
+    }
+    .step__phone::after {
+      inset: 0 0 0 auto;
+      width: 30%;
+      height: auto;
+      background: linear-gradient(90deg, transparent, rgba(23, 25, 32, 0.95));
     }
     .step__n {
       position: static;
@@ -169,15 +183,20 @@ const steps = [
     .step {
       grid-template-columns: 1fr;
     }
-    .step__shot {
-      aspect-ratio: 16 / 10;
+    .step__phone {
+      height: 280px;
       min-height: 0;
+      padding: 22px 0 0;
+      justify-content: center;
     }
-    .step__shot::after {
+    .step__phone .phone {
+      width: 62%;
+    }
+    .step__phone::after {
       inset: auto 0 0;
       width: auto;
-      height: 40%;
-      background: linear-gradient(180deg, transparent, rgba(23, 25, 32, 0.9));
+      height: 30%;
+      background: linear-gradient(180deg, transparent, rgba(23, 25, 32, 0.95));
     }
   }
 </style>
