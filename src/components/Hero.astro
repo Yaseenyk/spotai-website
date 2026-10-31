@@ -12,27 +12,29 @@ const exercises = [
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="wrap hero__in">
     <div class="hero__copy">
-      <h1 id="hero-title" class="hero__title wide">Nobody checking your form. No plan for today. Dues chased on WhatsApp.</h1>
+      <h1 id="hero-title" class="hero__title wide">No spotter. No plan. Dues on WhatsApp.</h1>
       <p class="hero__sub">SpotAI fixes all three.</p>
-      <p class="lead hero__lead">
-        The AI gym app for Indian gyms. Members get a coach that checks their squat on the phone camera, a workout log,
-        their gym’s leaderboard and a buddy to train with. Owners get arrivals, dues and UPI payments in one console.
-        Video never leaves the phone.
+      <p class="hero__lead">
+        The AI gym app for Indian gyms: form check on your phone camera, today’s plan, your gym’s leaderboard, dues
+        paid with UPI.
       </p>
       <div class="hero__cta">
         <a href="#download" class="btn btn--primary">Get early access</a>
         <a href="#owners" class="btn btn--ghost">For gym owners</a>
       </div>
-      <p class="hero__note">
-        In private demo with partner gyms in Hyderabad. Play Store and App Store links on launch day.
-      </p>
+      <p class="hero__note">Private demo with partner gyms in Hyderabad.</p>
     </div>
 
-    <div class="hero__stage" data-stage>
-      <!-- Chalk kit on the floor; drawn on load. -->
+    <div class="stage" data-stage>
       <div class="stage__light" aria-hidden="true"></div>
-      <div class="stage__pool" aria-hidden="true"></div>
-      <svg class="chalk chalk--plate2" viewBox="0 0 320 320" aria-hidden="true" data-kit data-depth="0.35">
+
+      <svg class="chalk chalk--rack" viewBox="0 0 60 600" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-chalk>
+          <path d="M18 0 V600 M42 0 V600" />
+          {[40, 100, 160, 220, 280, 340, 400, 460, 520].map((y) => <circle cx="30" cy={y} r="5" />)}
+        </g>
+      </svg>
+      <svg class="chalk chalk--plate chalk--plate2" viewBox="0 0 320 320" aria-hidden="true" data-kit data-depth="0.35">
         <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-chalk>
           <circle cx="160" cy="160" r="150" />
           <circle cx="160" cy="160" r="112" />
@@ -49,25 +51,18 @@ const exercises = [
         </g>
         <text x="160" y="76" text-anchor="middle" class="chalk__label">20</text>
       </svg>
-      <svg class="chalk chalk--rack" viewBox="0 0 60 600" aria-hidden="true">
-        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-chalk>
-          <path d="M18 0 V600 M42 0 V600" />
-          {[40, 100, 160, 220, 280, 340, 400, 460, 520].map((y) => <circle cx="30" cy={y} r="5" />)}
-        </g>
-      </svg>
 
-      <div class="hero__set" data-rep-box>
-        <span class="hero__set-name" data-set-name>Squat</span>
-        <b class="wide" data-rep>0</b>
-        <span class="hero__ticks" aria-hidden="true" data-ticks><i></i><i></i><i></i><i></i></span>
-        <span class="hero__set-label">reps this set</span>
+      <div class="set" data-rep-box>
+        <span class="set__name" data-set-name>Squat</span>
+        <b class="set__count wide" data-rep>0</b>
+        <span class="set__ticks" aria-hidden="true" data-ticks><i></i><i></i><i></i><i></i></span>
+        <span class="set__label">reps this set</span>
       </div>
-      <div class="hero__flag" data-hflag>Knees out over your toes</div>
+      <div class="cue" data-hflag>Knees out over your toes</div>
 
       <!-- The lifter. Side view; every joint is driven by the exercise reel in motion.ts. -->
       <svg class="figure" viewBox="0 0 520 560" aria-hidden="true" data-figure>
         <ellipse cx="270" cy="508" rx="130" ry="9" fill="currentColor" opacity="0.1" />
-        <!-- gear behind the lifter -->
         <g data-gear="bench" opacity="0">
           <rect x="110" y="372" width="300" height="22" rx="6" fill="var(--iron-2)" stroke="var(--line-2)" />
           <rect x="150" y="394" width="14" height="106" fill="var(--iron-2)" />
@@ -79,9 +74,7 @@ const exercises = [
           <rect x="292" y="356" width="80" height="16" rx="6" fill="var(--iron-2)" stroke="var(--line-2)" />
         </g>
         <line data-gear="cable" x1="300" y1="0" x2="300" y2="100" stroke="var(--steel)" stroke-width="3" opacity="0" />
-        <circle data-prop="plate" cx="0" cy="0" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" opacity="0" />
-        <circle data-prop="plate2" cx="0" cy="0" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" opacity="0" />
-        <!-- back limbs, dimmer: depth -->
+        <circle data-prop="plate" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" opacity="0" />
         <g fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-linecap="round" opacity="0.5">
           <line data-f="uarmB" stroke-width="17" />
           <line data-f="farmB" stroke-width="14" />
@@ -90,7 +83,6 @@ const exercises = [
           <line data-f="shinB" stroke-width="16" />
           <line data-f="footB" stroke-width="12" />
         </g>
-        <!-- torso and front limbs -->
         <g fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
           <line data-f="thigh" stroke-width="23" />
           <line data-f="shin" stroke-width="17" />
@@ -103,11 +95,10 @@ const exercises = [
           <ellipse data-f="head" rx="23" ry="26" stroke="none" />
         </g>
         <g data-prop="db" opacity="0">
-          <path data-prop="dbShape" d="" fill="var(--rubber)" stroke="currentColor" stroke-width="6" stroke-linejoin="round" />
+          <path data-prop="dbShape" fill="var(--rubber)" stroke="currentColor" stroke-width="6" stroke-linejoin="round" />
         </g>
-        <path data-prop="handle" d="" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" opacity="0" />
-        <!-- what the camera tracks: the landmark skeleton over the body -->
-        <g fill="none" stroke="var(--violet)" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round" opacity="0.9">
+        <path data-prop="handle" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" opacity="0" />
+        <g fill="none" stroke="var(--violet-2)" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round" opacity="0.9">
           <polyline data-f="trackArm" />
           <polyline data-f="trackLeg" />
           <line data-f="trackTorso" />
@@ -122,7 +113,7 @@ const exercises = [
         </g>
       </svg>
 
-      <div class="hero__tabs" role="tablist" aria-label="Exercises in the demo">
+      <div class="tabs" role="tablist" aria-label="Exercises in the demo">
         {
           exercises.map(([id, name], i) => (
             <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-ex={id}>
@@ -133,36 +124,32 @@ const exercises = [
       </div>
     </div>
   </div>
-
 </section>
 
 <style>
+  /* Layout: copy left, stage right, both centred in the first fold. */
   .hero {
     position: relative;
-    min-height: 100svh;
     display: grid;
     align-items: center;
+    min-height: 100svh;
     padding-top: 104px;
     padding-bottom: 48px;
     overflow: hidden;
   }
   .hero__in {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
-    gap: clamp(24px, 4vw, 64px);
-  }
-  .hero__copy {
-    padding-bottom: 0;
+    gap: clamp(32px, 5vw, 80px);
   }
   .hero__title {
-    font-size: clamp(28px, 2.7vw, 44px);
-    line-height: 1.06;
-    max-width: 22ch;
-    letter-spacing: -0.02em;
+    font-size: clamp(34px, 3.6vw, 56px);
+    line-height: 1.02;
+    max-width: 12ch;
   }
   .hero__sub {
-    margin-top: 18px;
+    margin-top: 14px;
     font-size: clamp(22px, 1.9vw, 30px);
     font-weight: 800;
     font-variation-settings: 'wdth' 118;
@@ -170,80 +157,68 @@ const exercises = [
     color: var(--violet-2);
   }
   .hero__lead {
-    margin-top: 22px;
-    max-width: 50ch;
+    margin-top: 20px;
+    max-width: 40ch;
     font-size: 17px;
+    color: var(--steel);
+    text-wrap: pretty;
   }
   .hero__cta {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 30px;
+    margin-top: 28px;
   }
   .hero__note {
-    margin-top: 18px;
-    font-size: 14px;
+    margin-top: 16px;
+    font-size: 13.5px;
     color: var(--dim);
-    max-width: 44ch;
   }
 
-  /* Stage: the lifter stands on the floor line; the tab row sits on the floor below. */
-  .hero__stage {
+  /* Stage: a floor line 56px up (the tab row sits on the floor below it). */
+  .stage {
+    --floor: 56px;
     position: relative;
-    height: clamp(460px, 58vh, 600px);
+    height: clamp(440px, 56vh, 580px);
     color: var(--chalk);
   }
-  .hero__stage::after {
+  .stage::after {
     content: '';
     position: absolute;
     left: -12%;
     right: -12%;
-    bottom: 56px;
+    bottom: var(--floor);
     height: 1px;
     background: var(--line-2);
   }
+  .stage__light {
+    position: absolute;
+    inset: -10% 14% var(--floor) 6%;
+    background: radial-gradient(60% 90% at 50% 100%, rgba(236, 233, 225, 0.08), transparent 70%);
+    pointer-events: none;
+  }
   .chalk {
     position: absolute;
+    bottom: var(--floor);
     color: var(--chalk);
-    opacity: 0.26;
     will-change: transform;
+  }
+  .chalk--rack {
+    left: 3%;
+    top: -6%;
+    bottom: auto;
+    height: calc(106% - var(--floor));
+    width: auto;
+    opacity: 0.2;
   }
   .chalk--plate {
     right: -3%;
-    bottom: 56px;
     width: 24%;
     opacity: 0.2;
   }
   .chalk--plate2 {
     right: 6%;
-    bottom: 56px;
-    width: 24%;
     opacity: 0.12;
-  }
-  .stage__light {
-    position: absolute;
-    left: 10%;
-    right: 18%;
-    top: -10%;
-    bottom: 56px;
-    background: radial-gradient(60% 90% at 50% 100%, rgba(236, 233, 225, 0.075), transparent 70%);
-    pointer-events: none;
-  }
-  .stage__pool {
-    position: absolute;
-    left: 6%;
-    right: 14%;
-    bottom: 50px;
-    height: 14px;
-    background: radial-gradient(closest-side, rgba(236, 233, 225, 0.22), transparent);
-    pointer-events: none;
-  }
-  .chalk--rack {
-    left: 3%;
-    top: -6%;
-    height: calc(106% - 56px);
-    width: auto;
-    opacity: 0.2;
   }
   .chalk__label {
     font-family: var(--font);
@@ -255,57 +230,57 @@ const exercises = [
   .figure {
     position: absolute;
     left: 0;
-    bottom: 56px;
-    height: calc(92% - 56px);
+    bottom: var(--floor);
+    height: calc(92% - var(--floor));
     width: auto;
-    color: var(--chalk);
-    filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.45));
     will-change: transform;
   }
-  .hero__set {
+
+  .set {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 2;
     display: grid;
     justify-items: end;
     gap: 6px;
     text-align: right;
-    z-index: 2;
   }
-  .hero__set-name {
+  .set__name {
     font-size: 14px;
     font-weight: 600;
     color: var(--steel);
   }
-  .hero__set b {
-    font-size: clamp(56px, 6vw, 88px);
+  .set__count {
+    font-size: clamp(48px, 5vw, 76px);
     line-height: 0.9;
     letter-spacing: -0.03em;
     font-variant-numeric: tabular-nums;
-    color: var(--chalk);
   }
-  .hero__ticks {
+  .set__ticks {
     display: flex;
     gap: 5px;
   }
-  .hero__ticks i {
+  .set__ticks i {
     width: 18px;
     height: 4px;
     border-radius: 2px;
     background: var(--iron-2);
     transition: background 0.3s ease;
   }
-  .hero__ticks i.is-on {
+  .set__ticks i.is-on {
     background: var(--violet-2);
   }
-  .hero__set-label {
+  .set__label {
     font-size: 12.5px;
     color: var(--dim);
   }
-  .hero__flag {
+
+  .cue {
     position: absolute;
     left: 2%;
     top: 52%;
+    z-index: 3;
     padding: 9px 12px;
     border-radius: 8px;
     background: var(--violet);
@@ -315,9 +290,8 @@ const exercises = [
     white-space: nowrap;
     opacity: 0;
     transform: translateY(6px);
-    z-index: 3;
   }
-  .hero__flag::after {
+  .cue::after {
     content: '';
     position: absolute;
     right: -5px;
@@ -328,22 +302,21 @@ const exercises = [
     transform: translateY(-50%) rotate(45deg);
     border-radius: 2px;
   }
-  .hero__tabs {
+
+  .tabs {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 56px;
+    inset: auto 0 0;
+    height: var(--floor);
     display: flex;
     gap: 4px;
     align-items: center;
     overflow-x: auto;
     scrollbar-width: none;
   }
-  .hero__tabs::-webkit-scrollbar {
+  .tabs::-webkit-scrollbar {
     display: none;
   }
-  .hero__tabs button {
+  .tabs button {
     position: relative;
     flex: 0 0 auto;
     padding: 7px 11px;
@@ -359,19 +332,17 @@ const exercises = [
       color 0.25s ease,
       background 0.25s ease;
   }
-  .hero__tabs button:hover {
+  .tabs button:hover {
     color: var(--steel);
     background: rgba(236, 233, 225, 0.04);
   }
-  .hero__tabs button[aria-selected='true'] {
+  .tabs button[aria-selected='true'] {
     color: var(--chalk);
     background: var(--iron-2);
   }
-  .hero__tabs button i {
+  .tabs button i {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: auto 0 0;
     height: 2px;
     background: var(--violet-2);
     transform: scaleX(0);
@@ -380,42 +351,38 @@ const exercises = [
 
   @media (max-width: 960px) {
     .hero {
+      align-items: start;
       padding-top: 96px;
       padding-bottom: 32px;
-      align-items: start;
     }
     .hero__in {
       grid-template-columns: 1fr;
     }
-    .hero__copy {
-      padding-bottom: 8px;
+    .hero__title {
+      max-width: none;
     }
-    .hero__stage {
-      height: clamp(420px, 108vw, 520px);
+    .stage {
+      height: clamp(400px, 100vw, 500px);
+      margin-top: 8px;
     }
     .figure {
-      height: calc(90% - 56px);
+      height: calc(88% - var(--floor));
     }
-    .hero__set b {
-      font-size: 48px;
+    .set__count {
+      font-size: 44px;
     }
-    .hero__flag {
-      left: 0;
+    .cue {
       top: 48%;
       font-size: 12px;
     }
-    .chalk--rack {
-      left: 2%;
-    }
     .chalk--plate {
-      width: 34%;
-      right: -6%;
+      width: 30%;
+      right: -8%;
     }
     .chalk--plate2 {
-      width: 34%;
-      right: 8%;
+      right: 4%;
     }
-    .hero__tabs {
+    .tabs {
       margin-inline: calc(-1 * var(--gutter));
       padding-inline: var(--gutter);
     }
