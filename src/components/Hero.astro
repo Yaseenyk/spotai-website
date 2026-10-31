@@ -83,33 +83,47 @@ const exercises = [
         <line data-gear="cable" x1="300" y1="0" x2="300" y2="100" stroke="var(--steel)" stroke-width="3" opacity="0" />
         <circle data-prop="plate" cx="0" cy="0" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" opacity="0" />
         <circle data-prop="plate2" cx="0" cy="0" r="46" fill="var(--rubber)" stroke="currentColor" stroke-width="7" opacity="0" />
+        <defs>
+          <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f3f1ea" />
+            <stop offset="1" stop-color="#d6d2c7" />
+          </linearGradient>
+          <linearGradient id="kitgrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3b3650" />
+            <stop offset="1" stop-color="#2a2738" />
+          </linearGradient>
+        </defs>
         <!-- back limbs, dimmer: depth -->
-        <g fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-linecap="round" opacity="0.5">
-          <line data-f="uarmB" stroke-width="17" />
-          <line data-f="farmB" stroke-width="14" />
-          <circle data-f="handB" r="9" stroke="none" />
-          <line data-f="thighB" stroke-width="21" />
-          <line data-f="shinB" stroke-width="16" />
-          <line data-f="footB" stroke-width="12" />
+        <g fill="#b7b3aa" stroke="#b7b3aa" stroke-width="2" stroke-linejoin="round" opacity="0.62">
+          <path data-f="thighB" /><path data-f="shortsB" fill="#1c1e25" stroke="#1c1e25" /><circle data-f="kneeB" r="12" /><path data-f="calfB" /><path data-f="footB" />
+          <path data-f="uarmB" /><circle data-f="elbowB" r="9" /><path data-f="farmB" /><circle data-f="handB" r="9" />
         </g>
-        <!-- torso and front limbs -->
-        <g fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <line data-f="thigh" stroke-width="23" />
-          <line data-f="shin" stroke-width="17" />
-          <line data-f="foot" stroke-width="13" />
-          <path data-f="torso" stroke-width="14" />
-          <line data-f="neck" stroke-width="13" />
-          <line data-f="uarm" stroke-width="18" />
-          <line data-f="farm" stroke-width="15" />
-          <circle data-f="hand" r="10" stroke="none" />
-          <ellipse data-f="head" rx="23" ry="26" stroke="none" />
+        <!-- body -->
+        <g fill="url(#skin)" stroke="url(#skin)" stroke-width="2" stroke-linejoin="round">
+          <path data-f="torso" />
+          <path data-f="shirt" fill="url(#kitgrad)" stroke="none" />
+          <circle data-f="hipJ" r="18" fill="#262932" stroke="none" />
+          <path data-f="thigh" /><path data-f="shorts" fill="#262932" stroke="#262932" /><circle data-f="knee" r="13" /><path data-f="calf" /><circle data-f="ankle" r="8" />
+          <path data-f="foot" fill="#e3e0d8" stroke="none" /><path data-f="sole" fill="#2b2d34" stroke="none" />
+          <path data-f="neck" />
+          <g data-f="headG">
+            <path d="M-18 -24 Q0 -32 14 -22 Q23 -12 21 -3 L27 3 L22 7 Q22 13 17 17 Q10 25 -2 23 Q-18 17 -21 0 Q-23 -14 -18 -24 Z" />
+            <path d="M-20 -22 Q0 -34 17 -20 Q10 -17 0 -19 Q-14 -17 -20 -2 Q-24 -12 -20 -22 Z" fill="#2b2d34" stroke="none" />
+            <ellipse cx="-5" cy="1" rx="3.5" ry="5" fill="#cfcbc0" stroke="none" />
+            <circle cx="12" cy="-6" r="2" fill="#2b2d34" stroke="none" />
+          </g>
+          <circle data-f="shoulderJ" r="15" />
+        </g>
+        <!-- front arm, edged so it separates from the chest -->
+        <g fill="url(#skin)" stroke="var(--rubber)" stroke-width="2.5" stroke-linejoin="round">
+          <path data-f="uarm" /><circle data-f="elbow" r="10" /><path data-f="farm" /><circle data-f="hand" r="9" />
         </g>
         <g data-prop="db" opacity="0">
           <path data-prop="dbShape" d="" fill="var(--rubber)" stroke="currentColor" stroke-width="6" stroke-linejoin="round" />
         </g>
         <path data-prop="handle" d="" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" opacity="0" />
         <!-- what the camera tracks: the landmark skeleton over the body -->
-        <g fill="none" stroke="var(--violet)" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round" opacity="0.9">
+        <g fill="none" stroke="var(--violet-2)" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round" opacity="0.9">
           <polyline data-f="trackArm" />
           <polyline data-f="trackLeg" />
           <line data-f="trackTorso" />
