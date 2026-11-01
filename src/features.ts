@@ -96,7 +96,7 @@ export const FEATURES: Feature[] = [
   {
     slug: 'workouts',
     nav: 'Workouts',
-    title: 'Gym workout plan app: today’s session picked, every set logged',
+    title: 'Gym workout plan app: every set logged',
     description:
       'Workout tracker for Indian gyms: today’s session picked from your week, tick the exercises, log reps and kilograms per set, a short for every exercise.',
     audience: 'members',
@@ -157,7 +157,7 @@ export const FEATURES: Feature[] = [
   {
     slug: 'leaderboard',
     nav: 'Leaderboard & buddies',
-    title: 'Gym buddy app and gym leaderboard: gains, streaks, partners',
+    title: 'Gym buddy app and gym leaderboard',
     description:
       'Gym leaderboard app: opt in for visits, kilograms and streak, lifetime gains and badges, and a buddy who trains when you do. First names only.',
     audience: 'members',
@@ -214,7 +214,7 @@ export const FEATURES: Feature[] = [
   {
     slug: 'food-log',
     nav: 'Food log',
-    title: 'Calorie counter for Indian food: roti, dal, idli, biryani',
+    title: 'Calorie counter for Indian food: roti, dal, idli',
     description:
       'Calorie counter app for Indian food: search 672 home-style dishes, log by servings or grams, see daily and monthly calories and protein. Logging is optional.',
     audience: 'members',
