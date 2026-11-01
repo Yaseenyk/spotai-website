@@ -3,9 +3,14 @@ export const SITE = {
   name: 'SpotAI',
   tagline: 'The AI gym buddy for Indian gyms',
   description:
-    'Nobody checking your form, no plan for today, dues chased on WhatsApp: SpotAI fixes all three. An AI gym coach that checks your squat on the phone camera, a workout log, an opt-in gym leaderboard and buddies for members; arrivals, dues reminders and UPI payments for gym owners in India. Video never leaves the phone.',
+    'AI gym app for India: squat form check on your phone, today’s workout, your gym’s leaderboard. Owners see who came and who owes. Free pilot in Hyderabad.',
   url: 'https://spotai.streamerosai.com/',
   email: 'contact@streamerosai.com',
+  // WhatsApp click-to-chat. Digits only with country code; replace the placeholder before launch.
+  whatsapp: '919000000000',
+  // Form endpoint (Formspree, Web3Forms or similar). Empty string keeps the mailto fallback.
+  formEndpoint: '',
+  pilot: { gyms: 10, days: 90, city: 'Hyderabad' },
   author: { name: 'Yaseen Khatib', url: 'https://yaseenkhatib.streamerosai.com' },
   twitterCard: 'summary_large_image',
   locale: 'en_IN',
@@ -28,34 +33,34 @@ export const SITE = {
 export const FAQ = [
   {
     q: 'What is SpotAI?',
-    a: 'SpotAI is a gym app with two sides. Members get an AI coach that checks their form on the phone camera, a workout log, a gym leaderboard and buddies to train with. Gym owners get a dashboard with arrivals, dues, revenue and busy hours, plus a front-desk console for check-ins and a trainer console for reviewing the AI coach’s tips.',
+    a: 'SpotAI is a gym app with two sides. Members get an AI coach that checks their squat on the phone camera, today’s workout, a gym leaderboard and buddies. Gym owners get a console with live arrivals, who stopped coming, dues and busy hours, plus a front-desk console and a trainer console.',
   },
   {
-    q: 'Does the AI coach send my video to the cloud?',
-    a: 'No. Pose tracking runs on your phone with MediaPipe. Only rep counts and form flags leave the device, never frames. Clips are saved only if you turn that on in your privacy settings, and you can delete them any time.',
+    q: 'How much does SpotAI cost?',
+    a: 'The first 10 gyms in Hyderabad get a free 90-day pilot. Pricing after the pilot will be announced to pilot gyms first. There is no per-member fee planned and your member list exports as CSV any time.',
   },
   {
-    q: 'Which exercises does the form check cover?',
-    a: 'Squats today, with knee valgus, shallow depth and excessive forward lean detected per rep. More exercises are coming; every exercise in the library already has a how-to and a short video.',
+    q: 'Do my members have to install an app?',
+    a: 'No. The front desk checks members in by QR or by name and tracks dues without anyone installing anything. Members who want the AI coach, leaderboard, buddies or in-app payments install the app when they are ready.',
   },
   {
-    q: 'How does the gym leaderboard work?',
-    a: 'It is opt-in and shows first names only. Three boards: visits this week, kilograms lifted this week, and current streak. You can leave at any time and your numbers go private again.',
+    q: 'What do I need at the gym?',
+    a: 'A laptop or phone with internet for the console, and an Android phone for any member who wants the app. The face check-in device is optional and comes later. Workout logging in the member app works offline and syncs later.',
   },
   {
-    q: 'What do gym owners get?',
-    a: 'Today’s arrivals with dues flagged, revenue and visit trends, busy hours, members, plans, dues reminders that respect consent, member complaints with reference numbers, and staff roles for trainers and the front desk. Members pay dues in the app with UPI.',
-  },
-  {
-    q: 'Is SpotAI compliant with India’s data protection rules?',
-    a: 'SpotAI is built around consent per purpose, as the DPDP Act expects. Camera coaching, clip saving, face check-in, community matching and chat are each separate opt-ins. Members can export or delete their data from the privacy centre, and a complaint gets a reference number the gym must answer.',
-  },
-  {
-    q: 'Is there a face check-in? Is it safe?',
-    a: 'Face check-in is optional and runs on a small device at the gym entrance, never in the cloud. Templates are encrypted, there is a liveness check, and the member confirms each check-in on their phone. Camera features are for adults only.',
+    q: 'Is SpotAI available in Hindi?',
+    a: 'The app is in English today. Coach tips have Hindi and Bengali versions drafted and waiting for native-speaker review before they ship.',
   },
   {
     q: 'When can I download SpotAI?',
-    a: 'The app is in private demo with partner gyms now. Join the waitlist and you will get the Play Store and App Store links on launch day.',
+    a: 'The app is in private demo with partner gyms in Hyderabad. Android and iOS come at launch; join the waitlist or ask your gym to switch it on and we will tell you first.',
+  },
+  {
+    q: 'Which exercises does the AI coach check?',
+    a: 'Squats today: knee valgus, shallow depth and forward lean, per rep. Deadlift and bench press are next. Every exercise already has a how-to and a short video.',
+  },
+  {
+    q: 'Who owns the data?',
+    a: 'Your gym owns its member list and can export it as CSV any time. Members own their own data and can export or delete it from the app. Camera video never leaves the phone.',
   },
 ] as const;

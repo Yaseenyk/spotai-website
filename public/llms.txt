@@ -23,6 +23,16 @@ Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streameros
 - Trainer console: review queue for the AI coach's tips with each flag's wrong-rate, moderation, helper endorsements, group creation.
 - Face check-in (optional): runs on a small device at the entrance with a liveness check and encrypted templates; stays in shadow mode until calibrated with consenting members.
 
+## Limits today
+
+- AI form check covers squats only; deadlift and bench press are next.
+- Dues reminders and UPI payments run in demo mode in the pilot; nothing is sent or charged.
+- Face check-in is optional hardware in shadow mode until calibrated with consenting members.
+- Private demo with partner gyms in Hyderabad; no public pricing yet; Android and iOS at launch.
+- English only; Hindi and Bengali coach tips drafted, awaiting native-speaker review.
+
+Last updated: 2026-11-01
+
 ## Technical facts
 
 - Apps: Vue 3 member app packaged with Capacitor for Android and iOS; Vue 3 owner dashboard and staff console on the web.
@@ -34,5 +44,7 @@ Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streameros
 
 ## Pages
 
+- https://spotai.streamerosai.com/for-gym-owners/ — owner landing: who came, who stopped coming, who owes; free 90-day pilot for the first 10 Hyderabad gyms
+- https://spotai.streamerosai.com/pricing/ — free pilot, free for members, no per-member fee planned, CSV export any time
 - https://spotai.streamerosai.com/features/ — index of every feature page
 - https://spotai.streamerosai.com/ : home, with sections for members, the AI coach, gains and leaderboard, gym owners, privacy, FAQ and download.

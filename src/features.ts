@@ -34,9 +34,9 @@ export const FEATURES: Feature[] = [
   {
     slug: 'ai-coach',
     nav: 'AI coach',
-    title: 'AI form check on your phone camera',
+    title: 'AI squat form check on your phone camera',
     description:
-      'SpotAI’s AI coach counts squat reps and flags knee valgus, shallow depth and forward lean on the phone, then gives one trainer-approved tip per set. Video never leaves the device.',
+      'AI squat form checker on your phone: counts reps, flags knee valgus, depth and forward lean, one trainer-approved tip per set. Video never leaves the phone.',
     audience: 'members',
     problem: 'No one spotting your squat?',
     fix: 'Prop your phone on the rack. The coach counts reps and calls your form.',
@@ -97,7 +97,7 @@ export const FEATURES: Feature[] = [
     nav: 'Workouts',
     title: 'Today’s workout, picked for you, every set logged',
     description:
-      'Check in and SpotAI suggests today’s session from your last week, lets you tick the exercises you want, and logs reps and kilograms per set. Shorts for every exercise.',
+      'Workout tracker for Indian gyms: today’s session picked from your week, tick the exercises, log reps and kilograms per set, a short for every exercise.',
     audience: 'members',
     problem: 'Walk in with no plan?',
     fix: 'Check in and the app tells you what to train today, then logs every set.',
@@ -158,7 +158,7 @@ export const FEATURES: Feature[] = [
     nav: 'Leaderboard & buddies',
     title: 'Gym leaderboard, gains and training buddies',
     description:
-      'Opt in to your gym’s leaderboard for visits, kilograms and streak, see lifetime gains and badges, and find a buddy who trains when you do. First names only, leave any time.',
+      'Gym leaderboard app: opt in for visits, kilograms and streak, lifetime gains and badges, and a buddy who trains when you do. First names only.',
     audience: 'members',
     problem: 'Lose steam after week two?',
     fix: 'See the kilos add up and let your gym see you turn up.',
@@ -214,7 +214,7 @@ export const FEATURES: Feature[] = [
     nav: 'Check-in & membership',
     title: 'QR check-in, membership and UPI dues in the app',
     description:
-      'Check in at your gym with a QR code from the SpotAI app, see days left on your membership, and pay dues with UPI without leaving the app.',
+      'Gym check-in app with QR, membership days left and UPI dues in the app. The gym sees the arrival and the payment reference live.',
     audience: 'everyone',
     problem: 'Paying dues over WhatsApp screenshots?',
     fix: 'Show a QR at the desk, see your days left, pay with UPI in the app.',
@@ -270,7 +270,7 @@ export const FEATURES: Feature[] = [
     nav: 'Gym owners',
     title: 'Gym management software for Indian gyms',
     description:
-      'SpotAI’s owner console: live arrivals with dues flagged, overdue list with reminders, UPI payments, busy hours, insights, member complaints with reference numbers, front-desk and trainer consoles.',
+      'Gym management software for India: live arrivals, who stopped coming, dues with reminders, UPI, busy hours, front-desk and trainer consoles.',
     audience: 'owners',
     problem: 'Chasing dues on WhatsApp?',
     fix: 'Who came, who owes, when it is busy. One screen, and members who pay in the app.',
@@ -326,7 +326,7 @@ export const FEATURES: Feature[] = [
     nav: 'Privacy',
     title: 'Private by design: consent per purpose, on-device AI',
     description:
-      'SpotAI treats camera, clips, face, matching, chat and reminders as separate consents, keeps pose tracking on the phone, and lets members export or delete everything from the app. Built for India’s DPDP Act.',
+      'Gym app privacy built for India’s DPDP Act: six separate consents, on-device pose tracking, export or delete from the app, complaints with a reference.',
     audience: 'everyone',
     problem: 'Worried where your camera footage goes?',
     fix: 'Nowhere. It stays on your phone, and every other use of your data is a switch you flip.',

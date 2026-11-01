@@ -1,4 +1,5 @@
 ---
+import { SITE } from '../site';
 const base = import.meta.env.BASE_URL;
 const problems = [
   {
@@ -32,12 +33,12 @@ const more = [
   <div class="wrap">
     <div class="owners__head">
       <p class="owners__for">For gym owners</p>
-      <h2 id="owners-title">Chasing dues on WhatsApp? Run the gym from one screen.</h2>
+      <h2 id="owners-title">See who came today. See who stopped coming. Before they stop paying.</h2>
       <p class="lead">
         Most gym software in India is a register with a login. SpotAI shows you who came, who owes, and when the
         floor is busy, and gives members a reason to keep coming.
       </p>
-      <a class="more-link" href={`${base}features/owners/`}>See the full feature</a>
+      <a class="more-link" href={`${base}for-gym-owners/`}>Free pilot for Hyderabad gyms</a>
     </div>
 
     <ul class="shots" role="list">
@@ -75,8 +76,8 @@ const more = [
     </ul>
 
     <div class="owners__cta">
-      <p>Running a gym in India? We set up a pilot with you.</p>
-      <a href="#download" class="btn btn--primary">Talk to us</a>
+      <p>Running a gym in Hyderabad? Free 90-day pilot, we load your register.</p>
+      <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hi SpotAI, I run a gym in Hyderabad and want the free pilot.')}`} target="_blank" rel="noopener" class="btn btn--primary">Chat on WhatsApp</a>
     </div>
   </div>
 </section>
