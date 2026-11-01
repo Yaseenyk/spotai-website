@@ -14,7 +14,7 @@ const pages = [
   { slug: 'gym-attendance-register', title: 'Gym attendance register: free sheet', blurb: 'A free attendance sheet for Excel or Google Sheets, and three checks that keep members renewing.', for: 'Gym owners' },
 ];
 // Scheduled Markdown guides appear once their publish date has passed (newest first), then the pages above.
-const scheduled = (await getCollection('guides', (g) => g.data.publish <= new Date()))
+const scheduled = (await getCollection('guides', (g) => g.data.publish <= new Date(import.meta.env.GUIDES_NOW || Date.now())))
   .sort((a, b) => b.data.publish.getTime() - a.data.publish.getTime())
   .map((g) => ({ slug: g.id, title: g.data.h1, blurb: g.data.blurb, for: g.data.audience === 'owner' ? 'Gym owners' : 'Members' }));
 const guides = [...scheduled, ...pages];

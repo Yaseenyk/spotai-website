@@ -4,7 +4,8 @@ import GuideLayout from '../../components/GuideLayout.astro';
 
 // One page per Markdown guide whose publish date has passed at build time.
 export async function getStaticPaths() {
-  const now = new Date();
+  // GUIDES_NOW lets a build show the site as it will be on a later date (scripts/check-schedule.mjs).
+  const now = new Date(import.meta.env.GUIDES_NOW || Date.now());
   const guides = await getCollection('guides', (g) => g.data.publish <= now);
   return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide } }));
 }

@@ -3,9 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # Monday and Thursday 06:00 IST: rebuilding publishes guides whose date has arrived.
+  # Every day at 00:17 UTC (05:47 IST). Guides go live on their own publish date (Mondays and
+  # Thursdays); building daily means a delayed or dropped scheduled run is caught up the next day.
+  # The odd minute avoids the busy top and half of the hour, when GitHub delays scheduled runs.
   schedule:
-    - cron: '30 0 * * 1,4'
+    - cron: '17 0 * * *'
   workflow_dispatch:
 
 permissions:
@@ -19,25 +21,53 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Pinned so the runner image cannot change under the schedule (ubuntu-latest is moving to 26).
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
       - run: npm ci
+      # On pushes, fails early if any guide, published or scheduled, would not build on its date.
+      - name: Check every scheduled guide
+        if: github.event_name != 'schedule'
+        run: npm run check:schedule
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
+  # GitHub disables scheduled workflows in public repositories after 60 days without activity.
+  # If nothing has been committed for 45 days, a scheduled run records an empty commit so the
+  # schedule keeps running until the last guide is out. Pushes made with GITHUB_TOKEN do not start
+  # another deploy.
+  keepalive:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - name: Commit if the repository has been quiet for 45 days
+        run: |
+          last=$(git log -1 --format=%ct)
+          age=$(( ($(date +%s) - last) / 86400 ))
+          echo "Last commit was $age days ago."
+          if [ "$age" -ge 45 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -m "Keep the guide schedule active"
+            git push
+          fi
