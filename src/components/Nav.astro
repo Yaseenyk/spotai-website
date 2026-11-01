@@ -1,14 +1,9 @@
 ---
+import { FEATURES } from '../features';
 const base = import.meta.env.BASE_URL;
-const links = [
-  [`${base}features/`, 'Features'],
-  [`${base}features/ai-coach/`, 'AI coach'],
-  [`${base}features/workouts/`, 'Workouts'],
-  [`${base}features/leaderboard/`, 'Leaderboard'],
-  [`${base}features/check-in/`, 'Check-in'],
-  [`${base}features/owners/`, 'Gym owners'],
-  [`${base}#faq`, 'FAQ'],
-];
+const members = FEATURES.filter((f) => f.audience !== 'owners');
+const owners = FEATURES.filter((f) => f.audience !== 'members');
+const links = [[`${base}#faq`, 'FAQ']];
 ---
 
 <header class="nav" data-nav>
@@ -18,6 +13,36 @@ const links = [
       <span>SpotAI</span>
     </a>
     <nav aria-label="Primary" class="nav__links">
+      <div class="menu" data-menu>
+        <a href={`${base}features/`} class="menu__btn" aria-haspopup="true" aria-expanded="false" data-menu-btn>
+          Features
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+        </a>
+        <div class="menu__panel" data-menu-panel>
+          <div class="menu__col">
+            <p>For members</p>
+            {
+              members.map((f) => (
+                <a href={`${base}features/${f.slug}/`}>
+                  <strong>{f.nav}</strong>
+                  <span>{f.problem}</span>
+                </a>
+              ))
+            }
+          </div>
+          <div class="menu__col">
+            <p>For gym owners</p>
+            {
+              owners.map((f) => (
+                <a href={`${base}features/${f.slug}/`}>
+                  <strong>{f.nav}</strong>
+                  <span>{f.problem}</span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
       {links.map(([href, label]) => <a href={href}>{label}</a>)}
     </nav>
     <a href={`${base}#download`} class="btn btn--ghost nav__cta">Get early access</a>
@@ -26,7 +51,9 @@ const links = [
     </button>
   </div>
   <nav aria-label="Mobile" class="nav__sheet" data-sheet>
-    {links.map(([href, label]) => <a href={href}>{label}</a>)}
+    <p class="nav__group">Features</p>
+    {FEATURES.map((f) => <a href={`${base}features/${f.slug}/`}>{f.nav}</a>)}
+    <a href={`${base}#faq`}>FAQ</a>
     <a href={`${base}#download`} class="btn btn--primary">Get early access</a>
   </nav>
 </header>
@@ -64,18 +91,86 @@ const links = [
   }
   .nav__links {
     display: flex;
+    align-items: center;
     gap: 26px;
     margin-left: auto;
   }
-  .nav__links a {
+  .nav__links > a,
+  .menu__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: 15px;
     font-weight: 500;
     color: var(--steel);
     text-decoration: none;
     transition: color 0.2s ease;
   }
-  .nav__links a:hover {
+  .nav__links > a:hover,
+  .menu__btn:hover,
+  .menu.is-open .menu__btn {
     color: var(--chalk);
+  }
+  .menu {
+    position: relative;
+  }
+  .menu__btn svg {
+    transition: transform 0.25s var(--ease);
+  }
+  .menu.is-open .menu__btn svg {
+    transform: rotate(180deg);
+  }
+  .menu__panel {
+    position: absolute;
+    right: -16px;
+    top: calc(100% + 18px);
+    display: none;
+    grid-template-columns: repeat(2, 236px);
+    gap: 8px;
+    padding: 10px;
+    border-radius: 16px;
+    background: #1a1c22;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 0 0 1px var(--line-2),
+      0 30px 60px -20px rgba(0, 0, 0, 0.9);
+  }
+  .menu__panel::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -18px;
+    height: 18px;
+  }
+  .menu.is-open .menu__panel {
+    display: grid;
+  }
+  .menu__col p {
+    padding: 8px 12px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--violet-2);
+  }
+  .menu__col a {
+    display: grid;
+    gap: 2px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .menu__col a:hover {
+    background: rgba(236, 233, 225, 0.06);
+  }
+  .menu__col strong {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--chalk);
+  }
+  .menu__col span {
+    font-size: 12.5px;
+    color: var(--steel);
   }
   .nav__cta {
     min-height: 42px;
@@ -114,8 +209,14 @@ const links = [
     gap: 2px;
     padding: 8px var(--gutter) 20px;
   }
+  .nav__group {
+    padding: 10px 4px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--violet-2);
+  }
   .nav__sheet a {
-    padding: 14px 4px;
+    padding: 12px 4px;
     font-weight: 600;
     text-decoration: none;
     color: var(--steel);
@@ -136,7 +237,8 @@ const links = [
       margin-left: auto;
     }
     .nav.is-open {
-      background: rgba(20, 21, 24, 0.98);
+      background: var(--rubber);
+      box-shadow: inset 0 -1px 0 var(--line);
     }
     .nav.is-open .nav__sheet {
       display: flex;
@@ -160,4 +262,31 @@ const links = [
       burger.setAttribute('aria-expanded', 'false');
     }),
   );
+
+  // Features dropdown: opens on hover or focus; a click opens it first, a second click follows the link.
+  const menu = document.querySelector<HTMLElement>('[data-menu]')!;
+  const btn = menu.querySelector<HTMLAnchorElement>('[data-menu-btn]')!;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const set = (open: boolean) => {
+    menu.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  };
+  menu.addEventListener('pointerenter', () => {
+    clearTimeout(timer);
+    set(true);
+  });
+  menu.addEventListener('pointerleave', () => {
+    timer = setTimeout(() => set(false), 160);
+  });
+  btn.addEventListener('click', (e) => {
+    if (!menu.classList.contains('is-open')) {
+      e.preventDefault();
+      set(true);
+    }
+  });
+  menu.addEventListener('focusin', () => set(true));
+  menu.addEventListener('focusout', (e) => {
+    if (!menu.contains(e.relatedTarget as Node)) set(false);
+  });
+  document.addEventListener('keydown', (e) => e.key === 'Escape' && set(false));
 </script>
