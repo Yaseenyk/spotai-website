@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
+import Screen from '../../components/Screen.astro';
 import { FEATURES } from '../../features';
 import { SITE } from '../../site';
 
@@ -35,9 +36,7 @@ const jsonLd = {
             <li>
               <a href={`${base}features/${f.slug}/`}>
                 <div class="shot">
-                  <div class={f.shots[0]!.kind === 'phone' ? 'phone' : 'browser'}>
-                    <img src={`${base}shots/${f.shots[0]!.src}`} width={f.shots[0]!.kind === 'phone' ? 640 : 1600} height={f.shots[0]!.kind === 'phone' ? 1385 : 1000} alt={f.shots[0]!.alt} loading="lazy" decoding="async" />
-                  </div>
+                  <Screen shot={f.hero} />
                 </div>
                 <span>{f.nav}</span>
                 <strong>{f.problem}</strong>
@@ -55,9 +54,7 @@ const jsonLd = {
             <li>
               <a href={`${base}features/${f.slug}/`}>
                 <div class="shot">
-                  <div class={f.shots[0]!.kind === 'phone' ? 'phone' : 'browser'}>
-                    <img src={`${base}shots/${f.shots[0]!.src}`} width={f.shots[0]!.kind === 'phone' ? 640 : 1600} height={f.shots[0]!.kind === 'phone' ? 1385 : 1000} alt={f.shots[0]!.alt} loading="lazy" decoding="async" />
-                  </div>
+                  <Screen shot={f.hero} />
                 </div>
                 <span>{f.nav}</span>
                 <strong>{f.problem}</strong>
@@ -132,20 +129,13 @@ const jsonLd = {
     background: linear-gradient(180deg, transparent, rgba(23, 25, 32, 0.95));
     pointer-events: none;
   }
-  .shot .phone {
+  .shot :global(.phone) {
     width: 58%;
     flex: 0 0 auto;
   }
-  .shot .browser {
+  .shot :global(.browser) {
     width: 100%;
     border-radius: 10px 10px 0 0;
-    background: #e9eaef;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-  }
-  .shot .browser img {
-    width: 150%;
-    max-width: none;
   }
   .grid span {
     margin: 10px 22px 0;
