@@ -34,7 +34,7 @@ export const FEATURES: Feature[] = [
   {
     slug: 'ai-coach',
     nav: 'AI coach',
-    title: 'AI squat form check on your phone camera',
+    title: 'AI gym trainer app with camera form check for squats',
     description:
       'AI squat form checker on your phone: counts reps, flags knee valgus, depth and forward lean, one trainer-approved tip per set. Video never leaves the phone.',
     audience: 'members',
@@ -89,13 +89,14 @@ export const FEATURES: Feature[] = [
       { q: 'Which exercises does the form check cover?', a: 'Squats today, with knee valgus, shallow depth and forward lean detected per rep. More exercises are coming.' },
       { q: 'Who writes the tips?', a: 'Your gym’s trainer approves the templates. The app picks one that matches the flag on your set.' },
       { q: 'Do I need to hold the phone?', a: 'No. Lean it on the rack or a bench so your whole body is in frame, then lift.' },
+      { q: 'Form check karne wala app kaunsa hai?', a: 'SpotAI ka AI coach phone camera se squat ka form check karta hai: reps ginta hai, ghutne andar aana, kam depth aur aage jhukna pakadta hai, aur har set ke baad ek tip deta hai. Video phone se bahar nahi jaata.' },
     ],
     related: ['workouts', 'privacy'],
   },
   {
     slug: 'workouts',
     nav: 'Workouts',
-    title: 'Today’s workout, picked for you, every set logged',
+    title: 'Gym workout plan app: today’s session picked, every set logged',
     description:
       'Workout tracker for Indian gyms: today’s session picked from your week, tick the exercises, log reps and kilograms per set, a short for every exercise.',
     audience: 'members',
@@ -156,7 +157,7 @@ export const FEATURES: Feature[] = [
   {
     slug: 'leaderboard',
     nav: 'Leaderboard & buddies',
-    title: 'Gym leaderboard, gains and training buddies',
+    title: 'Gym buddy app and gym leaderboard: gains, streaks, partners',
     description:
       'Gym leaderboard app: opt in for visits, kilograms and streak, lifetime gains and badges, and a buddy who trains when you do. First names only.',
     audience: 'members',
@@ -204,15 +205,77 @@ export const FEATURES: Feature[] = [
     limits: ['Leaderboard and Connect are for members aged 18 and over.', 'Boards are per gym; there is no cross-gym ranking.'],
     faq: [
       { q: 'How does the gym leaderboard work?', a: 'Opt in, first names only. Three boards: visits this week, kilograms this week, current streak. Leave any time.' },
+      { q: 'How do I find a gym buddy?', a: 'Open Connect and turn on buddy matching. Suggestions come from members of your own gym with the reason you match, like training at the same time. Adults only.' },
       { q: 'Who can message me?', a: 'Only buddies you accepted. Chat is a separate consent and trainers moderate it.' },
       { q: 'Can I hide my numbers but keep buddies?', a: 'Yes. The leaderboard and Connect are separate switches.' },
     ],
     related: ['workouts', 'privacy'],
   },
   {
+    slug: 'food-log',
+    nav: 'Food log',
+    title: 'Calorie counter for Indian food: roti, dal, idli, biryani',
+    description:
+      'Calorie counter app for Indian food: search 672 home-style dishes, log by servings or grams, see daily and monthly calories and protein. Logging is optional.',
+    audience: 'members',
+    problem: 'Calorie apps that don’t know dal?',
+    fix: 'Search roti, dal or dosa, tap how many, and the day adds up.',
+    lead:
+      'The food log uses the Indian Nutrient Databank, so a chapati is a chapati and a bowl of rajma is a bowl of rajma. Log by servings or grams, add anything in your own words, snap a photo of the plate. Logging is optional; the more you log, the closer the totals.',
+    hero: phone('m-dark-diet-filled.webp', 'Food log, Day tab: 246 kcal today with protein, carbs and fat; idli 100 g at breakfast, 1.5 chapati at lunch, banana at snacks'),
+    facts: [
+      ['672', 'Indian dishes to search'],
+      ['4', 'meals a day'],
+      ['Day + month', 'calorie totals'],
+      ['0', 'food photos uploaded'],
+    ],
+    steps: [
+      {
+        title: 'Search the dish you ate',
+        body: 'Type chapati, poha or dal makhani. Each result shows its usual serving with calories and protein, so you pick the right one without reading a label. Not in the list? Add it in your own words; it still counts as a meal, just without numbers.',
+        shot: phone('m-dark-diet-search.webp', 'Add to Lunch sheet: search chapati, result Chapati/Roti, 1 chapati, 73 kcal, 2.1 g protein, and Not in the list? Add it in your own words'),
+      },
+      {
+        title: 'Say how much: servings or grams',
+        body: 'Tap plus and minus for servings (one and a half chapatis is fine) or switch to grams if you weighed it. Calories, protein, carbs and fat update before you add, and the serving size in grams is shown underneath.',
+        shot: phone('m-dark-diet-amount.webp', 'Amount step: Chapati/Roti, Servings tab, 1.5 chapati, 110 kcal, 3.2 g protein, 19.2 g carbs, 2 g fat, one chapati is about 36 g'),
+      },
+      {
+        title: 'Your day, meal by meal',
+        body: 'Breakfast, lunch, snacks and dinner each list what you added, with the day’s calories, protein, carbs and fat on top. Forgot yesterday? Step back a day and log it. Add a photo of the plate if that is easier than typing; photos stay on the phone.',
+        shot: phone('m-dark-diet-day.webp', 'Food log Day tab, empty: 0 kcal, protein, carbs and fat, note that logging food is optional, Add food and Photo buttons for each meal'),
+      },
+      {
+        title: 'The month at a glance',
+        body: 'The Month tab totals the calories you logged, the number of days you logged and the daily average, with a bar for each day. Useful for spotting the weekend that undoes the week.',
+        shot: phone('m-dark-diet-month.webp', 'Food log Month tab: 246 kcal logged on 1 day, average per day, a bar for Mon Nov 2, and the Indian Nutrient Databank credit'),
+      },
+    ],
+    details: [
+      { title: 'Indian food, Indian portions', body: 'Dishes come from the Indian Nutrient Databank (Jaacks et al., 2024): home-style recipes with servings like one roti, one idli, one bowl. Recipes where the data counted all the frying oil as one serving were removed.' },
+      { title: 'Servings or grams', body: 'Every dish has a usual serving in grams. Log in servings, half servings, or exact grams.' },
+      { title: 'Protein, not just calories', body: 'Each entry carries protein, carbs and fat, and the day shows all three. If you train, protein is the number to watch.' },
+      { title: 'Your own words', body: 'Ate something not in the list? Write it down. It shows in the meal without numbers, or add the calories yourself if you know them.' },
+      { title: 'Photos stay on the phone', body: 'Plate photos are stored on the device only. They are never uploaded and are removed when you delete your account.' },
+      { title: 'In your data export', body: 'Food entries are part of “export my data” and are deleted with your account, like everything else.' },
+    ],
+    limits: [
+      'Numbers are estimates for typical home recipes; your oil, ghee and portion will differ.',
+      'No barcode scanning or packaged foods yet.',
+      'Not medical or dietary advice, and no calorie targets are set for you.',
+    ],
+    faq: [
+      { q: 'Is there a calorie counter app for Indian food?', a: 'SpotAI’s food log searches 672 Indian home-style dishes, from roti and dal to dosa and biryani, with servings as they are usually eaten. It is part of the member app, free for members.' },
+      { q: 'How many calories are in one roti?', a: 'About 73 kcal for a plain chapati of around 36 g without ghee, according to the Indian Nutrient Databank. The full table is in our guide to calories in Indian food.' },
+      { q: 'Do I have to log every meal?', a: 'No. Logging is optional. The totals are only as complete as what you add.' },
+      { q: 'Are my food photos uploaded?', a: 'No. Photos stay on your phone and are deleted with your account.' },
+    ],
+    related: ['workouts', 'leaderboard'],
+  },
+  {
     slug: 'check-in',
     nav: 'Check-in & membership',
-    title: 'QR check-in, membership and UPI dues in the app',
+    title: 'Gym attendance app: QR check-in, membership and UPI dues',
     description:
       'Gym check-in app with QR, membership days left and UPI dues in the app. The gym sees the arrival and the payment reference live.',
     audience: 'everyone',
@@ -268,7 +331,7 @@ export const FEATURES: Feature[] = [
   {
     slug: 'owners',
     nav: 'Gym owners',
-    title: 'Gym console: dues, check-in, staff and insights',
+    title: 'Gym management app: dues, attendance, staff and insights',
     description:
       'Every screen of the SpotAI gym console: arrivals, dues, members, plans, staff roles, insights, complaints, front desk, trainer tip review and moderation.',
     audience: 'owners',

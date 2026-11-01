@@ -13,6 +13,7 @@ Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streameros
 - Gains: lifetime kilograms and reps, this week's numbers, milestone badges, personal bests, visit history.
 - Leaderboard: opt-in, first names only, three boards (visits this week, kg this week, streak). Leave any time.
 - Buddies: suggestions, requests, chat, training groups, a helper badge for members who help others. Adults only; separate consent for matching and chat.
+- Food log: search Indian dishes, log servings or grams, daily and monthly calories, protein, carbs and fat. Optional; photos stay on the phone.
 - Check-in: QR from the app, or confirm a face check-in on the phone. Membership with days left, dues and UPI payment in the app.
 - Privacy centre: every consent toggle, export my data, delete my account, file a complaint and get a reference number.
 
@@ -31,7 +32,7 @@ Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streameros
 - Private demo with partner gyms in Hyderabad; no public pricing yet; Android and iOS at launch.
 - English only; Hindi and Bengali coach tips drafted, awaiting native-speaker review.
 
-Last updated: 2026-11-01
+Last updated: 2026-11-02
 
 ## Technical facts
 
@@ -45,8 +46,14 @@ Last updated: 2026-11-01
 ## Pages
 
 - https://spotai.streamerosai.com/demo/ — the same offline demo in the browser; on iPhone, Safari > Share > Add to Home Screen
-- https://spotai.streamerosai.com/downloads/spotai-demo.apk — Android offline demo of the member app (v1.1, Android 7.0+, 49 MB); sign in as ram@demo.spotai.app or yaseen@demo.spotai.app, password spotai-demo
+- https://spotai.streamerosai.com/downloads/spotai-demo.apk — Android offline demo of the member app (v1.3, Android 7.0+, 36 MB); sign in as ram@demo.spotai.app or yaseen@demo.spotai.app, password spotai-demo
 - https://spotai.streamerosai.com/for-gym-owners/ — owner landing: who came, who stopped coming, who owes; free 90-day pilot for the first 10 Hyderabad gyms
 - https://spotai.streamerosai.com/pricing/ — free pilot, free for members, no per-member fee planned
 - https://spotai.streamerosai.com/features/ — index of every feature page
+- https://spotai.streamerosai.com/features/food-log/ — food log: 672 Indian home-style dishes from the Indian Nutrient Databank, servings or grams, daily and monthly calories and protein; photos stay on the phone
+- https://spotai.streamerosai.com/guides/ — guides index
+- https://spotai.streamerosai.com/guides/calories-in-indian-food/ — calories and protein per serving for roti, rice, dal, idli, dosa, paratha, biryani (Indian Nutrient Databank)
+- https://spotai.streamerosai.com/guides/gym-workout-plan-for-beginners/ — 3-day full body and 4-day upper/lower beginner plans
+- https://spotai.streamerosai.com/guides/gym-fee-reminder-message/ — gym fee reminder templates for WhatsApp in English and Hindi
+- https://spotai.streamerosai.com/guides/gym-attendance-register/ — free gym attendance register sheet (CSV) and how to use it
 - https://spotai.streamerosai.com/ : home, with sections for members, the AI coach, gains and leaderboard, gym owners, privacy, FAQ and download.

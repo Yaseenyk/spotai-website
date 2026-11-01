@@ -1,0 +1,98 @@
+---
+import GuideLayout from '../../components/GuideLayout.astro';
+import data from '../../data/indian-foods.json';
+
+const base = import.meta.env.BASE_URL;
+const all = data.flatMap((g) => g.foods);
+const roti = all.find((f) => f.code === 'ASC096')!;
+const rice = all.find((f) => f.code === 'ASC113')!;
+const dal = all.find((f) => f.code === 'ASC155')!;
+const idli = all.find((f) => f.code === 'ASC144')!;
+const short = (name: string) => name.replace(/\s*\(.*\)\s*$/, '');
+const faq = [
+  {
+    q: 'How many calories are in one roti?',
+    a: `One plain chapati or roti of about ${roti.grams} g, made without ghee, has about ${roti.kcal} kcal, ${roti.protein} g protein and ${roti.carbs} g carbohydrate. Ghee or oil on top adds to that.`,
+  },
+  {
+    q: 'Roti or rice: which has fewer calories?',
+    a: `Per serving it depends on how much you eat. One ${roti.grams} g roti is about ${roti.kcal} kcal; a ${rice.grams} g plate of boiled rice is about ${rice.kcal} kcal, roughly the same as ${Math.round(rice.kcal / roti.kcal)} rotis.`,
+  },
+  {
+    q: 'How many calories are in a bowl of dal?',
+    a: `A bowl of mixed dal (about ${dal.grams} g cooked) is about ${dal.kcal} kcal with ${dal.protein} g protein. Thicker dals with butter or cream, like dal makhani, are higher.`,
+  },
+  {
+    q: 'Where do these numbers come from?',
+    a: 'From the Indian Nutrient Databank (Jaacks et al., 2024), which calculates nutrients for home-style Indian recipes. Your own recipe, oil and portion will differ, so treat these as estimates.',
+  },
+];
+---
+
+<GuideLayout
+  slug="calories-in-indian-food"
+  title="Calories in roti, rice, dal and idli: Indian food calorie chart · SpotAI"
+  description={`Calories in one roti (${roti.kcal} kcal), a plate of rice, a bowl of dal, idli, dosa, poha and paratha, with protein per serving. From the Indian Nutrient Databank.`}
+  h1="Calories in roti, rice, dal and other Indian food"
+  answer={`One plain roti (${roti.grams} g) has about ${roti.kcal} kcal. A plate of boiled rice (${rice.grams} g) has about ${rice.kcal} kcal, a bowl of mixed dal about ${dal.kcal} kcal, and one idli about ${idli.kcal} kcal. The tables below list ${all.length} everyday dishes per serving, with protein, carbs and fat.`}
+  updated="2026-11-02"
+  faq={faq}
+  cta={{ label: 'Log food in SpotAI', href: `${base}features/food-log/`, text: 'SpotAI totals what you eat each day and month from this same table. Logging is optional.' }}
+>
+  <p>
+    Gym-goers in India mostly eat home food, and generic calorie apps rarely know a bowl of rajma from a cup of chilli.
+    The numbers below are per <strong>serving as it is usually eaten</strong>: one roti, one idli, one bowl of dal, one plate of rice.
+  </p>
+
+  {
+    data.map((g) => (
+      <>
+        <h2>{g.group}: calories per serving</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Dish, one serving</th>
+                <th scope="col">kcal</th>
+                <th scope="col">Protein</th>
+                <th scope="col">Carbs</th>
+                <th scope="col">Fat</th>
+              </tr>
+            </thead>
+            <tbody>
+              {g.foods.map((f) => (
+                <tr>
+                  <td>
+                    {short(f.name)}
+                    <br />
+                    <span class="note">
+                      1 {f.unit}, about {f.grams} g
+                    </span>
+                  </td>
+                  <td>{f.kcal}</td>
+                  <td>{f.protein} g</td>
+                  <td>{f.carbs} g</td>
+                  <td>{f.fat} g</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </>
+    ))
+  }
+
+  <h2>How to use these numbers</h2>
+  <ul>
+    <li><strong>Count pieces, not plates.</strong> Two rotis, one bowl of dal and a small bowl of rice is easier to log than a guessed "one thali".</li>
+    <li><strong>Add the extras.</strong> Ghee on roti, butter on dosa and a spoon of pickle are not in the base numbers.</li>
+    <li><strong>Protein matters as much as calories</strong> if you train. Dal, paneer, curd and eggs are where most home protein comes from.</li>
+    <li><strong>Weigh once.</strong> Weigh your usual bowl and roti one time; after that the servings above are close enough.</li>
+  </ul>
+
+  <p class="note">
+    Source: Indian Nutrient Databank (Jaacks LM et al., Current Developments in Nutrition, 2024). Recipes where the
+    databank counts all the frying oil or a whole tray as one serving are left out. Estimates for typical home
+    recipes, not medical or dietary advice.
+  </p>
+</GuideLayout>

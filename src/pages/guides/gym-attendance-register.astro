@@ -1,0 +1,59 @@
+---
+import GuideLayout from '../../components/GuideLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const faq = [
+  {
+    q: 'What should a gym attendance register have?',
+    a: 'Date, member name or ID, check-in time, and ideally check-out time and membership end date. With those, you can see who is coming, when the gym is busy, and who has stopped coming before their membership runs out.',
+  },
+  {
+    q: 'Is there a free gym attendance sheet in Excel?',
+    a: 'Yes, the sheet linked on this page is free. It opens in Excel or Google Sheets and has the columns above.',
+  },
+  {
+    q: 'Paper register, Excel or an app: which is better?',
+    a: 'Paper is fine for a few members a day. Excel helps once you want totals. An app records check-ins on its own (by QR or at the desk) and can flag members who owe or have stopped coming without anyone reading the sheet.',
+  },
+  {
+    q: 'How does SpotAI record attendance?',
+    a: 'Members show a QR from the app at the desk, or the desk checks them in by name. Each check-in appears live on the owner console with the time, and members who stopped coming show up before their membership ends.',
+  },
+];
+---
+
+<GuideLayout
+  slug="gym-attendance-register"
+  title="Gym attendance register: free Excel sheet and better ways · SpotAI"
+  description="A free gym attendance register sheet (Excel / Google Sheets) with the columns that matter, how to use it to spot members who stopped coming, and when an attendance app helps."
+  h1="Gym attendance register: free sheet and how to use it"
+  answer="A gym attendance register needs the date, member name, check-in time and membership end date. Download the free sheet below (works in Excel and Google Sheets). Its real use is not counting heads: it shows who has stopped coming before they stop paying."
+  updated="2026-11-02"
+  faq={faq}
+  cta={{ label: 'See live attendance in SpotAI', href: `${base}features/check-in/`, text: 'SpotAI records check-ins by QR or name and shows who came today and who stopped coming.' }}
+>
+  <p><a href={`${base}downloads/gym-attendance-register.csv`} download class="btn btn--primary">Download the free attendance sheet (CSV)</a></p>
+
+  <h2>Columns to keep</h2>
+  <ul>
+    <li><strong>Date</strong> and <strong>check-in time</strong>: busy hours come from these.</li>
+    <li><strong>Member name</strong> and <strong>phone or member ID</strong>: two members called Rahul is normal.</li>
+    <li><strong>Check-out time</strong>: optional, useful for crowding.</li>
+    <li><strong>Membership ends</strong>: so the desk sees renewals coming.</li>
+    <li><strong>Dues</strong>: a yes/no is enough at the desk; keep amounts private.</li>
+  </ul>
+
+  <h2>Three things to check every week</h2>
+  <ol>
+    <li><strong>Who hasn't come in 7 days.</strong> These members are the ones who won't renew. Call or message them now.</li>
+    <li><strong>Busy hours.</strong> Count check-ins by hour. Put your trainers where the crowd is.</li>
+    <li><strong>Renewals in the next 7 days.</strong> Remind them before the date, not after.</li>
+  </ol>
+
+  <h2>When a register stops being enough</h2>
+  <p>
+    Once the desk is writing more than a few dozen names a day, the register gets filled in late, names get misspelt, and
+    nobody has time to read it for the three checks above. That is the point where a QR check-in and a console that does
+    the reading for you pays off.
+  </p>
+</GuideLayout>

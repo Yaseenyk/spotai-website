@@ -1,0 +1,292 @@
+[
+ {
+  "group": "Breads",
+  "foods": [
+   {
+    "code": "ASC096",
+    "name": "Chapati/Roti",
+    "unit": "chapati",
+    "grams": 36,
+    "kcal": 73,
+    "protein": 2.1,
+    "carbs": 12.8,
+    "fat": 1.3
+   },
+   {
+    "code": "ASC097",
+    "name": "Plain parantha/paratha",
+    "unit": "parantha",
+    "grams": 56,
+    "kcal": 166,
+    "protein": 2.8,
+    "carbs": 17.1,
+    "fat": 9.4
+   },
+   {
+    "code": "ASC098",
+    "name": "Potato parantha/paratha (Aloo ka parantha/paratha)",
+    "unit": "parantha",
+    "grams": 93,
+    "kcal": 191,
+    "protein": 3.5,
+    "carbs": 22.3,
+    "fat": 9.5
+   },
+   {
+    "code": "ASC105",
+    "name": "Paneer parantha/paratha",
+    "unit": "parantha",
+    "grams": 85,
+    "kcal": 224,
+    "protein": 6.8,
+    "carbs": 20.7,
+    "fat": 12.4
+   },
+   {
+    "code": "ASC101",
+    "name": "Dal parantha/paratha",
+    "unit": "parantha",
+    "grams": 77,
+    "kcal": 206,
+    "protein": 5.2,
+    "carbs": 23.0,
+    "fat": 10.0
+   },
+   {
+    "code": "ASC112",
+    "name": "Tandoori parantha/paratha",
+    "unit": "parantha",
+    "grams": 56,
+    "kcal": 164,
+    "protein": 2.8,
+    "carbs": 17.1,
+    "fat": 9.2
+   }
+  ]
+ },
+ {
+  "group": "Rice",
+  "foods": [
+   {
+    "code": "ASC113",
+    "name": "Boiled rice (Uble chawal)",
+    "unit": "plate",
+    "grams": 300,
+    "kcal": 352,
+    "protein": 7.8,
+    "carbs": 77.2,
+    "fat": 0.6
+   },
+   {
+    "code": "ASC126",
+    "name": "Curd rice (Dahi bhaat/Dahi chawal/ Perugu annam/Daddojanam/Thayir saadam)",
+    "unit": "plate",
+    "grams": 216,
+    "kcal": 423,
+    "protein": 12.4,
+    "carbs": 71.2,
+    "fat": 9.3
+   },
+   {
+    "code": "ASC124",
+    "name": "Lemon rice (Pulihora, Elumichai sadam, Chitranna)",
+    "unit": "plate",
+    "grams": 319,
+    "kcal": 563,
+    "protein": 13.6,
+    "carbs": 69.0,
+    "fat": 25.1
+   },
+   {
+    "code": "ASC127",
+    "name": "Tamarind rice (Chintapandu pulihora/Puliyodharai/Puli sadam/Huli anna)",
+    "unit": "plate",
+    "grams": 128,
+    "kcal": 477,
+    "protein": 9.5,
+    "carbs": 83.2,
+    "fat": 10.9
+   },
+   {
+    "code": "ASC122",
+    "name": "Mutton biryani/biriyani",
+    "unit": "plate",
+    "grams": 208,
+    "kcal": 396,
+    "protein": 15.3,
+    "carbs": 46.7,
+    "fat": 16.1
+   },
+   {
+    "code": "ASC123",
+    "name": "Vegetable biryani/biriyani",
+    "unit": "plate",
+    "grams": 302,
+    "kcal": 527,
+    "protein": 9.5,
+    "carbs": 56.0,
+    "fat": 28.7
+   }
+  ]
+ },
+ {
+  "group": "Dal and curries",
+  "foods": [
+   {
+    "code": "ASC155",
+    "name": "Mixed dal",
+    "unit": "bowl",
+    "grams": 298,
+    "kcal": 184,
+    "protein": 7.5,
+    "carbs": 17.3,
+    "fat": 9.2
+   },
+   {
+    "code": "ASC151",
+    "name": "Washed moong dal (Dhuli moong ki dal)",
+    "unit": "bowl",
+    "grams": 277,
+    "kcal": 139,
+    "protein": 7.4,
+    "carbs": 16.4,
+    "fat": 4.7
+   },
+   {
+    "code": "OSR139",
+    "name": "Dal makhani",
+    "unit": "bowl",
+    "grams": 353,
+    "kcal": 262,
+    "protein": 11.7,
+    "carbs": 28.1,
+    "fat": 10.8
+   },
+   {
+    "code": "OSR142",
+    "name": "Split bengal gram dal (Channa dal)",
+    "unit": "bowl",
+    "grams": 292,
+    "kcal": 291,
+    "protein": 12.1,
+    "carbs": 29.2,
+    "fat": 13.5
+   },
+   {
+    "code": "ASC165",
+    "name": "Kidney bean curry (Rajmah curry)",
+    "unit": "bowl",
+    "grams": 120,
+    "kcal": 172,
+    "protein": 7.1,
+    "carbs": 19.6,
+    "fat": 6.9
+   },
+   {
+    "code": "ASC191",
+    "name": "Pea paneer curry (Matar paneer)",
+    "unit": "bowl",
+    "grams": 277,
+    "kcal": 374,
+    "protein": 18.3,
+    "carbs": 25.8,
+    "fat": 21.5
+   },
+   {
+    "code": "ASC215",
+    "name": "Spinach paneer (Palak paneer)",
+    "unit": "bowl",
+    "grams": 296,
+    "kcal": 230,
+    "protein": 11.9,
+    "carbs": 13.1,
+    "fat": 14.1
+   },
+   {
+    "code": "ASC195",
+    "name": "Paneer curry",
+    "unit": "bowl",
+    "grams": 202,
+    "kcal": 357,
+    "protein": 15.8,
+    "carbs": 17.0,
+    "fat": 25.1
+   }
+  ]
+ },
+ {
+  "group": "South Indian breakfast",
+  "foods": [
+   {
+    "code": "ASC144",
+    "name": "Idli",
+    "unit": "idli",
+    "grams": 25,
+    "kcal": 34,
+    "protein": 1.2,
+    "carbs": 7.1,
+    "fat": 0.1
+   },
+   {
+    "code": "BFP148",
+    "name": "Plain dosa",
+    "unit": "dosa",
+    "grams": 36,
+    "kcal": 138,
+    "protein": 3.7,
+    "carbs": 23.1,
+    "fat": 3.0
+   },
+   {
+    "code": "ASC146",
+    "name": "Masala dosa",
+    "unit": "dosa",
+    "grams": 210,
+    "kcal": 345,
+    "protein": 6.9,
+    "carbs": 41.0,
+    "fat": 16.4
+   },
+   {
+    "code": "BFP039",
+    "name": "Semolina upma (Suji/Rava upma)",
+    "unit": "bowl",
+    "grams": 106,
+    "kcal": 157,
+    "protein": 3.5,
+    "carbs": 17.3,
+    "fat": 8.0
+   },
+   {
+    "code": "BFP044",
+    "name": "Poha",
+    "unit": "bowl",
+    "grams": 55,
+    "kcal": 161,
+    "protein": 3.3,
+    "carbs": 19.1,
+    "fat": 7.7
+   },
+   {
+    "code": "BFP045",
+    "name": "Vegetable poha",
+    "unit": "bowl",
+    "grams": 98,
+    "kcal": 177,
+    "protein": 4.8,
+    "carbs": 21.1,
+    "fat": 7.9
+   },
+   {
+    "code": "OSR103",
+    "name": "Moong bean dosa (Pesarattu)",
+    "unit": "pesarattu",
+    "grams": 27,
+    "kcal": 76,
+    "protein": 3.3,
+    "carbs": 8.5,
+    "fat": 3.1
+   }
+  ]
+ }
+]

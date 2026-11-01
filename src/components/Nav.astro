@@ -6,6 +6,7 @@ const owners = FEATURES.filter((f) => f.audience !== 'members');
 const links = [
   [`${base}for-gym-owners/`, 'Gym owners'],
   [`${base}pricing/`, 'Pricing'],
+  [`${base}guides/`, 'Guides'],
   [`${base}#faq`, 'FAQ'],
 ];
 ---
@@ -58,6 +59,7 @@ const links = [
     <p class="nav__group">Features</p>
     {FEATURES.map((f) => <a href={`${base}features/${f.slug}/`}>{f.nav}</a>)}
     <a href={`${base}pricing/`}>Pricing</a>
+    <a href={`${base}guides/`}>Guides</a>
     <a href={`${base}#faq`}>FAQ</a>
     <a href={`${base}for-gym-owners/`} class="btn btn--primary">Free pilot for gyms</a>
   </nav>
