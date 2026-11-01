@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL;
 const url = `${SITE.url}pricing/`;
 const wa = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi SpotAI, I run a gym in ${SITE.pilot.city} and want the free pilot.`)}`;
 const title = 'SpotAI pricing: free pilot for Hyderabad gyms';
-const description = `SpotAI is free for the first ${SITE.pilot.gyms} gyms in ${SITE.pilot.city} for ${SITE.pilot.days} days. Free for members. No per-member fee planned; your member list exports as CSV any time.`;
+const description = `SpotAI is free for the first ${SITE.pilot.gyms} gyms in ${SITE.pilot.city} for ${SITE.pilot.days} days. Free for members. No per-member fee planned.`;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -35,7 +35,7 @@ const jsonLd = {
             <li>We load your register or Excel in one visit</li>
             <li>QR poster for the desk, app poster for the floor</li>
             <li>WhatsApp support, seven days a week</li>
-            <li>Your member list as CSV, any time</li>
+            <li>Your member list stays yours</li>
             <li>No per-member fee planned after the pilot</li>
           </ul>
           <a href={wa} target="_blank" rel="noopener" class="btn btn--primary">Chat on WhatsApp</a>

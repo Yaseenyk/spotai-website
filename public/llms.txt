@@ -45,6 +45,6 @@ Last updated: 2026-11-01
 ## Pages
 
 - https://spotai.streamerosai.com/for-gym-owners/ — owner landing: who came, who stopped coming, who owes; free 90-day pilot for the first 10 Hyderabad gyms
-- https://spotai.streamerosai.com/pricing/ — free pilot, free for members, no per-member fee planned, CSV export any time
+- https://spotai.streamerosai.com/pricing/ — free pilot, free for members, no per-member fee planned
 - https://spotai.streamerosai.com/features/ — index of every feature page
 - https://spotai.streamerosai.com/ : home, with sections for members, the AI coach, gains and leaderboard, gym owners, privacy, FAQ and download.

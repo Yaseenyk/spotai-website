@@ -37,7 +37,7 @@ export const FAQ = [
   },
   {
     q: 'How much does SpotAI cost?',
-    a: 'The first 10 gyms in Hyderabad get a free 90-day pilot. Pricing after the pilot will be announced to pilot gyms first. There is no per-member fee planned and your member list exports as CSV any time.',
+    a: 'The first 10 gyms in Hyderabad get a free 90-day pilot. Pricing after the pilot will be announced to pilot gyms first. There is no per-member fee planned.',
   },
   {
     q: 'Do my members have to install an app?',
@@ -61,6 +61,6 @@ export const FAQ = [
   },
   {
     q: 'Who owns the data?',
-    a: 'Your gym owns its member list and can export it as CSV any time. Members own their own data and can export or delete it from the app. Camera video never leaves the phone.',
+    a: 'Your gym owns its member list. Members own their own data and can export or delete it from the app. Camera video never leaves the phone.',
   },
 ] as const;
