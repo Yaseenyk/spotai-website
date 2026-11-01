@@ -25,16 +25,18 @@ const base = import.meta.env.BASE_URL;
         </div>
         <ol class="demo__steps">
           <li>Open the downloaded <code>spotai-demo.apk</code>. If Android asks, allow installs from your browser.</li>
-          <li>Tap <strong>I already have an account</strong> and sign in as <code>{SITE.demo.logins[0]}</code> or <code>{SITE.demo.logins[1]}</code>, password <code>{SITE.demo.password}</code>.</li>
-          <li>Check in, pick a session, log sets. It keeps working across days, like the real thing.</li>
+          <li>Tap <strong>Sign up</strong>, enter your name, email and a password, and tick the privacy notice. Your account is ready at once; no email code in the demo.</li>
+          <li>Check in, pick a session, log sets. Everything you save stays on your phone and is still there when you open the app again.</li>
         </ol>
-        <p class="demo__meta">Version {SITE.demo.version} · Android {SITE.demo.android} or newer · {SITE.demo.size} · signed by SpotAI</p>
+        <p class="demo__meta">Version {SITE.demo.version} · Android {SITE.demo.android} or newer · {SITE.demo.size} · signed by SpotAI · just looking? sign in as <code>{SITE.demo.logins[0]}</code>, password <code>{SITE.demo.password}</code></p>
         <div class="demo__ios">
           <strong>On iPhone</strong>
           <ol>
-            <li>Open <a href={`/${SITE.demo.web}`}>spotai.streamerosai.com/{SITE.demo.web}</a> in <strong>Safari</strong>.</li>
-            <li>Tap the <strong>Share</strong> button, then <strong>Add to Home Screen</strong>.</li>
-            <li>Open SpotAI from your home screen. It runs full-screen and keeps your data on the phone. Same sign-in as above.</li>
+            <li><strong>Quickest:</strong> open <a href={`/${SITE.demo.web}`}>spotai.streamerosai.com/{SITE.demo.web}</a> in <strong>Safari</strong>, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>. It opens full-screen and keeps your data on the phone.</li>
+            <li>
+              <strong>Native iOS app:</strong> <a href={`/${SITE.demo.ipa}`} download>download the iOS build</a> ({SITE.demo.ipaSize}, iOS {SITE.demo.ios} or newer) and install it from your computer with
+              <a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> or AltStore using your Apple ID. With a free Apple ID the install lasts 7 days, then you install it again. App Store and TestFlight come at launch.
+            </li>
           </ol>
         </div>
       </div>
@@ -339,74 +341,7 @@ const base = import.meta.env.BASE_URL;
   }
   @media (max-width: 600px) {
     .waitlist__row,
-    .demo {
-    margin-top: 28px;
-    padding: 22px 24px;
-    border-radius: 18px;
-    background: rgba(139, 92, 246, 0.12);
-    box-shadow: inset 0 0 0 1px rgba(196, 181, 253, 0.35);
-  }
-  .demo__head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .demo h3 {
-    font-size: 22px;
-  }
-  .demo__head p {
-    margin-top: 4px;
-    color: var(--steel);
-    font-size: 15px;
-  }
-  .demo__steps {
-    margin: 16px 0 0;
-    padding-left: 20px;
-    color: var(--steel);
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  .demo__steps li + li {
-    margin-top: 6px;
-  }
-  .demo code {
-    padding: 1px 6px;
-    border-radius: 6px;
-    background: rgba(236, 233, 225, 0.08);
-    color: var(--chalk);
-    font-size: 13.5px;
-  }
-  .demo__meta {
-    margin-top: 12px;
-    font-size: 13px;
-    color: var(--dim);
-  }
-  .demo__btns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .demo__ios {
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid var(--line);
-    font-size: 14.5px;
-    color: var(--steel);
-  }
-  .demo__ios strong:first-child {
-    color: var(--chalk);
-  }
-  .demo__ios ol {
-    margin: 8px 0 0;
-    padding-left: 20px;
-    line-height: 1.6;
-  }
-  .demo__ios a {
-    color: var(--violet-2);
-  }
-  .paths {
+    .paths {
       grid-template-columns: 1fr;
     }
   }

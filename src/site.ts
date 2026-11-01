@@ -12,7 +12,7 @@ export const SITE = {
   formEndpoint: '',
   pilot: { gyms: 10, days: 90, city: 'Hyderabad' },
   // Offline demo build of the member app; everything it saves stays on the phone.
-  demo: { web: 'demo/', apk: 'downloads/spotai-demo.apk', version: '1.1', size: '49 MB', android: '7.0', logins: ['ram@demo.spotai.app', 'yaseen@demo.spotai.app'], password: 'spotai-demo' },
+  demo: { web: 'demo/', apk: 'downloads/spotai-demo.apk', ipa: 'downloads/spotai-ios.ipa', version: '1.2', size: '49 MB', ipaSize: '38 MB', android: '7.0', ios: '15', logins: ['ram@demo.spotai.app', 'yaseen@demo.spotai.app'], password: 'spotai-demo' },
   author: { name: 'Yaseen Khatib', url: 'https://yaseenkhatib.streamerosai.com' },
   twitterCard: 'summary_large_image',
   locale: 'en_IN',
@@ -55,7 +55,7 @@ export const FAQ = [
   },
   {
     q: 'When can I download SpotAI?',
-    a: 'The app is in private demo with partner gyms in Hyderabad. Android and iOS come at launch; join the waitlist or ask your gym to switch it on and we will tell you first.',
+    a: 'You can try the full member app today: download it for Android, install it on iPhone, or open it in Safari. Gyms in Hyderabad are joining as partners; join the waitlist or ask your gym to switch it on.',
   },
   {
     q: 'Which exercises does the AI coach check?',
