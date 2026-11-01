@@ -1,4 +1,5 @@
 ---
+import { SITE } from '../site';
 const exercises = [
   ['squat', 'Squat'],
   ['deadlift', 'Deadlift'],
@@ -19,10 +20,10 @@ const exercises = [
         paid with UPI.
       </p>
       <div class="hero__cta">
-        <a href="#download" class="btn btn--primary">Get early access</a>
+        <a href={`/${SITE.demo.apk}`} download class="btn btn--primary">Download the Android demo</a>
         <a href="/for-gym-owners/" class="btn btn--ghost">Gym owner? Free pilot</a>
       </div>
-      <p class="hero__note">Free 90-day pilot for the first 10 gyms in Hyderabad. Members need no app to start.</p>
+      <p class="hero__note">Android {SITE.demo.android}+, {SITE.demo.size}, works offline. <a href="#download">Install steps and iPhone</a></p>
     </div>
 
     <div class="stage" data-stage>

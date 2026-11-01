@@ -8,9 +8,26 @@ const base = import.meta.env.BASE_URL;
     <div class="download__copy">
       <h2 id="download-title">Get SpotAI at your gym</h2>
       <p class="lead">
-        In private demo with partner gyms in {SITE.pilot.city}. Android and iOS at launch. Tell us who you are and we
-        reply on WhatsApp.
+        Try the Android demo today. Gym owners in {SITE.pilot.city} get a free pilot. Tell us who you are and we reply
+        on WhatsApp.
       </p>
+
+      <div class="demo">
+        <div class="demo__head">
+          <div>
+            <h3>Try the demo now</h3>
+            <p>The full member app, running offline on your phone. Nothing you log leaves the phone.</p>
+          </div>
+          <a href={`/${SITE.demo.apk}`} download class="btn btn--primary">Download for Android</a>
+        </div>
+        <ol class="demo__steps">
+          <li>Open the downloaded <code>spotai-demo.apk</code>. If Android asks, allow installs from your browser.</li>
+          <li>Tap <strong>I already have an account</strong> and sign in as <code>{SITE.demo.logins[0]}</code> or <code>{SITE.demo.logins[1]}</code>, password <code>{SITE.demo.password}</code>.</li>
+          <li>Check in, pick a session, log sets. It keeps working across days, like the real thing.</li>
+        </ol>
+        <p class="demo__meta">Version {SITE.demo.version} · Android {SITE.demo.android} or newer · {SITE.demo.size} · signed by SpotAI</p>
+        <p class="demo__ios"><strong>iPhone:</strong> Apple only allows installs from the App Store or TestFlight. The iPhone demo arrives through TestFlight; join the waitlist below and we send the link.</p>
+      </div>
 
       <div class="paths">
         <a class="path path--owner" href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi SpotAI, I run a gym in ${SITE.pilot.city} and want the free pilot.`)}`} target="_blank" rel="noopener">
@@ -105,6 +122,55 @@ const base = import.meta.env.BASE_URL;
   }
   .download__copy .lead {
     margin-top: 16px;
+  }
+  .demo {
+    margin-top: 28px;
+    padding: 22px 24px;
+    border-radius: 18px;
+    background: rgba(139, 92, 246, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(196, 181, 253, 0.35);
+  }
+  .demo__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .demo h3 {
+    font-size: 22px;
+  }
+  .demo__head p {
+    margin-top: 4px;
+    color: var(--steel);
+    font-size: 15px;
+  }
+  .demo__steps {
+    margin: 16px 0 0;
+    padding-left: 20px;
+    color: var(--steel);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .demo__steps li + li {
+    margin-top: 6px;
+  }
+  .demo code {
+    padding: 1px 6px;
+    border-radius: 6px;
+    background: rgba(236, 233, 225, 0.08);
+    color: var(--chalk);
+    font-size: 13.5px;
+  }
+  .demo__meta {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--dim);
+  }
+  .demo__ios {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--steel);
   }
   .paths {
     display: grid;
@@ -245,7 +311,56 @@ const base = import.meta.env.BASE_URL;
   }
   @media (max-width: 600px) {
     .waitlist__row,
-    .paths {
+    .demo {
+    margin-top: 28px;
+    padding: 22px 24px;
+    border-radius: 18px;
+    background: rgba(139, 92, 246, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(196, 181, 253, 0.35);
+  }
+  .demo__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .demo h3 {
+    font-size: 22px;
+  }
+  .demo__head p {
+    margin-top: 4px;
+    color: var(--steel);
+    font-size: 15px;
+  }
+  .demo__steps {
+    margin: 16px 0 0;
+    padding-left: 20px;
+    color: var(--steel);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .demo__steps li + li {
+    margin-top: 6px;
+  }
+  .demo code {
+    padding: 1px 6px;
+    border-radius: 6px;
+    background: rgba(236, 233, 225, 0.08);
+    color: var(--chalk);
+    font-size: 13.5px;
+  }
+  .demo__meta {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--dim);
+  }
+  .demo__ios {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--steel);
+  }
+  .paths {
       grid-template-columns: 1fr;
     }
   }

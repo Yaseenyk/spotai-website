@@ -11,6 +11,8 @@ export const SITE = {
   // Form endpoint (Formspree, Web3Forms or similar). Empty string keeps the mailto fallback.
   formEndpoint: '',
   pilot: { gyms: 10, days: 90, city: 'Hyderabad' },
+  // Offline demo build of the member app; everything it saves stays on the phone.
+  demo: { apk: 'downloads/spotai-demo.apk', version: '1.1', size: '49 MB', android: '7.0', logins: ['ram@demo.spotai.app', 'yaseen@demo.spotai.app'], password: 'spotai-demo' },
   author: { name: 'Yaseen Khatib', url: 'https://yaseenkhatib.streamerosai.com' },
   twitterCard: 'summary_large_image',
   locale: 'en_IN',

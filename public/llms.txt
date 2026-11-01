@@ -44,6 +44,7 @@ Last updated: 2026-11-01
 
 ## Pages
 
+- https://spotai.streamerosai.com/downloads/spotai-demo.apk — Android offline demo of the member app (v1.1, Android 7.0+, 49 MB); sign in as ram@demo.spotai.app or yaseen@demo.spotai.app, password spotai-demo
 - https://spotai.streamerosai.com/for-gym-owners/ — owner landing: who came, who stopped coming, who owes; free 90-day pilot for the first 10 Hyderabad gyms
 - https://spotai.streamerosai.com/pricing/ — free pilot, free for members, no per-member fee planned
 - https://spotai.streamerosai.com/features/ — index of every feature page
