@@ -9,6 +9,11 @@ on:
   schedule:
     - cron: '17 0 * * *'
   workflow_dispatch:
+    inputs:
+      force_keepalive:
+        description: 'Make the keep-alive commit now (to test that it can push)'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -65,7 +70,7 @@ jobs:
           last=$(git log -1 --format=%ct)
           age=$(( ($(date +%s) - last) / 86400 ))
           echo "Last commit was $age days ago."
-          if [ "$age" -ge 45 ]; then
+          if [ "$age" -ge 45 ] || [ "${{ inputs.force_keepalive }}" = "true" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit --allow-empty -m "Keep the guide schedule active"
