@@ -4,7 +4,7 @@ export const SITE = {
   tagline: 'The AI gym buddy for Indian gyms',
   description:
     'Nobody checking your form, no plan for today, dues chased on WhatsApp: SpotAI fixes all three. An AI gym coach that checks your squat on the phone camera, a workout log, an opt-in gym leaderboard and buddies for members; arrivals, dues reminders and UPI payments for gym owners in India. Video never leaves the phone.',
-  url: 'https://yaseenyk.github.io/spotai-website/',
+  url: 'https://spotai.streamerosai.com/',
   email: 'contact@streamerosai.com',
   author: { name: 'Yaseen Khatib', url: 'https://yaseenkhatib.streamerosai.com' },
   twitterCard: 'summary_large_image',

@@ -23,7 +23,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      # Publishes dist/ to the gh-pages branch, which GitHub Pages serves at /spotai-website/.
+      # Publishes dist/ to the gh-pages branch; public/CNAME keeps the custom domain on it.
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -2,7 +2,7 @@
 
 > SpotAI is an AI gym buddy for members and a management console for gym owners in India. Live form check on the phone camera (on-device, nothing uploaded), workout logging, an opt-in gym leaderboard, buddy matching, QR and optional face check-in, dues reminders and UPI payments. Consent per purpose, data export and deletion built in.
 
-Site: https://yaseenyk.github.io/spotai-website/
+Site: https://spotai.streamerosai.com/
 Status: private demo with partner gyms; Play Store and App Store on launch. Waitlist on the site.
 Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streamerosai.com
 
@@ -34,4 +34,4 @@ Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streameros
 
 ## Pages
 
-- https://yaseenyk.github.io/spotai-website/ : home, with sections for members, the AI coach, gains and leaderboard, gym owners, privacy, FAQ and download.
+- https://spotai.streamerosai.com/ : home, with sections for members, the AI coach, gains and leaderboard, gym owners, privacy, FAQ and download.

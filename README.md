@@ -6,7 +6,7 @@ Astro + GSAP, static HTML. Every section is readable without JavaScript; the ani
 
 ```bash
 npm install
-npm run dev      # http://localhost:4321/spotai-website/
+npm run dev      # http://localhost:4321/
 npm run build    # dist/
 ```
 
