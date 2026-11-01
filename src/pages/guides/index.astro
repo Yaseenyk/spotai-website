@@ -3,15 +3,21 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE } from '../../site';
+import { getCollection } from 'astro:content';
 
 const base = import.meta.env.BASE_URL;
 const url = `${SITE.url}guides/`;
-const guides = [
+const pages = [
   { slug: 'calories-in-indian-food', title: 'Calories in roti, rice, dal and other Indian food', blurb: 'One roti, one idli, a bowl of dal: calories and protein per serving for everyday Indian dishes.', for: 'Members' },
   { slug: 'gym-workout-plan-for-beginners', title: 'Gym workout plan for beginners', blurb: 'A 3-day full body plan and a 4-day upper/lower split, with sets, reps and how to progress.', for: 'Members' },
   { slug: 'gym-fee-reminder-message', title: 'Gym fee reminder message templates', blurb: 'Ready-to-send WhatsApp reminders in English and Hindi, before, on and after the due date.', for: 'Gym owners' },
   { slug: 'gym-attendance-register', title: 'Gym attendance register: free sheet', blurb: 'A free attendance sheet for Excel or Google Sheets, and three checks that keep members renewing.', for: 'Gym owners' },
 ];
+// Scheduled Markdown guides appear once their publish date has passed (newest first), then the pages above.
+const scheduled = (await getCollection('guides', (g) => g.data.publish <= new Date()))
+  .sort((a, b) => b.data.publish.getTime() - a.data.publish.getTime())
+  .map((g) => ({ slug: g.id, title: g.data.h1, blurb: g.data.blurb, for: g.data.audience === 'owner' ? 'Gym owners' : 'Members' }));
+const guides = [...scheduled, ...pages];
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',

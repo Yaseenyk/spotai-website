@@ -14,8 +14,12 @@ interface Props {
   updated: string;
   faq: { q: string; a: string }[];
   cta: { label: string; href: string; text: string };
+  /** First publication date (YYYY-MM-DD) when it differs from `updated`. */
+  published?: string;
+  /** Cover image path under the site root, e.g. og/guides/<slug>.png (1200x630). */
+  cover?: string;
 }
-const { slug, title, description, h1, answer, updated, faq, cta } = Astro.props;
+const { slug, title, description, h1, answer, updated, faq, cta, published, cover } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const url = `${SITE.url}guides/${slug}/`;
 const jsonLd = {
@@ -28,6 +32,8 @@ const jsonLd = {
       description,
       url,
       dateModified: updated,
+      datePublished: published ?? updated,
+      ...(cover ? { image: `${SITE.url}${cover}` } : {}),
       inLanguage: 'en-IN',
       author: { '@type': 'Person', name: SITE.author.name, url: SITE.author.url },
       publisher: { '@id': `${SITE.url}#org` },
@@ -49,7 +55,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={title} description={description} jsonLd={jsonLd}>
+<Layout title={title} description={description} jsonLd={jsonLd} image={cover ? `${SITE.url}${cover}` : undefined} imageAlt={cover ? h1 : undefined}>
   <Nav />
   <main id="main" class="guide">
     <article class="wrap guide__in">

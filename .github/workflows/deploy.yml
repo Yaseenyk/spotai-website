@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Monday and Thursday 06:00 IST: rebuilding publishes guides whose date has arrived.
+  schedule:
+    - cron: '30 0 * * 1,4'
   workflow_dispatch:
 
 permissions:
