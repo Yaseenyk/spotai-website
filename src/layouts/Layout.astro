@@ -3,11 +3,12 @@ import '../styles/global.css';
 import { SITE, FAQ } from '../site';
 
 interface Props {
+  noindex?: boolean;
   title?: string;
   description?: string;
   jsonLd?: unknown;
 }
-const { title = `${SITE.name} — ${SITE.tagline}`, description = SITE.description, jsonLd: pageLd } = Astro.props;
+const { title = `${SITE.name} — ${SITE.tagline}`, description = SITE.description, jsonLd: pageLd, noindex = false } = Astro.props;
 const pageGraph = (pageLd as { '@graph'?: unknown[]; '@type'?: string } | undefined)?.['@graph'] ?? (pageLd ? [pageLd] : []);
 const pageHasFaq = pageGraph.some((n) => (n as { '@type'?: string })['@type'] === 'FAQPage');
 const base = import.meta.env.BASE_URL;
@@ -25,6 +26,7 @@ const jsonLd = {
       logo: `${SITE.url}icon.svg`,
       email: SITE.email,
       founder: { '@type': 'Person', name: SITE.author.name, url: SITE.author.url },
+      description: SITE.description,
       areaServed: 'IN',
       address: { '@type': 'PostalAddress', addressLocality: 'Hyderabad', addressRegion: 'Telangana', addressCountry: 'IN' },
       sameAs: ['https://github.com/Yaseenyk/spotai-website', SITE.author.url],
@@ -37,37 +39,6 @@ const jsonLd = {
       description: SITE.description,
       inLanguage: 'en-IN',
       publisher: { '@id': `${SITE.url}#org` },
-    },
-    {
-      '@type': 'MobileApplication',
-      '@id': `${SITE.url}#app`,
-      name: SITE.name,
-      description: SITE.description,
-      applicationCategory: 'HealthApplication',
-      operatingSystem: 'Android, iOS',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR', availability: 'https://schema.org/PreOrder' },
-      featureList: [
-        'On-device AI form check for squats',
-        'Workout plan, exercise library with short videos, set logging',
-        'Opt-in gym leaderboard: visits, kilograms, streak',
-        'Buddy matching, chat and training groups',
-        'QR and optional face check-in',
-        'Membership, dues and UPI payments',
-        'Consent per purpose, data export and deletion',
-      ],
-      author: { '@id': `${SITE.url}#org` },
-      screenshot: og,
-    },
-    {
-      '@type': 'SoftwareApplication',
-      '@id': `${SITE.url}#owner`,
-      name: `${SITE.name} for Gym Owners`,
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web',
-      description:
-        'Owner dashboard and staff consoles for Indian gyms: arrivals with dues flags, revenue, busy hours, members, plans, dues reminders, complaints, trainer review queue and front-desk check-in.',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR', availability: 'https://schema.org/PreOrder' },
-      author: { '@id': `${SITE.url}#org` },
     },
     {
       '@type': 'FAQPage',
@@ -90,8 +61,8 @@ const jsonLd = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={SITE.author.name} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
+    {!noindex && <link rel="canonical" href={canonical} />}
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
     <link rel="manifest" href={`${base}site.webmanifest`} />

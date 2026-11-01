@@ -16,7 +16,7 @@ const jsonLd = {
   '@id': url,
   url,
   name: 'SpotAI features',
-  description: 'Everything SpotAI does for gym members and gym owners in India: AI form check, workouts, leaderboard and buddies, QR check-in and UPI dues, the owner console, and privacy.',
+  description: 'Everything SpotAI does for gym members and owners in India: AI squat form check, workouts, leaderboard, QR check-in, UPI dues and the gym console.',
   isPartOf: { '@id': `${SITE.url}#website` },
   hasPart: FEATURES.map((f) => ({ '@type': 'WebPage', url: `${SITE.url}features/${f.slug}/`, name: f.title })),
 };

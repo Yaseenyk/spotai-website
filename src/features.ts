@@ -268,9 +268,9 @@ export const FEATURES: Feature[] = [
   {
     slug: 'owners',
     nav: 'Gym owners',
-    title: 'Gym management software for Indian gyms',
+    title: 'Gym console: dues, check-in, staff and insights',
     description:
-      'The SpotAI gym console: live arrivals, who stopped coming, dues with reminders, members, plans, staff roles, insights, complaints, front desk, trainer tip review, moderation, groups and entrance devices.',
+      'Every screen of the SpotAI gym console: arrivals, dues, members, plans, staff roles, insights, complaints, front desk, trainer tip review and moderation.',
     audience: 'owners',
     problem: 'Chasing dues on WhatsApp?',
     fix: 'Who came, who owes, when it is busy. One console for you, your trainer and the desk.',

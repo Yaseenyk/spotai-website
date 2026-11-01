@@ -9,7 +9,7 @@ const base = import.meta.env.BASE_URL;
 const url = `${SITE.url}for-gym-owners/`;
 const wa = (t: string) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(t)}`;
 const pilotMsg = `Hi SpotAI, I run a gym in ${SITE.pilot.city} and want the free pilot.`;
-const title = 'Gym management software for Indian gyms, free pilot in Hyderabad';
+const title = 'Gym management software for India, free pilot';
 const description = `See who came today, who stopped coming and who owes, from one screen. Free ${SITE.pilot.days}-day pilot for the first ${SITE.pilot.gyms} gyms in ${SITE.pilot.city}; members need no app to start.`;
 const faq = [
   { q: 'How much does it cost?', a: `Free for the first ${SITE.pilot.gyms} gyms in ${SITE.pilot.city} for ${SITE.pilot.days} days. Pricing after the pilot is announced to pilot gyms first; there is no per-member fee planned.` },
@@ -23,7 +23,7 @@ const faq = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'WebPage', '@id': url, url, name: title, description, isPartOf: { '@id': `${SITE.url}#website` }, about: { '@id': `${SITE.url}#owner` } },
+    { '@type': 'WebPage', '@id': url, url, name: title, description, isPartOf: { '@id': `${SITE.url}#website` }, about: { '@id': `${SITE.url}#org` } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'SpotAI', item: SITE.url }, { '@type': 'ListItem', position: 2, name: 'For gym owners', item: url }] },
     { '@type': 'FAQPage', mainEntity: faq.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } })) },
   ],

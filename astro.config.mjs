@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://spotai.streamerosai.com',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  integrations: [sitemap({ lastmod: new Date() })],
   build: { inlineStylesheets: 'auto' },
   compressHTML: true,
 });
