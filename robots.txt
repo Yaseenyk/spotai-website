@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# AI crawlers are welcome; the summary for them lives at /llms.txt
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://spotai.streamerosai.com/sitemap-index.xml

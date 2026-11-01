@@ -1,0 +1,37 @@
+# SpotAI
+
+> SpotAI is an AI gym buddy for members and a management console for gym owners in India. Live form check on the phone camera (on-device, nothing uploaded), workout logging, an opt-in gym leaderboard, buddy matching, QR and optional face check-in, dues reminders and UPI payments. Consent per purpose, data export and deletion built in.
+
+Site: https://spotai.streamerosai.com/
+Status: private demo with partner gyms; Play Store and App Store on launch. Waitlist on the site.
+Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streamerosai.com
+
+## For members (B2C)
+
+- AI coach: MediaPipe pose tracking on the phone. Squats today: knee valgus, shallow depth and excessive forward lean flagged per rep. A tip per set, written from trainer-approved templates. Frames never leave the phone.
+- Training: a weekly plan or a muscle-group session (back and biceps, chest and triceps, shoulders, legs). The app suggests what to train next from the last 7 days using the twice-a-week-per-muscle guideline. Each exercise has a how-to and a YouTube Short that plays in the app.
+- Gains: lifetime kilograms and reps, this week's numbers, milestone badges, personal bests, visit history.
+- Leaderboard: opt-in, first names only, three boards (visits this week, kg this week, streak). Leave any time.
+- Buddies: suggestions, requests, chat, training groups, a helper badge for members who help others. Adults only; separate consent for matching and chat.
+- Check-in: QR from the app, or confirm a face check-in on the phone. Membership with days left, dues and UPI payment in the app.
+- Privacy centre: every consent toggle, export my data, delete my account, file a complaint and get a reference number.
+
+## For gym owners (B2B)
+
+- Owner dashboard: today's arrivals with dues flagged, revenue, visits and busy hours, members, plans, dues reminders that respect consent, complaints.
+- Front-desk console: check-in by QR or name, pending check-ins.
+- Trainer console: review queue for the AI coach's tips with each flag's wrong-rate, moderation, helper endorsements, group creation.
+- Face check-in (optional): runs on a small device at the entrance with a liveness check and encrypted templates; stays in shadow mode until calibrated with consenting members.
+
+## Technical facts
+
+- Apps: Vue 3 member app packaged with Capacitor for Android and iOS; Vue 3 owner dashboard and staff console on the web.
+- API: NestJS on PostgreSQL with row-level security per gym, NATS events, S3-compatible clip storage.
+- AI: pose on device (MediaPipe); language models only through a gateway that redacts identity, checks consent and guards output, with template fallback.
+- Accessibility: member, staff and owner screens pass WCAG AA checks in the automated test suite.
+- Tests: 179 API tests, browser tests across all three apps.
+- Languages: English now; Hindi and Bengali after native-speaker review.
+
+## Pages
+
+- https://spotai.streamerosai.com/ : home, with sections for members, the AI coach, gains and leaderboard, gym owners, privacy, FAQ and download.
