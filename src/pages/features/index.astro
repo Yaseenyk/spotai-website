@@ -1,0 +1,184 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { FEATURES } from '../../features';
+import { SITE } from '../../site';
+
+const base = import.meta.env.BASE_URL;
+const url = `${SITE.url}features/`;
+const members = FEATURES.filter((f) => f.audience !== 'owners');
+const owners = FEATURES.filter((f) => f.audience !== 'members');
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': url,
+  url,
+  name: 'SpotAI features',
+  description: 'Everything SpotAI does for gym members and gym owners in India: AI form check, workouts, leaderboard and buddies, QR check-in and UPI dues, the owner console, and privacy.',
+  isPartOf: { '@id': `${SITE.url}#website` },
+  hasPart: FEATURES.map((f) => ({ '@type': 'WebPage', url: `${SITE.url}features/${f.slug}/`, name: f.title })),
+};
+---
+
+<Layout title="Features · SpotAI" description={jsonLd.description} jsonLd={jsonLd}>
+  <Nav />
+  <main id="main" class="list">
+    <div class="wrap">
+      <h1 class="wide">Everything SpotAI does</h1>
+      <p class="lead">One app for members, one console for the gym. Each page below names the problem and shows the screen that fixes it.</p>
+
+      <h2>For members</h2>
+      <ul class="grid" role="list">
+        {
+          members.map((f) => (
+            <li>
+              <a href={`${base}features/${f.slug}/`}>
+                <div class="shot">
+                  <div class={f.shots[0]!.kind === 'phone' ? 'phone' : 'browser'}>
+                    <img src={`${base}shots/${f.shots[0]!.src}`} width={f.shots[0]!.kind === 'phone' ? 640 : 1600} height={f.shots[0]!.kind === 'phone' ? 1385 : 1000} alt={f.shots[0]!.alt} loading="lazy" decoding="async" />
+                  </div>
+                </div>
+                <span>{f.nav}</span>
+                <strong>{f.problem}</strong>
+                <em>{f.fix}</em>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2>For gym owners</h2>
+      <ul class="grid" role="list">
+        {
+          owners.map((f) => (
+            <li>
+              <a href={`${base}features/${f.slug}/`}>
+                <div class="shot">
+                  <div class={f.shots[0]!.kind === 'phone' ? 'phone' : 'browser'}>
+                    <img src={`${base}shots/${f.shots[0]!.src}`} width={f.shots[0]!.kind === 'phone' ? 640 : 1600} height={f.shots[0]!.kind === 'phone' ? 1385 : 1000} alt={f.shots[0]!.alt} loading="lazy" decoding="async" />
+                  </div>
+                </div>
+                <span>{f.nav}</span>
+                <strong>{f.problem}</strong>
+                <em>{f.fix}</em>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .list {
+    padding: 136px 0 80px;
+  }
+  h1 {
+    font-size: clamp(34px, 4.2vw, 60px);
+  }
+  .list .lead {
+    margin-top: 16px;
+  }
+  h2 {
+    margin-top: 48px;
+    font-size: 22px;
+    color: var(--violet-2);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .grid a {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 6px;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #1f2129, #171920);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 0 0 1px var(--line);
+    overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow 0.25s ease;
+  }
+  .grid a:hover {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 0 0 1px rgba(196, 181, 253, 0.6);
+  }
+  .shot {
+    position: relative;
+    height: 240px;
+    padding: 22px 22px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    background: radial-gradient(70% 60% at 50% 100%, rgba(139, 92, 246, 0.3), transparent 70%);
+  }
+  .shot::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 30%;
+    background: linear-gradient(180deg, transparent, rgba(23, 25, 32, 0.95));
+    pointer-events: none;
+  }
+  .shot .phone {
+    width: 58%;
+    flex: 0 0 auto;
+  }
+  .shot .browser {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    background: #e9eaef;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+  .shot .browser img {
+    width: 150%;
+    max-width: none;
+  }
+  .grid span {
+    margin: 10px 22px 0;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--violet-2);
+  }
+  .grid strong {
+    margin: 0 22px;
+    font-size: 20px;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 110;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+  }
+  .grid em {
+    margin: 0 22px 22px;
+    font-style: normal;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--steel);
+  }
+  @media (max-width: 960px) {
+    .list {
+      padding-top: 112px;
+    }
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

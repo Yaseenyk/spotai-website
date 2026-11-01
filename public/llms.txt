@@ -34,4 +34,5 @@ Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streameros
 
 ## Pages
 
+- https://spotai.streamerosai.com/features/ — index of every feature page
 - https://spotai.streamerosai.com/ : home, with sections for members, the AI coach, gains and leaderboard, gym owners, privacy, FAQ and download.
