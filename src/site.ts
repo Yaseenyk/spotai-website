@@ -6,8 +6,8 @@ export const SITE = {
     'AI gym app for India: squat form check on your phone, today’s workout, your gym’s leaderboard. Owners see who came and who owes. Free pilot in Hyderabad.',
   url: 'https://spotai.streamerosai.com/',
   email: 'contact@streamerosai.com',
-  // WhatsApp click-to-chat. Digits only with country code; replace the placeholder before launch.
-  whatsapp: '919000000000',
+  // WhatsApp click-to-chat. Digits only with country code.
+  whatsapp: '918208335028',
   // Form endpoint (Formspree, Web3Forms or similar). Empty string keeps the mailto fallback.
   formEndpoint: '',
   pilot: { gyms: 10, days: 90, city: 'Hyderabad' },
