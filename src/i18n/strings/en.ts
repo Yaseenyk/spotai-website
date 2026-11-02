@@ -33,6 +33,9 @@ export default {
     /** Floating WhatsApp button: aria-label and visible text. */
     waLabel: 'Chat on WhatsApp',
     waShort: 'WhatsApp',
+    /** Floating download button, above WhatsApp: aria-label and visible text. */
+    dlLabel: 'Download the SpotAI demo app',
+    dlShort: 'Download app',
     /** Alt text of the default share image. */
     ogImageAlt: 'SpotAI: your AI gym buddy, with the member app and the owner dashboard',
     breadcrumb: 'Breadcrumb',

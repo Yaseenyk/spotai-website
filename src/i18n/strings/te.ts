@@ -24,6 +24,8 @@ export default {
     language: 'భాష',
     waLabel: 'WhatsAppలో చాట్ చేయండి',
     waShort: 'WhatsApp',
+    dlLabel: 'SpotAI డెమో యాప్ డౌన్‌లోడ్ చేయండి',
+    dlShort: 'యాప్ డౌన్‌లోడ్',
     ogImageAlt: 'SpotAI: మీ AI జిమ్ బడ్డీ, మెంబర్ యాప్ మరియు ఓనర్ డాష్‌బోర్డ్‌తో',
     breadcrumb: 'బ్రెడ్‌క్రంబ్',
     inApp: 'SpotAI యాప్‌లో',

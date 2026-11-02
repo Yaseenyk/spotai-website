@@ -376,12 +376,23 @@ const switcher = LANGS.map((l) => ({ ...l, href: switchHref(path, l.code, langs,
       display: flex;
       margin-left: auto;
     }
+    /* Open menu fills the screen; the link list scrolls inside it so the languages and CTA stay reachable. */
     .nav.is-open {
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
       background: var(--rubber);
       box-shadow: inset 0 -1px 0 var(--line);
     }
     .nav.is-open .nav__sheet {
       display: flex;
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+    .nav.is-open .nav__sheet > * {
+      flex-shrink: 0;
     }
   }
 </style>
@@ -394,11 +405,13 @@ const switcher = LANGS.map((l) => ({ ...l, href: switchHref(path, l.code, langs,
   window.addEventListener('scroll', solid, { passive: true });
   burger.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');
+    document.documentElement.classList.toggle('menu-open', open);
     burger.setAttribute('aria-expanded', String(open));
   });
   nav.querySelectorAll('[data-sheet] a').forEach((a) =>
     a.addEventListener('click', () => {
       nav.classList.remove('is-open');
+      document.documentElement.classList.remove('menu-open');
       burger.setAttribute('aria-expanded', 'false');
     }),
   );

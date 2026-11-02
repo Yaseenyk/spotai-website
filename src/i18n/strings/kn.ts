@@ -24,6 +24,8 @@ export default {
     language: 'ಭಾಷೆ',
     waLabel: 'WhatsApp‌ನಲ್ಲಿ ಮಾತಾಡಿ',
     waShort: 'WhatsApp',
+    dlLabel: 'SpotAI ಡೆಮೊ ಆ್ಯಪ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ',
+    dlShort: 'ಆ್ಯಪ್ ಡೌನ್‌ಲೋಡ್',
     ogImageAlt: 'SpotAI: ನಿಮ್ಮ AI ಜಿಮ್ ಜೊತೆಗಾರ, ಮೆಂಬರ್ ಆ್ಯಪ್ ಮತ್ತು ಮಾಲೀಕರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಜೊತೆ',
     breadcrumb: 'ಬ್ರೆಡ್‌ಕ್ರಂಬ್',
     inApp: 'SpotAI ಆ್ಯಪ್‌ನಲ್ಲಿ',

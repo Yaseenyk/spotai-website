@@ -24,6 +24,8 @@ export default {
     language: 'भाषा',
     waLabel: 'WhatsApp वर चॅट करा',
     waShort: 'WhatsApp',
+    dlLabel: 'SpotAI डेमो ॲप डाउनलोड करा',
+    dlShort: 'ॲप डाउनलोड',
     ogImageAlt: 'SpotAI: तुमचा AI जिम बडी, मेंबर ॲप आणि ओनर डॅशबोर्डसह',
     breadcrumb: 'ब्रेडक्रंब',
     inApp: 'SpotAI ॲपमध्ये',

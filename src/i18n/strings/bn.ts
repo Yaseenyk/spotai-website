@@ -26,6 +26,8 @@ export default {
     language: 'ভাষা',
     waLabel: 'WhatsApp-এ চ্যাট করুন',
     waShort: 'WhatsApp',
+    dlLabel: 'SpotAI ডেমো অ্যাপ ডাউনলোড করুন',
+    dlShort: 'অ্যাপ ডাউনলোড',
     ogImageAlt: 'SpotAI: আপনার AI জিম বাডি, মেম্বার অ্যাপ আর মালিকের ড্যাশবোর্ডসহ',
     breadcrumb: 'ব্রেডক্রাম্ব',
     inApp: 'SpotAI অ্যাপে',
