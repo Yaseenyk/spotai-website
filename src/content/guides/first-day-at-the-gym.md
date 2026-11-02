@@ -5,8 +5,8 @@ h1: 'First day at the gym: a beginner checklist'
 audience: member
 blurb: 'What to bring, what to eat and a 45-minute first workout.'
 answer: 'On your first day, keep it short and simple. Bring water, a small towel and clean indoor shoes, eat something light an hour or two before, and ask a trainer to show you around and watch you do a few basic exercises. Spend about 45 minutes: a warm-up, five easy exercises with light weights, and a cool-down. The goal of day one is to learn the gym and leave wanting to come back, not to wear yourself out.'
-publish: 2026-11-19
-updated: 2026-11-19
+publish: 2026-12-03
+updated: 2026-12-03
 faq:
   - q: 'What should I wear to the gym on the first day?'
     a: 'Comfortable clothes you can move in, such as a t-shirt and track pants or shorts, and clean indoor sports shoes. Many gyms ask you not to wear the shoes you walked in with.'

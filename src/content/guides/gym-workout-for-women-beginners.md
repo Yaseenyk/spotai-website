@@ -5,8 +5,8 @@ h1: 'Gym workout plan for women who are just starting'
 audience: member
 blurb: 'Two full-body workouts, three days a week, with weights, cardio and food tips.'
 answer: 'Start with three full-body sessions a week, alternating two simple workouts of five or six exercises each. Do 2 to 3 sets of 8 to 12 reps with a weight that feels challenging by the last few reps, and add a little weight when it gets easy. Lifting weights will make you stronger and fitter, not bulky. Add some walking or cycling, and eat enough protein to support your training.'
-publish: 2027-02-01
-updated: 2027-02-01
+publish: 2027-02-25
+updated: 2027-02-25
 faq:
   - q: 'Will lifting weights make women bulky?'
     a: 'Very unlikely. Building large muscles takes years of heavy, focused training and eating a lot. For most women, lifting leads to a firmer, stronger body and better fitness.'

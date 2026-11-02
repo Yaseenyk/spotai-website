@@ -5,8 +5,8 @@ h1: 'How many rest days a week do you need?'
 audience: member
 blurb: 'How many days to rest each week, and what to do on them.'
 answer: 'If you are new to the gym, train three or four days a week and rest the other three or four. Once you have trained regularly for six months or more, most people do well with two or three rest days a week. Give each muscle group about 48 hours before you train it hard again, and take at least one full rest day every week.'
-publish: 2026-12-03
-updated: 2026-12-03
+publish: 2027-01-04
+updated: 2027-01-04
 faq:
   - q: 'Is it OK to go to the gym every day?'
     a: 'You can be active every day, but training the same muscles hard every day leaves no time to recover. If you want to go daily, alternate muscle groups and make one or two of the days light: walking, cycling or mobility work. Keep at least one day a week completely easy.'

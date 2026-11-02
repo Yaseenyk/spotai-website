@@ -29,7 +29,7 @@ Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streameros
 - AI form check covers squats only; deadlift and bench press are next.
 - Dues reminders and UPI payments run in demo mode in the pilot; nothing is sent or charged.
 - Face check-in is optional hardware in shadow mode until calibrated with consenting members.
-- Private demo with partner gyms in Hyderabad; no public pricing yet; Android and iOS at launch.
+- Free 90-day pilot for the first 10 gyms anywhere in India, set up remotely over a video call and WhatsApp (in person around Hyderabad, our home base); no public pricing yet, no per-member fee planned; Android and iOS at launch.
 - English only; Hindi and Bengali coach tips drafted, awaiting native-speaker review.
 
 Last updated: 2026-11-02
@@ -46,8 +46,8 @@ Last updated: 2026-11-02
 ## Pages
 
 - https://spotai.streamerosai.com/demo/ — the same offline demo in the browser; on iPhone, Safari > Share > Add to Home Screen
-- https://spotai.streamerosai.com/downloads/spotai-demo.apk — Android offline demo of the member app (v1.7, Android 7.0+, 37 MB); sign in as ram@demo.spotai.app or yaseen@demo.spotai.app, password spotai-demo
-- https://spotai.streamerosai.com/for-gym-owners/ — owner landing: who came, who stopped coming, who owes; free 90-day pilot for the first 10 Hyderabad gyms
+- https://spotai.streamerosai.com/downloads/spotai-demo.apk — Android offline demo of the member app (v1.7.1, Android 7.0+, 37 MB); sign in as ram@demo.spotai.app or yaseen@demo.spotai.app, password spotai-demo
+- https://spotai.streamerosai.com/for-gym-owners/ — owner landing: who came, who stopped coming, who owes; free 90-day pilot for the first 10 gyms anywhere in India, set up remotely
 - https://spotai.streamerosai.com/pricing/ — free pilot, free for members, no per-member fee planned
 - https://spotai.streamerosai.com/features/ — index of every feature page
 - https://spotai.streamerosai.com/features/food-log/ — food log: 672 Indian home-style dishes from the Indian Nutrient Databank, servings or grams, daily and monthly calories and protein; photos stay on the phone

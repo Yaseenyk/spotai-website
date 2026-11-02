@@ -5,8 +5,8 @@ h1: 'How to price gym memberships in India'
 audience: owner
 blurb: 'Set membership prices from your costs, your area and sensible plan discounts.'
 answer: 'Start from your monthly costs to find the minimum average fee you need per member, then check what similar gyms near you charge and decide where you sit. Offer a ladder of plans (monthly, quarterly, half-yearly, annual) with moderate discounts for longer plans. Since 22 September 2025 GST on gym services is 5% without input tax credit, so decide whether your board price includes it and say so clearly.'
-publish: 2026-12-21
-updated: 2026-12-21
+publish: 2026-12-10
+updated: 2026-12-10
 faq:
   - q: 'How much should I charge for a gym membership in India?'
     a: 'It depends on your costs, your area and what you offer. Work out your break-even fee per member first, then compare with gyms of a similar standard within a few kilometres. Standard gyms in large cities often charge roughly ₹1,000 to ₹2,500 a month, but your own numbers matter more than any average.'
@@ -19,7 +19,7 @@ faq:
 cta:
   label: 'See SpotAI for gym owners'
   href: '/for-gym-owners/'
-  text: 'Set up your plans in SpotAI, track dues and reminders, and see who has stopped coming before renewal time. The pilot is free for the first gyms in Hyderabad.'
+  text: 'Set up your plans in SpotAI, track dues and reminders, and see who has stopped coming before renewal time. The pilot is free for the first gyms, anywhere in India.'
 ---
 
 Most gym owners set prices by looking at the gym down the road and charging a little less. That can work, but it can also leave you full of members and still losing money. A better method takes about an hour with a calculator.

@@ -5,8 +5,8 @@ h1: 'How to stay consistent at the gym'
 audience: member
 blurb: 'Fixed days, a minimum workout and a restart rule for weeks that go wrong.'
 answer: 'Consistency comes from a plan you can keep on bad days, not from motivation. Fix your gym days and time, set a minimum workout you can always do, and decide in advance what you will do after a missed week. Habits take weeks to months to form, and missing one day does not break them; quitting after a missed day does.'
-publish: 2027-04-01
-updated: 2027-04-01
+publish: 2027-04-12
+updated: 2027-04-12
 faq:
   - q: 'How long does it take to make the gym a habit?'
     a: 'Longer than the popular 21 days. In a well-known study, people took a median of about 66 days for a new daily behaviour to feel automatic, with a wide range from 18 to 254 days. Expect two to three months of conscious effort.'

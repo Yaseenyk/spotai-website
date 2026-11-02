@@ -5,8 +5,8 @@ h1: 'A 10-minute stretch after your workout'
 audience: member
 blurb: 'Nine stretches, how long to hold them, and what stretching actually does for you.'
 answer: 'After your workout, spend about 10 minutes on slow stretches for the muscles you trained: hips, thighs, calves, chest, shoulders and back. Hold each stretch for 20 to 30 seconds without bouncing, at a point of mild tension, not pain, and repeat once or twice on tight areas. Regular stretching improves flexibility over weeks, but it does little to prevent next-day soreness.'
-publish: 2027-03-15
-updated: 2027-03-15
+publish: 2027-03-29
+updated: 2027-03-29
 faq:
   - q: 'Should I stretch before or after a workout?'
     a: 'Do movement-based warm-up drills before, and save longer, slow stretches for after. Long static holds right before heavy lifting can slightly reduce strength for a short time.'

@@ -5,8 +5,8 @@ h1: 'How to check your exercise form with your phone camera'
 audience: member
 blurb: 'Where to put the phone, the right angle for each lift, and what to look for.'
 answer: 'Prop your phone at about hip height, 2 to 3 metres away, with your whole body and the weight in the frame. Film from the side for squats, deadlifts, rows and presses, and from the front to check knees and balance. Then watch the set back, pausing at the bottom and the top of a rep, and compare your first rep with your last.'
-publish: 2027-01-28
-updated: 2027-01-28
+publish: 2027-02-22
+updated: 2027-02-22
 faq:
   - q: 'What is the best angle to film a squat?'
     a: 'From the side, at hip height, to see depth, back angle and bar path. Film a second set from the front, slightly lower, to see whether your knees cave in.'

@@ -5,8 +5,8 @@ h1: 'How long should a gym workout be?'
 audience: member
 blurb: 'Where the minutes go, and 30, 45 and 60-minute session plans you can use.'
 answer: 'For most people, 45 to 60 minutes is enough for a full strength session, including a warm-up. On a busy day, 30 focused minutes still counts. What matters more than the clock is doing your main exercises with enough sets and sensible rest, and training often enough across the week: about three sessions for beginners.'
-publish: 2027-01-21
-updated: 2027-01-21
+publish: 2027-02-15
+updated: 2027-02-15
 faq:
   - q: 'Is a 30-minute gym workout enough?'
     a: 'Yes, if you use it well. Pick three or four main exercises, do 2 or 3 sets each with short rests, and train three times a week. You will make good progress, especially as a beginner.'

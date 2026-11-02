@@ -5,8 +5,8 @@ h1: 'Tracking gym attendance without a paper register'
 audience: owner
 blurb: 'Compare check-in methods, see which reports matter, and switch from paper in two weeks.'
 answer: 'Pick a check-in method members will use on every single visit, whether that is a QR code, a card, a fingerprint scanner or the front desk, and then actually use the data every week. The useful reports are simple: who came today, who has not come in 7 or 14 days, and your busiest hours. Collect only what you need and tell members how it is used.'
-publish: 2027-04-19
-updated: 2027-04-19
+publish: 2026-11-19
+updated: 2026-11-19
 faq:
   - q: 'What is the best way to track gym attendance?'
     a: 'The one your members will use every visit without thinking. For most small gyms that is either a QR code at the entrance or a quick desk check-in by name. Biometric scanners work well too but cost more to set up and raise privacy questions.'
@@ -19,7 +19,7 @@ faq:
 cta:
   label: 'See arrivals and who stopped coming'
   href: '/for-gym-owners/'
-  text: 'SpotAI records check-ins by QR or at the front desk by name, and shows owners who arrived today, who has stopped coming and the busiest hours. Free pilot for the first gyms in Hyderabad.'
+  text: 'SpotAI records check-ins by QR or at the front desk by name, and shows owners who arrived today, who has stopped coming and the busiest hours. Free pilot for the first gyms, anywhere in India.'
 ---
 
 Most Indian gyms still start with a register at the front desk. It costs nothing and everyone understands it. The trouble starts when you want to use it: who has not been in for two weeks, which hours are packed, whether January's new members are still coming. A register cannot answer those questions without someone spending an evening on it.
@@ -95,7 +95,7 @@ Costs vary widely, from a free spreadsheet to software with monthly fees plus ha
 - Will it work on the **phones and internet** you already have?
 - Can you **export your data** if you switch later?
 
-SpotAI is one option: members check in with a QR code or at the desk by name, and the owner view shows today's arrivals, who has stopped coming and busy hours. The pilot is free for the first gyms in Hyderabad.
+SpotAI is one option: members check in with a QR code or at the desk by name, and the owner view shows today's arrivals, who has stopped coming and busy hours. The pilot is free for the first gyms, anywhere in India.
 
 ### Sources
 

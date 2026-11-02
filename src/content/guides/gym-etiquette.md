@@ -5,8 +5,8 @@ h1: 'Gym etiquette: the unwritten rules'
 audience: member
 blurb: 'Re-racking, sharing at rush hour, sweat, phones and how to ask for a machine politely.'
 answer: 'Good gym etiquette comes down to three things: leave equipment as you found it, share fairly when the gym is busy, and respect other people''s space. Put weights back, wipe benches, use clean indoor shoes, keep your music in your earphones, and ask before you join someone''s equipment. Never film other people, and do not give advice unless someone asks.'
-publish: 2027-03-01
-updated: 2027-03-01
+publish: 2027-03-18
+updated: 2027-03-18
 faq:
   - q: 'How do I ask someone if I can use a machine?'
     a: 'Wait for them to finish a set, then ask: "How many sets left?" or "Can I work in between your sets?" Most people are happy to share. If they have several sets to go, use something else and come back.'

@@ -5,8 +5,8 @@ h1: 'How to get more gym members in India'
 audience: owner
 blurb: 'Where new members come from, and the few things that bring in more of them.'
 answer: 'Most local gyms grow by fixing a few basics rather than running big campaigns: a complete Google Maps listing with recent reviews, a reply to every enquiry on the same day, a trial that comes with a simple plan, and a referral reward for current members. Keeping the members you already have matters just as much, because every member who stays is one you do not need to replace.'
-publish: 2026-12-10
-updated: 2026-12-10
+publish: 2026-12-07
+updated: 2026-12-07
 faq:
   - q: 'What is the fastest way to get more gym members?'
     a: 'Answer every enquiry the same day and invite the person in for a specific time. Many gyms lose interested people simply by replying late or not following up after a visit. Then ask your current members to refer a friend.'
@@ -19,7 +19,7 @@ faq:
 cta:
   label: 'See SpotAI for gym owners'
   href: '/for-gym-owners/'
-  text: 'SpotAI shows arrivals today, who has stopped coming, dues and busy hours, and gives members workouts and an AI squat check. The pilot is free for the first gyms in Hyderabad.'
+  text: 'SpotAI shows arrivals today, who has stopped coming, dues and busy hours, and gives members workouts and an AI squat check. The pilot is free for the first gyms, anywhere in India.'
 ---
 
 When a gym is not growing, the instinct is to print more pamphlets or run a big discount. Usually the leak is elsewhere: people find the gym, ask about fees, and never hear back. Or they join, train for six weeks, and quietly stop. Fix those first, then spend on marketing.

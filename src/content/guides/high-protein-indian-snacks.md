@@ -5,8 +5,8 @@ h1: 'High-protein Indian snacks'
 audience: member
 blurb: 'Indian snacks with protein per portion, and which "protein" snacks are mostly hype.'
 answer: 'The best high-protein Indian snacks are soya chunk chaat, paneer tikka, boiled eggs or egg bhurji, moong dal or besan chilla, chicken tikka, and curd with roasted chana. A normal portion of each gives roughly 10 to 25 g of protein. Makhana, peanut chikki and most namkeen are tasty, but a usual portion gives only a few grams of protein.'
-publish: 2027-03-04
-updated: 2027-03-04
+publish: 2027-03-22
+updated: 2027-03-22
 faq:
   - q: 'What is the highest-protein vegetarian Indian snack?'
     a: 'Soya chunks are the most protein-dense: about 15 g from 30 g dry, made into a chaat or sukha. Paneer tikka is next, with about 18 g per 100 g of paneer.'

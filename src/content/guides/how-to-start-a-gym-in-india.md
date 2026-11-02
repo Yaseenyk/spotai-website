@@ -5,8 +5,8 @@ h1: 'How to start a gym in India'
 audience: owner
 blurb: 'Location, licences, GST, cost heads, break-even and your first 90 days.'
 answer: 'To start a gym in India, pick a location with enough people within a short drive, choose a business structure, and get the local registrations: Shops and Establishments, a municipal trade licence, fire safety clearance where your building needs it, and GST once you cross the threshold. Work out how many paying members you need to cover monthly costs before you sign a lease. Plan for retention and fee collection from day one, because they decide whether a new gym survives.'
-publish: 2027-03-08
-updated: 2027-03-08
+publish: 2026-12-31
+updated: 2026-12-31
 faq:
   - q: 'What licences do I need to open a gym in India?'
     a: 'Usually a Shops and Establishments registration from the state labour department, a trade licence from your municipal body, a fire NOC if your building or floor area requires it, GST registration once turnover crosses the limit, and music licences if you play recorded music. Rules differ by state and city, so confirm with your local offices or a CA.'
@@ -19,7 +19,7 @@ faq:
 cta:
   label: 'Run your gym with SpotAI'
   href: '/for-gym-owners/'
-  text: 'See arrivals today, members who have stopped coming, dues and reminders, plans and busy hours in one place. A free pilot is open to the first gyms in Hyderabad.'
+  text: 'See arrivals today, members who have stopped coming, dues and reminders, plans and busy hours in one place. A free pilot is open to the first gyms anywhere in India.'
 ---
 
 When a new gym struggles, it is rarely because the equipment was wrong. It is usually because the gym has not reached enough paying, regular members to cover rent and salaries. This guide covers the setup steps, but also the numbers and habits that keep a new gym open.

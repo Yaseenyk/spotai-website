@@ -5,8 +5,8 @@ h1: 'Push-ups for beginners: from zero to ten'
 audience: member
 blurb: 'An incline ladder and a 6-week plan to go from zero push-ups to ten good ones.'
 answer: 'Start with push-ups on an incline, hands on a bench, bar or wall, at a height where you can do 8 to 12 good reps. Keep your body in a straight line from head to heels and lower your chest all the way. Every week or two, lower the incline a step, training two or three times a week, until you reach the floor.'
-publish: 2027-04-08
-updated: 2027-04-08
+publish: 2027-04-15
+updated: 2027-04-15
 faq:
   - q: 'Are knee push-ups or incline push-ups better for beginners?'
     a: 'Both work. Incline push-ups keep your body in the same straight line as a full push-up, so they carry over more directly, and you can adjust the height in small steps. Knee push-ups are fine at home where you have nothing to lean on.'

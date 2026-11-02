@@ -5,8 +5,8 @@ h1: 'Squat or leg press?'
 audience: member
 blurb: 'What each lift does, what the studies found, and how to use both on leg day.'
 answer: 'Both build your legs. The squat carries over better to general strength, balance and jumping, while the leg press is easier to learn, easier to load heavy safely, and targets the quads with less demand on your back. Most people do best with both: learn the squat as your main lift and use the leg press for extra leg work.'
-publish: 2027-04-22
-updated: 2027-04-22
+publish: 2027-04-26
+updated: 2027-04-26
 faq:
   - q: 'Can the leg press replace squats?'
     a: 'For building leg muscle, the leg press can do much of the same job. For strength you can use outside the gym, balance and jumping, squats have the edge. If you cannot squat because of an injury or medical advice, the leg press is a good substitute.'

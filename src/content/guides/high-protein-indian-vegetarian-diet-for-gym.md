@@ -5,8 +5,8 @@ h1: 'High-protein Indian vegetarian diet for gym beginners'
 audience: member
 blurb: 'How much protein you need and the Indian vegetarian foods that get you there.'
 answer: 'Most people who train regularly do well on about 1.4 to 2 g of protein per kg of body weight a day, so 85 to 120 g for someone weighing 60 kg. A typical Indian vegetarian day often lands well below that. The simplest fix is to add one protein-rich food to every meal: paneer, soya chunks, dal, chana, curd or milk, and to eat dal and curd in bigger portions than usual.'
-publish: 2026-11-09
-updated: 2026-11-09
+publish: 2026-11-23
+updated: 2026-11-23
 faq:
   - q: 'Can you build muscle on a vegetarian Indian diet?'
     a: 'Yes. Paneer, curd, milk, soya, dals and pulses together can cover a gym-goer''s protein needs. It takes planning, because many everyday vegetarian meals are built around roti and rice with smaller portions of dal.'

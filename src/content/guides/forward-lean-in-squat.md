@@ -5,8 +5,8 @@ h1: 'Leaning too far forward in the squat'
 audience: member
 blurb: 'How much lean is normal in a squat, and drills to stay upright.'
 answer: 'Some forward lean is normal in every squat, and people with long thighs lean more. It becomes a problem when your chest drops sharply or your hips rise before your shoulders on the way up, which shifts the work to your lower back. Lighter weight, letting your knees travel forward, better ankle mobility and drills like the goblet squat usually fix it.'
-publish: 2026-12-07
-updated: 2026-12-07
+publish: 2027-01-07
+updated: 2027-01-07
 faq:
   - q: 'Is it OK to lean forward when squatting?'
     a: 'Yes, a moderate forward lean is normal and needed for balance, especially in the back squat with the bar low on your back. What you want to avoid is the angle of your back changing a lot during the rep, such as your hips rising first while your chest stays down.'

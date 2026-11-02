@@ -5,8 +5,8 @@ h1: 'How to use a treadmill (and not get bored)'
 audience: member
 blurb: 'Safety basics, speeds in km/h and four treadmill workouts that pass the time.'
 answer: 'Clip the safety key to your clothes, stand on the side rails, start the belt at a slow walk of 3 to 4 km/h, then step on and build up over a few minutes. Walk tall without holding the handrails, and use incline before speed if you want more effort. To beat boredom, follow a set workout such as an incline walk or intervals rather than a flat 30 minutes at one speed.'
-publish: 2027-04-12
-updated: 2027-04-12
+publish: 2027-04-19
+updated: 2027-04-19
 faq:
   - q: 'What speed should a beginner walk on a treadmill?'
     a: 'Start around 3 to 4 km/h for the first couple of minutes, then move to a brisk walk, usually 5 to 6.5 km/h for most adults. Brisk means you can talk but would not want to sing.'

@@ -5,8 +5,8 @@ h1: 'Do you need whey protein?'
 audience: member
 blurb: 'When whey protein helps, when you can skip it, and what to check before you buy.'
 answer: 'No, you do not need whey protein to build muscle. It is milk protein in powder form, and it does the same job as protein from paneer, curd, eggs, dal or chicken. Whey makes sense if you regularly fall short of your daily protein target and find it hard to eat more. If your meals already get you there, powder adds cost, not results.'
-publish: 2027-02-18
-updated: 2027-02-18
+publish: 2027-03-11
+updated: 2027-03-11
 faq:
   - q: 'Should a beginner take whey protein?'
     a: 'Most beginners get the biggest gains from training regularly and eating enough protein from food. Whey is optional. Try adding a protein food to each meal for a few weeks first, and use powder only if you still fall short.'

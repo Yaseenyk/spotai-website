@@ -5,8 +5,8 @@ h1: 'How to warm up before lifting'
 audience: member
 blurb: 'A 10-minute warm-up and the warm-up sets that get you ready to lift.'
 answer: 'Spend about 5 to 10 minutes getting warm before you lift: a few minutes of easy cardio until you are breathing a little harder, then moves that take your joints through the range you will use that day. After that, do two to four lighter warm-up sets of your first exercise, building up to your working weight. Skip long static stretches before heavy lifting; keep any holds short.'
-publish: 2027-02-11
-updated: 2027-02-11
+publish: 2027-03-04
+updated: 2027-03-04
 faq:
   - q: 'How long should a warm-up before the gym be?'
     a: 'About 5 to 10 minutes of general warm-up is enough for most people, plus a few warm-up sets for your first exercise. On a cold morning, or if you feel stiff, take a few minutes longer.'

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /demo/
+Disallow: /downloads/
 
 # AI crawlers are welcome; the summary for them lives at /llms.txt
 User-agent: GPTBot

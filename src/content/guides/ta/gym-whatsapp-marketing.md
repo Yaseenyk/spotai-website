@@ -5,8 +5,8 @@ h1: 'ஜிம்களுக்கான WhatsApp marketing'
 audience: owner
 blurb: 'Consent, ஒரு மாதாந்திர message plan, spam இல்லாமல் members-ஐத் திரும்ப வரவைக்கும் உதாரணங்கள்.'
 answer: 'மக்கள் உங்களிடமிருந்து messages பெற ஒப்புக்கொண்டிருந்து, ஒவ்வொரு message-ம் அவர்களுக்குப் பயனுள்ளதாக இருந்தால், WhatsApp ஜிம்களுக்கு நன்றாக வேலை செய்யும். Enquiry, சேரும் நேரத்தில் தெளிவான opt-in வாங்குங்கள், follow-ups, renewals-க்குத் தனிப்பட்ட one-to-one messages அனுப்புங்கள், broadcasts-ஐ மாதத்துக்கு இரண்டு மூன்றாக வையுங்கள். Messages-ஐ நிறுத்துவதை எளிதாக்குங்கள், எத்தனை பேரை எட்டினீர்கள் என்பதை வைத்து அல்ல, replies, visits, renewals-ஐ வைத்து வெற்றியை அளவிடுங்கள்.'
-publish: 2027-02-08
-updated: 2027-02-08
+publish: 2026-12-17
+updated: 2026-12-17
 faq:
   - q: 'ஜிம் members-க்கு WhatsApp marketing messages அனுப்புவது சட்டப்படி சரியா?'
     a: 'WhatsApp-ன் Business Messaging Policy-படி, உங்களிடம் number கொடுத்து உங்கள் business-இடமிருந்து messages பெற ஒப்புக்கொண்டவர்களுக்கு மட்டுமே message அனுப்பலாம். இந்தியாவின் தரவுப் பாதுகாப்புச் சட்டமும் தெளிவான consent கேட்கிறது. Opt-in-ஐ எழுத்தில் வாங்குங்கள், யாராவது கேட்டால் நிறுத்துங்கள்.'

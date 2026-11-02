@@ -1,6 +1,7 @@
-# SERP notes (kn): gym-management-software-hyderabad
+# SERP notes (kn): gym-management-software-india
 
-Main phrase: ಹೈದರಾಬಾದ್ ಜಿಮ್ ಮ್ಯಾನೇಜ್‌ಮೆಂಟ್ ಸಾಫ್ಟ್‌ವೇರ್  
+Main phrase: ಭಾರತದಲ್ಲಿ ಜಿಮ್ ಮ್ಯಾನೇಜ್‌ಮೆಂಟ್ ಸಾಫ್ಟ್‌ವೇರ್  
+Retargeted 2026-11-02 from gym-management-software-hyderabad: pilot is open India-wide (remote setup); Hyderabad kept as one example. Results below were checked for the Hyderabad query.  
 Checked: 2026-11-02 (web search, standard)
 
 **Phrases:** gym management software hyderabad; ಜಿಮ್ ಮ್ಯಾನೇಜ್‌ಮೆಂಟ್ ಸಾಫ್ಟ್‌ವೇರ್; gym software price india

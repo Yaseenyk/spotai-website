@@ -5,8 +5,8 @@ h1: 'What to eat before the gym: Indian pre-workout meals'
 audience: member
 blurb: 'Indian meals and snacks to eat before training, by how much time you have.'
 answer: 'Eat a normal meal with carbohydrates and some protein two to three hours before training, or a small, easy snack 30 to 60 minutes before. Good Indian options are poha, idli, upma, roti with dal, a banana, or curd with fruit. Keep fried and very heavy food for later, because it sits in your stomach while you train.'
-publish: 2026-12-14
-updated: 2026-12-14
+publish: 2027-01-14
+updated: 2027-01-14
 faq:
   - q: 'What should I eat 30 minutes before the gym?'
     a: 'Something small and easy to digest, mostly carbohydrate: a banana, two or three dates, a slice of toast with a little honey, or a small bowl of curd with fruit. Keep it light so you do not feel full while you train.'

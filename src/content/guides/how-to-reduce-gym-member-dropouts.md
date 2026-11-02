@@ -19,7 +19,7 @@ faq:
 cta:
   label: 'See who stopped coming'
   href: '/for-gym-owners/'
-  text: 'SpotAI records check-ins by QR or at the desk and shows owners who has stopped coming before the renewal date. A free pilot is open to the first gyms in Hyderabad.'
+  text: 'SpotAI records check-ins by QR or at the desk and shows owners who has stopped coming before the renewal date. A free pilot is open to the first gyms anywhere in India.'
 ---
 
 Most gyms put their effort into getting new members through the door. Keeping them is cheaper, and the work happens in the first few weeks. Here is a practical plan any gym can run, with or without software.

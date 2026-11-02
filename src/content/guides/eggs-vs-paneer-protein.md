@@ -5,8 +5,8 @@ h1: 'Eggs vs paneer: which gives more protein?'
 audience: member
 blurb: 'Protein per 100 g, per calorie and per rupee, with portions that reach 20 g.'
 answer: 'Gram for gram, paneer has more protein: about 20 g per 100 g against about 12.6 g in whole egg. But paneer also has far more fat and calories, so per 100 calories eggs give more protein, and egg whites give much more. If you eat eggs, they are usually the cheaper, leaner choice; if you are vegetarian, paneer is one of your best sources. Both are good-quality protein.'
-publish: 2027-01-14
-updated: 2027-01-14
+publish: 2027-02-11
+updated: 2027-02-11
 faq:
   - q: 'How much protein is in 2 eggs?'
     a: 'Two large whole eggs (about 100 g without the shell) have roughly 12.6 g of protein and about 143 calories, based on USDA values. Indian eggs vary in size, so treat this as an estimate.'

@@ -5,8 +5,8 @@ h1: 'Progressive overload, explained for beginners'
 audience: member
 blurb: 'How to keep getting stronger: add reps, then weight, and log every set.'
 answer: 'Progressive overload means doing a little more over time, so your muscles keep having a reason to adapt. For beginners the simplest method is double progression: pick a rep range like 8 to 12, add reps each session until you hit the top of the range on every set, then add the smallest weight jump and start again at 8. You need a log of your sets to do this properly.'
-publish: 2026-12-24
-updated: 2026-12-24
+publish: 2027-01-25
+updated: 2027-01-25
 faq:
   - q: 'How fast should I increase the weight?'
     a: 'Only when you can do all your sets at the top of your rep range with good form. A common guideline is to add about 2 to 10 percent at a time, which in practice means the smallest step available: 1.25 or 2.5 kg plates on each side of a barbell, or the next dumbbell up.'

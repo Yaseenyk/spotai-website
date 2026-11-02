@@ -5,8 +5,8 @@ h1: 'Gym challenge ideas that keep members coming'
 audience: owner
 blurb: 'Eight challenges scored on visits and effort, with a 4-week plan to run them.'
 answer: 'The best gym challenges reward showing up, not being the fittest person in the room. Score on visits, streaks or personal improvement so a beginner can win, keep the rules to one line, run it for four weeks, and show progress on a board people can opt in to. Avoid public weigh-ins and max-lift contests for beginners.'
-publish: 2027-03-22
-updated: 2027-03-22
+publish: 2027-01-11
+updated: 2027-01-11
 faq:
   - q: 'How long should a gym challenge run?'
     a: 'Four weeks is a good default. It is long enough for a routine to start forming and short enough that people do not lose interest. Two-week challenges work well around festivals; anything over six weeks usually needs a mid-point reset to keep people involved.'

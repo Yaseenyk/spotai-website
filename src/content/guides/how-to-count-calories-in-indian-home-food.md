@@ -5,8 +5,8 @@ h1: 'How to count calories in Indian home food'
 audience: member
 blurb: 'A practical method for dal, sabzi, roti and rice cooked at home for the whole family.'
 answer: 'Count the oil or ghee separately, because it causes most of the error. For dishes cooked for the family, add up the raw ingredients once, divide by the number of servings, and use the same katori every time. Rotis and rice are easiest to count by raw weight. You do not need perfect numbers, only consistent ones you can adjust from.'
-publish: 2027-03-25
-updated: 2027-03-25
+publish: 2027-04-05
+updated: 2027-04-05
 faq:
   - q: 'How many calories are in one roti?'
     a: 'It depends on size. A roti made from about 30 g of dry atta has roughly 100 kcal before ghee. Weigh the dough ball for a few rotis once to learn what your usual roti weighs. Each teaspoon of ghee on top adds about 45 kcal.'

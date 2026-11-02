@@ -1,8 +1,10 @@
-# Telugu keyword notes: gym-management-software-hyderabad
+# Telugu keyword notes: gym-management-software-india
 
 Checked: 2026-11-02 (web search, Telugu script and Tenglish)
 
-**Main phrase:** జిమ్ మేనేజ్‌మెంట్ సాఫ్ట్‌వేర్ హైదరాబాద్
+Retargeted 2026-11-02 from gym-management-software-hyderabad: pilot is open India-wide (remote setup); Hyderabad kept as one example. Results below were checked for the Hyderabad query.
+
+**Main phrase:** భారత్‌లో జిమ్ మేనేజ్‌మెంట్ సాఫ్ట్‌వేర్
 
 **Phrases people use:**
 - జిమ్ మేనేజ్‌మెంట్ సాఫ్ట్‌వేర్ హైదరాబాద్

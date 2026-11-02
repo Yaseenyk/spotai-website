@@ -5,8 +5,8 @@ h1: 'How deep should you squat?'
 audience: member
 blurb: 'What good squat depth looks like and three drills to reach it.'
 answer: 'For most people, a good target is to squat until the crease of the hip is level with or slightly below the top of the knee, often called "parallel", while keeping your heels down and your back in a strong position. Going lower is fine if you can keep that control. If you can only reach halfway at first, squat to the depth you control and work deeper over a few weeks.'
-publish: 2026-11-23
-updated: 2026-11-23
+publish: 2026-12-14
+updated: 2026-12-14
 faq:
   - q: 'Are deep squats bad for your knees?'
     a: 'For people without an existing knee problem, squatting through a full range with control is generally considered safe and is a normal human movement. Load and control matter more than depth. If squatting hurts, stop and get your knee checked rather than pushing through.'

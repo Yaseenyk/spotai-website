@@ -5,8 +5,8 @@ h1: 'How to collect gym fees on time'
 audience: owner
 blurb: 'A fee policy, a reminder schedule and a weekly dues routine that cut late payments.'
 answer: 'Most late fees come from unclear due dates and nobody following up, not from members who refuse to pay. Write a short fee policy, give every member a fixed renewal date, make paying by UPI take ten seconds, and send reminders before the due date rather than after it. Then spend 15 minutes each week on the dues list so nothing slips past 7 days.'
-publish: 2027-01-18
-updated: 2027-01-18
+publish: 2026-11-09
+updated: 2026-11-09
 faq:
   - q: 'Should I charge a late fee for gym membership?'
     a: 'A small, clearly written late fee can help, but only if it is in your fee policy from the start and you apply it to everyone. Many gyms get better results from a short grace period and a firm rule about pausing entry than from fines.'
@@ -19,7 +19,7 @@ faq:
 cta:
   label: 'See your dues list'
   href: '/for-gym-owners/'
-  text: 'SpotAI shows owners who owes, whose plan is ending and who has stopped coming. A free pilot is open to the first gyms in Hyderabad.'
+  text: 'SpotAI shows owners who owes, whose plan is ending and who has stopped coming. A free pilot is open to the first gyms anywhere in India.'
 ---
 
 Chasing fees is the least favourite job in most gyms. It eats the desk's time, it feels awkward, and the money still comes in late. The fix is rarely a stricter tone. It is a clear system that runs every week.
@@ -58,7 +58,7 @@ Pick one of these and stick to it:
 - **Anniversary date.** Each member renews on the date they joined. Simple, and dues are spread across the month.
 - **Fixed date for everyone.** For example the 1st of each month, with a pro-rata first month. Easier to track, but the desk gets busy at month start.
 
-Longer plans help too. A member on a quarterly or yearly plan has fewer chances to be late. Many gyms price longer plans lower per month to encourage them. Our guide on [pricing gym memberships](/guides/gym-membership-pricing-india/) covers how to set those gaps.
+Longer plans help too. A member on a quarterly or yearly plan has fewer chances to be late. Many gyms price longer plans lower per month to encourage them.
 
 ## 3. Make paying take ten seconds
 

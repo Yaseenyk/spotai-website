@@ -5,8 +5,8 @@ h1: 'What to eat after the gym: Indian post-workout meals'
 audience: member
 blurb: 'Indian meals to eat after training, with protein amounts and timing.'
 answer: 'After training, eat a normal meal with about 20 to 40 g of protein and some carbohydrate within an hour or two. Dal, rice and curd, paneer or egg bhurji with rotis, or chicken with rice all work. There is no need to rush a shake within 30 minutes; your protein across the whole day matters more than the exact minute you eat.'
-publish: 2026-12-17
-updated: 2026-12-17
+publish: 2027-01-18
+updated: 2027-01-18
 faq:
   - q: 'Do I have to eat within 30 minutes after a workout?'
     a: 'No. Research suggests the window for protein after training is much wider than the gym myth of 30 minutes, especially if you ate a meal a few hours before. Eating within an hour or two is fine. Total daily protein matters more.'

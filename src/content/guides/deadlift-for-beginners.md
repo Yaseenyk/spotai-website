@@ -5,8 +5,8 @@ h1: 'How to deadlift: a beginner''s guide'
 audience: member
 blurb: 'Learn the hinge, pick the right first variation and follow a simple 6-week plan.'
 answer: 'Learn the hip hinge first, with a stick or light dumbbells, before you put a loaded barbell on the floor. Start with a variation that sets the weight at a comfortable height, keep the bar close to your legs, and push the floor away rather than yanking with your back. Add weight slowly, only while every rep looks the same.'
-publish: 2027-03-29
-updated: 2027-03-29
+publish: 2027-04-08
+updated: 2027-04-08
 faq:
   - q: 'Are deadlifts bad for your back?'
     a: 'Done with good technique and a sensible weight, deadlifts train the muscles that support your back. Problems tend to come from too much weight too soon or from rounding under load. If you have back pain or a past back injury, see a doctor or physiotherapist before you start.'

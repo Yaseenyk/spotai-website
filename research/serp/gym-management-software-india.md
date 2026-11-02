@@ -1,6 +1,7 @@
-# SERP notes: gym-management-software-hyderabad
+# SERP notes: gym-management-software-india
 
-Keyword: gym management software hyderabad (variant: gym software india price per month)  
+Keyword: gym management software india (variant: gym software india price per month)  
+Retargeted 2026-11-02 from gym-management-software-hyderabad: the pilot is open to gyms anywhere in India (remote setup), so the guide targets the national query and keeps Hyderabad as one worked example. Results below were checked for the Hyderabad query.  
 Checked: 2026-11-02 (web search, standard; fetched Techjockey category page for listed prices)
 
 | Result | Site | Type | Angle |
@@ -26,7 +27,7 @@ Checked: 2026-11-02 (web search, standard; fetched Techjockey category page for 
 2. Do you need software at all (register/Excel up to a size; link to register guide).
 3. Must-have vs nice-to-have table.
 4. Price ranges seen on listings (Nov 2026) + custom builds; monthly vs yearly trap.
-5. Hyderabad-specific checks: staff language, WhatsApp, UPI/cash, local support visit.
+5. India-specific checks: staff language, WhatsApp, UPI/cash, setup and support; Hyderabad as one example (links to gym-fees-in-hyderabad).
 6. Questions to ask in a demo, data export, DPDP.
 7. Two-week trial plan.
 8. FAQ, sources.

@@ -5,8 +5,8 @@ h1: 'WhatsApp marketing for gyms, without spamming'
 audience: owner
 blurb: 'Consent, a monthly message plan and examples that bring members back without spam.'
 answer: 'WhatsApp works for gyms when people have agreed to hear from you and every message is useful to them. Collect a clear opt-in at enquiry and joining, send personal one-to-one messages for follow-ups and renewals, and keep broadcasts to two or three a month. Make it easy to stop messages, and judge success by replies, visits and renewals, not by how many people you reached.'
-publish: 2027-02-08
-updated: 2027-02-08
+publish: 2026-12-17
+updated: 2026-12-17
 faq:
   - q: 'Is it legal to send WhatsApp marketing messages to gym members?'
     a: 'WhatsApp''s Business Messaging Policy says you may message people only if they gave you their number and agreed to hear from your business. India''s data protection law also requires clear consent. Collect the opt-in in writing and stop when someone asks.'

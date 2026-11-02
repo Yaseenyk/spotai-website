@@ -1,6 +1,7 @@
-# SERP notes (hi): gym-management-software-hyderabad
+# SERP notes (hi): gym-management-software-india
 
-Keyword: हैदराबाद में जिम मैनेजमेंट सॉफ्टवेयर  
+Keyword: भारत में जिम मैनेजमेंट सॉफ्टवेयर  
+Retargeted 2026-11-02 from gym-management-software-hyderabad: pilot is open India-wide (remote setup); Hyderabad kept as one example. Results below were checked for the Hyderabad query.  
 Checked: 2026-11-02 (web search, Hindi and English)
 
 **Phrases people use:** "जिम मैनेजमेंट सॉफ्टवेयर", "जिम सॉफ्टवेयर की कीमत", "gym management software price India", "gym software Hyderabad". Owners mostly search this in English; the Hindi query returns English vendor pages.
@@ -14,4 +15,4 @@ Checked: 2026-11-02 (web search, Hindi and English)
 
 **Gap:** No Hindi page; nothing on how to choose or trial before paying.
 
-**Chosen main phrase:** "हैदराबाद में जिम मैनेजमेंट सॉफ्टवेयर" in title, h1, description and first paragraph. The English term is kept in Devanagari because that is how owners say and type it; a pure-Hindi word ("जिम प्रबंधन") does not appear in searches.
+**Chosen main phrase:** "भारत में जिम मैनेजमेंट सॉफ्टवेयर" in title, h1, description and first paragraph. The English term is kept in Devanagari because that is how owners say and type it; a pure-Hindi word ("जिम प्रबंधन") does not appear in searches.

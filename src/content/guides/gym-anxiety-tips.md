@@ -5,8 +5,8 @@ h1: 'Gym anxiety: how to walk in with confidence'
 audience: member
 blurb: 'A two-week plan to make the gym feel familiar, plus what to say and when to get help.'
 answer: 'Gym anxiety is the nervous, self-conscious feeling many people get about walking into a gym or training in front of others. It is common and usually eases as the place becomes familiar. Go at quieter hours, take a written plan so you always know your next exercise, start in one corner of the gym, and ask a trainer for a short tour. Most people are focused on their own workout, not on you.'
-publish: 2027-03-18
-updated: 2027-03-18
+publish: 2027-04-01
+updated: 2027-04-01
 faq:
   - q: 'Is gym anxiety normal?'
     a: 'Yes. Many people feel it when they first join or return after a long break. It is a reaction to an unfamiliar and sometimes crowded place, not a sign that something is wrong with you, and it usually fades as you keep going.'

@@ -5,8 +5,8 @@ h1: 'How much protein you need per day for the gym'
 audience: member
 blurb: 'Your daily protein target by body weight, and how to reach it with Indian meals.'
 answer: 'If you lift weights regularly, aim for about 1.4 to 2 g of protein per kg of body weight a day, so roughly 85 to 120 g if you weigh 60 kg. For most people the benefit levels off around 1.6 g per kg, so you do not need huge amounts. Split it across three or four meals of 20 to 40 g each, and get most of it from food.'
-publish: 2026-11-26
-updated: 2026-11-26
+publish: 2026-12-24
+updated: 2026-12-24
 faq:
   - q: 'Is 1 g of protein per kg enough for the gym?'
     a: 'It is more than the basic Indian recommendation of 0.83 g per kg, and it is a reasonable first step if you currently eat much less. For building muscle, research points to about 1.4 to 2 g per kg, so treat 1 g per kg as a starting point and build up.'

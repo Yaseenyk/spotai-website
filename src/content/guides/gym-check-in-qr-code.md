@@ -5,8 +5,8 @@ h1: 'QR code check-in for gyms'
 audience: owner
 blurb: 'How QR check-in works, how it compares with a register or biometric, and a one-week setup.'
 answer: 'With QR check-in, each visit is recorded when a member scans a code at the entrance, or when the desk scans the code on the member''s phone. It is faster than a paper register, needs no special hardware, and gives you clean data on who comes, when, and who has stopped. Put the code at the entrance, keep a desk fallback for members without a phone, and review the list every week.'
-publish: 2027-01-07
-updated: 2027-01-07
+publish: 2026-11-26
+updated: 2026-11-26
 faq:
   - q: 'How does QR code check-in work at a gym?'
     a: 'Either the gym shows one code at the entrance and members scan it with the gym''s app, or each member has a personal code in their app that the desk scans. Both record the member, the date and the time of the visit.'
@@ -95,7 +95,7 @@ India's Digital Personal Data Protection Act, 2023 sets rules on consent and on 
 
 ## A note on cost
 
-A printed QR code costs nothing. The cost is in the app or software behind it, which varies a lot, so compare what the price includes: check-ins, member lists, reminders and reports. SpotAI's check-in, arrivals list and "stopped coming" view are part of a free pilot for the first gyms in Hyderabad.
+A printed QR code costs nothing. The cost is in the app or software behind it, which varies a lot, so compare what the price includes: check-ins, member lists, reminders and reports. SpotAI's check-in, arrivals list and "stopped coming" view are part of a free pilot for the first gyms anywhere in India.
 
 ### Sources
 

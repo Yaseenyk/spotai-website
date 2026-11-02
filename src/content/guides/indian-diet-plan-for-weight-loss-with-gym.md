@@ -5,8 +5,8 @@ h1: 'An Indian eating plan for weight loss alongside the gym'
 audience: member
 blurb: 'A flexible Indian eating plan for fat loss that keeps your strength and your dal-chawal.'
 answer: 'Eat a little less than you burn, not a lot less: losing about half a kilo a week is a safe pace according to ICMR-NIN. Keep your usual Indian meals but control portions of rice, roti and oil, put a protein food in every meal, and keep lifting so the weight you lose is mostly fat. Check your weekly average weight and adjust every two weeks.'
-publish: 2027-04-15
-updated: 2027-04-15
+publish: 2027-04-22
+updated: 2027-04-22
 faq:
   - q: 'How many calories should I eat to lose weight?'
     a: 'It depends on your size, age and activity, so a fixed chart of 1,200 or 1,500 kcal will be wrong for many people. Track what you eat now for a week, then cut about 300 to 500 kcal a day. ICMR-NIN advises that weight-loss diets should not go below 1,000 kcal a day.'

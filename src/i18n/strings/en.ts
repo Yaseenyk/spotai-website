@@ -43,9 +43,9 @@ export default {
     seeFeature: 'See the full feature',
     chatWhatsApp: 'Chat on WhatsApp',
     /** Prefilled WhatsApp message from a gym owner who wants the pilot. */
-    waOwnerPilot: `Hi SpotAI, I run a gym in ${pilot.city} and want the free pilot.`,
+    waOwnerPilot: 'Hi SpotAI, I run a gym and want the free pilot. My gym and city: ',
     /** Prefilled WhatsApp message a member forwards to their gym owner; `url` is the gym owners page. */
-    waAskOwner: (url: string) => `Bhaiya, can we get SpotAI at our gym? Free pilot for Hyderabad gyms: ${url}`,
+    waAskOwner: (url: string) => `Hi! Can we get SpotAI at our gym? It has a free ${pilot.days}-day pilot for gyms anywhere in India: ${url}`,
     /** Screen-reader state of a privacy switch. */
     on: 'on',
     off: 'off',
@@ -98,6 +98,10 @@ export default {
     lead: 'The AI gym app for Indian gyms: form check on your phone camera, today’s plan, your gym’s leaderboard, dues paid with UPI.',
     ctaApk: 'Download the Android demo',
     ctaOwner: 'Gym owner? Free pilot',
+    /** Keyword line above the hook, inside the H1. */
+    kicker: 'AI gym app and gym management software for India',
+    /** One line for gym owners, above the buttons. */
+    owner: `Gym owners: see who came, who stopped coming and who owes. Free ${pilot.days}-day pilot, anywhere in India.`,
     /** HTML. */
     note: `Android ${demo.android}+, ${demo.size}, works offline. On iPhone, <a href="/${demo.web}">open the web demo</a>.`,
     repsLabel: 'reps this set',
@@ -193,7 +197,7 @@ export default {
     for: 'For gym owners',
     title: 'See who came today. See who stopped coming. Before they stop paying.',
     lead: 'Most gym software in India is a register with a login. SpotAI shows you who came, who owes, and when the floor is busy, and gives members a reason to keep coming.',
-    more: 'Free pilot for Hyderabad gyms',
+    more: 'Free pilot for gyms across India',
     /** Label over each owner console screenshot. */
     console: 'Owner console, in the browser',
     /** One per screenshot, in order. */
@@ -220,7 +224,7 @@ export default {
       { title: 'Complaints with a reference', body: 'A member files from the app, gets a number, and you see it in the dashboard. Required under India’s DPDP rules.' },
       { title: 'Face check-in, your call', body: 'An optional entrance device with liveness check and encrypted templates, nothing in the cloud. Stays in shadow mode until calibrated with consenting members.' },
     ],
-    cta: 'Running a gym in Hyderabad? Free 90-day pilot, we load your register.',
+    cta: `Run a gym anywhere in India? Free ${pilot.days}-day pilot, set up over a video call; we load your register.`,
   },
 
   privacy: {
@@ -257,7 +261,7 @@ export default {
 
   download: {
     title: 'Get SpotAI at your gym',
-    lead: `Try the Android demo today. Gym owners in ${pilot.city} get a free pilot. Tell us who you are and we reply on WhatsApp.`,
+    lead: `Try the Android demo today. Gym owners anywhere in India get a free pilot. Tell us who you are and we reply on WhatsApp.`,
     demo: {
       title: 'Try the demo now',
       body: 'The full member app in 7 languages, running offline on your phone. Nothing you log leaves the phone.',
@@ -283,7 +287,7 @@ export default {
     },
     owner: {
       title: 'I own a gym',
-      body: `Free ${pilot.days}-day pilot for the first ${pilot.gyms} ${pilot.city} gyms. We load your register for you.`,
+      body: `Free ${pilot.days}-day pilot for the first ${pilot.gyms} gyms, anywhere in India. Send us your register and we load it for you.`,
       cta: 'Chat on WhatsApp',
     },
     member: {
@@ -318,7 +322,7 @@ export default {
 
   pricing: {
     title: 'Gym management software price in India',
-    description: `SpotAI is free for the first ${pilot.gyms} gyms in ${pilot.city} for ${pilot.days} days. Free for members. No per-member fee planned.`,
+    description: `SpotAI is free for the first ${pilot.gyms} gyms in India for ${pilot.days} days, set up remotely. Free for members. No per-member fee planned.`,
     /** Breadcrumb name in JSON-LD. */
     crumb: 'Pricing',
     h1: 'Pricing',
@@ -328,10 +332,10 @@ export default {
       price: '₹0',
       /** After the price. */
       per: `for ${pilot.days} days`,
-      sub: `First ${pilot.gyms} gyms in ${pilot.city}`,
+      sub: `First ${pilot.gyms} gyms, anywhere in India`,
       items: [
         'Owner console, front-desk console, trainer console',
-        'We load your register or Excel in one visit',
+        'We load your register or Excel for you, remotely',
         'QR poster for the desk, app poster for the floor',
         'WhatsApp support, seven days a week',
         'Your member list stays yours',
@@ -365,15 +369,15 @@ export default {
 
   forGymOwners: {
     title: 'Gym management software India: fee reminders, attendance',
-    description: `See who came today, who stopped coming and who owes, from one screen. Free ${pilot.days}-day pilot for the first ${pilot.gyms} gyms in ${pilot.city}; members need no app to start.`,
+    description: `See who came today, who stopped coming and who owes, from one screen. Free ${pilot.days}-day pilot for the first ${pilot.gyms} gyms anywhere in India, set up remotely; members need no app to start.`,
     /** Breadcrumb name in JSON-LD. */
     crumb: 'For gym owners',
-    heroFor: `For gym owners · ${pilot.city}`,
+    heroFor: 'For gym owners across India',
     h1: 'Gym management software that shows who came, who stopped coming and who owes.',
     fix: 'See it before they stop paying.',
     lead: 'SpotAI’s owner console is a live picture of your floor on your laptop or phone. Members need no app to start: the front desk checks them in by QR or by name. Members who want the AI coach, the leaderboard and buddies install the app when they are ready.',
     ctaPilot: 'The free pilot',
-    note: `Free ${pilot.days}-day pilot for the first ${pilot.gyms} gyms in ${pilot.city}. We load your register for you.`,
+    note: `Free ${pilot.days}-day pilot for the first ${pilot.gyms} gyms anywhere in India. Set up over a video call; we load your register for you.`,
     heroAlt: 'SpotAI owner console: arrivals today, active members, overdue, collected this month, daily visits, busy hours and live arrivals',
     today: {
       title: 'One screen, every morning',
@@ -424,11 +428,11 @@ export default {
     },
     pilot: {
       for: 'The free pilot',
-      title: `Free for the first ${pilot.gyms} gyms in ${pilot.city}, for ${pilot.days} days`,
+      title: `Free for the first ${pilot.gyms} gyms in India, for ${pilot.days} days`,
       get: 'You get',
       getItems: [
         'The owner console, front-desk console and trainer console.',
-        'We come to your gym and load your register or Excel in one visit.',
+        'Setup over a video call and WhatsApp: send us your register or Excel and we load it. Around Hyderabad, we can come to your gym.',
         'A QR poster for the desk and a member-app poster for the floor.',
         'WhatsApp support, seven days a week.',
         'Your member list stays yours, pilot or not.',
@@ -444,10 +448,10 @@ export default {
     },
     faqTitle: 'Questions gym owners ask',
     faq: [
-      { q: 'How much does it cost?', a: `Free for the first ${pilot.gyms} gyms in ${pilot.city} for ${pilot.days} days. Pricing after the pilot is announced to pilot gyms first; there is no per-member fee planned.` },
+      { q: 'How much does it cost?', a: `Free for the first ${pilot.gyms} gyms anywhere in India for ${pilot.days} days. Pricing after the pilot is announced to pilot gyms first; there is no per-member fee planned.` },
       { q: 'Do my members have to install an app?', a: 'No. The front desk checks members in by QR or by name and tracks dues without anyone installing anything. Members install the app when they want the AI coach, leaderboard, buddies or in-app payments.' },
       { q: 'What do I need at the gym?', a: 'A laptop or phone with internet for the console. Any Android phone for members who want the app. The face check-in device is optional and comes later.' },
-      { q: 'What happens to my register or Excel?', a: 'We load it for you in one visit: names, plans, end dates, dues. You keep working from the console from day one.' },
+      { q: 'What happens to my register or Excel?', a: 'Send it to us on WhatsApp, as a file or photos, and we load it for you: names, plans, end dates, dues. You keep working from the console from day one.' },
       { q: 'Does it replace my trainer?', a: 'No. Every tip the AI coach gives is a template your trainer approved in the trainer console, and trainers see which tips members marked wrong.' },
       { q: 'Who owns the data?', a: 'You own your member list. Members own their own data and can export or delete it from the app. Camera video never leaves their phone.' },
       { q: 'Do dues reminders and UPI work today?', a: 'In the pilot, reminders and UPI run in demo mode: the flows are in the app, nothing is sent or charged until we switch your gym to live with you.' },
@@ -670,7 +674,7 @@ export default {
         a: 'The owner console lists every overdue member with the amount and days late, and the reminder button only works for members who allowed reminders. Members see what they owe and pay with UPI in the app. In the pilot, reminders and UPI run in demo mode.',
       },
     ],
-    cta: { label: 'See the dues list', text: 'SpotAI shows who owes, how many days late, and lets members pay with UPI in the app. Free pilot for Hyderabad gyms.' },
+    cta: { label: 'See the dues list', text: 'SpotAI shows who owes, how many days late, and lets members pay with UPI in the app. Free pilot for gyms across India.' },
     /** Ready-to-send messages. Keep the {placeholders} in braces as they are. */
     sections: [
       {

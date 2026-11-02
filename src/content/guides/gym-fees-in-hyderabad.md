@@ -19,7 +19,7 @@ faq:
 cta:
   label: 'See SpotAI for your gym'
   href: '/for-gym-owners/'
-  text: 'SpotAI gives members check-in by QR, workout plans and an AI form check, and shows owners who has stopped coming. A free pilot is open to the first gyms in Hyderabad.'
+  text: 'SpotAI gives members check-in by QR, workout plans and an AI form check, and shows owners who has stopped coming. A free pilot is open to the first gyms anywhere in India.'
 ---
 
 If you are choosing a gym in Hyderabad, the price on the board is only part of the cost. This guide covers the usual ranges, how plan length changes the price, and what to ask before you pay.

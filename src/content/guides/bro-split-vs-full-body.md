@@ -5,8 +5,8 @@ h1: 'Bro split or full body: which is better for beginners?'
 audience: member
 blurb: 'What the research says, and which split fits the number of days you actually train.'
 answer: 'For most beginners, a full-body routine three days a week is the better choice. It trains each muscle two or three times a week, teaches the main lifts faster, and a missed day does not wipe out a whole muscle group. A bro split, with one muscle group per day, can build muscle just as well when weekly sets are equal, but it needs five or six visits a week without gaps, which few beginners manage.'
-publish: 2027-03-11
-updated: 2027-03-11
+publish: 2027-03-25
+updated: 2027-03-25
 faq:
   - q: 'Is a bro split bad?'
     a: 'No. Research suggests that when the total number of hard sets per muscle per week is the same, a bro split and a full-body routine build similar muscle. The problems are practical: it needs many gym days, and missing one means a muscle goes two weeks without training.'

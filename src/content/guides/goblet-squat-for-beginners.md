@@ -5,8 +5,8 @@ h1: 'Goblet squat: the best first squat'
 audience: member
 blurb: 'Step-by-step form, a starting weight and a 6-week plan for your first squat.'
 answer: 'A goblet squat is a squat with one dumbbell or kettlebell held against your chest. The weight in front helps you stay upright and sit down between your knees, so it teaches good squat form faster than a barbell. Start with a dumbbell you can lift for 12 clean reps, often 5 to 10 kg for beginners, and do 3 sets of 8 to 12, two or three times a week.'
-publish: 2027-01-11
-updated: 2027-01-11
+publish: 2027-02-08
+updated: 2027-02-08
 faq:
   - q: 'What muscles does the goblet squat work?'
     a: 'Mainly the thighs (quadriceps) and glutes, with the inner thighs and hamstrings helping. Your upper back and core work to hold the weight in place and keep your chest up.'

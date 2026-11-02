@@ -5,8 +5,8 @@ h1: 'Cardio or weights for fat loss?'
 audience: member
 blurb: 'What cardio and weights each do for fat loss, and a weekly plan that uses both.'
 answer: 'Do both, and get your eating right first. Cardio burns more calories per session, so it helps you lose fat faster, while weight training keeps or builds muscle, so more of the weight you lose comes from fat. A good week for most beginners is two or three weight sessions, two or three cardio sessions and a daily walk, with a small calorie deficit and enough protein.'
-publish: 2027-02-15
-updated: 2027-02-15
+publish: 2027-03-08
+updated: 2027-03-08
 faq:
   - q: 'Can I lose belly fat with crunches or cardio?'
     a: 'No exercise burns fat from one spot. You lose fat across your whole body when you eat a little less energy than you use over weeks. Where it comes off first depends mostly on your body.'

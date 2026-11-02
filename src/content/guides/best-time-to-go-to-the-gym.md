@@ -5,8 +5,8 @@ h1: 'The best time to go to the gym (and avoid the rush)'
 audience: member
 blurb: 'Morning vs evening, what research says, and how to find your gym''s quiet hours.'
 answer: 'The best time to go to the gym is the time you can keep three or more days a week. Research finds that people who train in the morning and people who train in the evening gain similar strength and muscle. You may feel a little stronger in the evening, but in many Indian gyms 6 to 9 pm is also the busiest time, so a quieter slot often gives you a better session.'
-publish: 2027-01-25
-updated: 2027-01-25
+publish: 2027-02-18
+updated: 2027-02-18
 faq:
   - q: 'Is it better to work out in the morning or evening?'
     a: 'For building strength and muscle, both work about equally well over time. Pick the one that fits your work, sleep and meals, and stick with it.'

@@ -3,7 +3,7 @@ export const SITE = {
   name: 'SpotAI',
   tagline: 'The AI gym buddy for Indian gyms',
   description:
-    'AI gym app for India: squat form check on your phone, today’s workout, your gym’s leaderboard. Owners see who came and who owes. Free pilot in Hyderabad.',
+    'AI gym app for India: squat form check on your phone, today’s workout, your gym’s leaderboard. Owners see who came and who owes. Free pilot for gyms across India.',
   url: 'https://spotai.streamerosai.com/',
   email: 'contact@streamerosai.com',
   // WhatsApp click-to-chat. Digits only with country code.
@@ -12,9 +12,10 @@ export const SITE = {
   // The waitlist form sends through the same EmailJS service as the portfolio site, to `email`. These are
   // publishable values: EmailJS limits sending by allowed origin, not by keeping the key secret.
   emailjs: { service: 'service_560nh3i', template: 'template_dyb1k4x', publicKey: 'mB56akvK2qStLNadU' },
-  pilot: { gyms: 10, days: 90, city: 'Hyderabad' },
+  // Open to gyms anywhere in India, set up remotely; in person around Hyderabad (home base).
+  pilot: { gyms: 10, days: 90 },
   // Offline demo build of the member app; everything it saves stays on the phone.
-  demo: { web: 'demo/', apk: 'downloads/spotai-demo.apk', ipa: 'downloads/spotai-ios.ipa', version: '1.7', size: '37 MB', ipaSize: '30 MB', android: '7.0', ios: '15', logins: ['ram@demo.spotai.app', 'yaseen@demo.spotai.app'], password: 'spotai-demo' },
+  demo: { web: 'demo/', apk: 'downloads/spotai-demo.apk', ipa: 'downloads/spotai-ios.ipa', version: '1.7.1', size: '37 MB', ipaSize: '30 MB', android: '7.0', ios: '15', logins: ['ram@demo.spotai.app', 'yaseen@demo.spotai.app'], password: 'spotai-demo' },
   author: { name: 'Yaseen Khatib', url: 'https://yaseenkhatib.streamerosai.com' },
   twitterCard: 'summary_large_image',
   locale: 'en_IN',
@@ -41,7 +42,7 @@ export const FAQ = [
   },
   {
     q: 'How much does SpotAI cost?',
-    a: 'The first 10 gyms in Hyderabad get a free 90-day pilot. Pricing after the pilot will be announced to pilot gyms first. There is no per-member fee planned.',
+    a: 'The first 10 gyms anywhere in India get a free 90-day pilot, set up over a video call and WhatsApp. Pricing after the pilot will be announced to pilot gyms first. There is no per-member fee planned.',
   },
   {
     q: 'Do my members have to install an app?',
@@ -57,7 +58,7 @@ export const FAQ = [
   },
   {
     q: 'When can I download SpotAI?',
-    a: 'You can try the full member app today: download it for Android, install it on iPhone, or open it in Safari. Gyms in Hyderabad are joining as partners; join the waitlist or ask your gym to switch it on.',
+    a: 'You can try the full member app today: download it for Android, install it on iPhone, or open it in Safari. Gyms across India are joining the pilot; join the waitlist or ask your gym to switch it on.',
   },
   {
     q: 'Which exercises does the AI coach check?',

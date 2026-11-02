@@ -5,8 +5,8 @@ h1: 'High protein இந்திய snacks'
 audience: member
 blurb: 'ஒரு portion-க்கு protein உடன் இந்திய snacks, எந்த "protein" snacks பெரும்பாலும் வெறும் பில்டப்.'
 answer: 'சிறந்த high protein இந்திய snacks: soya chunk chaat, paneer tikka, அவித்த முட்டை அல்லது egg bhurji, பாசிப்பருப்பு அல்லது கடலை மாவு chilla, chicken tikka, வறுத்த கடலையுடன் தயிர். ஒவ்வொன்றின் சாதாரண portion-ம் சுமார் 10 முதல் 25 g protein தரும். Makhana, கடலை மிட்டாய், பெரும்பாலான namkeen சுவையானவை, ஆனால் வழக்கமான portion சில கிராம் protein மட்டுமே தரும்.'
-publish: 2027-03-04
-updated: 2027-03-04
+publish: 2027-03-22
+updated: 2027-03-22
 faq:
   - q: 'அதிக protein உள்ள சைவ இந்திய snack எது?'
     a: 'Soya chunks-ல்தான் protein அதிக அடர்த்தி: 30 g உலர்ந்த chunks-ல் சுமார் 15 g, chaat அல்லது sukha-வாகச் செய்து. அடுத்தது paneer tikka, 100 g paneer-க்குச் சுமார் 18 g.'

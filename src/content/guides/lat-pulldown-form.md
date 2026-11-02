@@ -5,8 +5,8 @@ h1: 'Lat pulldown form: how to do it right'
 audience: member
 blurb: 'Setup, step-by-step form, common mistakes and how heavy to go.'
 answer: 'Sit with your thighs locked under the pad and grip the bar a little wider than your shoulders. Lean back slightly, then pull the bar to your upper chest by driving your elbows down towards your ribs. Pause briefly, then let the bar rise slowly until your arms are straight. Choose a weight you can pull for 10 to 12 controlled reps without swinging your body.'
-publish: 2027-02-04
-updated: 2027-02-04
+publish: 2027-03-01
+updated: 2027-03-01
 faq:
   - q: 'What muscles does the lat pulldown work?'
     a: 'Mainly the latissimus dorsi, the large muscles on the sides of your back. The middle back, the back of the shoulders and the biceps also help.'

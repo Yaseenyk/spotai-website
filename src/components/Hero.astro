@@ -11,12 +11,13 @@ const exercises = Object.entries(t.exercises);
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="wrap hero__in">
     <div class="hero__copy">
-      <h1 id="hero-title" class="hero__title wide">{t.title}</h1>
+      <h1 id="hero-title" class="hero__title"><span class="hero__kicker">{t.kicker}</span> <span class="hero__hook wide">{t.title}</span></h1>
       <p class="hero__sub">{t.sub}</p>
       <p class="hero__lead">{t.lead}</p>
+      <p class="hero__owner">{t.owner}</p>
       <div class="hero__cta">
         <a href={`/${SITE.demo.apk}`} download class="btn btn--primary">{t.ctaApk}</a>
-        <a href={localize('/for-gym-owners/', code)} class="btn btn--ghost">{t.ctaOwner}</a>
+        <a href={localize('/for-gym-owners/', code)} class="btn btn--owner">{t.ctaOwner}</a>
       </div>
       <p class="hero__note" set:html={t.note} />
     </div>
@@ -150,10 +151,20 @@ const exercises = Object.entries(t.exercises);
     align-items: center;
     gap: clamp(32px, 5vw, 80px);
   }
-  .hero__title {
+  .hero__kicker {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    color: var(--violet-2);
+  }
+  .hero__hook {
+    display: block;
+    max-width: 12ch;
     font-size: clamp(34px, 3.6vw, 56px);
     line-height: 1.02;
-    max-width: 12ch;
   }
   .hero__sub {
     margin-top: 14px;
@@ -170,11 +181,28 @@ const exercises = Object.entries(t.exercises);
     color: var(--steel);
     text-wrap: pretty;
   }
+  .hero__owner {
+    margin-top: 16px;
+    max-width: 44ch;
+    padding-left: 12px;
+    border-left: 2px solid var(--violet);
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--chalk);
+    text-wrap: pretty;
+  }
   .hero__cta {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 28px;
+    margin-top: 24px;
+  }
+  .btn--owner {
+    background: var(--chalk);
+    color: var(--rubber);
+  }
+  .btn--owner:hover {
+    background: #fff;
   }
   .hero__note {
     margin-top: 16px;
@@ -378,7 +406,7 @@ const exercises = Object.entries(t.exercises);
     .hero__in {
       grid-template-columns: 1fr;
     }
-    .hero__title {
+    .hero__hook {
       max-width: none;
     }
     .stage {

@@ -5,8 +5,8 @@ h1: 'Gym referral programs that work'
 audience: owner
 blurb: 'Rewards, timing and tracking for a referral program that brings in members who stay.'
 answer: 'A gym referral program works when the reward is simple, both people get something, and the reward is given only after the new member has actually trained for a few weeks. Extra days on a membership usually work better than cash and cost you less. Ask happy, regular members at the right moment, track every referral in one place, and keep it running all year rather than as a one-off offer.'
-publish: 2027-02-22
-updated: 2027-02-22
+publish: 2026-12-21
+updated: 2026-12-21
 faq:
   - q: 'What is a good reward for a gym referral?'
     a: 'Extra membership days, such as two weeks or a month added to the plan, work well for both sides and cost the gym little in cash. Free personal training sessions or a gym t-shirt also work. Keep the reward easy to understand in one line.'
@@ -19,7 +19,7 @@ faq:
 cta:
   label: 'See who keeps coming'
   href: '/for-gym-owners/'
-  text: 'SpotAI records check-ins by QR or at the desk, so you can see whether referred members keep coming before you reward. A free pilot is open to the first gyms in Hyderabad.'
+  text: 'SpotAI records check-ins by QR or at the desk, so you can see whether referred members keep coming before you reward. A free pilot is open to the first gyms anywhere in India.'
 ---
 
 Most neighbourhood gyms in India already grow by word of mouth. A referral program simply makes that word of mouth more frequent, and rewards the members who bring people in. Done well, it brings in members who already know someone at the gym, which helps them stay.

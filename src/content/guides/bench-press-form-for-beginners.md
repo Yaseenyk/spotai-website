@@ -5,8 +5,8 @@ h1: 'Bench press form for beginners'
 audience: member
 blurb: 'Setup, grip, bar path and safety for your first months on the bench.'
 answer: 'Lie on the bench with your eyes under the bar, feet flat, and shoulder blades squeezed together. Grip the bar a little wider than your shoulders with your thumbs wrapped around it, lower it under control to your lower chest with elbows angled at about 45 to 70 degrees from your body, and press back up. Start with a light weight, use a spotter or safety pins, and never use a thumbless grip.'
-publish: 2027-02-25
-updated: 2027-02-25
+publish: 2027-03-15
+updated: 2027-03-15
 faq:
   - q: 'Where should the bar touch on a bench press?'
     a: 'Around your lower chest, roughly at or just below nipple level. Touching too high, near your neck, puts your shoulders in a worse position and makes the press harder.'

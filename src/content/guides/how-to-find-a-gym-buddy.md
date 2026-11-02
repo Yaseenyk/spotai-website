@@ -5,8 +5,8 @@ h1: 'How to find a gym buddy'
 audience: member
 blurb: 'Where to look, how to ask, and simple rules so a training partner actually helps.'
 answer: 'The easiest gym buddy is someone who already trains at your gym, at the same time of day, with a similar goal. Look among regulars in your time slot, ask a trainer to introduce you, or bring a friend or colleague who can commit to the same days. Start with one shared session, agree on days and a time, and keep the plan simple so neither of you has to wait for the other.'
-publish: 2027-01-04
-updated: 2027-01-04
+publish: 2027-02-04
+updated: 2027-02-04
 faq:
   - q: 'Is it better to work out alone or with a buddy?'
     a: 'Both work. A buddy helps most with showing up on time and staying for the full session. If your schedules rarely match, training alone with a fixed plan is better than waiting for someone who keeps cancelling.'

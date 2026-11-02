@@ -5,8 +5,8 @@ h1: 'Push, pull, legs split for beginners'
 audience: member
 blurb: 'A beginner-friendly push, pull, legs plan with exercises, sets and reps.'
 answer: 'A push, pull, legs split trains pushing muscles (chest, shoulders, triceps) on one day, pulling muscles (back, biceps) on another, and legs on a third. Most beginners do better with two or three months of full-body training first, then a 3-day PPL. Move to 4 or 6 days a week only when you are recovering well, sleeping enough and still progressing.'
-publish: 2026-12-31
-updated: 2026-12-31
+publish: 2027-02-01
+updated: 2027-02-01
 faq:
   - q: 'Is push, pull, legs good for beginners?'
     a: 'It can be, once you have learned the main exercises. In your first two or three months, a full-body plan three times a week teaches the movements faster and trains each muscle more often. After that, a 3-day PPL is a good next step.'

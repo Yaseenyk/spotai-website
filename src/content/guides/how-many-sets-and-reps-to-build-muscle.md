@@ -5,8 +5,8 @@ h1: 'How many sets and reps to build muscle'
 audience: member
 blurb: 'The rep ranges, weekly sets and effort that build muscle, with a sample week.'
 answer: 'For building muscle, do most of your sets in the 6 to 15 rep range, with 2 to 4 sets per exercise, and aim for about 10 hard sets per muscle group per week. Each set should end one to three reps short of failure. Beginners can start with less, around 6 to 8 sets per muscle per week, and add more as they progress.'
-publish: 2026-12-28
-updated: 2026-12-28
+publish: 2027-01-28
+updated: 2027-01-28
 faq:
   - q: 'Is 3 sets of 10 good for building muscle?'
     a: 'Yes, 3 sets of 10 is a solid default for most exercises, as long as the last few reps are hard. If 10 reps feels easy, the weight is too light. Add weight or reps over time.'
