@@ -86,6 +86,8 @@ export const FEATURES: FeatureData[] = [
       phone('m-dark-diet-amount.webp'),
       phone('m-dark-diet-day.webp'),
       phone('m-dark-diet-month.webp'),
+      phone('m-dark-dietplan-numbers.webp'),
+      phone('m-dark-dietplan-meals.webp'),
     ],
     related: ['workouts', 'leaderboard'],
   },

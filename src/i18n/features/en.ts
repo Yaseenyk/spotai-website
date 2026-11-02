@@ -214,7 +214,7 @@ const en: Record<string, FeatureCopy> = {
     problem: 'Calorie apps that don’t know dal?',
     fix: 'Search roti, dal or dosa, tap how many, and the day adds up.',
     lead:
-      'The food log uses the Indian Nutrient Databank, so a chapati is a chapati and a bowl of rajma is a bowl of rajma. Log by servings or grams, add anything in your own words, snap a photo of the plate. Logging is optional; the more you log, the closer the totals.',
+      'The food log uses the Indian Nutrient Databank, so a chapati is a chapati and a bowl of rajma is a bowl of rajma. Log by servings or grams, add anything in your own words, snap a photo of the plate. Logging is optional; the more you log, the closer the totals. Want a target? The diet plan turns your height, weight and how active you are into a daily calorie and protein target and a day of Indian meals to match.',
     /** Alt text of the hero screenshot. */
     heroAlt: 'Food log, Day tab: 246 kcal today with protein, carbs and fat; idli 100 g at breakfast, 1.5 chapati at lunch, banana at snacks',
     /** Number, label. */
@@ -246,6 +246,16 @@ const en: Record<string, FeatureCopy> = {
         body: 'The Month tab totals the calories you logged, the number of days you logged and the daily average, with a bar for each day. Useful for spotting the weekend that undoes the week.',
         alt: 'Food log Month tab: 246 kcal logged on 1 day, average per day, a bar for Mon Nov 2, and the Indian Nutrient Databank credit',
       },
+      {
+        title: 'A target from your body numbers',
+        body: 'Turn on the diet plan and enter your height, weight, how active you are and whether you eat veg, egg or non-veg. You get a daily calorie target with protein, carbs and fat, your BMI on the cut-offs WHO suggests for Asians, and a body fat estimate if you add waist and neck measurements.',
+        alt: 'Diet plan: daily target 2,580 kcal with 104 g protein, 380 g carbs and 72 g fat, BMI 25 above range, body fat 18.2% estimate, weight 74 kg',
+      },
+      {
+        title: 'A day of Indian meals to match',
+        body: 'Breakfast, lunch, snacks and dinner from the same Indian food table, sized to your target: so many rotis, a bowl of curry, a raita. Swap any meal you do not fancy, and log it to the food log in one tap. The meals change from day to day.',
+        alt: 'Today’s meals: 4 scrambled eggs and 3 chapatis for breakfast, 5 chapatis with 2 bowls of egg curry and cucumber raita for lunch, 4 dhokla for snacks, chapatis with paneer curry for dinner, each with Swap and Log this meal',
+      },
     ],
     details: [
       { title: 'Indian food, Indian portions', body: 'Dishes come from the Indian Nutrient Databank (Jaacks et al., 2024): home-style recipes with servings like one roti, one idli, one bowl. Recipes where the data counted all the frying oil as one serving were removed.' },
@@ -254,17 +264,20 @@ const en: Record<string, FeatureCopy> = {
       { title: 'Your own words', body: 'Ate something not in the list? Write it down. It shows in the meal without numbers, or add the calories yourself if you know them.' },
       { title: 'Photos stay on the phone', body: 'Plate photos are stored on the device only. They are never uploaded and are removed when you delete your account.' },
       { title: 'In your data export', body: 'Food entries are part of “export my data” and are deleted with your account, like everything else.' },
+      { title: 'Body numbers only with your say-so', body: 'The diet plan is a separate switch in Privacy, for members 18 and over. Height, weight and measurements are kept only while it is on, and turning it off deletes them.' },
     ],
     limits: [
       'Numbers are estimates for typical home recipes; your oil, ghee and portion will differ.',
       'No barcode scanning or packaged foods yet.',
-      'Not medical or dietary advice, and no calorie targets are set for you.',
+      'Diet plan targets are estimates from standard formulas, a starting point and not medical or dietary advice. If you are pregnant or have a medical condition, talk to a doctor or dietitian first.',
     ],
     faq: [
       { q: 'Is there a calorie counter app for Indian food?', a: 'SpotAI’s food log searches 672 Indian home-style dishes, from roti and dal to dosa and biryani, with servings as they are usually eaten. It is part of the member app, free for members.' },
       { q: 'How many calories are in one roti?', a: 'About 73 kcal for a plain chapati of around 36 g without ghee, according to the Indian Nutrient Databank. The full table is in our guide to calories in Indian food.' },
       { q: 'Do I have to log every meal?', a: 'No. Logging is optional. The totals are only as complete as what you add.' },
       { q: 'Are my food photos uploaded?', a: 'No. Photos stay on your phone and are deleted with your account.' },
+      { q: 'Can SpotAI make a diet plan for me?', a: 'Yes, for members 18 and over. Enter your height, weight, how active you are and veg, egg or non-veg, and SpotAI suggests a daily calorie and protein target and a day of Indian meals sized to it. It is an estimate, not medical advice.' },
+      { q: 'How does SpotAI work out my calories?', a: 'With the Mifflin-St Jeor formula for resting energy, times an activity factor, then adjusted for your goal: less to lose weight, more to gain. Protein is set per kilogram of body weight. The working is done on your phone.' },
     ],
   },
   'check-in': {
