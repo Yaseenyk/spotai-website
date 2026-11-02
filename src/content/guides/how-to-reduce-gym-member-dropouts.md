@@ -1,6 +1,6 @@
 ---
-title: 'How to stop gym members dropping out: a 30-day plan for Indian gyms · SpotAI'
-description: 'Why new gym members stop coming in the first weeks, and a simple 30-day plan to keep them: a first plan, a check-in habit, a message after a missed week, and progress members can see.'
+title: 'Stop gym members dropping out: a 30-day plan for Indian gyms'
+description: 'Why new gym members stop coming in the first weeks, and a simple 30-day plan to keep them: a first plan, a check-in habit, a message after a missed week.'
 h1: 'How to stop gym members dropping out'
 audience: owner
 blurb: 'A 30-day plan to keep new members coming back and renewing.'

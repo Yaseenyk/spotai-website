@@ -1,6 +1,6 @@
 ---
-title: 'First day at the gym: what to do, what to bring, a 45-minute plan · SpotAI'
-description: 'A simple first-day gym checklist for beginners in India: what to bring, what to eat, who to talk to, and a 45-minute first workout you can follow without feeling lost.'
+title: 'First day at the gym: what to do, what to bring, a 45-minute plan'
+description: 'A first-day gym checklist for beginners in India: what to bring, what to eat, who to talk to, and a 45-minute first workout you can follow.'
 h1: 'First day at the gym: a beginner checklist'
 audience: member
 blurb: 'What to bring, what to eat and a 45-minute first workout.'

@@ -1,6 +1,6 @@
 ---
 title: 'High protein இந்திய snacks: portion-க்கு எவ்வளவு protein · SpotAI'
-description: 'High protein இந்திய snacks, portion அளவும் protein அளவும்: soya chaat, paneer tikka, முட்டை, chilla மற்றும் பல, கூடவே பெயருக்கு மட்டும் "protein" ஆன snacks.'
+description: 'High protein இந்திய snacks, portion அளவும் protein அளவும்: soya chaat, paneer tikka, முட்டை, chilla, கூடவே பெயருக்கு மட்டும் "protein" ஆன snacks.'
 h1: 'High protein இந்திய snacks'
 audience: member
 blurb: 'ஒரு portion-க்கு protein உடன் இந்திய snacks, எந்த "protein" snacks பெரும்பாலும் வெறும் பில்டப்.'

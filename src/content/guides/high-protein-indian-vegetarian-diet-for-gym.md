@@ -1,6 +1,6 @@
 ---
 title: 'High-protein Indian vegetarian diet for gym beginners · SpotAI'
-description: 'How much protein a vegetarian gym-goer needs, the Indian foods that give the most (paneer, soya, dal, curd, chana), and a simple day of meals that reaches 80–100 g of protein without supplements.'
+description: 'How much protein a vegetarian gym-goer needs, the Indian foods that give the most, and a day of meals that reaches 80–100 g without supplements.'
 h1: 'High-protein Indian vegetarian diet for gym beginners'
 audience: member
 blurb: 'How much protein you need and the Indian vegetarian foods that get you there.'

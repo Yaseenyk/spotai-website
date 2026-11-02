@@ -6,7 +6,7 @@ const ta: Record<string, FeatureCopy> = {
     nav: 'AI coach',
     title: 'AI ஜிம் ட்ரெய்னர் ஆப்: கேமராவில் squat form check',
     description:
-      'போனில் AI squat form checker: reps எண்ணும், knee valgus, depth, முன்னோக்கிச் சாய்வைக் குறிக்கும், ஒரு set-க்கு trainer அங்கீகரித்த ஒரு tip. வீடியோ போனை விட்டு வெளியேறாது.',
+      'போனில் AI squat form checker: reps எண்ணும், knee valgus, depth, முன்னோக்கிச் சாய்வைக் குறிக்கும், ஒரு set-க்கு trainer அங்கீகரித்த ஒரு tip.',
     problem: 'Squat-க்கு spotter இல்லையா?',
     fix: 'போனை rack-ல் சாய்த்து வையுங்கள். Coach reps-ஐ எண்ணி, உங்கள் form-ஐச் சொல்லும்.',
     lead:
@@ -65,7 +65,7 @@ const ta: Record<string, FeatureCopy> = {
     nav: 'Workouts',
     title: 'ஜிம் workout plan ஆப்: ஒவ்வொரு set-ம் பதிவு',
     description:
-      'இந்திய ஜிம்களுக்கான workout tracker: உங்கள் வாரத்தை வைத்து இன்றைய session, பயிற்சிகளை tick செய்து, ஒவ்வொரு set-க்கும் reps, கிலோ பதிவு, ஒவ்வொரு பயிற்சிக்கும் ஒரு short.',
+      'இந்திய ஜிம்களுக்கான workout tracker: உங்கள் வாரத்தை வைத்து இன்றைய session, பயிற்சிகளை tick செய்து, ஒவ்வொரு set-க்கும் reps, கிலோ பதிவு.',
     problem: 'திட்டமே இல்லாமல் ஜிம்முக்குள் நுழைகிறீர்களா?',
     fix: 'Check-in செய்தால், இன்று என்ன பயிற்சி என்று ஆப் சொல்லி, ஒவ்வொரு set-ஐயும் பதிவு செய்யும்.',
     lead:
@@ -126,7 +126,7 @@ const ta: Record<string, FeatureCopy> = {
     nav: 'Leaderboard & buddies',
     title: 'ஜிம் buddy ஆப் மற்றும் ஜிம் leaderboard',
     description:
-      'ஜிம் leaderboard ஆப்: visits, கிலோ, streak-க்கு விருப்பப்பட்டால் சேருங்கள், மொத்த gains, badges, நீங்கள் வரும் நேரத்தில் பயிற்சி செய்யும் ஒரு buddy. முதல் பெயர்கள் மட்டும்.',
+      'ஜிம் leaderboard ஆப்: visits, கிலோ, streak-க்கு விருப்பப்பட்டால் சேருங்கள், மொத்த gains, badges, நீங்கள் வரும் நேரத்தில் பயிற்சி செய்யும் ஒரு buddy.',
     problem: 'இரண்டாவது வாரத்துக்குப் பிறகு ஆர்வம் குறைகிறதா?',
     fix: 'கிலோக்கள் கூடுவதைப் பாருங்கள், நீங்கள் வருவதை உங்கள் ஜிம் பார்க்கட்டும்.',
     lead:
@@ -183,7 +183,7 @@ const ta: Record<string, FeatureCopy> = {
     nav: 'உணவுப் பதிவு',
     title: 'இந்திய உணவுக்கு calorie counter: சப்பாத்தி, பருப்பு, இட்லி',
     description:
-      'இந்திய உணவுக்கான calorie counter ஆப்: 672 வீட்டு முறை உணவுகளைத் தேடுங்கள், servings அல்லது கிராமில் பதிவு, தினசரி, மாதாந்திர கலோரி மற்றும் புரதம். பதிவு விருப்பத்துக்குரியது.',
+      'இந்திய உணவுக்கான calorie counter ஆப்: 672 வீட்டு முறை உணவுகளைத் தேடுங்கள், servings அல்லது கிராமில் பதிவு, தினசரி, மாதாந்திர கலோரி மற்றும் புரதம்.',
     problem: 'பருப்பு என்னவென்று தெரியாத calorie ஆப்களா?',
     fix: 'சப்பாத்தி, பருப்பு அல்லது தோசையைத் தேடி, எத்தனை என்று தட்டுங்கள், நாள் கணக்கு தானாகக் கூடும்.',
     lead:
@@ -415,7 +415,7 @@ const ta: Record<string, FeatureCopy> = {
     nav: 'Privacy',
     title: 'Privacy முதலில்: ஒவ்வொரு நோக்கத்துக்கும் ஒப்புதல், போனிலேயே AI',
     description:
-      'இந்தியாவின் DPDP Act-க்காக உருவாக்கப்பட்ட ஜிம் ஆப் privacy: ஆறு தனி ஒப்புதல்கள், போனிலேயே pose tracking, ஆப்பிலிருந்து export அல்லது delete, reference உடன் புகார்கள்.',
+      'இந்தியாவின் DPDP Act-க்காக உருவாக்கப்பட்ட ஜிம் ஆப் privacy: ஆறு தனி ஒப்புதல்கள், போனிலேயே pose tracking, ஆப்பிலிருந்து export அல்லது delete.',
     problem: 'உங்கள் கேமரா footage எங்கே போகிறது என்று கவலையா?',
     fix: 'எங்கும் இல்லை. அது உங்கள் போனிலேயே இருக்கும், உங்கள் data-வின் மற்ற ஒவ்வொரு பயன்பாடும் நீங்கள் இயக்கும் ஒரு switch.',
     lead:

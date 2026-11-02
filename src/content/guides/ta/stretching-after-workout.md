@@ -1,6 +1,6 @@
 ---
 title: 'Workout-க்குப் பின் 10 நிமிட stretching · SpotAI'
-description: 'ஜிம்முக்குப் பின் 10 நிமிட stretching routine: ஒன்பது stretches, ஒவ்வொன்றையும் எவ்வளவு நேரம் பிடிப்பது, stretching என்ன செய்யும், என்ன செய்யாது, கூட்ட ஜிம் tips.'
+description: 'ஜிம்முக்குப் பின் 10 நிமிட stretching routine: ஒன்பது stretches, ஒவ்வொன்றையும் எவ்வளவு நேரம் பிடிப்பது, stretching என்ன செய்யும், என்ன செய்யாது.'
 h1: 'Workout-க்குப் பின் 10 நிமிட stretching'
 audience: member
 blurb: 'ஒன்பது stretches, எவ்வளவு நேரம் பிடிப்பது, stretching உண்மையில் உங்களுக்கு என்ன செய்கிறது.'

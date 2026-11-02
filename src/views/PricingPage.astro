@@ -22,7 +22,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={`${title} · SpotAI`} description={description} jsonLd={jsonLd}>
+<Layout title={`${title} · SpotAI`.length <= 65 ? `${title} · SpotAI` : title} description={description} jsonLd={jsonLd}>
   <Nav />
   <main id="main" class="pr">
     <div class="wrap">

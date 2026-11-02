@@ -1,6 +1,6 @@
 ---
 title: 'Knees caving in when you squat? 5 fixes that work · SpotAI'
-description: 'Why your knees cave in during squats (knee valgus) and five simple fixes: foot position, a knees-out cue, a band, lighter pause squats and glute work. With a way to check your own form.'
+description: 'Why your knees cave in during squats (knee valgus) and five simple fixes: foot position, a knees-out cue, a band, lighter pause squats and glute work.'
 h1: 'How to fix knees caving in when you squat'
 audience: member
 blurb: 'Why your knees cave in during squats and five fixes you can use today.'

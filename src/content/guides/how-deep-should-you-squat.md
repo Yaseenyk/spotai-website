@@ -1,6 +1,6 @@
 ---
 title: 'How deep should you squat? Depth explained for beginners · SpotAI'
-description: 'How low to go in a squat, what "parallel" means, why many people stop too high, and three drills to squat deeper with control: box squats, goblet squats and pause squats.'
+description: 'How low to squat, what "parallel" means, why many people stop too high, and three drills to go deeper with control: box, goblet and pause squats.'
 h1: 'How deep should you squat?'
 audience: member
 blurb: 'What good squat depth looks like and three drills to reach it.'

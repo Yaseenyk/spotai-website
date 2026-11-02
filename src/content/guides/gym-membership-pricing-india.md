@@ -1,5 +1,5 @@
 ---
-title: 'How to price gym memberships in India: a step-by-step method · SpotAI'
+title: 'How to price gym memberships in India: a step-by-step method'
 description: 'How Indian gym owners can set membership prices: find your break-even, check local rates, build monthly to annual plans, handle 5% GST and raise fees fairly.'
 h1: 'How to price gym memberships in India'
 audience: owner

@@ -49,7 +49,7 @@ const jsonLd = {
 const who = t.who[f.audience];
 ---
 
-<Layout title={`${f.title} · SpotAI`} description={f.description} jsonLd={jsonLd}>
+<Layout title={`${f.title} · SpotAI`.length <= 65 ? `${f.title} · SpotAI` : f.title} description={f.description} jsonLd={jsonLd}>
   <Nav />
   <main id="main" class="feat">
     <section class="hero">

@@ -1,5 +1,5 @@
 ---
-title: 'How many sets and reps to build muscle? A beginner''s guide · SpotAI'
+title: 'How many sets and reps to build muscle? A beginner''s guide'
 description: 'How many sets and reps build muscle: the rep ranges that work, how hard each set should be, weekly sets per muscle, rest between sets, and a sample week.'
 h1: 'How many sets and reps to build muscle'
 audience: member

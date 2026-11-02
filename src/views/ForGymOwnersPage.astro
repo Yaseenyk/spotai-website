@@ -24,7 +24,7 @@ const jsonLd = {
 const consoleShots = ['o-dues.webp', 'o-insights.webp', 'o-members.webp'];
 ---
 
-<Layout title={`${title} · SpotAI`} description={description} jsonLd={jsonLd}>
+<Layout title={`${title} · SpotAI`.length <= 65 ? `${title} · SpotAI` : title} description={description} jsonLd={jsonLd}>
   <Nav />
   <main id="main" class="own">
     <section class="hero">

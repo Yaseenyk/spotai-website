@@ -1,6 +1,6 @@
 ---
 title: 'Gym fees in Hyderabad (2026): what a membership costs · SpotAI'
-description: 'What gyms in Hyderabad charge per month in 2026, from local gyms to chains like cult.fit, why longer plans cost less per month, and the extra charges to ask about before you pay.'
+description: 'What gyms in Hyderabad charge per month in 2026, from local gyms to chains like cult.fit, why longer plans cost less per month.'
 h1: 'Gym fees in Hyderabad: what a membership costs in 2026'
 audience: member
 blurb: 'What gyms in Hyderabad charge per month, and the extra costs to ask about.'
