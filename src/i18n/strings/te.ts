@@ -273,6 +273,7 @@ export default {
       ],
       meta: `వెర్షన్ ${demo.version} · Android ${demo.android} లేదా కొత్తది · ${demo.size} · SpotAI సంతకం చేసింది · ఊరికే చూడాలా? <code>${demo.logins[0]}</code>, పాస్‌వర్డ్ <code>${demo.password}</code>తో సైన్ ఇన్ చేయండి`,
       iosTitle: 'iPhoneలో',
+      iosGuide: 'iPhone కోసం స్టెప్-బై-స్టెప్ గైడ్',
       ios: [
         `<strong>త్వరగా:</strong> <strong>Safari</strong>లో <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a> తెరిచి, <strong>Share</strong> ట్యాప్ చేసి, <strong>Add to Home Screen</strong> ఎంచుకోండి. ఇది ఫుల్ స్క్రీన్‌లో తెరుచుకుంటుంది, మీ డేటా ఫోన్‌లోనే ఉంటుంది.`,
         `<strong>నేటివ్ iOS యాప్:</strong> <a href="/${demo.ipa}" download>iOS బిల్డ్ డౌన్‌లోడ్ చేయండి</a> (${demo.ipaSize}, iOS ${demo.ios} లేదా కొత్తది), మీ Apple IDతో <a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> లేదా AltStore ద్వారా కంప్యూటర్ నుంచి ఇన్‌స్టాల్ చేయండి. ఫ్రీ Apple IDతో ఇన్‌స్టాల్ 7 రోజులు ఉంటుంది, తర్వాత మళ్ళీ ఇన్‌స్టాల్ చేయాలి. App Store, TestFlight లాంచ్ సమయంలో వస్తాయి.`,
@@ -482,6 +483,45 @@ export default {
     crumb: 'గైడ్స్',
     updated: 'అప్‌డేట్ చేసింది',
     questions: 'ప్రశ్నలు',
+  },
+
+  installIphone: {
+    title: 'iPhoneలో SpotAI ఇన్‌స్టాల్ చేయడం: స్టెప్-బై-స్టెప్ గైడ్',
+    description: 'Safariతో ఒక నిమిషంలో SpotAIని iPhone హోమ్ స్క్రీన్‌పై పెట్టండి, లేదా Windows/Mac కంప్యూటర్ నుంచి నేటివ్ iOS యాప్ ఇన్‌స్టాల్ చేయండి. రెండూ ఫ్రీ.',
+    crumb: 'iPhoneలో ఇన్‌స్టాల్',
+    h1: 'మీ iPhoneలో SpotAI ఇన్‌స్టాల్ చేయండి',
+    lead: 'రెండు మార్గాలు: ఒక నిమిషంలో యాప్‌ను హోమ్ స్క్రీన్‌పై పెట్టండి, లేదా కంప్యూటర్ నుంచి నేటివ్ యాప్ ఇన్‌స్టాల్ చేయండి. రెండూ ఫ్రీ, మీరు లాగ్ చేసేది మీ ఫోన్‌లోనే ఉంటుంది.',
+    quick: {
+      title: 'మార్గం 1: హోమ్ స్క్రీన్ యాప్ (1 నిమిషం, సులభం)',
+      steps: [
+        `iPhoneలో <strong>Safari</strong> తెరిచి <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a>కి వెళ్ళండి.`,
+        `కింద ఉన్న <strong>Share</strong> బటన్ నొక్కండి: పైకి బాణం ఉన్న చతురస్రం.`,
+        `కిందికి స్క్రోల్ చేసి <strong>Add to Home Screen</strong> నొక్కండి, తర్వాత <strong>Add</strong> నొక్కండి.`,
+        `హోమ్ స్క్రీన్ నుంచి <strong>SpotAI</strong> తెరవండి. ఇది మిగతా యాప్‌లలాగే ఫుల్ స్క్రీన్‌లో తెరుచుకుంటుంది.`,
+        `<strong>Sign up</strong> చేయండి, లేదా చూడటానికి మాత్రమే <code>${demo.logins[0]}</code>, పాస్‌వర్డ్ <code>${demo.password}</code> వాడండి.`,
+      ],
+      cta: 'Safariలో యాప్ తెరవండి',
+    },
+    native: {
+      title: 'మార్గం 2: కంప్యూటర్ నుంచి నేటివ్ యాప్ (సుమారు 15 నిమిషాలు)',
+      need: 'కావాల్సినవి: Windows లేదా Mac కంప్యూటర్, iPhone కేబుల్, మీ Apple ID.',
+      steps: [
+        `కంప్యూటర్‌లో <a href="/${demo.ipa}" download>SpotAI iOS ఫైల్</a> డౌన్‌లోడ్ చేయండి (${demo.ipaSize}, iOS ${demo.ios} లేదా కొత్తది).`,
+        `<a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> ఇన్‌స్టాల్ చేయండి. Windowsలో iTunes, iCloudని కూడా Apple వెబ్‌సైట్ నుంచి ఇన్‌స్టాల్ చేయండి, Microsoft Store నుంచి కాదు.`,
+        `కేబుల్‌తో iPhone కనెక్ట్ చేసి, ఫోన్ అన్‌లాక్ చేసి, అడిగినప్పుడు <strong>Trust</strong> నొక్కండి.`,
+        `Sideloadly తెరిచి, SpotAI ఫైల్‌ని అందులోకి లాగి, మీ Apple ID ఇచ్చి <strong>Start</strong> నొక్కండి.`,
+        `iPhoneలో <strong>Settings → General → VPN &amp; Device Management</strong> తెరిచి, మీ Apple ID ఎంచుకుని <strong>Trust</strong> నొక్కండి.`,
+        `iOS 16 లేదా కొత్తదానిలో <strong>Settings → Privacy &amp; Security → Developer Mode</strong> ఆన్ చేసి, అడిగినప్పుడు రీస్టార్ట్ చేయండి.`,
+        `హోమ్ స్క్రీన్ నుంచి SpotAI తెరవండి.`,
+      ],
+      note: 'ఫ్రీ Apple IDతో యాప్ 7 రోజులు పనిచేస్తుంది. తర్వాత iPhone కనెక్ట్ చేసి Sideloadlyలో మళ్ళీ Start నొక్కండి; మీ డేటా ఫోన్‌లోనే ఉంటుంది.',
+    },
+    faqTitle: 'ప్రశ్నలు',
+    faq: [
+      { q: 'SpotAI ఇంకా App Storeలో ఎందుకు లేదు?', a: 'లాంచ్ సమయానికి వస్తుంది. అప్పటివరకు iPhoneలో ప్రయత్నించడానికి హోమ్ స్క్రీన్ యాప్, iOS ఫైల్ మాత్రమే మార్గాలు.' },
+      { q: 'Sideloadlyకి నా Apple ID ఇవ్వాలా?', a: 'మార్గం 2 కోసం అవును: మీ iPhone కోసం యాప్‌కి సైన్ చేయడానికి Appleకి ఇది కావాలి. ఇవ్వకూడదనుకుంటే మార్గం 1 వాడండి, దానికి Apple ID అక్కర్లేదు.' },
+      { q: 'నేను లాగ్ చేసింది ఫోన్ బయటకు వెళ్తుందా?', a: 'లేదు. డెమోలో మీరు లాగ్ చేసేదంతా రెండు మార్గాల్లోనూ మీ ఫోన్‌లోనే ఉంటుంది.' },
+    ],
   },
 
   notFound: {

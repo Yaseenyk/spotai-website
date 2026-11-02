@@ -34,6 +34,7 @@ const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
           <ol>
             {t.demo.ios.map((s) => <li set:html={s} />)}
           </ol>
+          <a href={localize('/install-iphone/', code)} class="demo__guide">{t.demo.iosGuide} →</a>
         </div>
       </div>
       <div class="paths">
@@ -194,6 +195,11 @@ const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
   }
   .demo__ios a {
     color: var(--violet-2);
+  }
+  .demo__guide {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 700;
   }
   .paths {
     display: grid;

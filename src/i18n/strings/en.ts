@@ -272,6 +272,8 @@ export default {
       /** HTML. */
       meta: `Version ${demo.version} · Android ${demo.android} or newer · ${demo.size} · signed by SpotAI · just looking? sign in as <code>${demo.logins[0]}</code>, password <code>${demo.password}</code>`,
       iosTitle: 'On iPhone',
+      /** Link to the full iPhone guide, under the iPhone steps. */
+      iosGuide: 'Step-by-step iPhone guide',
       /** HTML. */
       ios: [
         `<strong>Quickest:</strong> open <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a> in <strong>Safari</strong>, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>. It opens full-screen and keeps your data on the phone.`,
@@ -500,6 +502,46 @@ export default {
     /** Before the date. */
     updated: 'Updated',
     questions: 'Questions',
+  },
+
+  /** The iPhone install guide (/install-iphone/). Steps are HTML. */
+  installIphone: {
+    title: 'Install SpotAI on iPhone: step-by-step guide',
+    description: `Put SpotAI on your iPhone home screen in a minute with Safari, or install the native iOS app from a Windows or Mac computer. Both free.`,
+    crumb: 'Install on iPhone',
+    h1: 'Install SpotAI on your iPhone',
+    lead: 'Two ways: add the app to your home screen in a minute, or install the native app from a computer. Both are free, and what you log stays on your phone.',
+    quick: {
+      title: 'Option 1: Home screen app (1 minute, recommended)',
+      steps: [
+        `Open <strong>Safari</strong> on your iPhone and go to <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a>.`,
+        'Tap the <strong>Share</strong> button: the square with an arrow pointing up, at the bottom of the screen.',
+        'Scroll down, tap <strong>Add to Home Screen</strong>, then tap <strong>Add</strong>.',
+        'Open <strong>SpotAI</strong> from your home screen. It opens full screen, like any other app.',
+        `Tap <strong>Sign up</strong>, or just look around with <code>${demo.logins[0]}</code> and password <code>${demo.password}</code>.`,
+      ],
+      cta: 'Open the app in Safari',
+    },
+    native: {
+      title: 'Option 2: Native app from a computer (about 15 minutes)',
+      need: 'You need a Windows or Mac computer, a cable for your iPhone, and your Apple ID.',
+      steps: [
+        `On the computer, download the <a href="/${demo.ipa}" download>SpotAI iOS file</a> (${demo.ipaSize}, iOS ${demo.ios} or newer).`,
+        'Install <a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a>. On Windows, also install iTunes and iCloud from Apple’s website, not from the Microsoft Store.',
+        'Connect your iPhone with the cable, unlock it and tap <strong>Trust</strong> when it asks.',
+        'Open Sideloadly, drag the SpotAI file into it, enter your Apple ID and click <strong>Start</strong>.',
+        'On the iPhone, open <strong>Settings → General → VPN &amp; Device Management</strong>, tap your Apple ID and tap <strong>Trust</strong>.',
+        'On iOS 16 or newer, turn on <strong>Settings → Privacy &amp; Security → Developer Mode</strong> and restart when asked.',
+        'Open SpotAI from your home screen.',
+      ],
+      note: 'With a free Apple ID the app works for 7 days. After that, connect the iPhone and click Start in Sideloadly again; your data stays on the phone.',
+    },
+    faqTitle: 'Questions',
+    faq: [
+      { q: 'Why is SpotAI not on the App Store yet?', a: 'It will be at launch. Until then, the home screen app and the iOS file are the ways to try it on an iPhone.' },
+      { q: 'Do I have to give Sideloadly my Apple ID?', a: 'For option 2, yes: Apple needs it to sign the app for your iPhone. If you would rather not, use option 1, which needs no Apple ID.' },
+      { q: 'Does what I log leave my phone?', a: 'No. In the demo, everything you log is kept on your phone, in both options.' },
+    ],
   },
 
   notFound: {

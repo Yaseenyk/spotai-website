@@ -273,6 +273,7 @@ export default {
       ],
       meta: `आवृत्ती ${demo.version} · Android ${demo.android} किंवा नवीन · ${demo.size} · SpotAI ने साइन केलेलं · फक्त पाहायचंय? <code>${demo.logins[0]}</code> ने साइन इन करा, पासवर्ड <code>${demo.password}</code>`,
       iosTitle: 'iPhone वर',
+      iosGuide: 'iPhone साठी स्टेप-बाय-स्टेप गाइड',
       ios: [
         `<strong>सगळ्यात सोपं:</strong> <strong>Safari</strong> मध्ये <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a> उघडा, <strong>Share</strong> वर टॅप करा, मग <strong>Add to Home Screen</strong>. ते फुल-स्क्रीन उघडतं आणि तुमचा डेटा फोनवरच ठेवतं.`,
         `<strong>नेटिव्ह iOS ॲप:</strong> <a href="/${demo.ipa}" download>iOS बिल्ड डाउनलोड करा</a> (${demo.ipaSize}, iOS ${demo.ios} किंवा नवीन) आणि तुमच्या Apple ID ने <a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> किंवा AltStore वापरून कॉम्प्युटरवरून इन्स्टॉल करा. मोफत Apple ID वर इन्स्टॉल 7 दिवस टिकतं, मग पुन्हा इन्स्टॉल करावं लागतं. App Store आणि TestFlight लाँचच्या वेळी येतील.`,
@@ -482,6 +483,45 @@ export default {
     crumb: 'गाइड्स',
     updated: 'अपडेट केले',
     questions: 'प्रश्न',
+  },
+
+  installIphone: {
+    title: 'iPhone वर SpotAI कसं इन्स्टॉल करायचं: स्टेप-बाय-स्टेप गाइड',
+    description: 'Safari ने एका मिनिटात SpotAI iPhone च्या होम स्क्रीनवर ठेवा, किंवा Windows/Mac कॉम्प्युटरवरून नेटिव्ह iOS ॲप इन्स्टॉल करा. दोन्ही मोफत.',
+    crumb: 'iPhone वर इन्स्टॉल',
+    h1: 'तुमच्या iPhone वर SpotAI इन्स्टॉल करा',
+    lead: 'दोन मार्ग: एका मिनिटात ॲप होम स्क्रीनवर ठेवा, किंवा कॉम्प्युटरवरून नेटिव्ह ॲप इन्स्टॉल करा. दोन्ही मोफत आहेत, आणि तुम्ही जे लॉग करता ते तुमच्या फोनवरच राहतं.',
+    quick: {
+      title: 'मार्ग 1: होम स्क्रीन ॲप (1 मिनिट, सर्वात सोपा)',
+      steps: [
+        `iPhone वर <strong>Safari</strong> उघडा आणि <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a> वर जा.`,
+        `खालचं <strong>Share</strong> बटण दाबा: वर बाण असलेला चौकोन.`,
+        `खाली स्क्रोल करा, <strong>Add to Home Screen</strong> दाबा, मग <strong>Add</strong> दाबा.`,
+        `होम स्क्रीनवरून <strong>SpotAI</strong> उघडा. ते इतर ॲप्ससारखं फुल स्क्रीन उघडतं.`,
+        `<strong>Sign up</strong> करा, किंवा फक्त बघण्यासाठी <code>${demo.logins[0]}</code> आणि पासवर्ड <code>${demo.password}</code> वापरा.`,
+      ],
+      cta: 'Safari मध्ये ॲप उघडा',
+    },
+    native: {
+      title: 'मार्ग 2: कॉम्प्युटरवरून नेटिव्ह ॲप (साधारण 15 मिनिटं)',
+      need: 'लागेल: Windows किंवा Mac कॉम्प्युटर, iPhone ची केबल, आणि तुमचा Apple ID.',
+      steps: [
+        `कॉम्प्युटरवर <a href="/${demo.ipa}" download>SpotAI iOS फाइल</a> डाउनलोड करा (${demo.ipaSize}, iOS ${demo.ios} किंवा नवीन).`,
+        `<a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> इन्स्टॉल करा. Windows वर iTunes आणि iCloud पण Apple च्या वेबसाइटवरून इन्स्टॉल करा, Microsoft Store वरून नाही.`,
+        `केबलने iPhone जोडा, फोन अनलॉक करा आणि विचारल्यावर <strong>Trust</strong> दाबा.`,
+        `Sideloadly उघडा, SpotAI फाइल त्यात ओढून टाका, Apple ID टाका आणि <strong>Start</strong> दाबा.`,
+        `iPhone वर <strong>Settings → General → VPN &amp; Device Management</strong> उघडा, तुमचा Apple ID निवडा आणि <strong>Trust</strong> दाबा.`,
+        `iOS 16 किंवा नवीन वर <strong>Settings → Privacy &amp; Security → Developer Mode</strong> चालू करा आणि विचारल्यावर रीस्टार्ट करा.`,
+        `होम स्क्रीनवरून SpotAI उघडा.`,
+      ],
+      note: 'मोफत Apple ID सोबत ॲप 7 दिवस चालतं. त्यानंतर iPhone जोडून Sideloadly मध्ये पुन्हा Start दाबा; तुमचा डेटा फोनवरच राहतो.',
+    },
+    faqTitle: 'प्रश्न',
+    faq: [
+      { q: 'SpotAI अजून App Store वर का नाही?', a: 'लॉन्चला येईल. तोपर्यंत iPhone वर वापरून बघण्यासाठी होम स्क्रीन ॲप आणि iOS फाइल हेच मार्ग आहेत.' },
+      { q: 'Sideloadly ला माझा Apple ID द्यावा लागेल का?', a: 'मार्ग 2 साठी हो: तुमच्या iPhone साठी ॲप साइन करायला Apple ला तो लागतो. द्यायचा नसेल तर मार्ग 1 वापरा, त्याला Apple ID लागत नाही.' },
+      { q: 'मी लॉग केलेलं फोनबाहेर जातं का?', a: 'नाही. डेमोमध्ये तुम्ही जे लॉग करता ते दोन्ही मार्गांत तुमच्या फोनवरच राहतं.' },
+    ],
   },
 
   notFound: {

@@ -273,6 +273,7 @@ export default {
       ],
       meta: `Version ${demo.version} · Android ${demo.android} அல்லது புதியது · ${demo.size} · SpotAI கையொப்பமிட்டது · சும்மா பார்க்கிறீர்களா? <code>${demo.logins[0]}</code> ஆக sign in செய்யுங்கள், password <code>${demo.password}</code>`,
       iosTitle: 'iPhone-ல்',
+      iosGuide: 'iPhone-க்கான படிப்படியான வழிகாட்டி',
       ios: [
         `<strong>விரைவான வழி:</strong> <strong>Safari</strong>-ல் <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a>-ஐத் திறந்து, <strong>Share</strong>, பிறகு <strong>Add to Home Screen</strong> தட்டுங்கள். இது முழுத் திரையில் திறக்கும், உங்கள் data போனிலேயே இருக்கும்.`,
         `<strong>Native iOS ஆப்:</strong> <a href="/${demo.ipa}" download>iOS build-ஐ download செய்யுங்கள்</a> (${demo.ipaSize}, iOS ${demo.ios} அல்லது புதியது), உங்கள் Apple ID-யுடன் <a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> அல்லது AltStore மூலம் கணினியிலிருந்து install செய்யுங்கள். இலவச Apple ID-யில் install 7 நாட்கள் நீடிக்கும், பிறகு மீண்டும் install செய்ய வேண்டும். App Store மற்றும் TestFlight launch-ன் போது வரும்.`,
@@ -482,6 +483,45 @@ export default {
     crumb: 'வழிகாட்டிகள்',
     updated: 'புதுப்பிக்கப்பட்டது',
     questions: 'கேள்விகள்',
+  },
+
+  installIphone: {
+    title: 'iPhone-ல் SpotAI நிறுவுவது எப்படி: படிப்படியான வழிகாட்டி',
+    description: 'Safari மூலம் ஒரு நிமிடத்தில் SpotAI-ஐ iPhone home screen-ல் வையுங்கள், அல்லது Windows/Mac கணினியிலிருந்து native iOS ஆப்பை நிறுவுங்கள். இரண்டும் இலவசம்.',
+    crumb: 'iPhone-ல் நிறுவுதல்',
+    h1: 'உங்கள் iPhone-ல் SpotAI நிறுவுங்கள்',
+    lead: 'இரண்டு வழிகள்: ஒரு நிமிடத்தில் ஆப்பை home screen-ல் வையுங்கள், அல்லது கணினியிலிருந்து native ஆப்பை நிறுவுங்கள். இரண்டும் இலவசம், நீங்கள் பதிவு செய்வது உங்கள் போனிலேயே இருக்கும்.',
+    quick: {
+      title: 'வழி 1: Home screen ஆப் (1 நிமிடம், எளிது)',
+      steps: [
+        `iPhone-ல் <strong>Safari</strong> திறந்து <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a>-க்குச் செல்லுங்கள்.`,
+        `கீழே உள்ள <strong>Share</strong> பட்டனைத் தட்டுங்கள்: மேல் நோக்கிய அம்புடன் உள்ள சதுரம்.`,
+        `கீழே scroll செய்து <strong>Add to Home Screen</strong>, பிறகு <strong>Add</strong> தட்டுங்கள்.`,
+        `Home screen-லிருந்து <strong>SpotAI</strong> திறங்கள். மற்ற ஆப்களைப் போல full screen-ல் திறக்கும்.`,
+        `<strong>Sign up</strong> செய்யுங்கள், அல்லது பார்க்க மட்டும் <code>${demo.logins[0]}</code>, password <code>${demo.password}</code> பயன்படுத்துங்கள்.`,
+      ],
+      cta: 'Safari-ல் ஆப்பைத் திறங்கள்',
+    },
+    native: {
+      title: 'வழி 2: கணினியிலிருந்து native ஆப் (சுமார் 15 நிமிடம்)',
+      need: 'தேவை: Windows அல்லது Mac கணினி, iPhone கேபிள், உங்கள் Apple ID.',
+      steps: [
+        `கணினியில் <a href="/${demo.ipa}" download>SpotAI iOS கோப்பை</a> download செய்யுங்கள் (${demo.ipaSize}, iOS ${demo.ios} அல்லது புதியது).`,
+        `<a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> நிறுவுங்கள். Windows-ல் iTunes, iCloud-ஐயும் Apple இணையதளத்திலிருந்து நிறுவுங்கள், Microsoft Store-லிருந்து அல்ல.`,
+        `கேபிள் மூலம் iPhone-ஐ இணைத்து, போனை unlock செய்து, கேட்கும்போது <strong>Trust</strong> தட்டுங்கள்.`,
+        `Sideloadly திறந்து, SpotAI கோப்பை அதில் இழுத்துப் போட்டு, Apple ID கொடுத்து <strong>Start</strong> அழுத்துங்கள்.`,
+        `iPhone-ல் <strong>Settings → General → VPN &amp; Device Management</strong> திறந்து, உங்கள் Apple ID-ஐத் தேர்ந்தெடுத்து <strong>Trust</strong> தட்டுங்கள்.`,
+        `iOS 16 அல்லது புதியதில் <strong>Settings → Privacy &amp; Security → Developer Mode</strong> on செய்து, கேட்கும்போது restart செய்யுங்கள்.`,
+        `Home screen-லிருந்து SpotAI திறங்கள்.`,
+      ],
+      note: 'இலவச Apple ID-யுடன் ஆப் 7 நாட்கள் வேலை செய்யும். பிறகு iPhone-ஐ இணைத்து Sideloadly-ல் மீண்டும் Start அழுத்துங்கள்; உங்கள் தரவு போனிலேயே இருக்கும்.',
+    },
+    faqTitle: 'கேள்விகள்',
+    faq: [
+      { q: 'SpotAI ஏன் இன்னும் App Store-ல் இல்லை?', a: 'Launch-ல் வரும். அதுவரை iPhone-ல் முயற்சிக்க home screen ஆப்பும் iOS கோப்பும்தான் வழிகள்.' },
+      { q: 'Sideloadly-க்கு என் Apple ID கொடுக்க வேண்டுமா?', a: 'வழி 2-க்கு ஆம்: உங்கள் iPhone-க்காக ஆப்பில் கையொப்பமிட Apple-க்கு இது தேவை. கொடுக்க விரும்பாவிட்டால் வழி 1-ஐப் பயன்படுத்துங்கள், அதற்கு Apple ID தேவையில்லை.' },
+      { q: 'நான் பதிவு செய்வது போனை விட்டு வெளியே போகுமா?', a: 'இல்லை. Demo-வில் நீங்கள் பதிவு செய்யும் அனைத்தும் இரண்டு வழிகளிலும் உங்கள் போனிலேயே இருக்கும்.' },
+    ],
   },
 
   notFound: {

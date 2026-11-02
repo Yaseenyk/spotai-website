@@ -1,0 +1,9 @@
+---
+import InstallIphonePage from '../../views/InstallIphonePage.astro';
+import { langPaths } from '../../i18n/config';
+export function getStaticPaths() {
+  return langPaths();
+}
+---
+
+<InstallIphonePage />

@@ -275,6 +275,7 @@ export default {
       ],
       meta: `वर्ज़न ${demo.version} · Android ${demo.android} या नया · ${demo.size} · SpotAI द्वारा साइन किया गया · बस देखना है? <code>${demo.logins[0]}</code> से साइन इन करें, पासवर्ड <code>${demo.password}</code>`,
       iosTitle: 'iPhone पर',
+      iosGuide: 'iPhone के लिए स्टेप-बाय-स्टेप गाइड',
       ios: [
         `<strong>सबसे आसान:</strong> <strong>Safari</strong> में <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a> खोलें, <strong>Share</strong> पर टैप करें, फिर <strong>Add to Home Screen</strong>। यह फुल-स्क्रीन खुलता है और आपका डेटा फ़ोन पर ही रखता है।`,
         `<strong>नेटिव iOS ऐप:</strong> <a href="/${demo.ipa}" download>iOS बिल्ड डाउनलोड करें</a> (${demo.ipaSize}, iOS ${demo.ios} या नया) और अपने कंप्यूटर से <a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> या AltStore से अपनी Apple ID के साथ इंस्टॉल करें। फ्री Apple ID पर इंस्टॉल 7 दिन चलता है, फिर दोबारा इंस्टॉल करना पड़ता है। App Store और TestFlight लॉन्च पर आएँगे।`,
@@ -484,6 +485,45 @@ export default {
     crumb: 'गाइड',
     updated: 'अपडेट',
     questions: 'सवाल',
+  },
+
+  installIphone: {
+    title: 'iPhone पर SpotAI कैसे इंस्टॉल करें: स्टेप-बाय-स्टेप गाइड',
+    description: 'Safari से एक मिनट में SpotAI को iPhone की होम स्क्रीन पर लगाएँ, या Windows/Mac कंप्यूटर से नेटिव iOS ऐप इंस्टॉल करें। दोनों तरीके फ्री हैं।',
+    crumb: 'iPhone पर इंस्टॉल',
+    h1: 'अपने iPhone पर SpotAI इंस्टॉल करें',
+    lead: 'दो तरीके हैं: एक मिनट में ऐप को होम स्क्रीन पर लगाएँ, या कंप्यूटर से नेटिव ऐप इंस्टॉल करें। दोनों फ्री हैं, और आप जो लॉग करते हैं वह आपके फ़ोन पर ही रहता है।',
+    quick: {
+      title: 'तरीका 1: होम स्क्रीन ऐप (1 मिनट, सबसे आसान)',
+      steps: [
+        `iPhone पर <strong>Safari</strong> खोलें और <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a> पर जाएँ।`,
+        `नीचे <strong>Share</strong> बटन दबाएँ: ऊपर तीर वाला चौकोर।`,
+        `नीचे स्क्रॉल करें, <strong>Add to Home Screen</strong> दबाएँ, फिर <strong>Add</strong> दबाएँ।`,
+        `होम स्क्रीन से <strong>SpotAI</strong> खोलें। यह बाकी ऐप्स की तरह फ़ुल स्क्रीन खुलता है।`,
+        `<strong>Sign up</strong> करें, या सिर्फ़ देखने के लिए <code>${demo.logins[0]}</code> और पासवर्ड <code>${demo.password}</code> इस्तेमाल करें।`,
+      ],
+      cta: 'Safari में ऐप खोलें',
+    },
+    native: {
+      title: 'तरीका 2: कंप्यूटर से नेटिव ऐप (करीब 15 मिनट)',
+      need: 'आपको चाहिए: Windows या Mac कंप्यूटर, iPhone की केबल, और आपकी Apple ID।',
+      steps: [
+        `कंप्यूटर पर <a href="/${demo.ipa}" download>SpotAI iOS फ़ाइल</a> डाउनलोड करें (${demo.ipaSize}, iOS ${demo.ios} या नया)।`,
+        `<a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> इंस्टॉल करें। Windows पर iTunes और iCloud भी Apple की वेबसाइट से इंस्टॉल करें, Microsoft Store से नहीं।`,
+        `केबल से iPhone जोड़ें, फ़ोन अनलॉक करें और पूछने पर <strong>Trust</strong> दबाएँ।`,
+        `Sideloadly खोलें, SpotAI फ़ाइल उसमें खींचकर डालें, अपनी Apple ID डालें और <strong>Start</strong> दबाएँ।`,
+        `iPhone पर <strong>Settings → General → VPN &amp; Device Management</strong> खोलें, अपनी Apple ID चुनें और <strong>Trust</strong> दबाएँ।`,
+        `iOS 16 या नए पर <strong>Settings → Privacy &amp; Security → Developer Mode</strong> चालू करें और पूछने पर रीस्टार्ट करें।`,
+        `होम स्क्रीन से SpotAI खोलें।`,
+      ],
+      note: 'फ्री Apple ID के साथ ऐप 7 दिन चलता है। उसके बाद iPhone जोड़कर Sideloadly में फिर से Start दबाएँ; आपका डेटा फ़ोन पर ही रहता है।',
+    },
+    faqTitle: 'सवाल',
+    faq: [
+      { q: 'SpotAI अभी App Store पर क्यों नहीं है?', a: 'लॉन्च पर आएगा। तब तक iPhone पर आज़माने के लिए होम स्क्रीन ऐप और iOS फ़ाइल ही तरीके हैं।' },
+      { q: 'क्या Sideloadly को अपनी Apple ID देनी पड़ेगी?', a: 'तरीका 2 के लिए हाँ: आपके iPhone के लिए ऐप साइन करने को Apple को इसकी ज़रूरत होती है। अगर नहीं देना चाहते, तो तरीका 1 इस्तेमाल करें, उसमें Apple ID नहीं लगती।' },
+      { q: 'क्या मेरा लॉग किया डेटा फ़ोन से बाहर जाता है?', a: 'नहीं। डेमो में आप जो भी लॉग करते हैं, वह दोनों तरीकों में आपके फ़ोन पर ही रहता है।' },
+    ],
   },
 
   notFound: {

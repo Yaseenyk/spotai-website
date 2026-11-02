@@ -275,6 +275,7 @@ export default {
       ],
       meta: `ভার্সন ${demo.version} · Android ${demo.android} বা তার নতুন · ${demo.size} · SpotAI-এর সাইন করা · শুধু দেখতে চান? <code>${demo.logins[0]}</code> দিয়ে সাইন ইন করুন, পাসওয়ার্ড <code>${demo.password}</code>`,
       iosTitle: 'iPhone-এ',
+      iosGuide: 'iPhone-এর জন্য ধাপে ধাপে গাইড',
       ios: [
         `<strong>সবচেয়ে সহজ:</strong> <strong>Safari</strong>-তে <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a> খুলুন, <strong>Share</strong> ট্যাপ করুন, তারপর <strong>Add to Home Screen</strong>। এটা পুরো স্ক্রিনে খোলে আর আপনার ডেটা ফোনেই রাখে।`,
         `<strong>নেটিভ iOS অ্যাপ:</strong> <a href="/${demo.ipa}" download>iOS বিল্ড ডাউনলোড করুন</a> (${demo.ipaSize}, iOS ${demo.ios} বা তার নতুন) আর আপনার Apple ID দিয়ে কম্পিউটার থেকে <a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> বা AltStore-এ ইনস্টল করুন। ফ্রি Apple ID-তে ইনস্টল 7 দিন চলে, তারপর আবার ইনস্টল করতে হয়। App Store আর TestFlight আসবে লঞ্চের সময়।`,
@@ -484,6 +485,45 @@ export default {
     crumb: 'গাইড',
     updated: 'আপডেট',
     questions: 'প্রশ্ন',
+  },
+
+  installIphone: {
+    title: 'iPhone-এ SpotAI কীভাবে ইনস্টল করবেন: ধাপে ধাপে গাইড',
+    description: 'Safari দিয়ে এক মিনিটে SpotAI-কে iPhone-এর হোম স্ক্রিনে রাখুন, বা Windows/Mac কম্পিউটার থেকে নেটিভ iOS অ্যাপ ইনস্টল করুন। দুটোই ফ্রি।',
+    crumb: 'iPhone-এ ইনস্টল',
+    h1: 'আপনার iPhone-এ SpotAI ইনস্টল করুন',
+    lead: 'দুটো উপায়: এক মিনিটে অ্যাপটা হোম স্ক্রিনে রাখুন, বা কম্পিউটার থেকে নেটিভ অ্যাপ ইনস্টল করুন। দুটোই ফ্রি, আর আপনি যা লগ করেন তা আপনার ফোনেই থাকে।',
+    quick: {
+      title: 'উপায় 1: হোম স্ক্রিন অ্যাপ (1 মিনিট, সবচেয়ে সহজ)',
+      steps: [
+        `iPhone-এ <strong>Safari</strong> খুলে <a href="/${demo.web}">spotai.streamerosai.com/${demo.web}</a>-এ যান।`,
+        `নিচের <strong>Share</strong> বোতাম চাপুন: ওপরে তীর-চিহ্ন দেওয়া চৌকো।`,
+        `নিচে স্ক্রল করে <strong>Add to Home Screen</strong> চাপুন, তারপর <strong>Add</strong> চাপুন।`,
+        `হোম স্ক্রিন থেকে <strong>SpotAI</strong> খুলুন। অন্য অ্যাপের মতোই ফুল স্ক্রিনে খোলে।`,
+        `<strong>Sign up</strong> করুন, বা শুধু দেখতে <code>${demo.logins[0]}</code> আর পাসওয়ার্ড <code>${demo.password}</code> দিন।`,
+      ],
+      cta: 'Safari-তে অ্যাপ খুলুন',
+    },
+    native: {
+      title: 'উপায় 2: কম্পিউটার থেকে নেটিভ অ্যাপ (প্রায় 15 মিনিট)',
+      need: 'লাগবে: Windows বা Mac কম্পিউটার, iPhone-এর কেবল, আর আপনার Apple ID।',
+      steps: [
+        `কম্পিউটারে <a href="/${demo.ipa}" download>SpotAI iOS ফাইল</a> ডাউনলোড করুন (${demo.ipaSize}, iOS ${demo.ios} বা নতুন)।`,
+        `<a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> ইনস্টল করুন। Windows-এ iTunes আর iCloud-ও Apple-এর ওয়েবসাইট থেকে ইনস্টল করুন, Microsoft Store থেকে নয়।`,
+        `কেবল দিয়ে iPhone জুড়ুন, ফোন আনলক করুন, জিজ্ঞেস করলে <strong>Trust</strong> চাপুন।`,
+        `Sideloadly খুলে SpotAI ফাইলটা তাতে টেনে আনুন, Apple ID দিন আর <strong>Start</strong> চাপুন।`,
+        `iPhone-এ <strong>Settings → General → VPN &amp; Device Management</strong> খুলে আপনার Apple ID বেছে <strong>Trust</strong> চাপুন।`,
+        `iOS 16 বা নতুনে <strong>Settings → Privacy &amp; Security → Developer Mode</strong> চালু করুন, জিজ্ঞেস করলে রিস্টার্ট করুন।`,
+        `হোম স্ক্রিন থেকে SpotAI খুলুন।`,
+      ],
+      note: 'ফ্রি Apple ID দিয়ে অ্যাপ 7 দিন চলে। তারপর iPhone জুড়ে Sideloadly-তে আবার Start চাপুন; আপনার ডেটা ফোনেই থাকে।',
+    },
+    faqTitle: 'প্রশ্ন',
+    faq: [
+      { q: 'SpotAI এখনও App Store-এ নেই কেন?', a: 'লঞ্চের সময় আসবে। ততদিন iPhone-এ চালিয়ে দেখার উপায় হোম স্ক্রিন অ্যাপ আর iOS ফাইল।' },
+      { q: 'Sideloadly-কে কি আমার Apple ID দিতে হবে?', a: 'উপায় 2-এর জন্য হ্যাঁ: আপনার iPhone-এর জন্য অ্যাপ সাইন করতে Apple-এর এটা লাগে। দিতে না চাইলে উপায় 1 ব্যবহার করুন, তাতে Apple ID লাগে না।' },
+      { q: 'আমি যা লগ করি তা কি ফোনের বাইরে যায়?', a: 'না। ডেমোতে আপনি যা লগ করেন, দুটো উপায়েই তা আপনার ফোনেই থাকে।' },
+    ],
   },
 
   notFound: {
