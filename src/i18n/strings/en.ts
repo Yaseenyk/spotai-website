@@ -268,6 +268,7 @@ export default {
         'Open the downloaded <code>spotai-demo.apk</code>. If Android asks, allow installs from your browser.',
         'Tap <strong>Sign up</strong>, enter your name, email and a password, and tick the privacy notice. Your account is ready at once; no email code in the demo.',
         'Check in, pick a session, log sets. Everything you save stays on your phone and is still there when you open the app again.',
+        'Run a gym? On the sign-in screen tap <strong>Work at this gym? Staff console</strong>, then <strong>Owner</strong>, <strong>Trainer</strong> or <strong>Desk</strong> to try the gym console on a sample gym.',
       ],
       /** HTML. */
       meta: `Version ${demo.version} · Android ${demo.android} or newer · ${demo.size} · signed by SpotAI · just looking? sign in as <code>${demo.logins[0]}</code>, password <code>${demo.password}</code>`,

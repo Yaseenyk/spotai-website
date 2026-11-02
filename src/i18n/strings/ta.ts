@@ -270,6 +270,7 @@ export default {
         'Download செய்த <code>spotai-demo.apk</code>-ஐத் திறங்கள். Android கேட்டால், உங்கள் browser-லிருந்து install செய்ய அனுமதியுங்கள்.',
         '<strong>Sign up</strong>-ஐத் தட்டி, உங்கள் பெயர், email, password-ஐ உள்ளிட்டு, privacy notice-ஐ tick செய்யுங்கள். உங்கள் கணக்கு உடனே தயார்; demo-வில் email code இல்லை.',
         'Check-in செய்து, ஒரு session-ஐத் தேர்ந்தெடுத்து, sets-ஐப் பதிவு செய்யுங்கள். நீங்கள் save செய்வது அனைத்தும் உங்கள் போனிலேயே இருக்கும், ஆப்பை மீண்டும் திறக்கும்போதும் அப்படியே இருக்கும்.',
+        'ஜிம் நடத்துகிறீர்களா? Sign-in திரையில் <strong>Work at this gym? Staff console</strong>-ஐத் தட்டி, <strong>Owner</strong>, <strong>Trainer</strong> அல்லது <strong>Desk</strong>-ஐத் தேர்ந்தெடுத்து ஒரு மாதிரி ஜிம்மில் gym console-ஐ முயற்சி செய்யுங்கள்.',
       ],
       meta: `Version ${demo.version} · Android ${demo.android} அல்லது புதியது · ${demo.size} · SpotAI கையொப்பமிட்டது · சும்மா பார்க்கிறீர்களா? <code>${demo.logins[0]}</code> ஆக sign in செய்யுங்கள், password <code>${demo.password}</code>`,
       iosTitle: 'iPhone-ல்',

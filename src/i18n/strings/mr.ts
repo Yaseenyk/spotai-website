@@ -270,6 +270,7 @@ export default {
         'डाउनलोड झालेली <code>spotai-demo.apk</code> उघडा. Android ने विचारलं तर तुमच्या ब्राउझरमधून इन्स्टॉल करायला परवानगी द्या.',
         '<strong>Sign up</strong> वर टॅप करा, तुमचं नाव, ईमेल आणि पासवर्ड टाका, आणि प्रायव्हसी नोटिसवर टिक करा. तुमचं अकाउंट लगेच तयार होतं; डेमोमध्ये ईमेल कोड नाही.',
         'चेक-इन करा, सेशन निवडा, सेट्स लॉग करा. तुम्ही सेव्ह केलेलं सगळं तुमच्या फोनवरच राहतं आणि पुन्हा ॲप उघडल्यावरही तसंच असतं.',
+        'जिम चालवता? साइन-इन स्क्रीनवर <strong>Work at this gym? Staff console</strong> टॅप करा, मग <strong>Owner</strong>, <strong>Trainer</strong> किंवा <strong>Desk</strong> निवडून सॅम्पल जिमवर जिम कन्सोल वापरून पाहा.',
       ],
       meta: `आवृत्ती ${demo.version} · Android ${demo.android} किंवा नवीन · ${demo.size} · SpotAI ने साइन केलेलं · फक्त पाहायचंय? <code>${demo.logins[0]}</code> ने साइन इन करा, पासवर्ड <code>${demo.password}</code>`,
       iosTitle: 'iPhone वर',
