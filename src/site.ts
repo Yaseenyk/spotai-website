@@ -9,7 +9,9 @@ export const SITE = {
   // WhatsApp click-to-chat. Digits only with country code.
   whatsapp: '918208335028',
   // Form endpoint (Formspree, Web3Forms or similar). Empty string keeps the mailto fallback.
-  formEndpoint: '',
+  // The waitlist form sends through the same EmailJS service as the portfolio site, to `email`. These are
+  // publishable values: EmailJS limits sending by allowed origin, not by keeping the key secret.
+  emailjs: { service: 'service_560nh3i', template: 'template_dyb1k4x', publicKey: 'mB56akvK2qStLNadU' },
   pilot: { gyms: 10, days: 90, city: 'Hyderabad' },
   // Offline demo build of the member app; everything it saves stays on the phone.
   demo: { web: 'demo/', apk: 'downloads/spotai-demo.apk', ipa: 'downloads/spotai-ios.ipa', version: '1.6.1', size: '37 MB', ipaSize: '30 MB', android: '7.0', ios: '15', logins: ['ram@demo.spotai.app', 'yaseen@demo.spotai.app'], password: 'spotai-demo' },

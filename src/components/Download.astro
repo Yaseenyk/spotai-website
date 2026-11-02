@@ -52,11 +52,21 @@ const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
       <form
         id="waitlist"
         class="waitlist"
-        action={SITE.formEndpoint || `mailto:${SITE.email}`}
-        method={SITE.formEndpoint ? 'post' : 'get'}
+        action={`mailto:${SITE.email}`}
+        method="post"
+        enctype="text/plain"
         aria-label={t.form.label}
+        data-service={SITE.emailjs.service}
+        data-template={SITE.emailjs.template}
+        data-key={SITE.emailjs.publicKey}
+        data-to={SITE.email}
+        data-sending={t.form.sending}
+        data-sent={t.form.sent}
+        data-error={t.form.error}
       >
         <input type="hidden" name="subject" value={t.form.subject} />
+        <!-- Left empty by people; bots that fill every field are dropped quietly. -->
+        <input class="waitlist__trap" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="waitlist__row">
           <label>
             <span>{t.form.name}</span>
@@ -82,8 +92,9 @@ const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
           </label>
         </div>
         <button type="submit" class="btn btn--primary">{t.form.submit}</button>
+        <p class="waitlist__status" role="status" aria-live="polite"></p>
         <p class="waitlist__note">
-          {SITE.formEndpoint ? t.form.noteForm : t.form.noteMail} {t.form.orWrite}
+          {t.form.noteForm} {t.form.orWrite}
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
         </p>
       </form>
@@ -112,6 +123,62 @@ const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
     </div>
   </div>
 </section>
+
+<script>
+  // Sends the waitlist form through EmailJS's REST API, so a lead reaches the inbox without a mail app.
+  const form = document.querySelector<HTMLFormElement>('#waitlist');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const d = form.dataset;
+    const status = form.querySelector<HTMLElement>('.waitlist__status')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    const f = new FormData(form);
+    const get = (k: string) => String(f.get(k) ?? '').trim();
+    if (get('company')) {
+      status.textContent = d.sent!;
+      return;
+    }
+    button.disabled = true;
+    status.dataset.state = 'sending';
+    status.textContent = d.sending!;
+    const message = [
+      `*** ${get('subject')} ***`,
+      `Who: ${get('who')}`,
+      `WhatsApp: ${get('whatsapp')}`,
+      `Gym: ${get('gym')}`,
+      `Page: ${location.pathname} (${document.documentElement.lang})`,
+    ].join('\n');
+    try {
+      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: d.service,
+          template_id: d.template,
+          user_id: d.key,
+          template_params: {
+            name: get('name'),
+            from_name: get('name'),
+            to_name: 'Yaseen',
+            email: d.to,
+            to_email: d.to,
+            message,
+          },
+        }),
+      });
+      if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
+      status.dataset.state = 'sent';
+      status.textContent = d.sent!;
+      form.reset();
+    } catch (err) {
+      console.error('Waitlist send failed:', err);
+      status.dataset.state = 'error';
+      status.textContent = d.error!;
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
 
 <style>
   .download {
@@ -195,6 +262,26 @@ const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
   }
   .demo__ios a {
     color: var(--violet-2);
+  }
+  .waitlist__trap {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+  .waitlist__status:empty {
+    display: none;
+  }
+  .waitlist__status {
+    margin-top: 12px;
+    font-weight: 600;
+  }
+  .waitlist__status[data-state='sent'] {
+    color: var(--go);
+  }
+  .waitlist__status[data-state='error'] {
+    color: var(--warn);
   }
   .demo__guide {
     display: inline-block;

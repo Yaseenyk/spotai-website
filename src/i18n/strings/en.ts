@@ -299,12 +299,14 @@ export default {
       whatsapp: 'WhatsApp number',
       who: 'I am a',
       whoOptions: { member: 'Gym member', owner: 'Gym owner', trainer: 'Trainer' },
-      gym: 'Gym name and area',
-      gymPlaceholder: 'e.g. Iron Temple, Kukatpally',
+      gym: 'Gym name and city',
+      gymPlaceholder: 'e.g. Iron Temple, Pune',
       submit: 'Join the waitlist',
-      /** Under the button: when a form endpoint is set, otherwise the mailto fallback. */
+      /** Under the button, then the sending, sent and error states. */
       noteForm: 'We reply on WhatsApp within a day.',
-      noteMail: 'Opens your mail app with the details filled in.',
+      sending: 'Sending…',
+      sent: 'Thanks, we got it. We reply on WhatsApp within a day.',
+      error: 'Could not send. Please try again, or message us on WhatsApp.',
       /** Followed by the email address. */
       orWrite: 'Or write to',
     },
