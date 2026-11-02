@@ -1,0 +1,1 @@
+var e={name:`SpotAI`};export{e as t};
