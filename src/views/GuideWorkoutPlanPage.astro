@@ -1,0 +1,38 @@
+---
+import GuideLayout from '../components/GuideLayout.astro';
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const t = strings(code).guideWorkoutPlan;
+---
+
+<GuideLayout
+  slug="gym-workout-plan-for-beginners"
+  title={t.title}
+  description={t.description}
+  h1={t.h1}
+  answer={t.answer}
+  updated="2026-11-02"
+  faq={t.faq}
+  cta={{ label: t.cta.label, href: localize('/features/workouts/', code), text: t.cta.text }}
+>
+  {
+    [t.fullBody, t.upperLower].map((plan) => (
+      <>
+        <h2>{plan.title}</h2>
+        <p>{plan.intro}</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">{t.table.day}</th><th scope="col" style="text-align:left">{t.table.exercises}</th></tr></thead>
+            <tbody>{plan.rows.map(([d, e]) => <tr><td>{d}</td><td style="text-align:left;white-space:normal">{e}</td></tr>)}</tbody>
+          </table>
+        </div>
+      </>
+    ))
+  }
+  <h2>{t.progressTitle}</h2>
+  <ul>
+    {t.progress.map((i) => <li set:html={i} />)}
+  </ul>
+  <p class="note">{t.note}</p>
+</GuideLayout>

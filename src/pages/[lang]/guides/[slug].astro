@@ -1,0 +1,14 @@
+---
+import GuidePage from '../../../views/GuidePage.astro';
+import { langsBySlug, liveGuides } from '../../../i18n/guides';
+// One page per translated Markdown guide (src/content/guides/<code>/<slug>.md) whose publish date has passed.
+export async function getStaticPaths() {
+  const guides = await liveGuides();
+  const langs = langsBySlug(guides);
+  return guides
+    .filter((g) => g.code !== 'en')
+    .map((g) => ({ params: { lang: g.code, slug: g.slug }, props: { guide: g.entry, slug: g.slug, langs: langs.get(g.slug)! } }));
+}
+---
+
+<GuidePage {...Astro.props} />

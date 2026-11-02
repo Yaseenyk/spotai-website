@@ -52,7 +52,7 @@ function hero() {
 // The exercise reel. A side-view lifter whose joints tween between two key poses per exercise; after four reps
 // it slides to the next one. The tabs under the floor pick an exercise directly.
 type Pose = { hx: number; hy: number; sx: number; sy: number; ex: number; ey: number; wx: number; wy: number; px: number; py: number; kx: number; ky: number; ax: number; ay: number };
-type Exercise = { a: Pose; b: Pose; prop: 'plate' | 'db' | 'handle' | 'none'; plateAt?: 'wrist' | 'back'; gear?: 'bench' | 'seat'; period: number; cue?: string };
+type Exercise = { a: Pose; b: Pose; prop: 'plate' | 'db' | 'handle' | 'none'; plateAt?: 'wrist' | 'back'; gear?: 'bench' | 'seat'; period: number; cue?: boolean };
 const STAND = { hx: 250, hy: 80, sx: 250, sy: 150, px: 250, py: 300, kx: 256, ky: 400, ax: 250, ay: 500 };
 const EXERCISES: Record<string, Exercise> = {
   squat: {
@@ -61,7 +61,7 @@ const EXERCISES: Record<string, Exercise> = {
     prop: 'plate',
     plateAt: 'back',
     period: 2.2,
-    cue: 'Knees out over your toes',
+    cue: true,
   },
   deadlift: {
     a: { hx: 318, hy: 220, sx: 296, sy: 268, ex: 300, ey: 360, wx: 304, wy: 452, px: 206, py: 328, kx: 282, ky: 420, ax: 250, ay: 500 },
@@ -111,6 +111,8 @@ export function reel(staticOnly: boolean) {
   const ticks = gsap.utils.toArray<HTMLElement>('[data-ticks] i');
   const nameEl = document.querySelector<HTMLElement>('[data-set-name]');
   const flag = document.querySelector<HTMLElement>('[data-hflag]');
+  // The cue's words come from the page, in the page's language.
+  const cueText = flag?.textContent ?? '';
   const ids = Object.keys(EXERCISES);
   let id = ids[0]!;
   const s: Pose = { ...EXERCISES[id]!.a };
@@ -230,7 +232,7 @@ export function reel(staticOnly: boolean) {
         Object.assign(s, EXERCISES[id]!.a);
         render();
         setRep(0);
-        if (flag) flag.textContent = EXERCISES[id]!.cue ?? '';
+        if (flag) flag.textContent = EXERCISES[id]!.cue ? cueText : '';
         if (nameEl) nameEl.textContent = tabs.find((t) => t.dataset.ex === id)?.textContent?.trim() ?? '';
       })
       .fromTo(svg, { x: 70, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: 'power3.out' })

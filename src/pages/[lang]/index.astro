@@ -1,0 +1,9 @@
+---
+import HomePage from '../../views/HomePage.astro';
+import { langPaths } from '../../i18n/config';
+export function getStaticPaths() {
+  return langPaths();
+}
+---
+
+<HomePage />

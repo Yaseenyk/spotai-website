@@ -50,8 +50,8 @@ export const FAQ = [
     a: 'A laptop or phone with internet for the console, and an Android phone for any member who wants the app. The face check-in device is optional and comes later. Workout logging in the member app works offline and syncs later.',
   },
   {
-    q: 'Is SpotAI available in Hindi?',
-    a: 'The app is in English today. Coach tips have Hindi and Bengali versions drafted and waiting for native-speaker review before they ship.',
+    q: 'Is SpotAI available in Hindi and other Indian languages?',
+    a: 'Yes. The member app is in 7 languages: English, Hindi, Telugu, Tamil, Kannada, Marathi and Bengali. Pick yours on the first screen or tap the globe at the top of any screen; the whole app switches at once and remembers your choice. It also opens in your phone’s language if it is one of the seven. The AI coach’s form tips are in English today; Hindi and Bengali versions are waiting for native-speaker review.',
   },
   {
     q: 'When can I download SpotAI?',

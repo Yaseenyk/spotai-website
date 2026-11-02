@@ -1,16 +1,19 @@
 ---
-import { FAQ } from '../site';
+import { strings } from '../i18n/strings';
+import { langOf } from '../i18n/config';
+const T = strings(langOf(Astro.url.pathname));
+const t = T.faqSection;
 ---
 
 <section class="section faq" id="faq" aria-labelledby="faq-title">
   <div class="wrap faq__in">
     <div class="faq__head">
-      <h2 id="faq-title">Questions gym members and owners ask first</h2>
-      <p class="lead">Straight answers. Write to us if yours is not here.</p>
+      <h2 id="faq-title">{t.title}</h2>
+      <p class="lead">{t.lead}</p>
     </div>
     <div class="faq__list">
       {
-        FAQ.map((f, i) => (
+        T.faq.map((f, i) => (
           <details class="faq__item" open={i === 0}>
             <summary>
               <h3>{f.q}</h3>

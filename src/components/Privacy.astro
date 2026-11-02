@@ -1,61 +1,57 @@
 ---
-const base = import.meta.env.BASE_URL;
-const consents = [
-  ['Camera coaching', true],
-  ['Save my clips', false],
-  ['Face check-in', false],
-  ['Buddy matching', true],
-  ['Chat', true],
-  ['Dues reminders', true],
-] as const;
-const points = [
-  ['Frames never leave the phone', 'Pose tracking runs on the device. The server only ever gets rep counts and flags.'],
-  ['One switch per purpose', 'Camera, clips, face, matching, chat and reminders are separate opt-ins, each with the notice version recorded.'],
-  ['Export or delete from the app', 'A JSON of everything you have, or the whole account gone. No email to support.'],
-  ['Complaints get a reference', 'File from the app, get a number, and the gym has to answer. As India’s DPDP Act expects.'],
-  ['Language models behind a gate', 'Any model call goes through a gateway that strips identity and checks consent first, with template fallback.'],
-  ['Adults only', 'Camera features and the community switch off for members under 18.'],
-];
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const T = strings(code);
+const t = T.privacy;
+// Default state of each switch in the illustrated privacy centre.
+const consents = (
+  [
+    ['camera', true],
+    ['clips', false],
+    ['face', false],
+    ['matching', true],
+    ['chat', true],
+    ['reminders', true],
+  ] as const
+).map(([k, on]) => [t.consents[k], on] as const);
 ---
 
 <section class="section privacy" id="privacy" aria-labelledby="privacy-title">
   <div class="wrap privacy__in">
     <div class="privacy__copy">
-      <h2 id="privacy-title">Worried where your camera footage goes? Nowhere.</h2>
-      <p class="lead">
-        A gym app sees your camera, your attendance and sometimes your face. Each one is a separate decision you
-        make, not a wall of text you tap through once.
-      </p>
-      <a class="more-link" href={`${base}features/privacy/`}>See the full feature</a>
+      <h2 id="privacy-title">{t.title}</h2>
+      <p class="lead">{t.lead}</p>
+      <a class="more-link" href={localize('/features/privacy/', code)}>{T.common.seeFeature}</a>
       <ul class="points" role="list">
         {
-          points.map(([t, b]) => (
+          t.points.map((p) => (
             <li>
-              <h3>{t}</h3>
-              <p>{b}</p>
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
             </li>
           ))
         }
       </ul>
     </div>
 
-    <div class="centre" aria-label="The privacy centre in the app">
-      <p class="centre__title">Privacy centre</p>
-      <p class="centre__sub">In the SpotAI app</p>
+    <div class="centre" aria-label={t.centreLabel}>
+      <p class="centre__title">{t.centreTitle}</p>
+      <p class="centre__sub">{T.common.inApp}</p>
       <ul class="toggles" role="list">
         {
           consents.map(([label, on]) => (
             <li class:list={{ 'is-on': on }}>
               <span>{label}</span>
               <i aria-hidden="true" />
-              <b class="sr-only">{on ? 'on' : 'off'}</b>
+              <b class="sr-only">{on ? T.common.on : T.common.off}</b>
             </li>
           ))
         }
       </ul>
       <div class="centre__actions">
-        <span>Export my data</span>
-        <span>Delete my account</span>
+        <span>{t.exportData}</span>
+        <span>{t.deleteAccount}</span>
       </div>
     </div>
   </div>

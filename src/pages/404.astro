@@ -2,25 +2,27 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { FEATURES } from '../features';
-const base = import.meta.env.BASE_URL;
+import { featuresFor } from '../i18n/features';
+import { strings } from '../i18n/strings';
+// English only; the language switcher sends other languages to their home page.
+const t = strings('en').notFound;
 ---
 
-<Layout noindex title="Page not found · SpotAI" description="That page is not here. Jump to a SpotAI feature, the gym owner pilot, or pricing.">
-  <Nav />
+<Layout noindex title={t.title} description={t.description}>
+  <Nav langs={['en']} fallback="/" />
   <main id="main" class="nf">
     <div class="wrap">
-      <h1 class="wide">That page is not here.</h1>
-      <p class="lead">Try one of these.</p>
+      <h1 class="wide">{t.h1}</h1>
+      <p class="lead">{t.lead}</p>
       <ul class="links" role="list">
-        <li><a href={base}>Home</a></li>
-        <li><a href={`${base}for-gym-owners/`}>For gym owners</a></li>
-        <li><a href={`${base}pricing/`}>Pricing</a></li>
-        {FEATURES.map((f) => (<li><a href={`${base}features/${f.slug}/`}>{f.nav}</a></li>))}
+        <li><a href="/">{t.home}</a></li>
+        <li><a href="/for-gym-owners/">{t.forOwners}</a></li>
+        <li><a href="/pricing/">{t.pricing}</a></li>
+        {featuresFor('en').map((f) => (<li><a href={`/features/${f.slug}/`}>{f.nav}</a></li>))}
       </ul>
     </div>
   </main>
-  <Footer />
+  <Footer langs={['en']} fallback="/" />
 </Layout>
 
 <style>

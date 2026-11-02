@@ -1,31 +1,11 @@
 ---
-const base = import.meta.env.BASE_URL;
-const features = [
-  {
-    title: 'Counts every rep',
-    body: 'Prop the phone side-on or at 45°. The counter runs on the body landmarks, so you lift and the app keeps score.',
-  },
-  {
-    title: 'Three form checks per rep',
-    body: 'Knee valgus, shallow depth and forward lean, flagged per rep. Squats today; deadlift and bench are next.',
-  },
-  {
-    title: 'One tip per set',
-    body: 'Picked from templates your gym’s trainer approved, in English, Hindi or Bengali. Nothing made up on the spot.',
-  },
-  {
-    title: 'Video never leaves your phone',
-    body: 'Pose runs on the phone with MediaPipe. Only rep counts and flags reach the server, never a frame.',
-  },
-  {
-    title: 'Mark a tip wrong',
-    body: 'Tap “This was wrong” and trainers see each template’s wrong-rate in the staff console, then retire the bad ones.',
-  },
-  {
-    title: 'Clips are your call',
-    body: 'Saving a clip is a separate consent, off by default, deletable any time. Camera features are for members 18 and over.',
-  },
-];
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const T = strings(code);
+const t = T.coach;
+const cam = t.cam;
+const features = t.features;
 ---
 
 <section class="section coach" id="coach" aria-labelledby="coach-title">
@@ -33,9 +13,9 @@ const features = [
     <!-- What the coach sees: a viewfinder with the tracked body. Scroll scrubs the squat and the flags fire in order. -->
     <div class="cam" aria-hidden="true">
       <div class="cam__bar">
-        <span class="cam__chip">Squat</span>
-        <span class="cam__chip">Side view</span>
-        <span class="cam__live"><i></i>On device</span>
+        <span class="cam__chip">{cam.exercise}</span>
+        <span class="cam__chip">{cam.view}</span>
+        <span class="cam__live"><i></i>{cam.live}</span>
       </div>
       <div class="cam__view">
       <svg viewBox="0 0 520 520" data-squat>
@@ -66,36 +46,33 @@ const features = [
         </g>
         <g data-flag="depth" opacity="0">
           <rect x="316" y="296" width="150" height="34" rx="17" fill="var(--warn)" />
-          <text x="391" y="318" text-anchor="middle" class="cam__flag">Shallow depth</text>
+          <text x="391" y="318" text-anchor="middle" class="cam__flag">{cam.depth}</text>
         </g>
         <g data-flag="valgus" opacity="0">
           <rect x="56" y="342" width="140" height="34" rx="17" fill="var(--violet)" />
-          <text x="126" y="364" text-anchor="middle" class="cam__flag cam__flag--light">Knee valgus</text>
+          <text x="126" y="364" text-anchor="middle" class="cam__flag cam__flag--light">{cam.valgus}</text>
         </g>
         <g data-flag="lean" opacity="0">
           <rect x="320" y="150" width="150" height="34" rx="17" fill="var(--warn)" />
-          <text x="395" y="172" text-anchor="middle" class="cam__flag">Forward lean</text>
+          <text x="395" y="172" text-anchor="middle" class="cam__flag">{cam.lean}</text>
         </g>
         <g data-flag="good" opacity="0">
           <rect x="190" y="40" width="140" height="34" rx="17" fill="var(--go)" />
-          <text x="260" y="62" text-anchor="middle" class="cam__flag">Good rep</text>
+          <text x="260" y="62" text-anchor="middle" class="cam__flag">{cam.good}</text>
         </g>
       </svg>
       </div>
       <div class="cam__foot">
-        <p class="cam__rep"><b>6</b><span>of 8 reps</span></p>
-        <p class="cam__tip">“Try pushing your knees out over your toes as you stand up.”</p>
-        <p class="cam__ask"><span>Helpful</span><span>This was wrong</span></p>
+        <p class="cam__rep"><b>6</b><span>{cam.repOf}</span></p>
+        <p class="cam__tip">{cam.tip}</p>
+        <p class="cam__ask"><span>{cam.helpful}</span><span>{cam.wrong}</span></p>
       </div>
     </div>
 
     <div class="coach__copy">
-      <h2 id="coach-title">No one spotting your squat? The AI coach checks your form on the phone camera.</h2>
-      <p class="lead">
-        Prop your phone against the rack and do a set. The coach counts reps, flags form per rep, and gives you one
-        tip your gym’s trainer has approved.
-      </p>
-      <a class="more-link" href={`${base}features/ai-coach/`}>See the full feature</a>
+      <h2 id="coach-title">{t.title}</h2>
+      <p class="lead">{t.lead}</p>
+      <a class="more-link" href={localize('/features/ai-coach/', code)}>{T.common.seeFeature}</a>
       <ul class="coach__grid" role="list">
         {
           features.map((f) => (

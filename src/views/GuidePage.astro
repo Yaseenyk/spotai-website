@@ -1,0 +1,49 @@
+---
+// One Markdown guide, in the language of the URL.
+import { render, type CollectionEntry } from 'astro:content';
+import GuideLayout from '../components/GuideLayout.astro';
+import { langOf, localize, type LangCode } from '../i18n/config';
+interface Props {
+  guide: CollectionEntry<'guides'>;
+  slug: string;
+  /** Languages this guide is live in. */
+  langs: LangCode[];
+}
+const { guide, slug, langs } = Astro.props;
+const code = langOf(Astro.url.pathname);
+const { Content } = await render(guide);
+const d = guide.data;
+const href = d.cta.href.startsWith('/') ? localize(d.cta.href, code) : d.cta.href;
+---
+
+<GuideLayout
+  slug={slug}
+  title={d.title}
+  description={d.description}
+  h1={d.h1}
+  answer={d.answer}
+  updated={d.updated.toISOString().slice(0, 10)}
+  published={d.publish.toISOString().slice(0, 10)}
+  cover={`og/guides/${slug}.png`}
+  faq={d.faq}
+  cta={{ ...d.cta, href }}
+  langs={langs}
+>
+  <div class="md"><Content /></div>
+</GuideLayout>
+
+<style>
+  /* Markdown tables hold words as well as numbers: let them wrap and scroll on small screens. */
+  .md :global(table) {
+    display: block;
+    overflow-x: auto;
+  }
+  .md :global(td),
+  .md :global(th) {
+    white-space: normal !important;
+    text-align: left !important;
+  }
+  .md :global(h3) {
+    margin-top: 22px;
+  }
+</style>

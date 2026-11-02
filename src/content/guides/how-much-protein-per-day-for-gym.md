@@ -79,7 +79,7 @@ The typical Indian pattern is a light breakfast, a carb-heavy lunch and a late d
 
 Values are typical figures from the Indian Food Composition Tables. Recipes, brands and portions vary, so treat them as estimates.
 
-## A sample day: about 105 to 120 g of protein
+## A sample day: about 105 to 125 g of protein
 
 This is an example for a 70 kg person who eats eggs and chicken. If you are vegetarian, see our [high-protein Indian vegetarian diet](/guides/high-protein-indian-vegetarian-diet-for-gym/).
 

@@ -1,9 +1,9 @@
 ---
 title: 'A 10-minute stretch after your workout · SpotAI'
-description: 'A 10-minute stretching routine for after the gym: eight stretches, how long to hold each, what stretching does and does not do, and busy-gym tips.'
+description: 'A 10-minute stretching routine for after the gym: nine stretches, how long to hold each, what stretching does and does not do, and busy-gym tips.'
 h1: 'A 10-minute stretch after your workout'
 audience: member
-blurb: 'Eight stretches, how long to hold them, and what stretching actually does for you.'
+blurb: 'Nine stretches, how long to hold them, and what stretching actually does for you.'
 answer: 'After your workout, spend about 10 minutes on slow stretches for the muscles you trained: hips, thighs, calves, chest, shoulders and back. Hold each stretch for 20 to 30 seconds without bouncing, at a point of mild tension, not pain, and repeat once or twice on tight areas. Regular stretching improves flexibility over weeks, but it does little to prevent next-day soreness.'
 publish: 2027-03-15
 updated: 2027-03-15

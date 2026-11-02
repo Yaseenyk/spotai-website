@@ -1,0 +1,9 @@
+---
+import GuideWorkoutPlanPage from '../../../views/GuideWorkoutPlanPage.astro';
+import { langPaths } from '../../../i18n/config';
+export function getStaticPaths() {
+  return langPaths();
+}
+---
+
+<GuideWorkoutPlanPage />

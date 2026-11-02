@@ -1,0 +1,10 @@
+---
+import FeaturePage from '../../../views/FeaturePage.astro';
+import { FEATURES } from '../../../features';
+import { langPaths } from '../../../i18n/config';
+export function getStaticPaths() {
+  return langPaths().flatMap(({ params }) => FEATURES.map((f) => ({ params: { ...params, slug: f.slug } })));
+}
+---
+
+<FeaturePage slug={Astro.params.slug!} />

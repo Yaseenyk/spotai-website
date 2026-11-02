@@ -1,0 +1,402 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Screen from '../components/Screen.astro';
+import { SITE } from '../site';
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const T = strings(code);
+const t = T.forGymOwners;
+const url = new URL(localize('/for-gym-owners/', code), SITE.url).href;
+const wa = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(T.common.waOwnerPilot)}`;
+const { title, description, faq } = t;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebPage', '@id': url, url, name: title, description, isPartOf: { '@id': `${SITE.url}#website` }, about: { '@id': `${SITE.url}#org` } },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'SpotAI', item: new URL(localize('/', code), SITE.url).href }, { '@type': 'ListItem', position: 2, name: t.crumb, item: url }] },
+    { '@type': 'FAQPage', mainEntity: faq.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } })) },
+  ],
+};
+// Screenshots in the console section, in the order of t.console.shots.
+const consoleShots = ['o-dues.webp', 'o-insights.webp', 'o-members.webp'];
+---
+
+<Layout title={`${title} · SpotAI`} description={description} jsonLd={jsonLd}>
+  <Nav />
+  <main id="main" class="own">
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div>
+          <p class="hero__for">{t.heroFor}</p>
+          <h1 class="wide">{t.h1}</h1>
+          <p class="hero__fix">{t.fix}</p>
+          <p class="hero__lead">{t.lead}</p>
+          <div class="hero__cta">
+            <a href={wa} target="_blank" rel="noopener" class="btn btn--primary">{T.common.chatWhatsApp}</a>
+            <a href="#pilot" class="btn btn--ghost">{t.ctaPilot}</a>
+          </div>
+          <p class="hero__note">{t.note}</p>
+        </div>
+        <div class="hero__art">
+          <Screen shot={{ kind: 'browser', src: 'o-overview.webp', alt: t.heroAlt }} eager />
+        </div>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="today-title">
+      <div class="wrap">
+        <h2 id="today-title">{t.today.title}</h2>
+        <ul class="grid4" role="list">
+          {t.today.items.map((i) => (<li><h3>{i.title}</h3><p>{i.body}</p></li>))}
+        </ul>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="vs-title">
+      <div class="wrap">
+        <h2 id="vs-title">{t.vs.title}</h2>
+        <table class="vs">
+          <thead><tr><th scope="col"></th><th scope="col">{t.vs.today}</th><th scope="col">{t.vs.withSpotai}</th></tr></thead>
+          <tbody>
+            {t.vs.rows.map(([k, a, b]) => (<tr><th scope="row">{k}</th><td>{a}</td><td>{b}</td></tr>))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="shots-title">
+      <div class="wrap">
+        <h2 id="shots-title">{t.console.title}</h2>
+        <ul class="shots" role="list">
+          {t.console.shots.map((s, i) => (<li><Screen shot={{ kind: 'browser', src: consoleShots[i]!, alt: s.alt }} /><p>{s.caption}</p></li>))}
+        </ul>
+        <a class="more-link" href={localize('/features/owners/', code)}>{t.console.more}</a>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="members-title">
+      <div class="wrap two">
+        <div>
+          <h2 id="members-title">{t.members.title}</h2>
+          <p class="lead">{t.members.lead}</p>
+          <ul class="list">
+            {t.members.items.map((i) => <li set:html={i} />)}
+          </ul>
+          <a class="more-link" href={localize('/features/', code)}>{t.members.more}</a>
+        </div>
+        <div class="hero__art hero__art--phone">
+          <Screen shot={{ kind: 'phone', src: 'm-dark-home-train.webp', alt: t.members.alt }} />
+        </div>
+      </div>
+    </section>
+    <section class="section pilot" id="pilot" aria-labelledby="pilot-title">
+      <div class="wrap pilot__in">
+        <div>
+          <p class="hero__for">{t.pilot.for}</p>
+          <h2 id="pilot-title">{t.pilot.title}</h2>
+          <div class="pilot__cols">
+            <div>
+              <h3>{t.pilot.get}</h3>
+              <ul class="list">
+                {t.pilot.getItems.map((i) => <li>{i}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h3>{t.pilot.ask}</h3>
+              <ul class="list">
+                {t.pilot.askItems.map((i) => <li>{i}</li>)}
+              </ul>
+            </div>
+          </div>
+          <div class="hero__cta">
+            <a href={wa} target="_blank" rel="noopener" class="btn btn--primary">{T.common.chatWhatsApp}</a>
+            <a href={`${localize('/', code)}#download`} class="btn btn--ghost">{t.pilot.leave}</a>
+          </div>
+          <p class="hero__note">{t.pilot.note}</p>
+        </div>
+      </div>
+    </section>
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="wrap faq__in">
+        <h2 id="faq-title">{t.faqTitle}</h2>
+        <div>
+          {faq.map((q, i) => (<details open={i === 0}><summary><h3>{q.q}</h3><span class="plus" aria-hidden="true" /></summary><p>{q.a}</p></details>))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .own {
+    font-size: 17px;
+  }
+  .own h2 {
+    font-size: clamp(28px, 3vw, 40px);
+  }
+  .hero {
+    padding: 128px 0 24px;
+  }
+  .hero__in,
+  .two,
+  .faq__in {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(32px, 5vw, 80px);
+    align-items: center;
+  }
+  .faq__in {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    align-items: start;
+  }
+  .hero__for {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(139, 92, 246, 0.16);
+    color: var(--violet-2);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .hero h1 {
+    margin-top: 16px;
+    font-size: clamp(32px, 3.6vw, 50px);
+    max-width: 18ch;
+  }
+  .hero__fix {
+    margin-top: 14px;
+    font-size: clamp(21px, 1.9vw, 28px);
+    font-weight: 800;
+    font-variation-settings: 'wdth' 118;
+    letter-spacing: -0.02em;
+    color: var(--violet-2);
+  }
+  .hero__lead,
+  .lead {
+    margin-top: 18px;
+    max-width: 52ch;
+    font-size: 17.5px;
+    line-height: 1.6;
+    color: var(--steel);
+  }
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .hero__note {
+    margin-top: 16px;
+    max-width: 52ch;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--dim);
+  }
+  .hero__art {
+    position: relative;
+  }
+  .hero__art::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    width: 110%;
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    background: radial-gradient(closest-side, rgba(139, 92, 246, 0.3), transparent 70%);
+    pointer-events: none;
+  }
+  .hero__art--phone {
+    display: flex;
+    justify-content: center;
+  }
+  .hero__art--phone :global(.phone) {
+    width: min(280px, 70%);
+  }
+
+  .grid4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .grid4 li,
+  .shots li {
+    padding: 22px 24px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #1f2129, #171920);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 0 0 1px var(--line);
+  }
+  .grid4 h3 {
+    font-size: 19px;
+    font-variation-settings: 'wdth' 108;
+  }
+  .grid4 p,
+  .shots p {
+    margin-top: 8px;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--steel);
+  }
+
+  .vs {
+    width: 100%;
+    margin-top: 28px;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  .vs th,
+  .vs td {
+    padding: 14px 16px;
+    text-align: left;
+    border-top: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .vs thead th {
+    border-top: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dim);
+  }
+  .vs tbody th {
+    font-weight: 700;
+    color: var(--chalk);
+    width: 24%;
+  }
+  .vs td:nth-child(2) {
+    color: var(--steel);
+  }
+  .vs td:nth-child(3) {
+    color: var(--chalk);
+    font-weight: 600;
+  }
+
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .shots li {
+    padding: 16px;
+  }
+  .shots p {
+    margin-top: 12px;
+    padding: 0 6px;
+  }
+
+  .list {
+    margin: 16px 0 0;
+    padding-left: 20px;
+    line-height: 1.6;
+    color: var(--steel);
+  }
+  .list li + li {
+    margin-top: 8px;
+  }
+  .list strong {
+    color: var(--chalk);
+  }
+
+  .pilot {
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.1), transparent);
+  }
+  .pilot__cols {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    margin-top: 24px;
+  }
+  .pilot h3 {
+    font-size: 18px;
+  }
+
+  details {
+    border-top: 1px solid var(--line);
+  }
+  details:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary h3 {
+    font-size: 18px;
+    font-variation-settings: 'wdth' 105;
+  }
+  .plus {
+    position: relative;
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px var(--line-2);
+  }
+  .plus::before,
+  .plus::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 11px;
+    height: 2px;
+    background: var(--chalk);
+    translate: -50% -50%;
+  }
+  .plus::after {
+    transform: rotate(90deg);
+  }
+  details[open] .plus::after {
+    transform: none;
+  }
+  details p {
+    padding: 0 44px 20px 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--steel);
+  }
+
+  @media (max-width: 960px) {
+    .hero {
+      padding-top: 108px;
+    }
+    .hero__in,
+    .two,
+    .faq__in,
+    .pilot__cols {
+      grid-template-columns: 1fr;
+    }
+    .grid4,
+    .shots {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 600px) {
+    .grid4,
+    .shots {
+      grid-template-columns: 1fr;
+    }
+    .vs {
+      font-size: 14px;
+    }
+    .vs th,
+    .vs td {
+      padding: 10px 8px;
+    }
+  }
+</style>

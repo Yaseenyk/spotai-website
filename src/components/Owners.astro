@@ -1,44 +1,22 @@
 ---
 import { SITE } from '../site';
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const T = strings(code);
+const t = T.owners;
 const base = import.meta.env.BASE_URL;
-const problems = [
-  {
-    problem: 'Dues chased on WhatsApp',
-    fix: 'Overdue members in one list with days late. Reminders respect each member’s consent. Members pay inside the app with UPI and the reference lands in your ledger.',
-    src: 'o-dues.webp',
-    alt: 'Dues screen listing Sana and Rohan with ₹1,000 each, days overdue, last visit and a Send reminder button',
-  },
-  {
-    problem: 'No idea who came today',
-    fix: 'Arrivals as they happen with dues flagged on the name, active members, memberships ending this week, and collected this month against last.',
-    src: 'o-overview.webp',
-    alt: 'Owner overview: arrivals today, active members, ₹2,000 overdue, ₹9,000 collected, daily visits bar chart, busy hours and a live arrivals list',
-  },
-  {
-    problem: 'Guessing the busy hours',
-    fix: 'Visits by weekday and hour over four weeks, who came back from last month, who uses the coach. Figures from fewer than five members stay hidden.',
-    src: 'o-insights.webp',
-    alt: 'Insights: members who visited 82%, came back from the month before 100%, visits per week 3, members using the AI coach 36%, visits by weekday chart',
-  },
-];
-const more = [
-  ['Front desk console', 'Check-in by QR or by name. Staff see who is in and who owes, nothing else.'],
-  ['Trainer console', 'Review the AI coach’s tip templates with each flag’s wrong-rate, endorse helpers, moderate the community.'],
-  ['Complaints with a reference', 'A member files from the app, gets a number, and you see it in the dashboard. Required under India’s DPDP rules.'],
-  ['Face check-in, your call', 'An optional entrance device with liveness check and encrypted templates, nothing in the cloud. Stays in shadow mode until calibrated with consenting members.'],
-];
+const shots = ['o-dues.webp', 'o-overview.webp', 'o-insights.webp'];
+const problems = t.problems.map((p, i) => ({ ...p, src: shots[i]! }));
 ---
 
 <section class="section owners" id="owners" aria-labelledby="owners-title">
   <div class="wrap">
     <div class="owners__head">
-      <p class="owners__for">For gym owners</p>
-      <h2 id="owners-title">See who came today. See who stopped coming. Before they stop paying.</h2>
-      <p class="lead">
-        Most gym software in India is a register with a login. SpotAI shows you who came, who owes, and when the
-        floor is busy, and gives members a reason to keep coming.
-      </p>
-      <a class="more-link" href={`${base}for-gym-owners/`}>Free pilot for Hyderabad gyms</a>
+      <p class="owners__for">{t.for}</p>
+      <h2 id="owners-title">{t.title}</h2>
+      <p class="lead">{t.lead}</p>
+      <a class="more-link" href={localize('/for-gym-owners/', code)}>{t.more}</a>
     </div>
 
     <ul class="shots" role="list">
@@ -54,7 +32,7 @@ const more = [
             <div class="shot__text">
               <span class="shot__app">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 20h8" /></svg>
-                Owner console, in the browser
+                {t.console}
               </span>
               <h3>{p.problem}</h3>
               <p>{p.fix}</p>
@@ -66,18 +44,18 @@ const more = [
 
     <ul class="more" role="list">
       {
-        more.map(([t, b]) => (
+        t.extras.map((m) => (
           <li>
-            <h3>{t}</h3>
-            <p>{b}</p>
+            <h3>{m.title}</h3>
+            <p>{m.body}</p>
           </li>
         ))
       }
     </ul>
 
     <div class="owners__cta">
-      <p>Running a gym in Hyderabad? Free 90-day pilot, we load your register.</p>
-      <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hi SpotAI, I run a gym in Hyderabad and want the free pilot.')}`} target="_blank" rel="noopener" class="btn btn--primary">Chat on WhatsApp</a>
+      <p>{t.cta}</p>
+      <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(T.common.waOwnerPilot)}`} target="_blank" rel="noopener" class="btn btn--primary">{T.common.chatWhatsApp}</a>
     </div>
   </div>
 </section>

@@ -44,7 +44,7 @@ Approximate protein per common portion:
 
 | Food | Portion | Protein |
 | --- | --- | --- |
-| Soya chunks (dry weight) | 50 g | about 25 g |
+| Soya chunks (dry weight) | 50 g | about 26 g |
 | Paneer | 100 g | about 18–20 g |
 | Matar paneer | 1 serving (277 g) | 18.3 g |
 | Channa dal | 1 bowl (292 g) | 12.1 g |

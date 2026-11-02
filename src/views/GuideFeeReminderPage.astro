@@ -1,0 +1,34 @@
+---
+import GuideLayout from '../components/GuideLayout.astro';
+import { SITE } from '../site';
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const t = strings(code).guideFeeReminder;
+const phone = `+${SITE.whatsapp.slice(0, 2)} ${SITE.whatsapp.slice(2)}`;
+---
+
+<GuideLayout
+  slug="gym-fee-reminder-message"
+  title={t.title}
+  description={t.description}
+  h1={t.h1}
+  answer={t.answer}
+  updated="2026-11-02"
+  faq={t.faq}
+  cta={{ label: t.cta.label, href: localize('/for-gym-owners/', code), text: t.cta.text }}
+>
+  {
+    t.sections.map((s) => (
+      <>
+        <h2>{s.title}</h2>
+        {s.messages.map((m) => <p class="msg">{m}</p>)}
+      </>
+    ))
+  }
+  <h2>{t.rulesTitle}</h2>
+  <ul>
+    {t.rules.map((i) => <li set:html={i} />)}
+  </ul>
+  <p class="note">{t.note(phone)}</p>
+</GuideLayout>

@@ -1,0 +1,67 @@
+---
+import GuideLayout from '../components/GuideLayout.astro';
+import data from '../data/indian-foods.json';
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const t = strings(code).guideCalories;
+const all = data.flatMap((g) => g.foods);
+const roti = all.find((f) => f.code === 'ASC096')!;
+const rice = all.find((f) => f.code === 'ASC113')!;
+const dal = all.find((f) => f.code === 'ASC155')!;
+const idli = all.find((f) => f.code === 'ASC144')!;
+const short = (name: string) => name.replace(/\s*\(.*\)\s*$/, '');
+---
+
+<GuideLayout
+  slug="calories-in-indian-food"
+  title={t.title}
+  description={t.description(roti)}
+  h1={t.h1}
+  answer={t.answer({ roti, rice, dal, idli, count: all.length })}
+  updated="2026-11-02"
+  faq={t.faq({ roti, rice, dal })}
+  cta={{ label: t.cta.label, href: localize('/features/food-log/', code), text: t.cta.text }}
+>
+  <p set:html={t.intro} />
+  {
+    data.map((g) => (
+      <>
+        <h2>{t.groupTitle(g.group)}</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">{t.table.dish}</th>
+                <th scope="col">{t.table.kcal}</th>
+                <th scope="col">{t.table.protein}</th>
+                <th scope="col">{t.table.carbs}</th>
+                <th scope="col">{t.table.fat}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {g.foods.map((f) => (
+                <tr>
+                  <td>
+                    {short(f.name)}
+                    <br />
+                    <span class="note">{t.serving(f.unit, f.grams)}</span>
+                  </td>
+                  <td>{f.kcal}</td>
+                  <td>{f.protein} g</td>
+                  <td>{f.carbs} g</td>
+                  <td>{f.fat} g</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </>
+    ))
+  }
+  <h2>{t.howTitle}</h2>
+  <ul>
+    {t.how.map((i) => <li set:html={i} />)}
+  </ul>
+  <p class="note">{t.source}</p>
+</GuideLayout>

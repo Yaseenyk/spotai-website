@@ -1,29 +1,24 @@
 ---
 import { SITE } from '../site';
-const exercises = [
-  ['squat', 'Squat'],
-  ['deadlift', 'Deadlift'],
-  ['bench', 'Bench press'],
-  ['curl', 'Biceps curl'],
-  ['pulldown', 'Lat pulldown'],
-  ['press', 'Overhead press'],
-];
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const t = strings(code).hero;
+// Exercise ids match the reel in motion.ts.
+const exercises = Object.entries(t.exercises);
 ---
 
 <section class="hero" id="top" aria-labelledby="hero-title">
   <div class="wrap hero__in">
     <div class="hero__copy">
-      <h1 id="hero-title" class="hero__title wide">No spotter. No plan. Dues on WhatsApp.</h1>
-      <p class="hero__sub">SpotAI fixes all three.</p>
-      <p class="hero__lead">
-        The AI gym app for Indian gyms: form check on your phone camera, today’s plan, your gym’s leaderboard, dues
-        paid with UPI.
-      </p>
+      <h1 id="hero-title" class="hero__title wide">{t.title}</h1>
+      <p class="hero__sub">{t.sub}</p>
+      <p class="hero__lead">{t.lead}</p>
       <div class="hero__cta">
-        <a href={`/${SITE.demo.apk}`} download class="btn btn--primary">Download the Android demo</a>
-        <a href="/for-gym-owners/" class="btn btn--ghost">Gym owner? Free pilot</a>
+        <a href={`/${SITE.demo.apk}`} download class="btn btn--primary">{t.ctaApk}</a>
+        <a href={localize('/for-gym-owners/', code)} class="btn btn--ghost">{t.ctaOwner}</a>
       </div>
-      <p class="hero__note">Android {SITE.demo.android}+, {SITE.demo.size}, works offline. On iPhone, <a href={`/${SITE.demo.web}`}>open the web demo</a>.</p>
+      <p class="hero__note" set:html={t.note} />
     </div>
 
     <div class="stage" data-stage>
@@ -54,12 +49,12 @@ const exercises = [
       </svg>
 
       <div class="set" data-rep-box>
-        <span class="set__name" data-set-name>Squat</span>
+        <span class="set__name" data-set-name>{t.exercises.squat}</span>
         <b class="set__count wide" data-rep>0</b>
         <span class="set__ticks" aria-hidden="true" data-ticks><i></i><i></i><i></i><i></i></span>
-        <span class="set__label">reps this set</span>
+        <span class="set__label">{t.repsLabel}</span>
       </div>
-      <div class="cue" data-hflag>Knees out over your toes</div>
+      <div class="cue" data-hflag>{t.cue}</div>
 
       <!-- The lifter. Side view; every joint is driven by the exercise reel in motion.ts. -->
       <svg class="figure" viewBox="0 0 520 560" aria-hidden="true" data-figure>
@@ -114,7 +109,7 @@ const exercises = [
         </g>
       </svg>
 
-      <div class="tabs" role="tablist" aria-label="Exercises in the demo">
+      <div class="tabs" role="tablist" aria-label={t.tabsLabel}>
         {
           exercises.map(([id, name], i) => (
             <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-ex={id}>

@@ -1,33 +1,20 @@
 ---
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const T = strings(code);
+const t = T.members;
 const base = import.meta.env.BASE_URL;
-const steps = [
-  {
-    problem: 'No idea what to train today',
-    fix: 'Check in and the app picks today’s session from your last week: the muscle group that’s most rested, or cardio, cycling, mobility.',
-    src: 'm-dark-picker.webp',
-    alt: 'Session picker: What are you training today? Strength is suggested with the reason, then Cardio, Cycling and Mobility',
-  },
-  {
-    problem: 'Same three exercises every time',
-    fix: 'Tick the ones you want. Each exercise shows how many times you did it this week, so the gaps are obvious.',
-    src: 'm-dark-exercises.webp',
-    alt: 'Exercise checklist for Back and biceps with Lat pulldown, Dumbbell row, Biceps curl and Hammer curl, each showing how many times it was done this week',
-  },
-  {
-    problem: 'Sets never get written down',
-    fix: 'Reps and kilograms per set, a 30-second short if you forgot the move, or let the camera count the set for you.',
-    src: 'm-dark-workout.webp',
-    alt: 'Workout screen for Lat pulldown with a how-to, Watch short and Record set buttons and sets of reps and kilograms to log',
-  },
-];
+const shots = ['m-dark-picker.webp', 'm-dark-exercises.webp', 'm-dark-workout.webp'];
+const steps = t.steps.map((s, i) => ({ ...s, src: shots[i]! }));
 ---
 
 <section class="section members" id="members" aria-labelledby="members-title">
   <div class="wrap">
     <div class="members__head">
-      <h2 id="members-title">Walk in with no plan? Not anymore.</h2>
-      <p class="lead">Check in on your phone. SpotAI gives you today’s workout, then logs every set.</p>
-      <a class="more-link" href={`${base}features/workouts/`}>See the full feature</a>
+      <h2 id="members-title">{t.title}</h2>
+      <p class="lead">{t.lead}</p>
+      <a class="more-link" href={localize('/features/workouts/', code)}>{T.common.seeFeature}</a>
     </div>
 
     <ol class="steps" role="list">
@@ -43,7 +30,7 @@ const steps = [
               <span class="step__n" aria-hidden="true">{i + 1}</span>
               <span class="step__app">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" /><path d="M10 18h4" /></svg>
-                In the SpotAI app
+                {T.common.inApp}
               </span>
               <h3>{s.problem}</h3>
               <p>{s.fix}</p>

@@ -1,0 +1,9 @@
+---
+import ForGymOwnersPage from '../../views/ForGymOwnersPage.astro';
+import { langPaths } from '../../i18n/config';
+export function getStaticPaths() {
+  return langPaths();
+}
+---
+
+<ForGymOwnersPage />

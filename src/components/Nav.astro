@@ -1,34 +1,49 @@
 ---
-import { FEATURES } from '../features';
+import { featuresFor } from '../i18n/features';
+import { strings } from '../i18n/strings';
+import { LANGS, lang as langInfo, langOf, localize, switchHref, type LangCode } from '../i18n/config';
+interface Props {
+  /** Languages this page exists in; the switcher sends the others to `fallback` in their language. */
+  langs?: LangCode[];
+  fallback?: string;
+}
+const { langs, fallback } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const members = FEATURES.filter((f) => f.audience !== 'owners');
-const owners = FEATURES.filter((f) => f.audience !== 'members');
+const path = Astro.url.pathname;
+const code = langOf(path);
+const t = strings(code);
+const current = langInfo(code);
+const features = featuresFor(code);
+const members = features.filter((f) => f.audience !== 'owners');
+const owners = features.filter((f) => f.audience !== 'members');
+const home = localize('/', code);
 const links = [
-  [`${base}for-gym-owners/`, 'Gym owners'],
-  [`${base}pricing/`, 'Pricing'],
-  [`${base}guides/`, 'Guides'],
-  [`${base}#faq`, 'FAQ'],
+  [localize('/for-gym-owners/', code), t.nav.owners],
+  [localize('/pricing/', code), t.nav.pricing],
+  [localize('/guides/', code), t.nav.guides],
+  [`${home}#faq`, t.nav.faq],
 ];
+const switcher = LANGS.map((l) => ({ ...l, href: switchHref(path, l.code, langs, fallback) }));
 ---
 
 <header class="nav" data-nav>
   <div class="wrap nav__in">
-    <a href={base} class="nav__brand wide" aria-label="SpotAI home">
+    <a href={home} class="nav__brand wide" aria-label={t.nav.home}>
       <img src={`${base}icon.svg`} width="30" height="30" alt="" />
       <span>SpotAI</span>
     </a>
-    <nav aria-label="Primary" class="nav__links">
+    <nav aria-label={t.nav.primary} class="nav__links">
       <div class="menu" data-menu>
-        <a href={`${base}features/`} class="menu__btn" aria-haspopup="true" aria-expanded="false" data-menu-btn>
-          Features
+        <a href={localize('/features/', code)} class="menu__btn" aria-haspopup="true" aria-expanded="false" data-menu-btn>
+          {t.nav.features}
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
         </a>
         <div class="menu__panel" data-menu-panel>
           <div class="menu__col">
-            <p>For members</p>
+            <p>{t.nav.forMembers}</p>
             {
               members.map((f) => (
-                <a href={`${base}features/${f.slug}/`}>
+                <a href={localize(`/features/${f.slug}/`, code)}>
                   <strong>{f.nav}</strong>
                   <span>{f.problem}</span>
                 </a>
@@ -36,10 +51,10 @@ const links = [
             }
           </div>
           <div class="menu__col">
-            <p>For gym owners</p>
+            <p>{t.nav.forOwners}</p>
             {
               owners.map((f) => (
-                <a href={`${base}features/${f.slug}/`}>
+                <a href={localize(`/features/${f.slug}/`, code)}>
                   <strong>{f.nav}</strong>
                   <span>{f.problem}</span>
                 </a>
@@ -50,18 +65,48 @@ const links = [
       </div>
       {links.map(([href, label]) => <a href={href}>{label}</a>)}
     </nav>
-    <a href={`${base}for-gym-owners/`} class="btn btn--primary nav__cta">Free pilot for gyms</a>
-    <button type="button" class="nav__burger" aria-label="Open menu" aria-expanded="false" data-burger>
+    <details class="lang" data-lang>
+      <summary class="lang__btn" aria-haspopup="true" aria-expanded="false" aria-label={`${t.common.language}: ${current.native}`} data-lang-btn>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z" /></svg>
+        <span lang={current.tag}>{current.native}</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+      </summary>
+      <ul class="lang__panel" role="list">
+        {
+          switcher.map((l) => (
+            <li>
+              <a href={l.href} lang={l.tag} hreflang={l.tag} aria-current={l.code === code ? 'true' : undefined}>
+                {l.native}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </details>
+    <a href={localize('/for-gym-owners/', code)} class="btn btn--primary nav__cta">{t.nav.cta}</a>
+    <button type="button" class="nav__burger" aria-label={t.nav.openMenu} aria-expanded="false" data-burger>
       <span></span><span></span>
     </button>
   </div>
-  <nav aria-label="Mobile" class="nav__sheet" data-sheet>
-    <p class="nav__group">Features</p>
-    {FEATURES.map((f) => <a href={`${base}features/${f.slug}/`}>{f.nav}</a>)}
-    <a href={`${base}pricing/`}>Pricing</a>
-    <a href={`${base}guides/`}>Guides</a>
-    <a href={`${base}#faq`}>FAQ</a>
-    <a href={`${base}for-gym-owners/`} class="btn btn--primary">Free pilot for gyms</a>
+  <nav aria-label={t.nav.mobile} class="nav__sheet" data-sheet>
+    <p class="nav__group">{t.nav.features}</p>
+    {features.map((f) => <a href={localize(`/features/${f.slug}/`, code)}>{f.nav}</a>)}
+    <a href={localize('/pricing/', code)}>{t.nav.pricing}</a>
+    <a href={localize('/guides/', code)}>{t.nav.guides}</a>
+    <a href={`${home}#faq`}>{t.nav.faq}</a>
+    <p class="nav__group">{t.common.language}</p>
+    <ul class="nav__langs" role="list">
+      {
+        switcher.map((l) => (
+          <li>
+            <a href={l.href} lang={l.tag} hreflang={l.tag} aria-current={l.code === code ? 'true' : undefined}>
+              {l.native}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <a href={localize('/for-gym-owners/', code)} class="btn btn--primary">{t.nav.cta}</a>
   </nav>
 </header>
 
@@ -234,8 +279,96 @@ const links = [
     color: #fff;
     border: 0;
   }
+  .lang {
+    position: relative;
+  }
+  .lang__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 36px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--steel);
+    list-style: none;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px var(--line-2);
+    transition: color 0.2s ease;
+  }
+  .lang__btn::-webkit-details-marker {
+    display: none;
+  }
+  .lang__btn:hover,
+  .lang[open] .lang__btn {
+    color: var(--chalk);
+  }
+  .lang__btn svg:last-child {
+    transition: transform 0.25s var(--ease);
+  }
+  .lang[open] .lang__btn svg:last-child {
+    transform: rotate(180deg);
+  }
+  .lang__panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    display: grid;
+    gap: 2px;
+    min-width: 168px;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    border-radius: 14px;
+    background: #1a1c22;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 0 0 1px var(--line-2),
+      0 30px 60px -20px rgba(0, 0, 0, 0.9);
+  }
+  .lang__panel a {
+    display: block;
+    padding: 9px 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--steel);
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .lang__panel a:hover {
+    background: rgba(236, 233, 225, 0.06);
+    color: var(--chalk);
+  }
+  .lang__panel a[aria-current] {
+    color: var(--chalk);
+    background: rgba(139, 92, 246, 0.16);
+  }
+  .nav__langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4px 0 6px;
+    padding: 0;
+    list-style: none;
+  }
+  .nav__sheet .nav__langs a {
+    display: block;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px var(--line-2);
+    color: var(--steel);
+  }
+  .nav__sheet .nav__langs a[aria-current] {
+    color: var(--chalk);
+    background: rgba(139, 92, 246, 0.16);
+    box-shadow: inset 0 0 0 1px var(--violet-2);
+  }
   @media (max-width: 860px) {
     .nav__links,
+    .lang,
     .nav__cta {
       display: none;
     }
@@ -296,4 +429,19 @@ const links = [
     if (!menu.contains(e.relatedTarget as Node)) set(false);
   });
   document.addEventListener('keydown', (e) => e.key === 'Escape' && set(false));
+
+  // Language switcher: a <details> that works without JS; this keeps aria-expanded in step and closes it
+  // on Escape or a click elsewhere.
+  const lang = document.querySelector<HTMLDetailsElement>('[data-lang]')!;
+  const langBtn = lang.querySelector<HTMLElement>('[data-lang-btn]')!;
+  lang.addEventListener('toggle', () => langBtn.setAttribute('aria-expanded', String(lang.open)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lang.open) {
+      lang.open = false;
+      langBtn.focus();
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (lang.open && !lang.contains(e.target as Node)) lang.open = false;
+  });
 </script>

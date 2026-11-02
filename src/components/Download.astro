@@ -1,106 +1,99 @@
 ---
 import { SITE } from '../site';
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const T = strings(code);
+const t = T.download;
 const base = import.meta.env.BASE_URL;
+const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
 ---
 
 <section class="section download" id="download" aria-labelledby="download-title">
   <div class="wrap download__in">
     <div class="download__copy">
-      <h2 id="download-title">Get SpotAI at your gym</h2>
-      <p class="lead">
-        Try the Android demo today. Gym owners in {SITE.pilot.city} get a free pilot. Tell us who you are and we reply
-        on WhatsApp.
-      </p>
-
+      <h2 id="download-title">{t.title}</h2>
+      <p class="lead">{t.lead}</p>
       <div class="demo">
         <div class="demo__head">
           <div>
-            <h3>Try the demo now</h3>
-            <p>The full member app, running offline on your phone. Nothing you log leaves the phone.</p>
+            <h3>{t.demo.title}</h3>
+            <p>{t.demo.body}</p>
           </div>
           <div class="demo__btns">
-            <a href={`/${SITE.demo.apk}`} download class="btn btn--primary">Download for Android</a>
-            <a href={`/${SITE.demo.web}`} class="btn btn--ghost">Open on iPhone</a>
+            <a href={`/${SITE.demo.apk}`} download class="btn btn--primary">{t.demo.android}</a>
+            <a href={`/${SITE.demo.web}`} class="btn btn--ghost">{t.demo.iphone}</a>
           </div>
         </div>
         <ol class="demo__steps">
-          <li>Open the downloaded <code>spotai-demo.apk</code>. If Android asks, allow installs from your browser.</li>
-          <li>Tap <strong>Sign up</strong>, enter your name, email and a password, and tick the privacy notice. Your account is ready at once; no email code in the demo.</li>
-          <li>Check in, pick a session, log sets. Everything you save stays on your phone and is still there when you open the app again.</li>
+          {t.demo.steps.map((s) => <li set:html={s} />)}
         </ol>
-        <p class="demo__meta">Version {SITE.demo.version} · Android {SITE.demo.android} or newer · {SITE.demo.size} · signed by SpotAI · just looking? sign in as <code>{SITE.demo.logins[0]}</code>, password <code>{SITE.demo.password}</code></p>
+        <p class="demo__meta" set:html={t.demo.meta} />
         <div class="demo__ios">
-          <strong>On iPhone</strong>
+          <strong>{t.demo.iosTitle}</strong>
           <ol>
-            <li><strong>Quickest:</strong> open <a href={`/${SITE.demo.web}`}>spotai.streamerosai.com/{SITE.demo.web}</a> in <strong>Safari</strong>, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>. It opens full-screen and keeps your data on the phone.</li>
-            <li>
-              <strong>Native iOS app:</strong> <a href={`/${SITE.demo.ipa}`} download>download the iOS build</a> ({SITE.demo.ipaSize}, iOS {SITE.demo.ios} or newer) and install it from your computer with
-              <a href="https://sideloadly.io/" target="_blank" rel="noopener">Sideloadly</a> or AltStore using your Apple ID. With a free Apple ID the install lasts 7 days, then you install it again. App Store and TestFlight come at launch.
-            </li>
+            {t.demo.ios.map((s) => <li set:html={s} />)}
           </ol>
         </div>
       </div>
-
       <div class="paths">
-        <a class="path path--owner" href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi SpotAI, I run a gym in ${SITE.pilot.city} and want the free pilot.`)}`} target="_blank" rel="noopener">
-          <strong>I own a gym</strong>
-          <span>Free {SITE.pilot.days}-day pilot for the first {SITE.pilot.gyms} {SITE.pilot.city} gyms. We load your register for you.</span>
-          <em>Chat on WhatsApp</em>
+        <a class="path path--owner" href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(T.common.waOwnerPilot)}`} target="_blank" rel="noopener">
+          <strong>{t.owner.title}</strong>
+          <span>{t.owner.body}</span>
+          <em>{t.owner.cta}</em>
         </a>
-        <a class="path" href={`https://wa.me/?text=${encodeURIComponent('Bhaiya, can we get SpotAI at our gym? Free pilot for Hyderabad gyms: https://spotai.streamerosai.com/for-gym-owners/')}`} target="_blank" rel="noopener">
-          <strong>I train at a gym</strong>
-          <span>Ask your gym owner to switch it on. One tap sends them the pilot link.</span>
-          <em>Send to my gym owner</em>
+        <a class="path" href={`https://wa.me/?text=${encodeURIComponent(T.common.waAskOwner(ownersUrl))}`} target="_blank" rel="noopener">
+          <strong>{t.member.title}</strong>
+          <span>{t.member.body}</span>
+          <em>{t.member.cta}</em>
         </a>
       </div>
-
       <form
         id="waitlist"
         class="waitlist"
         action={SITE.formEndpoint || `mailto:${SITE.email}`}
         method={SITE.formEndpoint ? 'post' : 'get'}
-        aria-label="Join the waitlist"
+        aria-label={t.form.label}
       >
-        <input type="hidden" name="subject" value="SpotAI waitlist" />
+        <input type="hidden" name="subject" value={t.form.subject} />
         <div class="waitlist__row">
           <label>
-            <span>Your name</span>
+            <span>{t.form.name}</span>
             <input name="name" type="text" required autocomplete="name" />
           </label>
           <label>
-            <span>WhatsApp number</span>
+            <span>{t.form.whatsapp}</span>
             <input name="whatsapp" type="tel" required inputmode="tel" autocomplete="tel" placeholder="98xxxxxxxx" />
           </label>
         </div>
         <div class="waitlist__row">
           <label>
-            <span>I am a</span>
+            <span>{t.form.who}</span>
             <select name="who">
-              <option value="member">Gym member</option>
-              <option value="owner">Gym owner</option>
-              <option value="trainer">Trainer</option>
+              <option value="member">{t.form.whoOptions.member}</option>
+              <option value="owner">{t.form.whoOptions.owner}</option>
+              <option value="trainer">{t.form.whoOptions.trainer}</option>
             </select>
           </label>
           <label>
-            <span>Gym name and area</span>
-            <input name="gym" type="text" required placeholder="e.g. Iron Temple, Kukatpally" />
+            <span>{t.form.gym}</span>
+            <input name="gym" type="text" required placeholder={t.form.gymPlaceholder} />
           </label>
         </div>
-        <button type="submit" class="btn btn--primary">Join the waitlist</button>
+        <button type="submit" class="btn btn--primary">{t.form.submit}</button>
         <p class="waitlist__note">
-          {SITE.formEndpoint ? 'We reply on WhatsApp within a day.' : 'Opens your mail app with the details filled in.'} Or write to
+          {SITE.formEndpoint ? t.form.noteForm : t.form.noteMail} {t.form.orWrite}
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
         </p>
       </form>
     </div>
-
     <div class="download__art">
       <div class="phone">
         <img
           src={`${base}shots/m-dark-welcome.webp`}
           width="640"
           height="1385"
-          alt="SpotAI welcome screen with a kettlebell, dumbbell and shaker, the line Train smarter get stronger, and Continue with email"
+          alt={t.welcomeAlt}
           loading="lazy"
           decoding="async"
         />
@@ -110,7 +103,7 @@ const base = import.meta.env.BASE_URL;
           src={`${base}shots/m-light-home.webp`}
           width="640"
           height="1385"
-          alt="SpotAI home screen in light mode: Ready to train, Check in button, day streak and visits this week"
+          alt={t.homeAlt}
           loading="lazy"
           decoding="async"
         />

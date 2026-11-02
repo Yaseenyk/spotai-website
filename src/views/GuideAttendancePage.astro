@@ -1,0 +1,31 @@
+---
+import GuideLayout from '../components/GuideLayout.astro';
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const t = strings(code).guideAttendance;
+const base = import.meta.env.BASE_URL;
+---
+
+<GuideLayout
+  slug="gym-attendance-register"
+  title={t.title}
+  description={t.description}
+  h1={t.h1}
+  answer={t.answer}
+  updated="2026-11-02"
+  faq={t.faq}
+  cta={{ label: t.cta.label, href: localize('/features/check-in/', code), text: t.cta.text }}
+>
+  <p><a href={`${base}downloads/gym-attendance-register.csv`} download class="btn btn--primary">{t.download}</a></p>
+  <h2>{t.columnsTitle}</h2>
+  <ul>
+    {t.columns.map((i) => <li set:html={i} />)}
+  </ul>
+  <h2>{t.checksTitle}</h2>
+  <ol>
+    {t.checks.map((i) => <li set:html={i} />)}
+  </ol>
+  <h2>{t.enoughTitle}</h2>
+  <p>{t.enough}</p>
+</GuideLayout>

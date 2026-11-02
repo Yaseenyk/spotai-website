@@ -1,36 +1,57 @@
 ---
 import { SITE } from '../site';
-import { FEATURES } from '../features';
+import { featuresFor } from '../i18n/features';
+import { strings } from '../i18n/strings';
+import { LANGS, langOf, localize, switchHref, type LangCode } from '../i18n/config';
+interface Props {
+  /** Languages this page exists in; the language list sends the others to `fallback` in their language. */
+  langs?: LangCode[];
+  fallback?: string;
+}
+const { langs, fallback } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const path = Astro.url.pathname;
+const code = langOf(path);
+const t = strings(code);
+const home = localize('/', code);
 const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="wrap footer__in">
     <div class="footer__brand">
-      <a href={base} class="footer__logo wide" aria-label="SpotAI home">
+      <a href={home} class="footer__logo wide" aria-label={t.footer.home}>
         <img src={`${base}icon.svg`} width="28" height="28" alt="" />
         <span>SpotAI</span>
       </a>
-      <p>{SITE.tagline}.</p>
+      <p>{t.site.tagline}.</p>
     </div>
-    <nav aria-label="Features" class="footer__nav">
-      {FEATURES.map((f) => <a href={`${base}features/${f.slug}/`}>{f.nav}</a>)}
+    <nav aria-label={t.footer.featuresLabel} class="footer__nav">
+      {featuresFor(code).map((f) => <a href={localize(`/features/${f.slug}/`, code)}>{f.nav}</a>)}
     </nav>
-    <nav aria-label="Footer" class="footer__nav">
-      <a href={`${base}features/`}>All features</a>
-      <a href={`${base}for-gym-owners/`}>For gym owners</a>
-      <a href={`${base}pricing/`}>Pricing</a>
-      <a href={`${base}guides/`}>Guides</a>
-      <a href={`${base}#faq`}>FAQ</a>
-      <a href={`${base}#download`}>Get the app</a>
+    <nav aria-label={t.footer.navLabel} class="footer__nav">
+      <a href={localize('/features/', code)}>{t.footer.allFeatures}</a>
+      <a href={localize('/for-gym-owners/', code)}>{t.footer.forOwners}</a>
+      <a href={localize('/pricing/', code)}>{t.footer.pricing}</a>
+      <a href={localize('/guides/', code)}>{t.footer.guides}</a>
+      <a href={`${home}#faq`}>{t.footer.faq}</a>
+      <a href={`${home}#download`}>{t.footer.getApp}</a>
     </nav>
     <div class="footer__contact">
       <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-      <a href={SITE.author.url} rel="author">Made by {SITE.author.name}</a>
+      <a href={SITE.author.url} rel="author">{t.footer.madeBy(SITE.author.name)}</a>
     </div>
   </div>
-  <p class="wrap footer__legal">© {year} SpotAI · Hyderabad, India · Not medical advice. Train with a qualified coach.</p>
+  <nav aria-label={t.footer.languagesLabel} class="wrap footer__langs">
+    {
+      LANGS.map((l) => (
+        <a href={switchHref(path, l.code, langs, fallback)} lang={l.tag} hreflang={l.tag} aria-current={l.code === code ? 'true' : undefined}>
+          {l.native}
+        </a>
+      ))
+    }
+  </nav>
+  <p class="wrap footer__legal">© {year} {t.footer.legal}</p>
 </footer>
 
 <style>
@@ -75,8 +96,23 @@ const year = new Date().getFullYear();
   .footer__contact a:hover {
     color: var(--chalk);
   }
+  .footer__langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 32px;
+  }
+  .footer__langs a {
+    font-size: 13.5px;
+    color: var(--steel);
+    text-decoration: none;
+  }
+  .footer__langs a:hover,
+  .footer__langs a[aria-current] {
+    color: var(--chalk);
+  }
   .footer__legal {
-    margin-top: 36px;
+    margin-top: 16px;
     font-size: 12.5px;
     color: var(--dim);
   }

@@ -15,7 +15,9 @@
   --warn: #fbbf24;
   --line: rgba(236, 233, 225, 0.12);
   --line-2: rgba(236, 233, 225, 0.22);
-  --font: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Archivo has Latin only; Indian scripts fall through to the Noto family loaded for the page. */
+  --font: 'Archivo', 'Noto Sans Devanagari', 'Noto Sans Telugu', 'Noto Sans Tamil', 'Noto Sans Kannada',
+    'Noto Sans Bengali', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --gutter: clamp(20px, 5vw, 72px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -306,4 +308,12 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Indian scripts have marks above and below the letter: tight headings and negative tracking clip them. */
+:root:not(:lang(en)) * {
+  letter-spacing: normal !important;
+}
+:root:not(:lang(en)) :is(h1, h2, h3, h4) {
+  line-height: 1.25;
 }

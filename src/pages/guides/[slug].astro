@@ -1,49 +1,14 @@
 ---
-import { getCollection, render } from 'astro:content';
-import GuideLayout from '../../components/GuideLayout.astro';
-
-// One page per Markdown guide whose publish date has passed at build time.
+import GuidePage from '../../views/GuidePage.astro';
+import { langsBySlug, liveGuides } from '../../i18n/guides';
+// One page per English Markdown guide whose publish date has passed at build time.
 export async function getStaticPaths() {
-  // GUIDES_NOW lets a build show the site as it will be on a later date (scripts/check-schedule.mjs).
-  const now = new Date(import.meta.env.GUIDES_NOW || Date.now());
-  const guides = await getCollection('guides', (g) => g.data.publish <= now);
-  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide } }));
+  const guides = await liveGuides();
+  const langs = langsBySlug(guides);
+  return guides
+    .filter((g) => g.code === 'en')
+    .map((g) => ({ params: { slug: g.slug }, props: { guide: g.entry, slug: g.slug, langs: langs.get(g.slug)! } }));
 }
-
-const { guide } = Astro.props;
-const { Content } = await render(guide);
-const base = import.meta.env.BASE_URL;
-const d = guide.data;
-const href = d.cta.href.startsWith('/') ? `${base}${d.cta.href.slice(1)}` : d.cta.href;
 ---
 
-<GuideLayout
-  slug={guide.id}
-  title={d.title}
-  description={d.description}
-  h1={d.h1}
-  answer={d.answer}
-  updated={d.updated.toISOString().slice(0, 10)}
-  published={d.publish.toISOString().slice(0, 10)}
-  cover={`og/guides/${guide.id}.png`}
-  faq={d.faq}
-  cta={{ ...d.cta, href }}
->
-  <div class="md"><Content /></div>
-</GuideLayout>
-
-<style>
-  /* Markdown tables hold words as well as numbers: let them wrap and scroll on small screens. */
-  .md :global(table) {
-    display: block;
-    overflow-x: auto;
-  }
-  .md :global(td),
-  .md :global(th) {
-    white-space: normal !important;
-    text-align: left !important;
-  }
-  .md :global(h3) {
-    margin-top: 22px;
-  }
-</style>
+<GuidePage {...Astro.props} />

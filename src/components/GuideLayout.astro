@@ -4,7 +4,8 @@ import Layout from '../layouts/Layout.astro';
 import Nav from './Nav.astro';
 import Footer from './Footer.astro';
 import { SITE } from '../site';
-
+import { strings } from '../i18n/strings';
+import { lang as langInfo, langOf, localize, type LangCode } from '../i18n/config';
 interface Props {
   slug: string;
   title: string;
@@ -18,10 +19,15 @@ interface Props {
   published?: string;
   /** Cover image path under the site root, e.g. og/guides/<slug>.png (1200x630). */
   cover?: string;
+  /** Languages this guide exists in (Markdown guides); every language when omitted. */
+  langs?: LangCode[];
 }
-const { slug, title, description, h1, answer, updated, faq, cta, published, cover } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const url = `${SITE.url}guides/${slug}/`;
+const { slug, title, description, h1, answer, updated, faq, cta, published, cover, langs } = Astro.props;
+const code = langOf(Astro.url.pathname);
+const L = langInfo(code);
+const t = strings(code).guide;
+const guides = localize('/guides/', code);
+const url = new URL(`${guides}${slug}/`, SITE.url).href;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -34,7 +40,7 @@ const jsonLd = {
       dateModified: updated,
       datePublished: published ?? updated,
       ...(cover ? { image: `${SITE.url}${cover}` } : {}),
-      inLanguage: 'en-IN',
+      inLanguage: L.tag,
       author: { '@type': 'Person', name: SITE.author.name, url: SITE.author.url },
       publisher: { '@id': `${SITE.url}#org` },
       isPartOf: { '@id': `${SITE.url}#website` },
@@ -42,8 +48,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'SpotAI', item: SITE.url },
-        { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE.url}guides/` },
+        { '@type': 'ListItem', position: 1, name: 'SpotAI', item: new URL(localize('/', code), SITE.url).href },
+        { '@type': 'ListItem', position: 2, name: t.crumb, item: new URL(guides, SITE.url).href },
         { '@type': 'ListItem', position: 3, name: h1, item: url },
       ],
     },
@@ -55,22 +61,21 @@ const jsonLd = {
 };
 ---
 
-<Layout title={title} description={description} jsonLd={jsonLd} image={cover ? `${SITE.url}${cover}` : undefined} imageAlt={cover ? h1 : undefined}>
-  <Nav />
+<Layout title={title} description={description} jsonLd={jsonLd} image={cover ? `${SITE.url}${cover}` : undefined} imageAlt={cover ? h1 : undefined} langs={langs}>
+  <Nav langs={langs} />
   <main id="main" class="guide">
     <article class="wrap guide__in">
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href={base}>SpotAI</a><span aria-hidden="true">/</span><a href={`${base}guides/`}>Guides</a>
+      <nav class="crumbs" aria-label={strings(code).common.breadcrumb}>
+        <a href={localize('/', code)}>SpotAI</a><span aria-hidden="true">/</span><a href={guides}>{t.crumb}</a>
       </nav>
       <h1 class="wide">{h1}</h1>
       <p class="guide__answer">{answer}</p>
-      <p class="guide__meta">Updated <time datetime={updated}>{new Date(updated).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</time> · {SITE.author.name}</p>
+      <p class="guide__meta">{t.updated} <time datetime={updated}>{new Date(updated).toLocaleDateString(L.tag, { day: 'numeric', month: 'long', year: 'numeric', numberingSystem: 'latn' })}</time> · {SITE.author.name}</p>
       <div class="guide__body">
         <slot />
       </div>
-
       <section class="guide__faq" aria-labelledby="gfaq">
-        <h2 id="gfaq">Questions</h2>
+        <h2 id="gfaq">{t.questions}</h2>
         {
           faq.map((f, i) => (
             <details open={i === 0}>
@@ -82,14 +87,13 @@ const jsonLd = {
           ))
         }
       </section>
-
       <aside class="guide__cta">
         <p>{cta.text}</p>
         <a href={cta.href} class="btn btn--primary">{cta.label}</a>
       </aside>
     </article>
   </main>
-  <Footer />
+  <Footer langs={langs} />
 </Layout>
 
 <style>

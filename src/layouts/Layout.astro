@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
-import { SITE, FAQ } from '../site';
+import { SITE } from '../site';
+import { LANGS, lang as langInfo, langOf, localize, type LangCode } from '../i18n/config';
+import { strings } from '../i18n/strings';
 
 interface Props {
   noindex?: boolean;
@@ -10,8 +12,19 @@ interface Props {
   /** Absolute URL of a 1200x630 share image for this page; the site cover otherwise. */
   image?: string;
   imageAlt?: string;
+  /** Languages this page exists in, for hreflang; every language when omitted. */
+  langs?: LangCode[];
 }
-const { title = `${SITE.name} — ${SITE.tagline}`, description = SITE.description, jsonLd: pageLd, noindex = false, image, imageAlt } = Astro.props;
+const code = langOf(Astro.url.pathname);
+const L = langInfo(code);
+const t = strings(code);
+const { title = `${SITE.name} — ${t.site.tagline}`, description = t.site.description, jsonLd: pageLd, noindex = false, image, imageAlt, langs } = Astro.props;
+// Every language version of this page, plus x-default (English), for reciprocal hreflang.
+const alternates = LANGS.filter((l) => !langs || langs.includes(l.code)).map((l) => ({
+  hreflang: l.tag,
+  href: new URL(localize(Astro.url.pathname, l.code), Astro.site).href,
+}));
+const xDefault = new URL(localize(Astro.url.pathname, 'en'), Astro.site).href;
 const pageGraph = (pageLd as { '@graph'?: unknown[]; '@type'?: string } | undefined)?.['@graph'] ?? (pageLd ? [pageLd] : []);
 const pageHasFaq = pageGraph.some((n) => (n as { '@type'?: string })['@type'] === 'FAQPage');
 const base = import.meta.env.BASE_URL;
@@ -39,14 +52,14 @@ const jsonLd = {
       '@id': `${SITE.url}#website`,
       url: SITE.url,
       name: SITE.name,
-      description: SITE.description,
-      inLanguage: 'en-IN',
+      description: t.site.description,
+      inLanguage: L.tag,
       publisher: { '@id': `${SITE.url}#org` },
     },
     {
       '@type': 'FAQPage',
       '@id': `${SITE.url}#faq`,
-      mainEntity: FAQ.map((f) => ({
+      mainEntity: t.faq.map((f) => ({
         '@type': 'Question',
         name: f.q,
         acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -57,7 +70,7 @@ const jsonLd = {
 ---
 
 <!doctype html>
-<html lang="en-IN">
+<html lang={L.tag}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -67,6 +80,8 @@ const jsonLd = {
     <meta name="google-site-verification" content="OG5PRiRPw3I5jB5p-G7nDzf_mlxdiZzrpLaFYCZ0p1M" />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
     {!noindex && <link rel="canonical" href={canonical} />}
+    {!noindex && alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    {!noindex && <link rel="alternate" hreflang="x-default" href={xDefault} />}
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
     <link rel="manifest" href={`${base}site.webmanifest`} />
@@ -76,14 +91,14 @@ const jsonLd = {
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />
-    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:locale" content={L.og} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={og} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={imageAlt ?? 'SpotAI: your AI gym buddy, with the member app and the owner dashboard'} />
+    <meta property="og:image:alt" content={imageAlt ?? t.common.ogImageAlt} />
     <meta name="twitter:card" content={SITE.twitterCard} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -95,6 +110,7 @@ const jsonLd = {
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap"
     />
+    {L.font && <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?family=${L.font.replaceAll(' ', '+')}:wght@400..800&display=swap`} />}
 
     <script
       type="application/ld+json"
@@ -108,11 +124,11 @@ const jsonLd = {
     </script>
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">{t.common.skip}</a>
     <slot />
-    <a class="wa" href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hi SpotAI, I want to know about the free pilot for my gym.')}`} target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <a class="wa" href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(t.common.waPilot)}`} target="_blank" rel="noopener" aria-label={t.common.waLabel}>
       <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.6 2.6 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>
-      <span>WhatsApp</span>
+      <span>{t.common.waShort}</span>
     </a>
     <style>
       .skip {

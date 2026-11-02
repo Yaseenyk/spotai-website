@@ -1,33 +1,20 @@
 ---
+import { strings } from '../i18n/strings';
+import { langOf, localize } from '../i18n/config';
+const code = langOf(Astro.url.pathname);
+const T = strings(code);
+const t = T.gains;
 const base = import.meta.env.BASE_URL;
-const cards = [
-  {
-    problem: 'Progress you can’t see',
-    fix: 'Lifetime kilograms, reps and workouts, personal bests, and badges from 1,000 kg lifted up to 100,000.',
-    src: 'm-dark-gains.webp',
-    alt: 'Gains screen: lifetime kilograms lifted, reps and workouts, personal bests and milestone badges',
-  },
-  {
-    problem: 'Nobody notices you showed up',
-    fix: 'Three gym boards: visits, kilos and streak, this week. Opt in with your first name. Leave any time and your numbers go private again.',
-    src: 'm-dark-leaderboard.webp',
-    alt: 'Gym leaderboard with tabs for Visits, Kg lifted and Streak, a podium of Diya, Sana and Arjun, and the member’s own place highlighted',
-  },
-  {
-    problem: 'Training alone',
-    fix: 'Buddy suggestions with the reason: same start, same hours, a shared goal. Chat and groups, each a separate consent, adults only.',
-    src: 'm-dark-connect.webp',
-    alt: 'Buddies screen with a suggested training partner and why they match, plus requests, chats and groups',
-  },
-];
+const shots = ['m-dark-gains.webp', 'm-dark-leaderboard.webp', 'm-dark-connect.webp'];
+const cards = t.cards.map((c, i) => ({ ...c, src: shots[i]! }));
 ---
 
 <section class="section gains" id="gains" aria-labelledby="gains-title">
   <div class="wrap">
     <div class="gains__head">
-      <h2 id="gains-title">Lose steam after week two? Your gym keeps you coming back.</h2>
-      <p class="lead">The kilos add up, the streak shows, and the people at your gym see you turn up.</p>
-      <a class="more-link" href={`${base}features/leaderboard/`}>See the full feature</a>
+      <h2 id="gains-title">{t.title}</h2>
+      <p class="lead">{t.lead}</p>
+      <a class="more-link" href={localize('/features/leaderboard/', code)}>{T.common.seeFeature}</a>
     </div>
 
     <ul class="cards" role="list">
@@ -42,7 +29,7 @@ const cards = [
             <div class="card__text">
               <span class="card__app">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" /><path d="M10 18h4" /></svg>
-                In the SpotAI app
+                {T.common.inApp}
               </span>
               <h3>{c.problem}</h3>
               <p>{c.fix}</p>
