@@ -82,6 +82,5 @@ Worked example with the default numbers: 80 members at ₹1,200 with the price i
 
 ## What to do with the result
 
-If break-even is close to your member count, a handful of lapsed members is the difference between profit and loss, so renewals matter more than new joins. Send reminders before the expiry date, not after: our [gym fee reminder templates](/guides/gym-fee-reminder-message/) have the wording. If you are still setting prices, start with [how to price gym memberships in India](/guides/gym-membership-pricing-india/) and the [fee collection guide](/guides/how-to-collect-gym-fees-on-time/).
-
+If break-even is close to your member count, a handful of lapsed members is the difference between profit and loss, so renewals matter more than new joins. Send reminders before the expiry date, not after: our [gym fee reminder templates](/guides/gym-fee-reminder-message/) have the wording.
 GST treatment depends on your registration, so confirm the details with a chartered accountant. This calculator is for planning, not for filing.

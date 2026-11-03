@@ -96,6 +96,4 @@ Percentages of your max are a way to choose a working weight. As a rough guide, 
 - Use a set you finished with solid form and about one rep to spare.
 - Keep to 2 to 10 reps. The longer the set, the weaker the estimate.
 - Use the same lift, same exercise setup and the same formula each time you test, so changes mean progress and not noise.
-- Do not chase a true max on the squat or bench without a spotter or safety bars. For squat technique first, read [how deep should you squat](/guides/how-deep-should-you-squat/) and [goblet squat for beginners](/guides/goblet-squat-for-beginners/).
-
-If you are choosing sets and reps, see [how many sets and reps to build muscle](/guides/how-many-sets-and-reps-to-build-muscle/).
+- Do not chase a true max on the squat or bench without a spotter or safety bars.
