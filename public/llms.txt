@@ -56,4 +56,6 @@ Last updated: 2026-11-02
 - https://spotai.streamerosai.com/guides/gym-workout-plan-for-beginners/ — 3-day full body and 4-day upper/lower beginner plans
 - https://spotai.streamerosai.com/guides/gym-fee-reminder-message/ — gym fee reminder templates for WhatsApp in English and Hindi
 - https://spotai.streamerosai.com/guides/gym-attendance-register/ — free gym attendance register sheet (CSV) and how to use it
+- https://spotai.streamerosai.com/guides/gym-fee-calculator/ — gym fee calculator: break-even members, money stuck in dues, 5% GST split (runs in the browser)
+- https://spotai.streamerosai.com/guides/one-rep-max-calculator/ — one rep max calculator with Epley and Brzycki formulas and a percentage table
 - https://spotai.streamerosai.com/ : home, with sections for members, the AI coach, gains and leaderboard, gym owners, privacy, FAQ and download.
