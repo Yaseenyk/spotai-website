@@ -4,7 +4,7 @@
 
 Site: https://spotai.streamerosai.com/
 Status: private demo with partner gyms; Play Store and App Store on launch. Waitlist on the site.
-Maker: Yaseen Khatib (https://yaseenkhatib.streamerosai.com), contact@streamerosai.com
+Maker: Yaseen Khatib (https://yk.streamerosai.com), contact@streamerosai.com
 
 ## For members (B2C)
 
