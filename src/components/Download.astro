@@ -168,6 +168,7 @@ const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
       });
       if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
       status.dataset.state = 'sent';
+      (window as unknown as { gaEvent?: (n: string, p?: object) => void }).gaEvent?.('generate_lead', { form_name: 'spotai-waitlist' });
       status.textContent = d.sent!;
       form.reset();
     } catch (err) {

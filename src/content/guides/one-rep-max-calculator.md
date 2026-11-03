@@ -76,7 +76,7 @@ Pick the unit, then enter one hard set.
     $('rm-table').innerHTML = PCT.map(function (p) { return '<tr><td>' + p + '%</td><td>' + f((av * p) / 100) + '</td></tr>'; }).join('');
   }
   var form = document.getElementById('rmcalc');
-  if (form) { form.addEventListener('input', run); run(); }
+  if (form) { form.addEventListener('input', function () { run(); if (!window.__calcUsed && window.gaEvent) { window.__calcUsed = 1; window.gaEvent('calculator_use', { cta_text: 'one-rep-max-calculator' }); } }); run(); }
 })();
 </script>
 

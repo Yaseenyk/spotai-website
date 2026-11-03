@@ -67,7 +67,7 @@ Fill in your own numbers. The results update as you type.
     $('o-dues').textContent = inr(m * (late / 100) * fee);
   }
   var f = document.getElementById('feecalc');
-  if (f) { f.addEventListener('input', run); run(); }
+  if (f) { f.addEventListener('input', function () { run(); if (!window.__calcUsed && window.gaEvent) { window.__calcUsed = 1; window.gaEvent('calculator_use', { cta_text: 'gym-fee-calculator' }); } }); run(); }
 })();
 </script>
 
