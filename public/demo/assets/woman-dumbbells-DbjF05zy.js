@@ -1,0 +1,1 @@
+var e=`/demo/assets/woman-dumbbells-S_myhwNG.webp`;export{e as t};

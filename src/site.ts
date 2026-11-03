@@ -15,7 +15,7 @@ export const SITE = {
   // Open to gyms anywhere in India, set up remotely; in person around Hyderabad (home base).
   pilot: { gyms: 10, days: 90 },
   // Offline demo build of the member app; everything it saves stays on the phone.
-  demo: { web: 'demo/', apk: 'downloads/spotai-demo.apk', ipa: 'downloads/spotai-ios.ipa', version: '1.7.1', size: '37 MB', ipaSize: '30 MB', android: '7.0', ios: '15', logins: ['ram@demo.spotai.app', 'yaseen@demo.spotai.app'], password: 'spotai-demo' },
+  demo: { web: 'demo/', apk: 'downloads/spotai-demo.apk', ipa: 'downloads/spotai-ios.ipa', version: '1.8', size: '37 MB', ipaSize: '30 MB', android: '7.0', ios: '15', logins: ['ram@demo.spotai.app', 'yaseen@demo.spotai.app'], password: 'spotai-demo' },
   author: { name: 'Yaseen Khatib', url: 'https://yaseenkhatib.streamerosai.com' },
   twitterCard: 'summary_large_image',
   locale: 'en_IN',
