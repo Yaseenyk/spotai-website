@@ -122,6 +122,14 @@ const jsonLd = {
     <script is:inline>
       document.documentElement.classList.add('js');
     </script>
+    <!-- Google tag (GA4): a plain tag in the head so Google's tag checker finds it in the HTML. -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-VX7LDFZ4EE"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-VX7LDFZ4EE');
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">{t.common.skip}</a>
