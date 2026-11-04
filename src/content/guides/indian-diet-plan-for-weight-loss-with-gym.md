@@ -112,6 +112,8 @@ Also check your lifts. If your strength is dropping fast, your deficit is probab
 
 If you have diabetes, PCOS, a thyroid condition, are pregnant or breastfeeding, or take regular medicines, see a doctor or registered dietitian before changing your diet.
 
+Prefer to read this in Hinglish? See the [weight loss diet plan in Hindi](/guides/weight-loss-diet-plan-in-hindi/).
+
 If you want to see your intake without a notebook, the SpotAI food log covers Indian foods and shows calories and protein by day and month. It does not give diet advice; it just shows you the numbers.
 
 ### Sources
