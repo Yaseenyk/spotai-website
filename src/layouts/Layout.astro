@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../site';
-import { LANGS, lang as langInfo, langOf, localize, type LangCode } from '../i18n/config';
+import { INDEXED_LANGS, LANGS, lang as langInfo, langOf, localize, type LangCode } from '../i18n/config';
 import { strings } from '../i18n/strings';
 
 interface Props {
@@ -18,9 +18,11 @@ interface Props {
 const code = langOf(Astro.url.pathname);
 const L = langInfo(code);
 const t = strings(code);
-const { title = `${SITE.name} — ${t.site.tagline}`, description = t.site.description, jsonLd: pageLd, noindex = false, image, imageAlt, langs } = Astro.props;
-// Every language version of this page, plus x-default (English), for reciprocal hreflang.
-const alternates = LANGS.filter((l) => !langs || langs.includes(l.code)).map((l) => ({
+const { title = `${SITE.name} — ${t.site.tagline}`, description = t.site.description, jsonLd: pageLd, noindex: noindexProp = false, image, imageAlt, langs } = Astro.props;
+// Languages not yet in INDEXED_LANGS stay live but noindex (see src/i18n/indexed.mjs).
+const noindex = noindexProp || !INDEXED_LANGS.includes(code);
+// Every indexed language version of this page, plus x-default (English), for reciprocal hreflang.
+const alternates = LANGS.filter((l) => INDEXED_LANGS.includes(l.code) && (!langs || langs.includes(l.code))).map((l) => ({
   hreflang: l.tag,
   href: new URL(localize(Astro.url.pathname, l.code), Astro.site).href,
 }));
@@ -79,7 +81,7 @@ const jsonLd = {
     <meta name="author" content={SITE.author.name} />
     <meta name="google-site-verification" content="OG5PRiRPw3I5jB5p-G7nDzf_mlxdiZzrpLaFYCZ0p1M" />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
-    {!noindex && <link rel="canonical" href={canonical} />}
+    {!noindexProp && <link rel="canonical" href={canonical} />}
     {!noindex && alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
     {!noindex && <link rel="alternate" hreflang="x-default" href={xDefault} />}
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
@@ -104,6 +106,7 @@ const jsonLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={og} />
 
+    {code === 'en' && <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLmvDIaI.woff2" crossorigin />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -122,8 +125,6 @@ const jsonLd = {
     <script is:inline>
       document.documentElement.classList.add('js');
     </script>
-    <!-- Google tag (GA4): a plain tag in the head so Google's tag checker finds it in the HTML. -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-VX7LDFZ4EE"></script>
     <script is:inline>
 (function(){
 var w=window,d=document,q=new URLSearchParams(location.search),st=null;
@@ -150,12 +151,32 @@ else if(/^mailto:/i.test(h))n='email_click';
 else if(/^tel:/i.test(h))n='phone_click';
 else if(/\.(apk|ipa)([?#]|$)/i.test(h))n='app_download';
 else if(/\.md([?#]|$)/i.test(h))n='template_download';
-if(n)w.gaEvent(n,{cta_text:(a.textContent||'').trim().slice(0,60),link_url:h.slice(0,100)});
+var p={cta_text:(a.textContent||'').trim().slice(0,60),link_url:h.slice(0,100)};
+if(!n){
+var u=null;try{u=new URL(h,location.href)}catch(x){}
+if(u&&u.origin===location.origin&&/^https?:$/.test(u.protocol)){
+p.link_url=(u.pathname+u.search).slice(0,100);
+n=a.closest('header,nav')?'nav_click':a.closest('footer')?'footer_click':'internal_link_click';
+}}
+if(n)w.gaEvent(n,p);
 }catch(x){}},true);
+// GA4 and Clarity load once, at the first of: user interaction, load+idle (3 s cap), or 4 s after load.
+var done=0;
+function loadTags(){
+if(done)return;done=1;
+['pointerdown','keydown','scroll','touchstart'].forEach(function(ev){w.removeEventListener(ev,loadTags)});
+var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-VX7LDFZ4EE';d.head.appendChild(s);
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(w,d,"clarity","script","z8axhj9zaq");
+}
+['pointerdown','keydown','scroll','touchstart'].forEach(function(ev){w.addEventListener(ev,loadTags,{once:true,passive:true})});
+function afterLoad(){
+setTimeout(loadTags,4000);
+if('requestIdleCallback' in w)w.requestIdleCallback(loadTags,{timeout:3000});else setTimeout(loadTags,3000);
+}
+if(d.readyState==='complete')afterLoad();else w.addEventListener('load',afterLoad,{once:true});
 })();
 </script>
-    <!-- Microsoft Clarity: free heatmaps and session replay. Forms carry data-clarity-mask, so typed text is hidden. -->
-    <script is:inline>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z8axhj9zaq");</script>
+    <!-- Microsoft Clarity (heatmaps, session replay) is injected by the loader above. Forms carry data-clarity-mask, so typed text is hidden. -->
   </head>
   <body>
     <a class="skip" href="#main">{t.common.skip}</a>
