@@ -21,6 +21,7 @@ export const LANGS: Lang[] = [
   { code: 'bn', tag: 'bn-IN', native: 'বাংলা', font: 'Noto Sans Bengali', og: 'bn_IN' },
 ];
 export type LangCode = Lang['code'];
+export { INDEXED_LANGS } from './indexed.mjs';
 export const OTHER_LANGS = LANGS.filter((l) => l.code !== 'en');
 export const lang = (code: string | undefined): Lang => LANGS.find((l) => l.code === code) ?? LANGS[0]!;
 
