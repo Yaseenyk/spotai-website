@@ -127,6 +127,7 @@ const jsonLd = {
     </script>
     <script is:inline>
 (function(){
+if(/^(localhost|127.0.0.1|0.0.0.0)$/.test(location.hostname)&&!/ga_test=1/.test(location.search)){window.gaEvent=function(){};window.gtag=function(){};return}
 var w=window,d=document,q=new URLSearchParams(location.search),st=null;
 try{st=w.localStorage}catch(e){}
 function g(k){return q.get(k)||''}
