@@ -9,4 +9,4 @@
  * ['en', 'hi']). Nothing else changes; rebuild and deploy. Canonicals stay self-referencing throughout.
  * Plain .mjs so astro.config.mjs can import it too.
  */
-export const INDEXED_LANGS = ['en'];
+export const INDEXED_LANGS = ['en', 'hi'];
