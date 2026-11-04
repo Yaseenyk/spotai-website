@@ -114,6 +114,8 @@ Agar aapko diabetes, PCOS, thyroid ki problem hai, aap pregnant ya breastfeeding
 
 Agar bina notebook ke apna intake dekhna ho, toh SpotAI ka food log Indian foods cover karta hai aur din aur mahine ke hisaab se calories aur protein dikhata hai. Woh diet advice nahi deta, sirf numbers dikhata hai.
 
+English mein padhna ho toh [7-day diet plan for weight loss](/guides/7-day-diet-plan-for-weight-loss/) dekhein.
+
 ### Sources
 
 - ICMR-National Institute of Nutrition, *Dietary Guidelines for Indians* (2024).

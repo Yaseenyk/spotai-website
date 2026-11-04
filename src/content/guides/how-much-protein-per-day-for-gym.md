@@ -91,7 +91,7 @@ This is an example for a 70 kg person who eats eggs and chicken. If you are vege
 | Dinner | Rice, fish curry (120 g fish), 1 katori curd | about 30 g |
 | Before bed (optional) | 100 g paneer bhurji or 1 glass milk | about 8–18 g |
 
-Prefer Hinglish? Read the [gym diet plan in Hindi](/guides/gym-diet-plan-in-hindi/).
+See also the [highest protein foods in India](/guides/highest-protein-foods-in-india/) and the [gym diet plan for muscle gain](/guides/gym-diet-plan-for-muscle-gain/). Prefer Hinglish? Read the [gym diet plan in Hindi](/guides/gym-diet-plan-in-hindi/).
 
 ## Mistakes that keep you short
 

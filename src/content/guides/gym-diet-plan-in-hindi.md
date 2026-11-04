@@ -99,6 +99,8 @@ Yeh 70 kg ke aise vyakti ka example hai jo ande aur chicken khata hai. Veg hon t
 4. **Shake se sab theek karna.** Protein powder ek convenience hai. Khane se target pura ho jaaye toh zaroorat nahi.
 5. **Andaaza lagana.** Zyadatar log apna protein zyada samajhte hain. Teen aam dino ka khana likhein aur jod lein. Kaagaz par ya SpotAI ke food log mein, jisme Indian foods hain aur roz ka protein jodta hai.
 
+English mein padhna ho toh [gym diet plan for muscle gain](/guides/gym-diet-plan-for-muscle-gain/) aur [highest protein foods in India](/guides/highest-protein-foods-in-india/) dekhein.
+
 ### Sources
 
 - ICMR-National Institute of Nutrition, *Dietary Guidelines for Indians* (2024).
