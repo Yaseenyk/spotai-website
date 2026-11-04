@@ -29,9 +29,18 @@ const t = strings(langOf(Astro.url.pathname));
   </main>
   <Footer />
   <script>
-    // Content is plain HTML; the animation bundle (GSAP) loads only after the page has painted and is idle.
-    const boot = () => import('../motion').then((m) => m.start());
-    const later = () => ('requestIdleCallback' in window ? requestIdleCallback(boot, { timeout: 1500 }) : setTimeout(boot, 200));
+    // Content is plain HTML and the first screen paints without any of this. All client animation (the
+    // exercise reel and the scroll-driven squat; no animation library) arrives in ONE dynamic import, at the first user interaction or 5 s after
+    // load, whichever comes first, so nothing competes with first paint or first input.
+    let started = false;
+    const boot = () => {
+      if (started) return;
+      started = true;
+      for (const ev of ['pointerdown', 'keydown', 'scroll', 'touchstart']) window.removeEventListener(ev, boot);
+      import('../motion').then((m) => m.start());
+    };
+    for (const ev of ['pointerdown', 'keydown', 'scroll', 'touchstart']) window.addEventListener(ev, boot, { once: true, passive: true });
+    const later = () => setTimeout(boot, 5000);
     if (document.readyState === 'complete') later();
     else window.addEventListener('load', later, { once: true });
   </script>

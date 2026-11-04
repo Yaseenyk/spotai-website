@@ -2,7 +2,7 @@
 
 Marketing site for SpotAI, an AI gym buddy for members and a management console for gym owners in India.
 
-Astro + GSAP, static HTML. Every section is readable without JavaScript; the animation is on top.
+Astro, static HTML (no animation library). Every section is readable without JavaScript; the animation is on top.
 
 ```bash
 npm install
