@@ -7,6 +7,7 @@
 // Run with: npm run check:schedule (CI runs it on every push).
 import { execSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { INDEXED_LANGS } from '../src/i18n/indexed.mjs';
 
 const dir = 'src/content/guides';
 const LANGS = ['hi', 'te', 'ta', 'kn', 'mr', 'bn'];
@@ -80,10 +81,16 @@ const index = (code) => {
 for (const g of all) {
   if (!existsSync(`dist${g.path}index.html`)) problems.push(`${g.name}: page was not built`);
   if (!index(g.code).includes(g.path)) problems.push(`${g.name}: missing from the ${g.code} guides index`);
-  if (!sitemap.includes(g.path)) problems.push(`${g.name}: missing from the sitemap`);
+  // Staged indexing: only INDEXED_LANGS belong in the sitemap; every other language must stay out of it and be noindex.
+  if (INDEXED_LANGS.includes(g.code)) {
+    if (!sitemap.includes(g.path)) problems.push(`${g.name}: missing from the sitemap`);
+  } else {
+    if (sitemap.includes(g.path)) problems.push(`${g.name}: ${g.code} is not indexed yet but is in the sitemap`);
+    if (existsSync(`dist${g.path}index.html`) && !/noindex/.test(readFileSync(`dist${g.path}index.html`, 'utf8'))) problems.push(`${g.name}: ${g.code} page is missing noindex`);
+  }
 }
 if (problems.length) {
   console.error(`Schedule check failed:\n- ${problems.join('\n- ')}`);
   process.exit(1);
 }
-console.log(`OK: all ${guides.length} guides and ${translations.length} translations build, appear in their index and the sitemap, and link only to live pages.`);
+console.log(`OK: all ${guides.length} guides and ${translations.length} translations build, appear in their index, and (for indexed languages) the sitemap, and link only to live pages.`);
