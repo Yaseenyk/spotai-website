@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/generate-llms-full.mjs && node scripts/copy-sitemap.mjs",
+    "build": "astro build && node scripts/generate-llms-full.mjs && node scripts/copy-sitemap.mjs && node scripts/verify-no-ads.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "check:schedule": "node scripts/check-schedule.mjs"
