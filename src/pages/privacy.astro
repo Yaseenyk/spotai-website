@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../site';
+---
+
+<Layout
+  title="Privacy notice · SpotAI"
+  description="What the SpotAI website collects when you browse it or join the waitlist, how it is used and how to ask for it to be deleted."
+  langs={['en']}
+>
+  <Nav />
+  <main id="main" class="priv">
+    <div class="wrap">
+      <h1 class="wide">Privacy notice</h1>
+      <p class="lead">This notice covers this website only. What the SpotAI app does with your data is explained in the app's privacy centre.</p>
+
+      <h2>What the waitlist form collects</h2>
+      <p>
+        When you join the waitlist, I receive what you type: your name, WhatsApp number, gym name and whether you are a member or
+        an owner, plus the page you sent it from. The form sends it by email using EmailJS, to {SITE.email}.
+      </p>
+
+      <h2>Analytics</h2>
+      <p>
+        The site uses Google Analytics to see how visitors find and use it. It sets first-party cookies and sends usage data, such
+        as pages viewed, approximate location and the source of the visit, to Google. The site also uses Microsoft Clarity, a free
+        tool that records anonymised heatmaps and session replays so I can see where visitors get stuck. Text typed into the
+        waitlist form is masked and is not recorded. None of it is used for advertising, and you can block it with a browser
+        extension or by disabling cookies.
+      </p>
+
+      <h2>What I use it for</h2>
+      <p>Only to reply to you about SpotAI and to understand which pages help gym owners and members. I do not sell or share your details.</p>
+
+      <h2>Your choices</h2>
+      <p>To see, correct or delete what you sent, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+      <p class="priv__date">Last updated 4 November 2026.</p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .priv {
+    padding-block: clamp(96px, 12vw, 140px) 72px;
+  }
+  .priv .wrap {
+    max-width: 720px;
+  }
+  .priv h2 {
+    margin-top: 36px;
+    font-size: 20px;
+  }
+  .priv p {
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .priv__date {
+    opacity: 0.7;
+    font-size: 14px;
+  }
+</style>

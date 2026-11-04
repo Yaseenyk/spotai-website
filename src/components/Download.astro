@@ -51,6 +51,7 @@ const ownersUrl = new URL(localize('/for-gym-owners/', code), SITE.url).href;
       </div>
       <form
         id="waitlist"
+        data-clarity-mask="true"
         class="waitlist"
         action={`mailto:${SITE.email}`}
         method="post"
