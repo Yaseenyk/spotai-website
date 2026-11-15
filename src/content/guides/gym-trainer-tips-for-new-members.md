@@ -5,8 +5,8 @@ h1: 'What trainers should do in a new member''s first month'
 audience: owner
 blurb: 'A week-by-week script for floor trainers to turn new joiners into regulars.'
 answer: 'In the first month, a trainer''s job is to make the new member confident, not exhausted. Give them a simple written plan on day one, teach a handful of basic movements properly, learn their name, and check in at the end of weeks one, two and four. If they miss a week, a short personal message from the trainer works better than any offer.'
-publish: 2027-01-21
-updated: 2027-01-21
+publish: 2027-03-04
+updated: 2027-03-04
 faq:
   - q: 'How much time should a trainer spend with a new member?'
     a: 'About 30 to 45 minutes in the first session, then 5 to 10 minutes on each of the next few visits. In most Indian gyms one floor trainer looks after many members at once, so short, regular check-ins work better than long sessions.'

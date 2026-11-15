@@ -5,8 +5,8 @@ h1: 'Gym management software in India: how to choose'
 audience: owner
 blurb: 'What gym software should do, what it costs, and what to ask before you sign up.'
 answer: 'Pick gym software by the problems you have every day: tracking who came in, collecting dues on time, and noticing who has stopped coming. Listed prices for gym software in India in November 2026 ran from about ₹500 a month to around ₹18,000 a year, and custom builds cost far more. Try any tool with your real members and front-desk staff for two weeks before you pay for a year.'
-publish: 2026-11-30
-updated: 2026-11-30
+publish: 2027-01-14
+updated: 2027-01-14
 faq:
   - q: 'How much does gym management software cost in India?'
     a: 'Listings we checked in November 2026 ranged from about ₹500 to ₹2,000 a month, or about ₹4,000 to ₹18,000 a year, for ready-made software. Some vendors only quote on request, and custom-built systems are quoted in lakhs. Prices change often, so get a written quote with GST and add-ons included.'

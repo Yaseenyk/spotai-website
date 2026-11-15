@@ -5,8 +5,8 @@ h1: 'Gym membership freeze rules that are fair to both sides'
 audience: owner
 blurb: 'Freeze limits by plan length, sample policy wording and how to get members back after.'
 answer: 'A good freeze policy extends the member''s end date by the frozen days, sets a clear limit based on plan length, and is written down before the member pays. Allow short freezes for travel, exams or illness, ask for notice in advance, and plan a proper welcome back. A member on a freeze is far more likely to return than one who quietly stops coming.'
-publish: 2026-12-28
-updated: 2026-12-28
+publish: 2027-02-08
+updated: 2027-02-08
 faq:
   - q: 'Is a gym legally required to offer a membership freeze in India?'
     a: 'There is no specific law that requires gyms to offer freezes. What you promise in writing, or verbally at sign-up, is what members will hold you to. Write the policy into your membership form so there is no argument later.'

@@ -1,0 +1,2174 @@
+{
+ "_note": "Briefs for the 10 food guides written 2026-11-16. Every number: value, unit/basis, type (source, derived or assumption), source and URL, date checked. IFCT 2017 prints energy in kJ only; kcal = kJ / 4.184 is our conversion. USDA values were read from the SR Legacy (April 2018) and FNDDS 2021-2023 (31 Oct 2024) bulk CSV downloads on 2026-11-16 (FDC links point to the same ids); the two packaged biryani labels were read through the FDC search API. Items marked WEAK are the least well sourced.",
+ "guides": {
+  "calories-in-rice": {
+   "keyword": "calories in rice; calories in rice per 100g; 1 bowl cooked rice calories; calories in rice 1 cup",
+   "volumes": "14,800 / 14,800 / 880 / 5,400 (docs/food-keyword-check-2026-11-16.md)",
+   "publish": "2027-04-29",
+   "numbers": [
+    {
+     "value": "1491 kJ (356 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rice, raw, milled; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A015",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.94,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rice, raw, milled",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A015",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 0.52,
+     "unit": "g fat per 100 g raw",
+     "basis": "Rice, raw, milled",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A015",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1471 kJ (352 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rice, parboiled, milled; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.81,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rice, parboiled, milled",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1480 kJ (354 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rice, raw, brown; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 9.16,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rice, raw, brown",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 130,
+     "unit": "kcal per 100 g",
+     "basis": "Rice, white, long-grain, regular, enriched, cooked (boiled; 1 cup = 158 g)",
+     "type": "source",
+     "source": "USDA FDC 168878 (SR Legacy 2018-04)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168878/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 2.69,
+     "unit": "g protein per 100 g",
+     "basis": "Rice, white, long-grain, regular, enriched, cooked (boiled; 1 cup = 158 g)",
+     "type": "source",
+     "source": "USDA FDC 168878 (SR Legacy 2018-04)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168878/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 130,
+     "unit": "kcal per 100 g",
+     "basis": "Rice, white, medium-grain, cooked (1 cup = 186 g)",
+     "type": "source",
+     "source": "USDA FDC 168880 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168880/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 2.38,
+     "unit": "g protein per 100 g",
+     "basis": "Rice, white, medium-grain, cooked (1 cup = 186 g)",
+     "type": "source",
+     "source": "USDA FDC 168880 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168880/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 123,
+     "unit": "kcal per 100 g",
+     "basis": "Rice, parboiled, cooked",
+     "type": "source",
+     "source": "USDA FDC 169708 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169708/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 2.91,
+     "unit": "g protein per 100 g",
+     "basis": "Rice, parboiled, cooked",
+     "type": "source",
+     "source": "USDA FDC 169708 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169708/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 123,
+     "unit": "kcal per 100 g",
+     "basis": "Rice, brown, long-grain, cooked (1 cup = 202 g)",
+     "type": "source",
+     "source": "USDA FDC 169704 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169704/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 2.74,
+     "unit": "g protein per 100 g",
+     "basis": "Rice, brown, long-grain, cooked (1 cup = 202 g)",
+     "type": "source",
+     "source": "USDA FDC 169704 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169704/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "876 kcal per 100 g; 1 tbsp = 12.8 g",
+     "unit": "ghee",
+     "basis": "Butter oil, anhydrous",
+     "type": "source",
+     "source": "USDA FDC 173412 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173412/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "~0.668 g/ml; 150 ml = ~100 g = ~130 kcal; 200 ml = ~134 g = ~174 kcal; 250 ml = ~167 g = ~217 kcal",
+     "unit": "cooked white rice",
+     "basis": "USDA cup weight 158 g / 236.588 ml; 130 kcal per 100 g",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "katori = 150 ml, bowl = 250 ml",
+     "unit": "volume",
+     "basis": "assumed, not a standard",
+     "type": "assumption",
+     "note": "Katori sizes vary; stated in the guide"
+    },
+    {
+     "value": "1 cup = 200 ml",
+     "unit": "sample meal plans",
+     "basis": "stated in the manual",
+     "type": "source",
+     "source": "NIN Dietary Guidelines for Indians: A Manual (2011), Annexure 2a/2b",
+     "url": "https://nin.res.in/downloads/DietaryGuidelinesforNINwebsite.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "~275 g cooked per 100 g raw",
+     "unit": "weight",
+     "basis": "356 kcal / 1.30 kcal per g",
+     "type": "derived",
+     "how": "derived from the energy ratio, not a measured yield"
+    },
+    {
+     "value": "37 kcal per teaspoon ghee (~4.3 g)",
+     "unit": "ghee",
+     "basis": "876 kcal/100 g x 12.8 g / 3",
+     "type": "derived",
+     "how": "arithmetic; teaspoon = 1/3 of the USDA tablespoon"
+    },
+    {
+     "value": "650 kcal",
+     "unit": "500 g cooked rice",
+     "basis": "130 x 5",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "178 / 267 kcal",
+     "unit": "50 g / 75 g raw rice",
+     "basis": "356.4 kcal per 100 g",
+     "type": "derived",
+     "how": "arithmetic"
+    }
+   ]
+  },
+  "calories-in-roti-chapati": {
+   "keyword": "calories in roti; 1 wheat roti calories; calories in chapati with ghee",
+   "volumes": "3,600 / 3,600 / 1,000",
+   "publish": "2027-05-03",
+   "numbers": [
+    {
+     "value": "1340 kJ (320 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Wheat flour, atta; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 10.57,
+     "unit": "g protein per 100 g raw",
+     "basis": "Wheat flour, atta",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.53,
+     "unit": "g fat per 100 g raw",
+     "basis": "Wheat flour, atta",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1342 kJ (321 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Ragi; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A010",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.16,
+     "unit": "g protein per 100 g raw",
+     "basis": "Ragi",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A010",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1398 kJ (334 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Jowar; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A005",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 9.97,
+     "unit": "g protein per 100 g raw",
+     "basis": "Jowar",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A005",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1456 kJ (348 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Bajra; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 10.96,
+     "unit": "g protein per 100 g raw",
+     "basis": "Bajra",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1398 kJ (334 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Maize, dry; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A006",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 8.8,
+     "unit": "g protein per 100 g raw",
+     "basis": "Maize, dry",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A006",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 299,
+     "unit": "kcal per 100 g",
+     "basis": "Bread, chappatti or roti (fat 9.2 g/100 g; small 6in 27 g, medium 7in 40 g, large 8in 52 g)",
+     "type": "source",
+     "source": "USDA FDC 2707713 (FNDDS 2021-2023)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707713/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.85,
+     "unit": "g protein per 100 g",
+     "basis": "Bread, chappatti or roti (fat 9.2 g/100 g; small 6in 27 g, medium 7in 40 g, large 8in 52 g)",
+     "type": "source",
+     "source": "USDA FDC 2707713 (FNDDS 2021-2023)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707713/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 297,
+     "unit": "kcal per 100 g",
+     "basis": "Bread, chapati or roti, plain, commercially prepared (1 piece = 68 g)",
+     "type": "source",
+     "source": "USDA FDC 171844 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171844/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 11.25,
+     "unit": "g protein per 100 g",
+     "basis": "Bread, chapati or roti, plain, commercially prepared (1 piece = 68 g)",
+     "type": "source",
+     "source": "USDA FDC 171844 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171844/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 299,
+     "unit": "kcal per 100 g",
+     "basis": "Bread, chapati or roti, whole wheat, commercially prepared, frozen (1 piece = 43 g)",
+     "type": "source",
+     "source": "USDA FDC 174075 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/174075/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.85,
+     "unit": "g protein per 100 g",
+     "basis": "Bread, chapati or roti, whole wheat, commercially prepared, frozen (1 piece = 43 g)",
+     "type": "source",
+     "source": "USDA FDC 174075 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/174075/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "876 kcal per 100 g; 1 tbsp = 12.8 g",
+     "unit": "ghee",
+     "basis": "Butter oil, anhydrous",
+     "type": "source",
+     "source": "USDA FDC 173412 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173412/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "64 / 80 / 96 / 128 / 160 kcal for 20 / 25 / 30 / 40 / 50 g atta",
+     "unit": "roti by raw atta",
+     "basis": "320.3 kcal per 100 g",
+     "type": "derived",
+     "how": "arithmetic; dusting flour ignored (assumption)"
+    },
+    {
+     "value": "81 / 120 / 155 kcal (small / medium / large)",
+     "unit": "finished roti",
+     "basis": "299 kcal per 100 g x 27/40/52 g",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "37 kcal per teaspoon ghee; roti + 1 tsp = 133 (30 g atta) or 157 (40 g)",
+     "unit": "ghee",
+     "basis": "arithmetic",
+     "type": "derived",
+     "how": "1 tsp = 12.8 g / 3"
+    },
+    {
+     "value": "multigrain 30 g flour: ragi 96, atta 96, jowar 100, maize 100, bajra 104 kcal",
+     "unit": "flour",
+     "basis": "IFCT per 100 g x 0.3",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "atta ball weights 20-50 g",
+     "unit": "dough",
+     "basis": "typical range, not sourced",
+     "type": "assumption",
+     "note": "guide tells the reader to weigh their own"
+    }
+   ]
+  },
+  "protein-in-dal-per-100g": {
+   "keyword": "protein in dal; protein in dal per 100g",
+   "volumes": "6,600 / 5,400",
+   "publish": "2027-05-06",
+   "numbers": [
+    {
+     "value": "1363 kJ (326 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Green gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B010",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 23.88,
+     "unit": "g protein per 100 g raw",
+     "basis": "Green gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B010",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.35,
+     "unit": "g fat per 100 g raw",
+     "basis": "Green gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B010",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1349 kJ (322 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Lentil dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 24.35,
+     "unit": "g protein per 100 g raw",
+     "basis": "Lentil dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 0.75,
+     "unit": "g fat per 100 g raw",
+     "basis": "Lentil dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1356 kJ (324 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Black gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 23.06,
+     "unit": "g protein per 100 g raw",
+     "basis": "Black gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.69,
+     "unit": "g fat per 100 g raw",
+     "basis": "Black gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1384 kJ (331 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Red gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B021",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 21.7,
+     "unit": "g protein per 100 g raw",
+     "basis": "Red gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B021",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.56,
+     "unit": "g fat per 100 g raw",
+     "basis": "Red gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B021",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1377 kJ (329 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Bengal gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B001",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 21.55,
+     "unit": "g protein per 100 g raw",
+     "basis": "Bengal gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B001",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 5.31,
+     "unit": "g fat per 100 g raw",
+     "basis": "Bengal gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B001",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 116,
+     "unit": "kcal per 100 g",
+     "basis": "Lentils, boiled, no salt (1 cup 198 g)",
+     "type": "source",
+     "source": "USDA FDC 172421 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172421/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 9.02,
+     "unit": "g protein per 100 g",
+     "basis": "Lentils, boiled, no salt (1 cup 198 g)",
+     "type": "source",
+     "source": "USDA FDC 172421 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172421/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 164,
+     "unit": "kcal per 100 g",
+     "basis": "Chickpeas, boiled (1 cup 164 g)",
+     "type": "source",
+     "source": "USDA FDC 173757 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173757/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 8.86,
+     "unit": "g protein per 100 g",
+     "basis": "Chickpeas, boiled (1 cup 164 g)",
+     "type": "source",
+     "source": "USDA FDC 173757 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173757/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 116,
+     "unit": "kcal per 100 g",
+     "basis": "Cowpeas, boiled",
+     "type": "source",
+     "source": "USDA FDC 173759 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173759/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.73,
+     "unit": "g protein per 100 g",
+     "basis": "Cowpeas, boiled",
+     "type": "source",
+     "source": "USDA FDC 173759 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173759/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 105,
+     "unit": "kcal per 100 g",
+     "basis": "Mung beans, boiled",
+     "type": "source",
+     "source": "USDA FDC 174257 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/174257/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.02,
+     "unit": "g protein per 100 g",
+     "basis": "Mung beans, boiled",
+     "type": "source",
+     "source": "USDA FDC 174257 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/174257/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 121,
+     "unit": "kcal per 100 g",
+     "basis": "Pigeon peas, boiled",
+     "type": "source",
+     "source": "USDA FDC 172437 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172437/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 6.76,
+     "unit": "g protein per 100 g",
+     "basis": "Pigeon peas, boiled",
+     "type": "source",
+     "source": "USDA FDC 172437 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172437/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 145,
+     "unit": "kcal per 100 g",
+     "basis": "Dal (US survey recipe, thick, with fat)",
+     "type": "source",
+     "source": "USDA FDC 2707427 (FNDDS 2021-2023)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707427/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 8.6,
+     "unit": "g protein per 100 g",
+     "basis": "Dal (US survey recipe, thick, with fat)",
+     "type": "source",
+     "source": "USDA FDC 2707427 (FNDDS 2021-2023)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707427/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "protein per katori from 20/30/40 g raw dal: masoor 4.9/7.3/9.7; moong 4.8/7.2/9.6; urad 4.6/6.9/9.2; toor 4.3/6.5/8.7; chana 4.3/6.5/8.6 g",
+     "unit": "raw dal weight in the pot",
+     "basis": "IFCT protein per 100 g x grams",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "30 g raw dal per katori (typical), 20 g thin, 40 g thick",
+     "unit": "raw dal",
+     "basis": "our assumption",
+     "type": "assumption",
+     "note": ""
+    },
+    {
+     "value": "about 20 g raw pulses paired with 1/2 cup dhal; 1 cup = 200 ml",
+     "unit": "sample meal plans",
+     "basis": "WEAK: the PDF text layout of the table is ambiguous, read as pulses 20 g with dhal 1/2 cup",
+     "type": "source",
+     "source": "NIN Dietary Guidelines for Indians: A Manual (2011), Annexure 2a/2b",
+     "url": "https://nin.res.in/downloads/DietaryGuidelinesforNINwebsite.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "20 g protein needs ~82 g raw masoor to ~93 g raw chana dal",
+     "unit": "raw dal",
+     "basis": "20 / 0.2435 and 20 / 0.2155",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "~97-99 kcal per 30 g raw dal",
+     "unit": "raw dal",
+     "basis": "IFCT energy x 0.3",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "884 kcal/100 g; tsp 4.5 g",
+     "unit": "soybean oil",
+     "basis": "Oil, vegetable, soybean",
+     "type": "source",
+     "source": "USDA FDC 172370",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172370/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "876 kcal per 100 g; 1 tbsp = 12.8 g",
+     "unit": "ghee",
+     "basis": "Butter oil, anhydrous",
+     "type": "source",
+     "source": "USDA FDC 173412 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173412/nutrients",
+     "checked": "2026-11-16"
+    }
+   ]
+  },
+  "calories-in-poha": {
+   "keyword": "calories in poha; poha calories per 100g; 1 plate poha calories and protein",
+   "volumes": "14,800 / 1,300 / 480",
+   "publish": "2027-05-10",
+   "numbers": [
+    {
+     "value": "1480 kJ (354 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rice flakes (poha); energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A011",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.44,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rice flakes (poha)",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A011",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.14,
+     "unit": "g fat per 100 g raw",
+     "basis": "Rice flakes (poha)",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A011",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "76.75 g carbohydrate; 3.46 g total dietary fibre",
+     "unit": "per 100 g raw",
+     "basis": "Rice flakes",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A011",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "201 kJ (48 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Onion, big; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, G017",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.5,
+     "unit": "g protein per 100 g raw",
+     "basis": "Onion, big",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, G017",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 0.24,
+     "unit": "g fat per 100 g raw",
+     "basis": "Onion, big",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, G017",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "292 kJ (70 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Potato, brown skin, big; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, F006",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.54,
+     "unit": "g protein per 100 g raw",
+     "basis": "Potato, brown skin, big",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, F006",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 0.23,
+     "unit": "g fat per 100 g raw",
+     "basis": "Potato, brown skin, big",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, F006",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 567,
+     "unit": "kcal per 100 g",
+     "basis": "Peanuts, all types, raw",
+     "type": "source",
+     "source": "USDA FDC 172430 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172430/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 25.8,
+     "unit": "g protein per 100 g",
+     "basis": "Peanuts, all types, raw",
+     "type": "source",
+     "source": "USDA FDC 172430 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172430/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "884 kcal per 100 g; 1 tsp = 4.5 g",
+     "unit": "peanut oil",
+     "basis": "Oil, peanut",
+     "type": "source",
+     "source": "USDA FDC 171410 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171410/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 87,
+     "unit": "kcal per 100 g",
+     "basis": "Upma (US survey) (1 cup cooked 170 g)",
+     "type": "source",
+     "source": "USDA FDC 2709128 (FNDDS 2021-2023)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709128/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.98,
+     "unit": "g protein per 100 g",
+     "basis": "Upma (US survey) (1 cup cooked 170 g)",
+     "type": "source",
+     "source": "USDA FDC 2709128 (FNDDS 2021-2023)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709128/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 333,
+     "unit": "kcal per 100 g",
+     "basis": "Thick poha (packaged, label)",
+     "type": "source",
+     "source": "USDA FDC 2265565 (Branded Foods)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2265565/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 6.67,
+     "unit": "g protein per 100 g",
+     "basis": "Thick poha (packaged, label)",
+     "type": "source",
+     "source": "USDA FDC 2265565 (Branded Foods)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2265565/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 61,
+     "unit": "kcal per 100 g",
+     "basis": "Yogurt, plain, whole milk",
+     "type": "source",
+     "source": "USDA FDC 171284 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171284/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 3.47,
+     "unit": "g protein per 100 g",
+     "basis": "Yogurt, plain, whole milk",
+     "type": "source",
+     "source": "USDA FDC 171284 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171284/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 155,
+     "unit": "kcal per 100 g",
+     "basis": "Egg, hard-boiled",
+     "type": "source",
+     "source": "USDA FDC 173424 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173424/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 12.58,
+     "unit": "g protein per 100 g",
+     "basis": "Egg, hard-boiled",
+     "type": "source",
+     "source": "USDA FDC 173424 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173424/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "plates: basic 231 kcal / 4.2 g; with peanuts and potato 309 / 7.2; large 444 / 9.9",
+     "unit": "plate",
+     "basis": "sum of parts",
+     "type": "derived",
+     "how": "recipe arithmetic; weights are assumptions"
+    },
+    {
+     "value": "50 g / 75 g dry poha; 1 or 2 tsp oil; 30 g onion; 10 or 15 g peanuts; 30 g potato",
+     "unit": "plate",
+     "basis": "our assumptions, stated in the guide",
+     "type": "assumption",
+     "note": ""
+    },
+    {
+     "value": "upma 1 cup = 148 kcal, 3.4 g protein",
+     "unit": "170 g",
+     "basis": "87 x 1.7",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "Poha 1 cup (snack), Upma 1-1/2 cup (man) / 1 cup (woman), Idli, Dosa listed as breakfast items",
+     "unit": "sample meal plans",
+     "basis": "no calorie figures given",
+     "type": "source",
+     "source": "NIN Dietary Guidelines for Indians: A Manual (2011), Annexure 2a/2b",
+     "url": "https://nin.res.in/downloads/DietaryGuidelinesforNINwebsite.pdf",
+     "checked": "2026-11-16"
+    }
+   ]
+  },
+  "calories-in-idli": {
+   "keyword": "calories in idli; 3 idli calories; calories in idli sambar; 4 idli with chutney calories",
+   "volumes": "12,100 / 2,900 / 2,400 / 480",
+   "publish": "2027-05-13",
+   "numbers": [
+    {
+     "value": "128 kcal, 6.36 g protein, 0.35 g fat, 24.98 g carb per 100 g; 1 item = 38 g; quantity not specified = 76 g",
+     "unit": "idli",
+     "basis": "FNDDS 2021-2023",
+     "type": "source",
+     "source": "USDA FDC 2708346",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2708346/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 86,
+     "unit": "kcal per 100 g",
+     "basis": "Sambar, vegetable stew (fat 2.71; 1 cup 248 g)",
+     "type": "source",
+     "source": "USDA FDC 2707430 (FNDDS 2021-2023)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707430/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 4.33,
+     "unit": "g protein per 100 g",
+     "basis": "Sambar, vegetable stew (fat 2.71; 1 cup 248 g)",
+     "type": "source",
+     "source": "USDA FDC 2707430 (FNDDS 2021-2023)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707430/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1471 kJ (352 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rice, parboiled, milled; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.81,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rice, parboiled, milled",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1356 kJ (324 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Black gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 23.06,
+     "unit": "g protein per 100 g raw",
+     "basis": "Black gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1711 kJ (409 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Coconut, kernel, fresh; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, H007",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 3.84,
+     "unit": "g protein per 100 g raw",
+     "basis": "Coconut, kernel, fresh",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, H007",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 41.38,
+     "unit": "g fat per 100 g raw",
+     "basis": "Coconut, kernel, fresh",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, H007",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1/2/3/4 idli (38 g): 49/97/146/195 kcal; 2.4/4.8/7.3/9.7 g protein",
+     "unit": "idli",
+     "basis": "128 and 6.36 per 100 g",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "sambar 1/2 cup 124 g = 107 kcal, 5.4 g; chutney 20 g coconut = 82 kcal, 0.8 g; plates 286 / 335 / 384 kcal",
+     "unit": "plate",
+     "basis": "sum",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "20 g fresh coconut in chutney",
+     "unit": "chutney",
+     "basis": "assumption (no table for the dish)",
+     "type": "assumption",
+     "note": ""
+    },
+    {
+     "value": "Idli 3 Nos. (woman plan) / 4 Nos. (man plan)",
+     "unit": "sample meal plans",
+     "basis": "no weights given",
+     "type": "source",
+     "source": "NIN Dietary Guidelines for Indians: A Manual (2011), Annexure 2a/2b",
+     "url": "https://nin.res.in/downloads/DietaryGuidelinesforNINwebsite.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "876 kcal per 100 g; 1 tbsp = 12.8 g",
+     "unit": "ghee",
+     "basis": "Butter oil, anhydrous",
+     "type": "source",
+     "source": "USDA FDC 173412 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173412/nutrients",
+     "checked": "2026-11-16"
+    }
+   ]
+  },
+  "rice-vs-chapati-calories": {
+   "keyword": "rice vs chapati calories",
+   "volumes": "no dedicated volume pulled (comparison of the rice and roti clusters)",
+   "publish": "2027-05-17",
+   "numbers": [
+    {
+     "value": 130,
+     "unit": "kcal per 100 g",
+     "basis": "White rice, cooked",
+     "type": "source",
+     "source": "USDA FDC 168878 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168878/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 2.69,
+     "unit": "g protein per 100 g",
+     "basis": "White rice, cooked",
+     "type": "source",
+     "source": "USDA FDC 168878 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168878/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 299,
+     "unit": "kcal per 100 g",
+     "basis": "Roti",
+     "type": "source",
+     "source": "USDA FDC 2707713 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707713/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.85,
+     "unit": "g protein per 100 g",
+     "basis": "Roti",
+     "type": "source",
+     "source": "USDA FDC 2707713 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707713/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1491 kJ (356 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rice, raw, milled; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A015",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.94,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rice, raw, milled",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A015",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1340 kJ (320 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Atta; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 10.57,
+     "unit": "g protein per 100 g raw",
+     "basis": "Atta",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "total dietary fibre 2.81 g (milled rice), 11.36 g (atta), 4.43 g (brown), 3.74 g (parboiled)",
+     "unit": "per 100 g raw",
+     "basis": "IFCT Table 1",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A015/A019/A013/A014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 123,
+     "unit": "kcal per 100 g",
+     "basis": "Brown rice, cooked",
+     "type": "source",
+     "source": "USDA FDC 169704 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169704/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 2.74,
+     "unit": "g protein per 100 g",
+     "basis": "Brown rice, cooked",
+     "type": "source",
+     "source": "USDA FDC 169704 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169704/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "per 100 kcal: rice ~77 g cooked, 2.1 g protein; roti ~33 g, 2.6 g protein",
+     "unit": "cooked",
+     "basis": "from per-100 g values",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "2 rotis 30 g atta = 192 kcal / 6.3 g; 2 medium rotis 40 g = 239 kcal / 6.3 g; bowl 250 ml (~167 g) = 217 kcal; heaped 250 g = 325 kcal",
+     "unit": "portion",
+     "basis": "arithmetic",
+     "type": "derived",
+     "how": ""
+    },
+    {
+     "value": "katori 150 ml = ~100 g; bowl 250 ml = ~167 g cooked rice",
+     "unit": "portion",
+     "basis": "assumption",
+     "type": "assumption",
+     "note": ""
+    },
+    {
+     "value": "2.3x kcal per 100 g cooked",
+     "unit": "roti vs rice",
+     "basis": "299 / 130",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "876 kcal per 100 g; 1 tbsp = 12.8 g",
+     "unit": "ghee",
+     "basis": "Butter oil, anhydrous",
+     "type": "source",
+     "source": "USDA FDC 173412 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173412/nutrients",
+     "checked": "2026-11-16"
+    }
+   ]
+  },
+  "calories-in-2-roti-and-sabzi": {
+   "keyword": "calories in 2 roti and sabzi; calories in 1 roti and sabzi; how much calories in 2 roti",
+   "volumes": "720 / 880 / 480",
+   "publish": "2027-05-20",
+   "numbers": [
+    {
+     "value": "1340 kJ (320 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Atta; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 10.57,
+     "unit": "g protein per 100 g raw",
+     "basis": "Atta",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.53,
+     "unit": "g fat per 100 g raw",
+     "basis": "Atta",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 86,
+     "unit": "kcal per 100 g",
+     "basis": "Vegetable curry (1 cup 240 g)",
+     "type": "source",
+     "source": "USDA FDC 2710067 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2710067/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.6,
+     "unit": "g protein per 100 g",
+     "basis": "Vegetable curry (1 cup 240 g)",
+     "type": "source",
+     "source": "USDA FDC 2710067 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2710067/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 59,
+     "unit": "kcal per 100 g",
+     "basis": "Okra, fresh, cooked, fat added (1 cup 165 g)",
+     "type": "source",
+     "source": "USDA FDC 2709947 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709947/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 2.02,
+     "unit": "g protein per 100 g",
+     "basis": "Okra, fresh, cooked, fat added (1 cup 165 g)",
+     "type": "source",
+     "source": "USDA FDC 2709947 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709947/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 101,
+     "unit": "kcal per 100 g",
+     "basis": "Palak Paneer (1 cup 200 g; 100 g)",
+     "type": "source",
+     "source": "USDA FDC 2709631 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709631/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 5.42,
+     "unit": "g protein per 100 g",
+     "basis": "Palak Paneer (1 cup 200 g; 100 g)",
+     "type": "source",
+     "source": "USDA FDC 2709631 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709631/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 89,
+     "unit": "kcal per 100 g",
+     "basis": "Channa Saag (1 cup 245 g)",
+     "type": "source",
+     "source": "USDA FDC 2709632 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709632/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 4.1,
+     "unit": "g protein per 100 g",
+     "basis": "Channa Saag (1 cup 245 g)",
+     "type": "source",
+     "source": "USDA FDC 2709632 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709632/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 107,
+     "unit": "kcal per 100 g",
+     "basis": "Chicken curry (1 cup 240 g)",
+     "type": "source",
+     "source": "USDA FDC 2706437 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2706437/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 6.48,
+     "unit": "g protein per 100 g",
+     "basis": "Chicken curry (1 cup 240 g)",
+     "type": "source",
+     "source": "USDA FDC 2706437 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2706437/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 299,
+     "unit": "kcal per 100 g",
+     "basis": "Roti (medium 40 g)",
+     "type": "source",
+     "source": "USDA FDC 2707713 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707713/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.85,
+     "unit": "g protein per 100 g",
+     "basis": "Roti (medium 40 g)",
+     "type": "source",
+     "source": "USDA FDC 2707713 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707713/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "292 kJ (70 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Potato; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, F006",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.54,
+     "unit": "g protein per 100 g raw",
+     "basis": "Potato",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, F006",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "201 kJ (48 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Onion; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, G017",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.5,
+     "unit": "g protein per 100 g raw",
+     "basis": "Onion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, G017",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1349 kJ (322 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Lentil dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 24.35,
+     "unit": "g protein per 100 g raw",
+     "basis": "Lentil dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 0.75,
+     "unit": "g fat per 100 g raw",
+     "basis": "Lentil dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "884 kcal per 100 g; 1 tsp = 4.5 g",
+     "unit": "peanut oil",
+     "basis": "Oil, peanut",
+     "type": "source",
+     "source": "USDA FDC 171410 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171410/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "2 rotis (30 g atta) 192 kcal, 6.3 g; aloo sabzi katori 199 kcal, 2.8 g; dal katori 137 kcal, 7.3 g; meals 289-449 kcal",
+     "unit": "meal",
+     "basis": "sums",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "aloo sabzi = 150 g raw potato + 2 tsp oil + 30 g onion; dal = 30 g raw masoor + 1 tsp oil",
+     "unit": "home dishes",
+     "basis": "our assumptions (no table for these dishes)",
+     "type": "assumption",
+     "note": ""
+    },
+    {
+     "value": "FNDDS \"1 cup\" values used as listed; a 150 ml katori is ~63% of a US cup",
+     "unit": "portion",
+     "basis": "flagged in the guide",
+     "type": "assumption",
+     "note": ""
+    },
+    {
+     "value": "876 kcal per 100 g; 1 tbsp = 12.8 g",
+     "unit": "ghee",
+     "basis": "Butter oil, anhydrous",
+     "type": "source",
+     "source": "USDA FDC 173412 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173412/nutrients",
+     "checked": "2026-11-16"
+    }
+   ]
+  },
+  "which-dal-has-the-most-protein": {
+   "keyword": "which dal has the most protein",
+   "volumes": "no volume pulled (supports the protein-in-dal cluster)",
+   "publish": "2027-05-24",
+   "numbers": [
+    {
+     "value": "1363 kJ (326 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Green gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B010",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 23.88,
+     "unit": "g protein per 100 g raw",
+     "basis": "Green gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B010",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.35,
+     "unit": "g fat per 100 g raw",
+     "basis": "Green gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B010",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1349 kJ (322 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Lentil dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 24.35,
+     "unit": "g protein per 100 g raw",
+     "basis": "Lentil dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 0.75,
+     "unit": "g fat per 100 g raw",
+     "basis": "Lentil dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B013",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1356 kJ (324 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Black gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 23.06,
+     "unit": "g protein per 100 g raw",
+     "basis": "Black gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.69,
+     "unit": "g fat per 100 g raw",
+     "basis": "Black gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1384 kJ (331 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Red gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B021",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 21.7,
+     "unit": "g protein per 100 g raw",
+     "basis": "Red gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B021",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 1.56,
+     "unit": "g fat per 100 g raw",
+     "basis": "Red gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B021",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1377 kJ (329 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Bengal gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B001",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 21.55,
+     "unit": "g protein per 100 g raw",
+     "basis": "Bengal gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B001",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 5.31,
+     "unit": "g fat per 100 g raw",
+     "basis": "Bengal gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B001",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1229 kJ (294 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Green gram, whole; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B011",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 22.53,
+     "unit": "g protein per 100 g raw",
+     "basis": "Green gram, whole",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B011",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1251 kJ (299 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Lentil whole, brown; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 22.49,
+     "unit": "g protein per 100 g raw",
+     "basis": "Lentil whole, brown",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1219 kJ (291 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Black gram, whole; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B004",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 21.97,
+     "unit": "g protein per 100 g raw",
+     "basis": "Black gram, whole",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B004",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1379 kJ (330 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Horse gram, whole; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B012",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 21.73,
+     "unit": "g protein per 100 g raw",
+     "basis": "Horse gram, whole",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B012",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1340 kJ (320 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Cowpea, brown; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B005",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 20.36,
+     "unit": "g protein per 100 g raw",
+     "basis": "Cowpea, brown",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B005",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1252 kJ (299 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rajma, red; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B020",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 19.91,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rajma, red",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B020",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1201 kJ (287 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Bengal gram, whole; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B002",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 18.77,
+     "unit": "g protein per 100 g raw",
+     "basis": "Bengal gram, whole",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B002",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1596 kJ (381 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Soybean, brown; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B024",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 35.58,
+     "unit": "g protein per 100 g raw",
+     "basis": "Soybean, brown",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B024",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 19.82,
+     "unit": "g fat per 100 g raw",
+     "basis": "Soybean, brown",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B024",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "rajma brown 19.50 g protein per 100 g raw",
+     "unit": "per 100 g raw",
+     "basis": "B019",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B019",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "+/- values printed in IFCT: masoor 1.10, moong 0.61, urad 0.59, toor 0.50, chana dal 1.45 (6 regions)",
+     "unit": "g protein",
+     "basis": "WEAK: we read +/- as the spread across samples; the guide says \"regional spread\"",
+     "type": "source",
+     "source": "IFCT 2017 Table 1",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "protein per 100 kcal: masoor 7.5, moong 7.3, urad 7.1, toor 6.6, chana 6.5; moong whole 7.7; soybean 9.3",
+     "unit": "dry",
+     "basis": "protein / (kJ/4.184) x 100",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "per katori from 30 g raw dal: masoor 7.3, moong 7.2, urad 6.9, toor 6.5, chana 6.5 g; from 40 g: 8.6-9.7 g",
+     "unit": "raw dal",
+     "basis": "IFCT x grams",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": 116,
+     "unit": "kcal per 100 g",
+     "basis": "Lentils, boiled, no salt (1 cup 198 g)",
+     "type": "source",
+     "source": "USDA FDC 172421 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172421/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 9.02,
+     "unit": "g protein per 100 g",
+     "basis": "Lentils, boiled, no salt (1 cup 198 g)",
+     "type": "source",
+     "source": "USDA FDC 172421 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172421/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 164,
+     "unit": "kcal per 100 g",
+     "basis": "Chickpeas, boiled (1 cup 164 g)",
+     "type": "source",
+     "source": "USDA FDC 173757 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173757/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 8.86,
+     "unit": "g protein per 100 g",
+     "basis": "Chickpeas, boiled (1 cup 164 g)",
+     "type": "source",
+     "source": "USDA FDC 173757 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173757/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 116,
+     "unit": "kcal per 100 g",
+     "basis": "Cowpeas, boiled",
+     "type": "source",
+     "source": "USDA FDC 173759 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173759/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.73,
+     "unit": "g protein per 100 g",
+     "basis": "Cowpeas, boiled",
+     "type": "source",
+     "source": "USDA FDC 173759 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173759/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 105,
+     "unit": "kcal per 100 g",
+     "basis": "Mung beans, boiled",
+     "type": "source",
+     "source": "USDA FDC 174257 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/174257/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.02,
+     "unit": "g protein per 100 g",
+     "basis": "Mung beans, boiled",
+     "type": "source",
+     "source": "USDA FDC 174257 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/174257/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 121,
+     "unit": "kcal per 100 g",
+     "basis": "Pigeon peas, boiled",
+     "type": "source",
+     "source": "USDA FDC 172437 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172437/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 6.76,
+     "unit": "g protein per 100 g",
+     "basis": "Pigeon peas, boiled",
+     "type": "source",
+     "source": "USDA FDC 172437 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172437/nutrients",
+     "checked": "2026-11-16"
+    }
+   ]
+  },
+  "calories-in-dosa": {
+   "keyword": "calories in dosa; 1 plain dosa calories; how many calories in masala dosa; 1 medium dosa calories",
+   "volumes": "9,900 / 1,000 / 390 / 140",
+   "publish": "2027-05-27",
+   "numbers": [
+    {
+     "value": "210 kcal, 5.70 g protein, 4.05 g fat, 37.04 g carb per 100 g; small 35 g, medium 80 g, large 155 g",
+     "unit": "Dosa, plain",
+     "basis": "FNDDS 2021-2023",
+     "type": "source",
+     "source": "USDA FDC 2708347",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2708347/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "184 kcal, 5.46 g protein, 4.27 g fat, 30.8 g carb per 100 g; small 113 g, medium 267 g, large 523 g",
+     "unit": "Dosa, with filling",
+     "basis": "FNDDS 2021-2023",
+     "type": "source",
+     "source": "USDA FDC 2709129",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2709129/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 86,
+     "unit": "kcal per 100 g",
+     "basis": "Sambar",
+     "type": "source",
+     "source": "USDA FDC 2707430 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707430/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 4.33,
+     "unit": "g protein per 100 g",
+     "basis": "Sambar",
+     "type": "source",
+     "source": "USDA FDC 2707430 (FNDDS)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2707430/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1711 kJ (409 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Coconut, kernel, fresh; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, H007",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 3.84,
+     "unit": "g protein per 100 g raw",
+     "basis": "Coconut, kernel, fresh",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, H007",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 41.38,
+     "unit": "g fat per 100 g raw",
+     "basis": "Coconut, kernel, fresh",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, H007",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1471 kJ (352 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rice, parboiled; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.81,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rice, parboiled",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A014",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1356 kJ (324 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Black gram, dal; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 23.06,
+     "unit": "g protein per 100 g raw",
+     "basis": "Black gram, dal",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, B003",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "884 kcal per 100 g; 1 tsp = 4.5 g",
+     "unit": "peanut oil",
+     "basis": "Oil, peanut",
+     "type": "source",
+     "source": "USDA FDC 171410 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171410/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "876 kcal per 100 g; 1 tbsp = 12.8 g",
+     "unit": "ghee",
+     "basis": "Butter oil, anhydrous",
+     "type": "source",
+     "source": "USDA FDC 173412 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173412/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "plain 74/168/326 kcal; masala 208/491/962 kcal; meals 357 / 525 / 680 kcal",
+     "unit": "dosa",
+     "basis": "per-100 g x portion + sides",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "20 g coconut in chutney; sambar 1/2 cup (124 g)",
+     "unit": "sides",
+     "basis": "assumption",
+     "type": "assumption",
+     "note": ""
+    },
+    {
+     "value": "Dosa 2 Nos. (woman plan) / 3 Nos. (man plan)",
+     "unit": "sample meal plans",
+     "basis": "no weights given",
+     "type": "source",
+     "source": "NIN Dietary Guidelines for Indians: A Manual (2011), Annexure 2a/2b",
+     "url": "https://nin.res.in/downloads/DietaryGuidelinesforNINwebsite.pdf",
+     "checked": "2026-11-16"
+    }
+   ]
+  },
+  "calories-in-chicken-biryani": {
+   "keyword": "calories in chicken biryani; chicken biryani calories per 500g; 1 kg chicken biryani calories; biryani calories 1 plate",
+   "volumes": "4,400 / 880 / 390 / 170 / 110",
+   "publish": "2027-05-31",
+   "numbers": [
+    {
+     "value": "104 kcal, 7.15 g protein, 2.38 g fat, 13.55 g carb per 100 g; 1 cup 196 g; quantity not specified 245 g",
+     "unit": "Biryani with chicken",
+     "basis": "FNDDS 2021-2023",
+     "type": "source",
+     "source": "USDA FDC 2706538",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2706538/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "145 kcal, 8.5 g protein, 6.79 g fat per 100 g; 196 g cup; 245 g",
+     "unit": "Biryani with meat",
+     "basis": "FNDDS 2021-2023",
+     "type": "source",
+     "source": "USDA FDC 2706490",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2706490/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "109 kcal, 1.93 g protein, 3.2 g fat per 100 g; cup 172 g; 215 g",
+     "unit": "Biryani with vegetables",
+     "basis": "FNDDS 2021-2023",
+     "type": "source",
+     "source": "USDA FDC 2708985",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2708985/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "163 kcal, 6.01 g protein per 100 g; serving 283 g",
+     "unit": "Chicken biryani, packaged (label); read via the FDC search API on 2026-11-16, brand not recorded (WEAK: not re-opened as a full record)",
+     "basis": "Branded Foods",
+     "type": "source",
+     "source": "USDA FDC 1895953",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/1895953/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "140 kcal, 5.49 g protein per 100 g; serving 328 g (0.25 packet)",
+     "unit": "Chicken biryani, packaged (label); same note (WEAK)",
+     "basis": "Branded Foods",
+     "type": "source",
+     "source": "USDA FDC 2076755",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2076755/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 61,
+     "unit": "kcal per 100 g",
+     "basis": "Yogurt, plain, whole milk",
+     "type": "source",
+     "source": "USDA FDC 171284 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171284/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 3.47,
+     "unit": "g protein per 100 g",
+     "basis": "Yogurt, plain, whole milk",
+     "type": "source",
+     "source": "USDA FDC 171284 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/171284/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 130,
+     "unit": "kcal per 100 g",
+     "basis": "White rice, cooked",
+     "type": "source",
+     "source": "USDA FDC 168878 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168878/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 2.69,
+     "unit": "g protein per 100 g",
+     "basis": "White rice, cooked",
+     "type": "source",
+     "source": "USDA FDC 168878 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168878/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "1491 kJ (356 kcal)",
+     "unit": "per 100 g raw",
+     "basis": "Rice, raw, milled; energy printed in kJ, kcal = kJ/4.184 is our conversion",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A015",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": 7.94,
+     "unit": "g protein per 100 g raw",
+     "basis": "Rice, raw, milled",
+     "type": "source",
+     "source": "IFCT 2017 Table 1, A015",
+     "url": "https://nin.res.in/ebooks/IFCT2017.pdf",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "876 kcal per 100 g; 1 tbsp = 12.8 g",
+     "unit": "ghee",
+     "basis": "Butter oil, anhydrous",
+     "type": "source",
+     "source": "USDA FDC 173412 (SR Legacy)",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173412/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "884 kcal per 100 g",
+     "unit": "vegetable oil",
+     "basis": "Oil, peanut / soybean",
+     "type": "source",
+     "source": "USDA FDC 171410, 172370",
+     "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/172370/nutrients",
+     "checked": "2026-11-16"
+    },
+    {
+     "value": "per 250/500/1000 g: 260/520/1040 kcal (survey); 408/815/1630 (product A)",
+     "unit": "portion",
+     "basis": "per-100 g x weight",
+     "type": "derived",
+     "how": "arithmetic"
+    },
+    {
+     "value": "product A pack 283 g = 461 kcal, 17 g; product B 328 g = 459 kcal, 18 g",
+     "unit": "pack",
+     "basis": "arithmetic",
+     "type": "derived",
+     "how": ""
+    },
+    {
+     "value": "restaurant plate weight and oil unknown; no table exists",
+     "unit": "plate",
+     "basis": "no source; the guide says so",
+     "type": "assumption",
+     "note": ""
+    }
+   ]
+  }
+ }
+}
