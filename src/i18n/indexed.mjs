@@ -9,4 +9,5 @@
  * ['en', 'hi']). Nothing else changes; rebuild and deploy. Canonicals stay self-referencing throughout.
  * Plain .mjs so astro.config.mjs can import it too.
  */
-export const INDEXED_LANGS = ['en', 'hi'];
+// te, ta, kn, mr and bn promoted 15 Nov 2026 after the owner confirmed the translations.
+export const INDEXED_LANGS = ['en', 'hi', 'te', 'ta', 'kn', 'mr', 'bn'];
