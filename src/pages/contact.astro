@@ -1,0 +1,34 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { SITE } from '../site';
+---
+
+<LegalPage
+  title="Contact SpotAI"
+  description="How to reach the SpotAI team: email, WhatsApp, the pilot waitlist, and what to write for support, a pilot, a correction or your data."
+  heading="Contact"
+>
+  <p class="lead">SpotAI is run by one person, so you get a reply from the person who builds it. Email is the most reliable way.</p>
+
+  <h2>Email</h2>
+  <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+
+  <h2>WhatsApp</h2>
+  <p>
+    <a href={`https://wa.me/${SITE.whatsapp}`} rel="noopener">Message on WhatsApp</a> for quick questions from gym owners. Please
+    do not send payment details, passwords or ID numbers over chat.
+  </p>
+
+  <h2>What to write about</h2>
+  <ul>
+    <li><strong>A pilot for your gym.</strong> Tell me the gym name, the city and roughly how many members you have. The first {SITE.pilot.gyms} gyms get a free {SITE.pilot.days}-day pilot, set up over a video call.</li>
+    <li><strong>Help with the app.</strong> Say which phone and app version you use and what you saw. Do not include your password.</li>
+    <li><strong>Your data.</strong> To see, correct or delete what you sent through the website, write from the same contact details you used. See the <a href="/privacy/">privacy notice</a>.</li>
+    <li><strong>A mistake in a guide.</strong> Send the page link and what is wrong. Corrections are made on the page.</li>
+  </ul>
+
+  <h2>Where I am</h2>
+  <p>Hyderabad, Telangana, India. There is no public office; meetings are by appointment.</p>
+
+  <p>You can also join the waitlist from the <a href="/#download">home page</a>.</p>
+</LegalPage>

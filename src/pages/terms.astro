@@ -1,0 +1,58 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { SITE } from '../site';
+---
+
+<LegalPage
+  title="Terms of use · SpotAI website"
+  description="The terms for using the SpotAI website and its guides: what the site offers, health information limits, accuracy, links, and how to contact the owner."
+  heading="Terms of use"
+>
+  <p class="lead">These terms cover this website, spotai.streamerosai.com. The app has its own terms inside the app.</p>
+
+  <h2>Who runs the site</h2>
+  <p>{SITE.author.name}, Hyderabad, Telangana, India. Contact: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+
+  <h2>What you may do</h2>
+  <p>
+    You may read the site, use the calculators and share links to the pages. You may quote short passages with a link back. You
+    may not copy whole guides to republish, scrape the site at a rate that slows it for others, or use it to send spam.
+  </p>
+
+  <h2>Health information is general</h2>
+  <p>
+    The guides on food, protein, workouts and form are general information, not medical or dietetic advice. Calorie and protein
+    figures are published averages for typical portions; the food you eat will differ. If you have an injury or a medical
+    condition, are pregnant, or are unsure whether an exercise or diet is safe for you, ask a doctor or a qualified trainer
+    first. Stop exercising if something hurts.
+  </p>
+
+  <h2>Accuracy</h2>
+  <p>
+    I try to keep pages correct and to say where numbers come from, but I cannot promise that every page is complete or current.
+    Pricing and pilot terms can change. Nothing here is a guarantee of results.
+  </p>
+
+  <h2>The pilot and waitlist</h2>
+  <p>
+    Joining the waitlist or asking for a pilot does not create a contract or oblige either side. A pilot is free for its
+    {SITE.pilot.days} days; anything paid later is agreed with the gym in writing before it starts.
+  </p>
+
+  <h2>Links and third parties</h2>
+  <p>
+    The site links to other websites and uses services such as Google Analytics and Microsoft Clarity (see the
+    <a href="/privacy/">privacy notice</a>). I am not responsible for other sites. Advertising may be shown on this site in
+    future; ads will be labelled and are not endorsements.
+  </p>
+
+  <h2>Liability</h2>
+  <p>
+    The site is provided as it is. To the extent the law allows, I am not liable for loss that comes from relying on the site's
+    content. Nothing here limits rights you have under Indian consumer law.
+  </p>
+
+  <h2>Changes and law</h2>
+  <p>I may update these terms; the date below changes when I do. Indian law applies, and courts in Hyderabad have jurisdiction.</p>
+  <p class="priv__date">Last updated 16 November 2026.</p>
+</LegalPage>

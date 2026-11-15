@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+}
+const { title, description, heading } = Astro.props;
+---
+
+<Layout title={title} description={description} langs={['en']}>
+  <Nav langs={['en']} fallback="/" />
+  <main id="main" class="priv">
+    <div class="wrap">
+      <h1 class="wide">{heading}</h1>
+      <slot />
+    </div>
+  </main>
+  <Footer langs={['en']} fallback="/" />
+</Layout>
+
+<style is:global>
+  .priv {
+    padding-block: clamp(96px, 12vw, 140px) 72px;
+  }
+  .priv .wrap {
+    max-width: 720px;
+  }
+  .priv h2 {
+    margin-top: 36px;
+    font-size: 20px;
+  }
+  .priv p,
+  .priv li {
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .priv ul {
+    padding-left: 20px;
+    list-style: disc;
+  }
+  .priv__date {
+    opacity: 0.7;
+    font-size: 14px;
+  }
+</style>

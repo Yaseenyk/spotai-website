@@ -1,0 +1,53 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { SITE } from '../site';
+---
+
+<LegalPage
+  title="About SpotAI · who builds it and why"
+  description="SpotAI is built by Yaseen Khatib in Hyderabad: a gym app for members and a management console for gym owners in India. What it is, what is real today and how to reach me."
+  heading="About SpotAI"
+>
+  <p class="lead">
+    SpotAI is a gym app for India, built and run by one person: <a href={SITE.author.url} rel="author">{SITE.author.name}</a>, a
+    full-stack software engineer based in Hyderabad, Telangana.
+  </p>
+
+  <h2>What SpotAI is</h2>
+  <p>
+    It has two sides. Members get an app with today's workout, a gym leaderboard, workout buddies and an AI coach that checks
+    squat form on the phone camera: knees caving in, shallow depth and forward lean, rep by rep. The camera video stays on the
+    phone. Gym owners get a console that shows who came in, who stopped coming and who owes a fee, plus a front-desk view that
+    checks members in by QR code or by name without anyone installing an app.
+  </p>
+
+  <h2>Why it exists</h2>
+  <p>
+    Many small gyms in India run on a paper register and WhatsApp reminders. Fees are chased by hand, nobody notices a member
+    who quietly stops coming, and new lifters get no feedback on form. SpotAI is an attempt to give those gyms visibility
+    at a price a one-room gym can afford, in the languages their members speak: the app is available in English, Hindi,
+    Telugu, Tamil, Kannada, Marathi and Bengali.
+  </p>
+
+  <h2>Where it stands today</h2>
+  <p>
+    SpotAI is an early product. You can try the full member app today as an offline demo build (Android, iPhone or in the
+    browser; what you save stays on your phone). The first {SITE.pilot.gyms} gyms in India get a free {SITE.pilot.days}-day pilot,
+    set up remotely over a video call and WhatsApp, and in person around Hyderabad. Pricing after the pilot has not been
+    announced, and this site does not publish customer numbers, testimonials or results, because there are none to show yet.
+  </p>
+
+  <h2>The guides on this site</h2>
+  <p>
+    The <a href="/guides/">guides</a> are written for gym members and gym owners: food calories and protein from published USDA
+    and ICMR-NIN tables, workout and form explanations, and practical notes for running a gym. Where a guide gives a number it
+    says where the number comes from. Some are translated into Indian languages; those translations are reviewed before they
+    are listed in search. If you find a mistake, email me and I will fix it.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or see the <a href="/contact/">contact page</a>. My other work is at
+    <a href={SITE.author.url}>{SITE.author.url.replace('https://', '')}</a>.
+  </p>
+</LegalPage>
