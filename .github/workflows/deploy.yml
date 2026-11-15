@@ -39,6 +39,8 @@ jobs:
       - name: Check every scheduled guide
         if: github.event_name != 'schedule'
         run: npm run check:schedule
+      - name: Unit test the IndexNow URL selection
+        run: node --test scripts/indexnow.test.mjs
       - run: npm run build
       - uses: actions/upload-pages-artifact@v5
         with:
@@ -69,6 +71,22 @@ jobs:
         uses: actions/deploy-pages@v5
         with:
           timeout: 420000
+
+  # Tell Bing and other IndexNow engines (not Google) about guides and pages changed in this commit, and guides that went
+  # live today by schedule. A failed ping never fails a deploy.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Submit changed pages
+        run: node scripts/indexnow.mjs
+        continue-on-error: true
 
   # GitHub disables scheduled workflows in public repositories after 60 days without activity.
   # If nothing has been committed for 45 days, a scheduled run records an empty commit so the
