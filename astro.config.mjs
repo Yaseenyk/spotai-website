@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import { INDEXED_LANGS } from './src/i18n/indexed.mjs';
+import { INDEXED_LANGS, isThinHub } from './src/i18n/indexed.mjs';
 import { readdirSync, readFileSync } from 'node:fs';
 
 // Markdown guides carry their own `updated` date; the sitemap uses it as lastmod. Other pages have
@@ -26,9 +26,10 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Only indexed languages are listed (see src/i18n/indexed.mjs).
+      // Thin translated hubs (THIN_HUBS) are noindex and stay out too.
       filter(page) {
-        const m = page.match(/^https?:\/\/[^/]+\/([a-z]{2})\//);
-        return !m || INDEXED_LANGS.includes(m[1]);
+        const m = page.match(/^https?:\/\/[^/]+\/([a-z]{2})(\/.*)$/);
+        return !m || (INDEXED_LANGS.includes(m[1]) && !isThinHub(m[1], m[2]));
       },
       serialize(item) {
         const m = item.url.match(/^https?:\/\/[^/]+\/(?:([a-z]{2})\/)?guides\/([^/]+)\/$/);

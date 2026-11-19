@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../site';
-import { INDEXED_LANGS, LANGS, lang as langInfo, langOf, localize, type LangCode } from '../i18n/config';
+import { INDEXED_LANGS, LANGS, isThinHub, lang as langInfo, langOf, localize, stripLang, type LangCode } from '../i18n/config';
 import { strings } from '../i18n/strings';
 
 interface Props {
@@ -20,9 +20,13 @@ const L = langInfo(code);
 const t = strings(code);
 const { title = `${SITE.name} — ${t.site.tagline}`, description = t.site.description, jsonLd: pageLd, noindex: noindexProp = false, image, imageAlt, langs } = Astro.props;
 // Languages not yet in INDEXED_LANGS stay live but noindex (see src/i18n/indexed.mjs).
-const noindex = noindexProp || !INDEXED_LANGS.includes(code);
+// Thin translated hubs (THIN_HUBS) are noindex too and drop out of hreflang.
+const basePath = stripLang(Astro.url.pathname);
+const noindex = noindexProp || !INDEXED_LANGS.includes(code) || isThinHub(code, basePath);
 // Every indexed language version of this page, plus x-default (English), for reciprocal hreflang.
-const alternates = LANGS.filter((l) => INDEXED_LANGS.includes(l.code) && (!langs || langs.includes(l.code))).map((l) => ({
+const alternates = LANGS.filter(
+  (l) => INDEXED_LANGS.includes(l.code) && !isThinHub(l.code, basePath) && (!langs || langs.includes(l.code)),
+).map((l) => ({
   hreflang: l.tag,
   href: new URL(localize(Astro.url.pathname, l.code), Astro.site).href,
 }));
