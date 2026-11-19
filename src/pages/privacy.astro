@@ -5,7 +5,7 @@ import { SITE } from '../site';
 
 <LegalPage
   title="Privacy notice · SpotAI"
-  description="What the SpotAI website collects when you browse it or join the waitlist: Google Analytics, Microsoft Clarity, a first-party visit counter, cookies, EmailJS, future advertising, and how to ask for deletion."
+  description="What the SpotAI website collects when you browse it or join the waitlist: Google Analytics, Microsoft Clarity, a first-party visit counter, Google Fonts, cookies, EmailJS, future advertising, and how to ask for deletion."
   heading="Privacy notice"
 >
   <p class="lead">This notice covers this website only (spotai.streamerosai.com). What the SpotAI app does with your data is explained in the app's privacy centre.</p>
@@ -19,9 +19,10 @@ import { SITE } from '../site';
 
   <h2>Analytics and cookies</h2>
   <ul>
-    <li><strong>Google Analytics.</strong> Sets first-party cookies and sends usage data to Google: pages viewed, approximate location, device and browser, and the source of the visit.</li>
-    <li><strong>Microsoft Clarity.</strong> A free tool that records anonymised heatmaps and session replays so I can see where visitors get stuck. Text typed into the waitlist form is masked and is not recorded.</li>
-    <li><strong>First-party visit counter.</strong> A small script from my own Cloudflare Worker (pulse.yaseenyk.workers.dev) counts page views and tells human visits from bots. It sets no cookie and stores no IP address, no user-agent string and no text you type. It switches itself off if your browser sends Do Not Track or Global Privacy Control, and records are deleted after 90 days.</li>
+    <li><strong>Google Analytics</strong> (googletagmanager.com). Sets first-party cookies (<code>_ga</code>, <code>_ga_*</code>) and sends usage data to Google: pages viewed, approximate location, device and browser, and the source of the visit. Opt out with Google's <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">browser add-on</a>.</li>
+    <li><strong>Microsoft Clarity</strong> (clarity.ms). Records session replays and heatmaps (mouse movement, clicks and scrolling) so I can see where visitors get stuck. Text typed into the waitlist form is masked and is not recorded. It may set its own cookies (<code>_clck</code>, <code>_clsk</code>) and Microsoft cookies on clarity.ms and bing.com (such as <code>MUID</code>). See the <a href="https://privacy.microsoft.com/privacystatement" rel="noopener">Microsoft privacy statement</a>.</li>
+    <li><strong>Pulse, my own visit counter.</strong> A small script from my own Cloudflare Worker (pulse.yaseenyk.workers.dev). It records the page (without the query string), the referring site and campaign tags, country, device type, browser and system name, screen size, language, the name of your network provider, scroll depth, time on the page, page speed, which links and buttons were clicked, and, when a form is sent, the form's name only, never what you typed. It sets no cookie and stores no IP address and no user-agent string. The IP address is used in memory only, to limit abuse and to make a visitor code that changes every day (a one-way hash with a random salt that is deleted the next day), so visits cannot be linked across days. It switches itself off if your browser sends Do Not Track or Global Privacy Control, and records are deleted after 90 days.</li>
+    <li><strong>Google Fonts</strong> (fonts.googleapis.com, fonts.gstatic.com). The page fonts are loaded from Google, so your browser sends Google your IP address and browser details when it fetches them. Google Fonts sets no cookies. See <a href="https://developers.google.com/fonts/faq/privacy" rel="noopener">Google Fonts and privacy</a>.</li>
     <li><strong>Hosting.</strong> The site is served by GitHub Pages, which may log requests such as IP addresses under its own policy.</li>
   </ul>
   <p>None of this is used to target you with advertising. You can block it with a browser extension or by turning off cookies.</p>
@@ -45,5 +46,5 @@ import { SITE } from '../site';
     To see, correct or delete what you sent, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> from the contact details you
     used. See also the <a href="/terms/">terms of use</a>.
   </p>
-  <p class="priv__date">Last updated 16 November 2026.</p>
+  <p class="priv__date">Last updated 19 November 2026.</p>
 </LegalPage>

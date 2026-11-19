@@ -45,3 +45,20 @@ I did not add further sections: each would need new sourced facts, and the exist
 3. English `/pricing/` (222 words) and `/features/` (233 words) are short too. They are core product pages and stay indexed; more real text (written by the owner) would help.
 4. The product is early, with no customers or reviews shown (honest, but the "unique value" rests on the guides and the demo).
 5. Owner to-dos from 16 Nov still stand: read the Terms, confirm the public WhatsApp number, update the privacy notice before ads are enabled.
+
+## Privacy and crawl audit (19 Nov 2026)
+
+Method: home and /contact/ loaded in headless Chromium with every third-party request and cookie recorded, three guide and
+feature pages fetched raw, and `src/layouts/Layout.astro` read for scripts injected later.
+
+- Loaded on spotai.streamerosai.com: Google Analytics 4 (googletagmanager.com, analytics.google.com,
+  stats.g.doubleclick.net; cookies `_ga`, `_ga_VX7LDFZ4EE`), Microsoft Clarity (clarity.ms; no Clarity cookie was set in
+  the test run), Pulse (pulse.yaseenyk.workers.dev, no cookies), Google Fonts (fonts.googleapis.com, fonts.gstatic.com).
+  On demand only: EmailJS when the waitlist form is sent. No AdSense.
+- Privacy page fixed: Google Fonts loads on every page but was not named; the Pulse text missed what it records (country,
+  network name, clicks, form name on submit) and the daily-rotating visitor code; no GA opt-out or Microsoft link. All
+  added. AdSense "future use" paragraph kept.
+- Crawl: robots.txt allows crawling (only /demo/ and /downloads/ disallowed) and names `sitemap-index.xml`. All 151
+  sitemap URLs return 200, none redirects, none is noindex (the noindexed translated hubs are correctly left out), every
+  canonical matches.
+- Raw HTML: main text is in the static HTML (home about 1,960 words, guides 625 to 930 words).
